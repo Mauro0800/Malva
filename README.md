@@ -1,7 +1,7 @@
 # Sobre nosotros: Tienda Online que ofrece una variada cantidad de artículos de bazar y distinguidos accesorios para decorar el hogar. Desde la comodidad de su casa, los clientes pueden acceder a nuestros productos a un precio accesible. Nuestro principal objetivo es la satisfacción de compra de los usuarios. ¡Gracias por visitarnos!
 
 # Integrantes del proyecto:
-## Mauricio Amado, de 18 años y residente de Lanús
+## Mauricio Amado, de 18 años y residente de Lanús, Es un chico que le fascina ser eficiente con el tiempo, muy activo deportivamente y le encanta aprender tecnologias nuevas siempre ya que de eso se trata la vida.
 ## Nazarena Camarota, de 29 años y residente de Lanús
 ## Keila Di Pardo, de 23 años y residente de Lanús
 ## Gabriela Acuña, de 27 años y residente de Rafael Castillo
