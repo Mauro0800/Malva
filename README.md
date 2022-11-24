@@ -2,7 +2,7 @@
 
 # Integrantes del proyecto:
 ## Mauricio Amado, de 18 años y residente de Lanús
-## Nazarena Camarota, de 29 años y residente de Lanús
+## Nazarena Camarota, de 29 años y residente de Lanús, es una mujer metódica, diligente y detallista, que siente curiosidad constante por aprender y un gusto personal por el maquillaje artístico y de efectos especiales.
 ## Keila Di Pardo, de 23 años y residente de Lanús
 ## Gabriela Acuña, de 27 años y residente de Rafael Castillo
 ## Giuliana Gutierrez, de 19 años y residente de Villa La Angostura
