@@ -1,4 +1,4 @@
-# Sobre nosotros: Tienda Online que ofrece una variada cantidad de artículos de bazar y distinguidos accesorios para decorar el hogar. Desde la comodidad de su casa, los clientes pueden acceder a nuestros productos a un precio accesible. Nuestro principal objetivo es la satisfacción de compra de los usuarios. ¡Gracias por visitarnos!
+# Sobre nosotros: Como desarrolladores hemos trabajado en este proyecto e-commerce llamado Malva, asignado por la empresa. La tienda online ofrece diferentes productos de bazar y articulos para el hogar. En este trabajo, el cual incluye diferentes vistas y lógicas, se ve reflejado el desempeño y conocimiento adquirido hasta ahora por los participantes.
 
 # Integrantes del proyecto:
 ## Mauricio Amado, de 18 años y residente de Lanús, es un chico que le fascina ser eficiente con el tiempo, muy activo deportivamente y le encanta aprender tecnologias nuevas siempre ya que de eso se trata la vida.
