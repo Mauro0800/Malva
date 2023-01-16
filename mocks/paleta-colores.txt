@@ -1,0 +1,7 @@
+HEXADECIMAL PALETA DE COLORES (del más claro al más oscuro):
+
+#ffddd4
+#e7c5bc
+#cfada4
+#b9948c
+#a17c74
