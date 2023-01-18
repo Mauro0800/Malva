@@ -7,11 +7,15 @@
     justify-content: space-between;
     padding: 5px 15px;
     width: 100%;
-    background-color: #ffddd4;
+    background-color: var(--color1);
 }
 
 .home__header__figure-button{
     margin-right: 5px;
+}
+
+.home__header__figure{
+    margin: 1rem 0 0;
 }
 
 .home__header-section img{
@@ -24,11 +28,11 @@
 
 .home__header-section button{
     border: none;
-    background-color: #ffddd4;
+    background-color: var(--color1);
 }
 
 .home__header__nav{
-    background-color: #a17c74;
+    background-color: var(--color5);
     margin-bottom: -15.9px;
 }
 
@@ -45,6 +49,6 @@
 }
 
 .home__header__nav-ul li:hover{
-    color:#ffddd4;
+    color: var(--color1);
     cursor: pointer;
 }

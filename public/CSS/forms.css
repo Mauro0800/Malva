@@ -1,0 +1,22 @@
+.form__mobile__input{
+    display: block;
+    width: 100%;
+    background-color: var(--color3);
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid #fff ;
+}
+
+.form__mobile__input::placeholder{
+    color: #fff;
+}
+
+.form__mobile__button{
+    border-radius: 30px;
+    padding: 5px;
+    width: 70%;
+    background-color: var(--color4);
+    color: #fff;
+    text-transform: uppercase;
+    box-shadow: rgba(167, 167, 167,0.8) 0px 6px 7px -1px;;
+}

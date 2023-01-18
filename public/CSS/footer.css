@@ -1,0 +1,83 @@
+.home__footer__section--novedades{
+    background-color: var(--color3);
+    padding: 20px 10px 10px;
+}
+
+.home__footer__section__div{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+.home__footer__section__div--parrafo{
+    font-size: 0.9rem;
+}
+
+.home__footer section{
+    text-align: center;
+}
+
+.form__mobile__input{
+    margin-bottom: 10px;
+}
+
+.home__footer__section--info{
+ padding: 60px 20px;
+}
+
+
+.home__footer__section__div--iconos{
+    font-size: 3rem;
+}
+
+.home__footer__section__div__h2{
+    text-transform: uppercase;
+    margin: 5px 0 12px;
+}
+
+.home__footer__section__div--info p{
+    font-size: 0.8rem;
+}
+
+.home__footer__section--final{
+    background-color: var(--color3);
+    color: #fff;
+    padding: 20px 10px 20px; 
+}
+
+.home__footer__section__div a{
+    color: #fff;
+}
+.home__footer__section__div__a{
+    font-size: 0.7rem;
+}
+
+.home__footer__section__div--social{
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.home__footer__section__div h4{
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin: 15px 0;
+}
+
+.home__footer__section__div__h4{
+    margin-bottom: 5px;
+}
+
+.home__footer__section__div__p{
+    font-size: 0.7rem;
+}
+
+.home__footer__section__div--malva{
+    margin-top: 20px;
+}
+
+.home__footer__section__div--malva h4{
+    font-size: 1rem;
+}
