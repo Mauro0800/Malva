@@ -1,0 +1,50 @@
+.register__form-box{
+    width: 90%;
+    margin: 50px auto;
+    padding: 0;
+}
+
+.register__form-box h1{
+    font-size: 1.2rem;
+    margin-left: 13px;
+}
+
+.register__form-box hr{
+    border-color: inherit;
+    color: var(--color3);
+    background-color: var(--color3);
+    height: 1px;
+}
+
+.register__form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    box-sizing: border-box;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.register__form input{
+    width: 90%;
+    height: 30px;
+    padding: 10px;
+    font-size: 0.8rem;
+    border-style: groove;
+}
+
+.termcond{
+    display: flex;
+    flex-wrap:wrap;
+}
+
+.termcond label{
+    width: 70%;
+    font-size: 0.9rem;
+    text-align: start;
+}
+
+.termcond input{
+    width: 20%;
+}
