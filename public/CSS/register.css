@@ -95,6 +95,7 @@
     transition: all 0.5s;
     text-transform: uppercase;
     font-size: 0.8em;
+    border-radius: 5px;
 }
 
 .submit button:hover{
