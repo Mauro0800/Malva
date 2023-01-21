@@ -1,0 +1,130 @@
+.register__form-box{
+    width: 90%;
+    margin: 70px auto;
+    padding: 0;
+}
+
+.register__form-box h1{
+    font-size: 1.2rem;
+    margin-left: 13px;
+}
+
+.register__form-box hr{
+    border-color: inherit;
+    color: var(--color3);
+    background-color: var(--color3);
+    height: 1px;
+}
+
+.register__form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    box-sizing: border-box;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.register__form input{
+    width: 90%;
+    height: 30px;
+    padding: 10px;
+    font-size: 0.8rem;
+    border-style: groove;
+}
+
+
+.termcond input{
+    display: none;
+}
+
+.termcond label{
+    color: var(--color5);
+    padding: 5px 15px 5px 51px;
+    display: inline-block;
+    position: relative;
+    font-size: 1em;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.termcond label:hover{
+    background-color: var(--color1);
+}
+
+.termcond label:before{
+    content: '';
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    background: none;
+    border: 3px solid var(--color5);
+    border-radius: 50%;
+    position: absolute;
+    left: 17px;
+    top: 12px;
+}
+
+.termcond input:checked + label{
+     padding: 5px 15px;
+     background: var(--color2);
+     border-radius: 2px;
+     color: var(--color5);
+}
+
+.termcond input:checked + label:before{
+    display: none;
+}
+
+
+.submit{
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    margin: 10px;
+}
+.submit button{
+    width: 70%;
+    height: 37px;
+    border: none;
+    background-color: var(--color5);
+    color: var(--color1);
+    transition: all 0.5s;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    border-radius: 5px;
+}
+
+.submit button:hover{
+    background-color: var(--color2);
+    color: var(--color5);
+    font-size: 0.9em;
+
+}
+
+@media (min-width: 768px){
+    .register__form-box{
+        width: 65%;
+    }
+    .termcond label:before{
+        content: '';
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        background: none;
+        border: 3px solid var(--color5);
+        border-radius: 50%;
+        position: absolute;
+        left: 17px;
+        top: 4px;
+    }
+}
+
+@media (min-width: 1024px){
+    .register__form-box{
+        width: 50%;
+    }
+}
