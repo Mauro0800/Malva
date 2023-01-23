@@ -1,0 +1,147 @@
+.carousel-inner img {
+    width: 350px;
+    height: 350px !important;
+}
+
+.product-detail__main {
+    width: 100%;
+    padding: 10px;
+    margin: 15px;
+    box-sizing: border-box;
+}
+
+.product-detail__main__section--product {}
+
+.product-detail__main__section__article--product {}
+
+.product-detail-description {
+    margin: 15px;
+    padding: 15px;
+    border-radius: 25px;
+    background-color: var(--color1);
+}
+
+.product-description {
+    color: rgb(127, 127, 127);
+}
+
+.product-price {
+    font-weight: 700;
+    color: var(--color5);
+}
+
+.product-detail__main__section__article--shopping-cart-button {
+    text-align: center;
+}
+
+.product-detail__main__section__article--shopping-cart-button button,
+label,
+select {
+    margin: 10px 0;
+    border: none;
+}
+
+.default-button {
+    font-size: 14px;
+    padding: 6px 0;
+    width: 70%;
+    background-color: var(--color4);
+    color: #fff;
+    text-transform: uppercase;
+    box-shadow: rgba(167, 167, 167, 0.8) 5px 5px 5px 0;
+    border: none;
+}
+
+.payment-method {}
+
+.payment-method select {
+    width: 60%;
+}
+
+.product-detail__main__section--related-products {
+    display: none;
+    text-transform: capitalize;
+    font-size: 14px;
+}
+
+.product-detail__main__section__article--related-products {
+    width: 22%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.related-products {}
+
+.product-image {}
+
+.product-detail__main__section__article--related-products img {
+    width: 100%;
+}
+
+/* Vista para tablet */
+@media (min-width: 768px) {
+
+    .product-detail__main__section__article--product {
+        display: flex;
+        justify-content: center;
+    }
+
+    .product-detail-description {
+        height: 75%;
+        margin: 0 15px 15px;
+    }
+
+    .product-detail__main__section__article--shopping-cart-button {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 0 0 20px;
+    }
+
+    .default-button {
+        width: 25%;
+    }
+
+    .payment-method select {
+        width: 50%;
+    }
+
+    .product-detail__main__section--related-products {
+        display: block;
+    }
+
+    .product-detail__main__section__article--related-products {
+        width: 65%;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .related-products {
+        margin: 10px;
+    }
+
+    .related-products button {
+        text-align: center;
+        width: 100%;
+        padding: 8px;
+    }
+
+    .home__footer__section--info {
+        display: none;
+    }
+
+    .home__footer__section--final {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
+
+/* Vista para desktop */
+@media (min-width: 1024px) {
+    .product-detail__main__section__article--related-products {
+        width: 50%;
+    }
+}

@@ -33,7 +33,7 @@ body {
     border-color :inherit;
     color :var(--color3);
     background-color: var(--color3);
-    height: 1px;
+    height: 2px;
 }
 #login {
   
@@ -54,7 +54,7 @@ body {
     padding: 10px;
     font-size :0.8rem;
     border-style :groove;
-    gap:20px
+    
 }
 
 #login input::placeholder {
@@ -64,7 +64,9 @@ body {
     
 }
 #loginform input{
-    gap:50px;
+    border-color: #080808;
+    
+    margin-bottom: 15px;;
 }
 
 #login button {
@@ -74,7 +76,7 @@ body {
     width: 90%;
     height: 40px;
     border: none;
-    
+    transition: all 0.5s;
     border-radius: 3px 3px 3px 3px;
     -moz-border-radius: 3px 3px 3px 3px;
     -webkit-border-radius: 3px 3px 3px 3px;
@@ -100,11 +102,12 @@ body {
 .pie-form a {
     display: block;
     text-decoration: none;
-    color: #a17c74;
+    color: var(--color5);
     margin-bottom: 3px;
 }
 
 .pie-form a:hover {
+    background-color :var(--color1);
     color: #e7c5bc;
 }
 
@@ -113,7 +116,29 @@ body {
     font-size: 90%;
     text-align: center;
 }
+.inferior button{
+    font-family: 'Domine', sans-serif;
+    font-size: 110%;
+    color:#ffddd4;
+    width: 90%;
+    height: 40px;
+    border: none;
+    
+    transition: all 0.5s;
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    
+    background-color: #a17c74;
+    
+    margin-top: 10px;
+}
 
+.inferior button:hover{
+    background-color:
+    #e7c5bc;
+    color:#fff;
+}
 .inferior a {
     display: block;
     text-decoration: none;

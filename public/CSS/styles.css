@@ -1,4 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400;600;700&display=swap%27');
+@import './buttons.css';
 @import './general.css';
 @import './home.css';
 @import './header.css';
 @import './login.css';
+@import './footer.css';
+@import './forms.css';
+@import './productdetail.css';
+@import './resetpassword.css';
+@import './variables.css';
