@@ -4,8 +4,7 @@
 }
 
 .home__footer__section__div{
-    display: flex;
-    flex-direction: column;
+    
     color: #fff;
 }
 
@@ -45,6 +44,11 @@
     padding: 20px 10px 20px; 
 }
 
+.home__footer__section--final h4{
+    text-transform: uppercase;
+    font-size: 1.10rem;
+}
+
 .home__footer__section__div a{
     color: #fff;
 }
@@ -80,4 +84,52 @@
 
 .home__footer__section__div--malva h4{
     font-size: 1rem;
+}
+
+.home__footer__section__div--atencion-cliente a{
+    color: #fff;
+}
+
+@media (min-width: 768px){
+    
+    .home__footer__section--info {
+        display: none;
+    }
+
+    .home__footer__section--final {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    .home__footer__section__div--sobre-nosotros{
+        width: 50%;
+        position: relative;
+        top: 80px;
+    }
+
+    .home__footer__section__div--sobre-nosotros h4{
+        text-align: end;
+    }
+    
+    .home__footer__section__div__p{
+        font-size: 0.8rem;
+        text-align: end;
+    }
+    
+    .home__footer__section__div--atencion-cliente {
+        width: 82%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    }
+
+
+    .home__footer__section__div--malva{
+        width: 100%;
+    }
 }
