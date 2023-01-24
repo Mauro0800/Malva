@@ -14,3 +14,6 @@
 ## https://umarketoficial.com - Estética y productos
 ## https://entucasa.com.ar - Estética y productos
 ## https://www.casanovahogar.com.ar - Estética y productos
+
+# Tablero de Trello
+## https://trello.com/b/gXrJkOJP/proyecto-integrador-malva
