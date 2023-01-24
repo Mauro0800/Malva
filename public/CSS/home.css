@@ -10,6 +10,121 @@
     margin: 0 5px;
 }
 
+/* main */
+
+.home__main__section--body{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.home__main__section--body img{
+    width: 100%;
+}
+
+.home__main__botones-fijos button{
+    border: none;
+    background-color: var(--color3);
+    font-size: 28px;
+    width: 45px;
+    text-align: center;
+    border-radius: 50px;
+    padding: 2px;
+}
+
+.boton-shopping{
+    position: absolute;
+    left: 20px;
+    top: 305px;
+}
+
+.boton-down{
+    position: absolute;
+    left: 140px;
+    top: 305px;
+}
+
+.boton-wpp{
+    position: absolute;
+    left: 250px;
+    top: 305px;
+}
+
+.home__main__productos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.home__main__productos h4{
+    font-size: 0.9em;
+    color: black;
+    font-weight: bolder;
+}
+.home__main__productos-imagen{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.home__main__productos-detalle{
+    width: 100%;
+}
+.home__main__productos-detalle p{
+    color: var(--color5);
+    font-size: 0.8em;
+}
+
+.precio-viejo{
+    text-decoration: line-through;
+    color: black;
+    margin: 0;
+    padding:0;
+}
+
+.home__main__productos h3{
+    color: black;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    margin-top: 70px;
+    width: 100%;
+    text-align: center;
+    font-weight:bolder;
+}
+
+.home__main__productos figure{
+    width: 40%;
+    
+}
+
+.ver-todos-los-productos{
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    margin: 10px auto 50px auto;
+}
+.ver-todos-los-productos button{
+    width: 100%;
+    height: 37px;
+    border: none;
+    background-color: var(--color5);
+    color: var(--color1);
+    transition: all 0.5s;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    border-radius: 5px;
+}
+
+.ver-todos-los-productos button:hover{
+    background-color: var(--color2);
+    color: var(--color5);
+    font-size: 0.9em;
+
+}
+
+
+
 @media (min-width:768px) {
 
     .home__main__section--banner{
@@ -21,6 +136,8 @@
         width: 100%;
         height: 250px;
     }
+
+    /* main */
 }
 
 @media (min-width:1024px) {
