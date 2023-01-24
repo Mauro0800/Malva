@@ -12,3 +12,4 @@ app.get("/register",(req,res)=>res.sendFile(path.resolve(__dirname,'views','regi
 app.get("/shopingcart",(req,res)=>res.sendFile(path.resolve(__dirname,'views','shopingcart.html')));
 app.get("/product-detail",(req,res)=>res.sendFile(path.resolve(__dirname,'views','productdetail.html')));
 app.get("/reset-password",(req,res)=>res.sendFile(path.resolve(__dirname,'views','resetpassword.html')));
+app.get("/dashboard",(req,res)=>res.sendFile(path.resolve(__dirname,'views','dashboard.html')));
