@@ -35,7 +35,7 @@
 }
 
 .home__footer__section__div--info p{
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 
 .home__footer__section--final{
@@ -92,8 +92,42 @@
 
 @media (min-width: 768px){
     
-    .home__footer__section--info {
-        display: none;
+    .home__footer__div--novedades{
+        display: flex;
+        background: rgb(255,221,212);
+        background: linear-gradient(0deg, rgba(255,221,212,1) 0%, rgba(255,255,255,1) 100%);
+        
+    }
+
+    .home__footer__section--novedades{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 9px 10px 10px;
+        background: rgb(255,221,212);
+        background: linear-gradient(0deg, rgba(255,221,212,1) 0%, rgba(255,255,255,1) 100%);
+    }
+    
+    .home__footer__section__div--novedades{
+        color: #000;
+    }
+
+    .home__footer__section__div{
+        position: relative;
+    }
+
+    .home__footer__section--info{
+        display: flex;
+        padding: 15px;
+    }
+
+    .home__footer__section__div--info{
+        flex-direction: row;
+        padding-left: 12px;
+    }
+
+    .home__footer__section__div__h2 {
+        font-size: 1rem;
+        font-weight: 700;
     }
 
     .home__footer__section--final {
@@ -117,8 +151,8 @@
     }
     
     .home__footer__section__div__p{
-        font-size: 0.8rem;
-        text-align: end;
+        font-size: 0.7rem;
+        text-align: center;
     }
     
     .home__footer__section__div--atencion-cliente {

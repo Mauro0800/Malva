@@ -1,4 +1,4 @@
-.form__mobile__input{
+.form__mobile__input,.form__mobile__input--nombre{
     display: block;
     width: 100%;
     background-color: var(--color3);
@@ -11,6 +11,10 @@
     color: #fff;
 }
 
+.form__mobile__input--nombre{
+    display: none;
+}
+
 .form__mobile__button{
     border-radius: 30px;
     padding: 5px;
@@ -19,4 +23,47 @@
     color: #fff;
     text-transform: uppercase;
     box-shadow: rgba(167, 167, 167,0.8) 0px 6px 7px -1px;;
+}
+
+.form__mobile__button--submit{
+    display: none;
+}
+
+@media (min-width: 768px){
+
+
+
+    .form__mobile__input--nombre{
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .form__mobile__input{
+        position: relative;
+    }
+
+    .form__mobile__input,.form__mobile__input--nombre{
+        background-color: #fff;
+        border: 1px solid #000;
+    }
+
+    .form__mobile__input::placeholder{
+        color: rgb(88, 88, 88);
+    }
+
+    .form__mobile__button{
+        display: none;
+    }
+
+    .form__mobile__button--submit{
+        display: inline-block;
+        position: absolute;
+        width: 24px;
+        height: 36px;
+        top: 46px;
+        left: 188px;
+        border: none;
+        color: #ffddd4;
+        background-color: #000;
+    }
 }
