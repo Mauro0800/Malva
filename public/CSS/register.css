@@ -1,3 +1,7 @@
+.ingresa {
+    color: var(--color5);
+}
+
 .register__form-box{
     width: 90%;
     margin: 70px auto;

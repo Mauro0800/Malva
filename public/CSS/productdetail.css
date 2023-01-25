@@ -50,6 +50,13 @@ select {
     text-transform: uppercase;
     box-shadow: rgba(167, 167, 167, 0.8) 5px 5px 5px 0;
     border: none;
+    transition: all 0.5s;
+}
+
+.default-button:hover {
+    background-color: var(--color2);
+    color: var(--color5);
+    font-size: 0.9em;
 }
 
 .payment-method {}
