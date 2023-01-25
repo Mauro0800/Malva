@@ -81,6 +81,9 @@
   }
 
 @media (min-width: 768px){
+  .home__header__figure-button{
+    display: none;
+  }
 
   .home__header__section--cuenta a{
     color: #fff;
