@@ -28,7 +28,7 @@
     <section class="home__header-section">
 
       <figure class="home__header__figure">
-        <button class="home__header__figure-button"><i class="fa-solid fa-bars"></i></button>
+        <button class="home__header__figure-button" id="icono-menu"><i class="fa-solid fa-bars"></i></button>
         <button><i class="fa-solid fa-magnifying-glass"></i></button>
       </figure>
 
@@ -55,6 +55,16 @@
     </nav>
 
   </header>
+
+  <div class="cont-menu active10" id="menu">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="#novedades">Recibi novedades</a></li>
+      <li><a href="#redes">Redes</a></li>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/register">Register</a></li>
+    </ul>
+  </div>
 
   <main class="home__main">
     <section class="home__main__section--banner">
@@ -257,7 +267,7 @@
 
   <footer id="footer" class="home__footer">
     <div class="home__footer__div--novedades">
-      <section class="home__footer__section--novedades">
+      <section class="home__footer__section--novedades" id="novedades">
         <div class="home__footer__section__div--novedades">
           <h2 class="home__footer__section__div--subtitulo">Recibí nuestras novedades</h2>
           <p class="home__footer__section__div--parrafo">Registrate y entérate primero de nuestras novedades, nuevos
@@ -302,7 +312,7 @@
       </section>
     </div>
 
-    <section class="home__footer__section--final">
+    <section class="home__footer__section--final" id="redes">
       <div class="home__footer__section__div">
 
         <h4>redes sociales</h4>
@@ -341,6 +351,8 @@
     </section>
 
   </footer>
+
+  <script src="/javascripts/menuHam.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
