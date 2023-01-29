@@ -153,7 +153,7 @@ body {
     #contenedor{
         width: 65%;
     }
-    .pie-form{
+    /* .pie-form{
         content :'';
         width: 15px;
         height: 15px;
@@ -164,7 +164,7 @@ body {
         position :absolute;
         left: 17px;
         top :4px;
-    }
+    } */
 }
 
 @media (min-width: 1024px){

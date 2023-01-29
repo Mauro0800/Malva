@@ -1,0 +1,49 @@
+#icono-menu{
+    position: relative;
+    z-index: 11;
+}
+
+.cont-menu{
+    background-color: var(--color1);
+    box-shadow: 2px 0 5px 2px #666;
+    width: 400px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .5s ease;
+    z-index: 10;
+}
+
+
+.active10{
+    transform: translate(-600px);
+}
+
+.opacity{
+    background-color: rgba(0,0,0,0.5);
+    transition: all .5s ease;
+}
+
+.cont-menu ul{
+    padding: 100px 0 20px 0;
+    list-style: none;
+}
+
+.cont-menu ul a{
+    display: block;
+    font-size: 25px;
+    padding: 10px 50px;
+    color: #000;
+}
+
+.cont-menu ul a:hover{
+    background-color: #999;
+    color: #000;
+}
+
+@media (min-width: 768px){
+    .cont-menu{
+        display: none;
+    }
+}

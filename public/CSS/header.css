@@ -1,3 +1,7 @@
+.home__header__section--cuenta{
+    display: none;
+}
+
 
 .home__header-section{
     display: flex;
@@ -75,4 +79,27 @@
     transform: scaleX(1);
     transform-origin: right left;
   }
+
+@media (min-width: 768px){
+  .home__header__figure-button{
+    display: none;
+  }
+
+  .home__header__section--cuenta a{
+    color: #fff;
+    font-size: smaller;
+    margin-right: 10px;
+}
+
+  .home__header__section--cuenta{
+    display: block;
+    background-color: var(--color5);
+    text-align: end;
+    padding: 5px;
+  }
+
+  .home__header__section__a--icono{
+    margin-right: 20px;
+  }
+}
 

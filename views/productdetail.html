@@ -20,7 +20,11 @@
 <body class="home">
 
     <header class="home__header">
-
+        <section class="home__header__section--cuenta">
+            <a href="/login" class="home__header__section__a">Iniciar Sesión</a>
+            <a href="/register" class="home__header__section__a">Registrarse</a>
+            <a href="" class="home__header__section__a--icono"><i class="fa-solid fa-user"></i></a>
+        </section>
         <section class="home__header-section">
 
             <figure class="home__header__figure">
@@ -33,7 +37,7 @@
             </figure>
 
             <figure class="home__header__figure">
-                <button><i class="fa-solid fa-cart-shopping"></i></button>
+                <a href="/shopping-cart"><button><i class="fa-solid fa-cart-shopping"></i></button></a>
             </figure>
 
         </section>
@@ -55,7 +59,7 @@
     <main class="product-detail__main">
         <section class="product-detail__main__section--product">
             <article class="product-detail__main__section__article--product">
-                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div id="carouselExampleIndicators" class="carousel slide carouseldetail" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
                             class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -100,22 +104,22 @@
                     <h4 class="product-price"><b>$5.472,00</b></h4>
                 </div>
             </article>
-                <div class="product-detail__main__section__article--shopping-cart-button">
-                    <button class="default-button" type="submit">Agregar al carrito</button>
-                    <form action="medios-de-pago" method="post"></form>
-                    <div class="payment-method">
-                        <label for="medios-de-pago"></label>
-                        <i class="fa-regular fa-credit-card"></i>
-                        <select name="direccion" id="address">
-                            <option value="medios-de-pago" hidden>Medios de pago</option>
-                            <option value="6-cuotas">6 cuotas sin interés de $912,00</option>
-                            <option value="12-cuotas">12 cuotas fijas de $775,20</option>
-                            <option value="efectivo">1 pago en efectivo de $5.472,00</option>
-                            </option>
-                        </select>
-                    </div>
+            <div class="product-detail__main__section__article--shopping-cart-button">
+                <button class="default-button" type="submit"><a href="#">Agregar al carrito</a></button>
+                <form action="medios-de-pago" method="post"></form>
+                <div class="payment-method">
+                    <label for="medios-de-pago"></label>
+                    <i class="fa-regular fa-credit-card"></i>
+                    <select name="direccion" id="address">
+                        <option value="medios-de-pago" hidden>Medios de pago</option>
+                        <option value="6-cuotas">6 cuotas sin interés de $912,00</option>
+                        <option value="12-cuotas">12 cuotas fijas de $775,20</option>
+                        <option value="efectivo">1 pago en efectivo de $5.472,00</option>
+                        </option>
+                    </select>
                 </div>
-            
+            </div>
+
         </section>
         <section class="product-detail__main__section--related-products">
             <h4>Productos relacionados</h4>
@@ -125,89 +129,100 @@
                     <p>Cubo aromático Bergamine</p>
                     <h6><del>$870,00</del></h6>
                     <h6 class="product-price"><b>$696,00</b></h6>
-                    <button class="default-button" type="submit">Agregar</button>
+                    <button class="default-button" type="submit"><a href="/">Agregar</a></button>
                 </div>
                 <div class="related-products">
                     <img src="/images/aromaticos/difusor-bergam-y-rosas-1.jpg" alt="">
                     <p>Difusor de ambiente Bergamota y rosas Kala</p>
                     <h6><del>$5.270,00</del></h6>
                     <h6 class="product-price"><b>$4.216,00</b></h6>
-                    <button class="default-button" type="submit">Agregar</button>
+                    <button class="default-button" type="submit"><a href="/">Agregar</a></button>
                 </div>
                 <div class="related-products">
                     <img src="/images/aromaticos/difusor-de-ambiente-basic-the-candle-shop-1.jpg" alt="">
                     <p>Difusor Basic Cedro Verbena</p>
                     <h6><del>$2.530,00</del></h6>
                     <h6 class="product-price"><b>$2.024,00</b></h6>
-                    <button class="default-button" type="submit">Agregar</button>
+                    <button class="default-button" type="submit"><a href="/">Agregar</a></button>
                 </div>
                 <div class="related-products">
                     <img src="/images/aromaticos/difusor-grey-the-candle-shop-1.jpg" alt="">
                     <p>Difusor Grey The Candle Shop</p>
                     <h6><del>$4.550,00</del></h6>
                     <h6 class="product-price"><b>$3.640,00</b></h6>
-                    <button class="default-button" type="submit">Agregar</button>
+                    <button class="default-button" type="submit"><a href="/">Agregar</a></button>
                 </div>
             </article>
         </section>
     </main>
 
-    <footer class="home__footer">
-
-        <section class="home__footer__section--info">
+    <footer id="footer" class="home__footer">
+          <section class="home__footer__section--info">
+    
             <div class="home__footer__section__div--info">
-                <div class="home__footer__section__div--iconos"><i class="fa-regular fa-credit-card"></i></div>
-                <h2 class="home__footer__section__div__h2">podes pagar con tarjeta o en efectivo</h2>
-                <p class="home__footer__section__div__p">!Tenemos 3 y 6 cuotas sin interés en todos los productos de la
-                    tienda y un 10% de descuento en productos
-                    seleccionados para vos!</p>
+              <div class="home__footer__section__div--iconos"><i class="fa-regular fa-credit-card"></i></div>
+              <h2 class="home__footer__section__div__h2">podes pagar con tarjeta o en efectivo</h2>
+              <p class="home__footer__section__div__p">!Tenemos 3 y 6 cuotas sin interés en todos los productos de la tienda
+                y un 10% de descuento en productos
+                seleccionados para vos!</p>
             </div>
-
+    
             <div class="home__footer__section__div--info">
-                <div class="home__footer__section__div--iconos"><i class="fa-solid fa-truck-fast"></i></div>
-                <h2 class="home__footer__section__div__h2">envío rapido</h2>
-                <p class="home__footer__section__div__p">Elegí Mercado Envios y segui tu compra hasta recibirla. Todos
-                    tus envíos estarán protegidos</p>
+              <div class="home__footer__section__div--iconos"><i class="fa-solid fa-truck-fast"></i></div>
+              <h2 class="home__footer__section__div__h2">envío rapido</h2>
+              <p class="home__footer__section__div__p">Elegí Mercado Envios y segui tu compra hasta recibirla. Todos tus
+                envíos estarán protegidos</p>
             </div>
-
+    
             <div class="home__footer__section__div--info">
-                <div class="home__footer__section__div--iconos"><i class="fa-regular fa-face-laugh-beam"></i></div>
-                <h2 class="home__footer__section__div__h2">compra protegida</h2>
-                <p class="home__footer__section__div__p">Te acompañamos hasta que recibas lo que compraste, y si no es
-                    lo que esperabas te devolvemos el dinero.</p>
+              <div class="home__footer__section__div--iconos"><i class="fa-regular fa-face-laugh-beam"></i></div>
+              <h2 class="home__footer__section__div__h2">compra protegida</h2>
+              <p class="home__footer__section__div__p">Te acompañamos hasta que recibas lo que compraste, y si no es lo que
+                esperabas te devolvemos el dinero.</p>
             </div>
-
-        </section>
-
+    
+          </section>
+        </div>
+    
         <section class="home__footer__section--final">
-            <div class="home__footer__section__div">
-
-                <h4>redes sociales</h4>
-
-                <div class="home__footer__section__div--social">
-                    <a href="https://www.google.com/"><i class="fa-brands fa-google"></i></a>
-                    <a href="https://web.whatsapp.com/"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="https://es-la.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
-                </div>
+          <div class="home__footer__section__div">
+    
+            <h4>redes sociales</h4>
+    
+            <div class="home__footer__section__div--social">
+              <a href=""><i class="fa-brands fa-google"></i></a>
+              <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+              <a href=""><i class="fa-brands fa-instagram"></i></a>
             </div>
-
-            <div class="home__footer__section__div">
-                <h4 class="home__footer__section__div__h4">atención al cliente</h4>
-                <a class="home__footer__section__div__a" href="/">Botón de arrepentimiento </a>
-                <a class="home__footer__section__div__a" href="/">Formas de pago </a>
-                <a class="home__footer__section__div__a" href="/">Políticas de privacidad y seguridad </a>
-                <a class="home__footer__section__div__a" href="/">Términos y condiciones</a>
-                <a class="home__footer__section__div__a" href="/">Defensa al consumidor</a>
-            </div>
-
-            <div class="home__footer__section__div--malva">
-                <h4>MALVA©</h4>
-            </div>
-
+    
+          </div>
+    
+          <div class="home__footer__section__div--sobre-nosotros">
+            <h4>sobre nosotros</h4>
+            <p class="home__footer__section__div__p">Como desarrolladores hemos trabajado en este proyecto e-commerce
+              llamado Malva, asignado por la empresa. La
+              tienda online ofrece diferentes productos de bazar y articulos para el hogar. En este trabajo, el cual incluye
+              diferentes vistas y lógicas, se ve reflejado el desempeño y conocimiento adquirido hasta ahora por los
+              participantes.</p>
+          </div>
+    
+          <div class="home__footer__section__div--atencion-cliente">
+            <h4 class="home__footer__section__div__h4">atención al cliente</h4>
+            <a class="home__footer__section__div__a" href="">Botón de arrepentimiento </a>
+            <a class="home__footer__section__div__a" href="">Formas de pago </a>
+            <a class="home__footer__section__div__a" href="">Políticas de privacidad y seguridad </a>
+            <a class="home__footer__section__div__a" href="">Términos y condiciones</a>
+            <a class="home__footer__section__div__a" href="">Defensa al consumidor</a>
+          </div>
+    
+          <div class="home__footer__section__div--malva">
+            <h4>MALVA©</h4>
+          </div>
+    
         </section>
-
-    </footer>
+    
+      </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
