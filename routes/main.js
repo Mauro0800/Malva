@@ -8,9 +8,9 @@ router
 .get('/', home)
 .get('/login',login)
 .get('/register', register)
-.get('/productdetail', productdetail)
-.get('/resetpassword', resetpassword)
-.get('/shoppingcart', shoppingcart)
+.get('/reset-password', resetpassword)
+.get('/product-detail', productdetail)
+.get('/shopping-cart', shoppingcart)
 .get('/dashboard', dashboard)
 
 module.exports = router;

@@ -2,67 +2,12 @@
 
 <html lang="es">
     
-    <head>
-        
-        <meta charset="utf-8">
-        
-        <title> Malva | Log-in </title>    
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-        <meta name="description" content="formulario de acceso en HTML y CSS Proyecto Malva">
-        <meta name="keywords" content="Formulario Acceso, Formulario de LogIn">
-        
-        <link href="https://fonts.googleapis.com/css?family=Overpass&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;600;700&display=swap" rel="stylesheet">
-        <link rel="shortcut icon" href="/images/logo/icon-malva.ico">
-       
-        <link rel="stylesheet" href="css/styles.css">
-        
-        <style type="text/css">
-            
-        </style>
-        
-        <script type="text/javascript">
-        
-        </script>
-        
-    </head>
-    <header class="home__header">
-      <section class="home__header-section">
-  
-        <figure class="home__header__figure">
-          <button class="home__header__figure-button"><i class="fa-solid fa-bars"></i></button>
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
-        </figure>
-  
-        <figure class="home__header__figure--logo">
-          <a href="/"><img src="/images/logo/malva-logo-1.png" alt=""></a>
-        </figure>
-  
-        <figure class="home__header__figure">
-          <a href="/shopping-cart"><button><i class="fa-solid fa-cart-shopping"></i></button></a>
-        </figure>
-  
-      </section>
-  
-  
-      <nav class="home__header__nav">
-        <ul class="home__header__nav-ul">
-          <li><a>deco</a></li>
-          <li><a>frascos</a></li>
-          <li><a>utensilios</a></li>
-          <li><a>vasos</a></li>
-          <li><a>jarras</a></li>
-          <li><a>aromáticos</a></li>
-        </ul>
-      </nav>
-  
-    </header>
+  <%- include('./partials/head') %>
 
     <body>
-        
-        
+      
+      <%- include('./partials/header') %>
+
         <div id="contenedor">
             <div id="central">
                 <div class="titulo">
@@ -94,45 +39,5 @@
         
     </body>
     
-    <footer id="footer" class="home__footer">
-
-      <section class="home__footer__section--final">
-        <div class="home__footer__section__div">
-  
-          <h4>redes sociales</h4>
-  
-          <div class="home__footer__section__div--social">
-            <a href=""><i class="fa-brands fa-google"></i></a>
-            <a href=""><i class="fa-brands fa-whatsapp"></i></a>
-            <a href=""><i class="fa-brands fa-facebook"></i></a>
-            <a href=""><i class="fa-brands fa-instagram"></i></a>
-          </div>
-  
-        </div>
-  
-        <div class="home__footer__section__div--sobre-nosotros">
-          <h4>sobre nosotros</h4>
-          <p class="home__footer__section__div__p">Como desarrolladores hemos trabajado en este proyecto e-commerce
-            llamado Malva, asignado por la empresa. La
-            tienda online ofrece diferentes productos de bazar y articulos para el hogar. En este trabajo, el cual incluye
-            diferentes vistas y lógicas, se ve reflejado el desempeño y conocimiento adquirido hasta ahora por los
-            participantes.</p>
-        </div>
-  
-        <div class="home__footer__section__div--atencion-cliente">
-          <h4 class="home__footer__section__div__h4">atención al cliente</h4>
-          <a class="home__footer__section__div__a" href="">Botón de arrepentimiento </a>
-          <a class="home__footer__section__div__a" href="">Formas de pago </a>
-          <a class="home__footer__section__div__a" href="">Políticas de privacidad y seguridad </a>
-          <a class="home__footer__section__div__a" href="">Términos y condiciones</a>
-          <a class="home__footer__section__div__a" href="">Defensa al consumidor</a>
-        </div>
-  
-        <div class="home__footer__section__div--malva">
-          <h4>MALVA©</h4>
-        </div>
-  
-      </section>
-  
-    </footer>
+    <%- include('./partials/footer') %>
 </html>
