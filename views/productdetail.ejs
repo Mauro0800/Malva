@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head') %>
+
+<body class="home">
+
+    <%- include('./partials/header') %>
+
+    <main class="product-detail__main">
+        <section class="product-detail__main__section--product">
+            <article class="product-detail__main__section__article--product">
+                <div id="carouselExampleIndicators" class="carousel slide carouseldetail" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="image-product" src="/images/aromaticos/caja-aladin-c-perf-y-crem-1.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="image-product" src="/images/aromaticos/caja-aladin-c-perf-y-crem-2.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="image-product" src="/images/aromaticos/caja-aladin-c-perf-y-crem-3.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="product-detail-description">
+                    <h2>Set perfume y crema Aladdin Kala</h2>
+                    <p class="product-description">Set de cuidado personal: perfume y crema Aladdin marca Kala.</p>
+                    <p><b>Uso:</b> Set cuidado personal</p>
+                    <p><b>Marca:</b> Kala</p>
+                    <p><b>Material:</b> Vidrio</p>
+                    <p><b>Tamaño:</b> 16 cm.</p>
+                    <h6><del>$6.840,00</del></h6>
+                    <h4 class="product-price"><b>$5.472,00</b></h4>
+                </div>
+            </article>
+            <div class="product-detail__main__section__article--shopping-cart-button">
+                <button class="default-button" type="submit"><a href="#">Agregar al carrito</a></button>
+                <form action="medios-de-pago" method="post"></form>
+                <div class="payment-method">
+                    <label for="medios-de-pago"></label>
+                    <i class="fa-regular fa-credit-card"></i>
+                    <select name="direccion" id="address">
+                        <option value="medios-de-pago" hidden>Medios de pago</option>
+                        <option value="6-cuotas">6 cuotas sin interés de $912,00</option>
+                        <option value="12-cuotas">12 cuotas fijas de $775,20</option>
+                        <option value="efectivo">1 pago en efectivo de $5.472,00</option>
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+        </section>
+        <section class="product-detail__main__section--related-products">
+            <h4>Productos relacionados</h4>
+            <article class="product-detail__main__section__article--related-products">
+                <div class="related-products">
+                    <img src="/images/aromaticos/cubo-aromatico-mini-the-candle-shop-1.jpg" alt="">
+                    <p>Cubo aromático Bergamine</p>
+                    <h6><del>$870,00</del></h6>
+                    <h6 class="product-price"><b>$696,00</b></h6>
+                    <button class="default-button" type="submit"><a href="/">Agregar</a></button>
+                </div>
+                <div class="related-products">
+                    <img src="/images/aromaticos/difusor-bergam-y-rosas-1.jpg" alt="">
+                    <p>Difusor de ambiente Bergamota y rosas Kala</p>
+                    <h6><del>$5.270,00</del></h6>
+                    <h6 class="product-price"><b>$4.216,00</b></h6>
+                    <button class="default-button" type="submit"><a href="/">Agregar</a></button>
+                </div>
+                <div class="related-products">
+                    <img src="/images/aromaticos/difusor-de-ambiente-basic-the-candle-shop-1.jpg" alt="">
+                    <p>Difusor Basic Cedro Verbena</p>
+                    <h6><del>$2.530,00</del></h6>
+                    <h6 class="product-price"><b>$2.024,00</b></h6>
+                    <button class="default-button" type="submit"><a href="/">Agregar</a></button>
+                </div>
+                <div class="related-products">
+                    <img src="/images/aromaticos/difusor-grey-the-candle-shop-1.jpg" alt="">
+                    <p>Difusor Grey The Candle Shop</p>
+                    <h6><del>$4.550,00</del></h6>
+                    <h6 class="product-price"><b>$3.640,00</b></h6>
+                    <button class="default-button" type="submit"><a href="/">Agregar</a></button>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <%- include('./partials/footer') %>
+
+    <%- include('./partials/scripts') %>
+
+
+</body>
+
+</html>
