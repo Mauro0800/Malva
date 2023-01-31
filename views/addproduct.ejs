@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head') %>
+
+    <body>
+        <%- include('./partials/header') %>
+            <main class="product-form__main">
+                <section class="product-form__section">
+                    <article class="product-form">
+                        <h3 class="title-add-product">Agregar producto</h3>
+                        <form action="add-product" method="post">
+                            <div class="product-form-container">
+                                <label for="name">Nombre</label>
+                                <input type="text" name="name" id="name" required>
+                                <div class="product-prices">
+                                    <label for="price">Precio</label>
+                                    <input type="number" name="price" id="price" required>
+                                    <label for="discount">Descuento</label>
+                                    <input type="number" name="discount" id="discount">
+                                </div>
+                                <label for="description">Descripción</label>
+                                <input type="textarea" name="description" id="description" required>
+                                <div class="product-details">
+                                    <span>Marca</span>
+                                    <select name="marca" id="marca">
+                                        <option value="marca" hidden>Seleccionar una marca</option>
+                                        <option value="kala">Kala</option>
+                                        <option value="the-candle-shop">The Candle Shop</option>
+                                    </select>
+                                    <span>Categoría</span>
+                                    <select name="category" id="category">
+                                        <option value="category" hidden>Seleccionar una categoría</option>
+                                        <option value="aromaticos">Aromáticos</option>
+                                    </select>
+                                    <span>Sección</span>
+                                    <select name="section" id="section">
+                                        <option value="section" hidden>Seleccionar una sección</option>
+                                        <option value="aromaticos">Aromáticos</option>
+                                    </select>
+                                    <label for="file"><b>Foto del producto</b></label>
+                                    <input type="file" name="product-image" id="product-image" accept=".jpg, .png"
+                                        required>
+                                </div>
+                                <div class="product-form-button">
+                                    <button type="submit"><a href="/">Guardar</a></button>
+                                    <button type="reset">Cancelar</button>
+                                </div>
+                        </form>
+                        </div>
+                    </article>
+                </section>
+            </main>
+            <%- include('./partials/footer') %>
+    </body>
+
+</html>
