@@ -9,42 +9,61 @@
                 <section class="product-form__section">
                     <article class="product-form">
                         <h3 class="title-add-product">Agregar producto</h3>
+                        <div class="product-form-container">
                         <form action="add-product" method="post">
-                            <div class="product-form-container">
-                                <label for="name">Nombre</label>
+                                <label for="name"><b>Nombre</b></label>
                                 <input type="text" name="name" id="name" required>
                                 <div class="product-prices">
-                                    <label for="price">Precio</label>
-                                    <input type="number" name="price" id="price" required>
-                                    <label for="discount">Descuento</label>
-                                    <input type="number" name="discount" id="discount">
+                                    <label for="price"><b>Precio</b><span>$</span></label>
+                                    <input type="number" name="price" id="price" min="1000" required>
+                                    <label for="discount"><b>Descuento</b></label>
+                                    <input type="number" name="discount" id="discount" min="5" max="50"><span>%</span>
                                 </div>
-                                <label for="description">Descripción</label>
-                                <input type="textarea" name="description" id="description" required>
+                                <label for="description"><b>Descripción</b></label>
+                                <input type="textarea" rows="10" cols="50" name="description" id="description" minlength="20" maxlength="250" required>
                                 <div class="product-details">
-                                    <span>Marca</span>
+                                    <h6><b>Marca</b></h6>
                                     <select name="marca" id="marca">
-                                        <option value="marca" hidden>Seleccionar una marca</option>
-                                        <option value="kala">Kala</option>
+                                        <option value="marca" hidden>Seleccione una marca</option>
+                                        <option value="tramontina">Tramontina</option>
                                         <option value="the-candle-shop">The Candle Shop</option>
+                                        <option value="kala">Kala</option>
+                                        <option value="leifheit">Leifheit</option>
+                                        <option value="oxo">Oxo</option>
+                                        <option value="pollywood">Pollywood</option>
+                                        <option value="pyrex">Pyrex</option>
+                                        <option value="otro">Otro</option>
                                     </select>
-                                    <span>Categoría</span>
+                                    <h6><b>Categoría</b></h6>
                                     <select name="category" id="category">
-                                        <option value="category" hidden>Seleccionar una categoría</option>
+                                        <option value="category" hidden>Seleccione una categoría</option>
+                                        <option value="deco">Deco</option>
+                                        <option value="frascos">Frascos</option>
+                                        <option value="utensilios">Utensilios</option>
+                                        <option value="vasos">Vasos</option>
+                                        <option value="jarras">Jarras</option>
                                         <option value="aromaticos">Aromáticos</option>
                                     </select>
-                                    <span>Sección</span>
+                                    <h6><b>Material</b></h6>
                                     <select name="section" id="section">
-                                        <option value="section" hidden>Seleccionar una sección</option>
-                                        <option value="aromaticos">Aromáticos</option>
+                                        <option value="section" hidden>Seleccione un material</option>
+                                        <option value="silicona">Silicona</option>
+                                        <option value="acero">Acero</option>
+                                        <option value="vidrio">Vidrio</option>
+                                        <option value="mimbre">Mimbre</option>
+                                        <option value="madera">Madera</option>
+                                        <option value="marmol">Mármol</option>
+                                        <option value="otro">Otro</option>
                                     </select>
+                                    <div class="product-images">
                                     <label for="file"><b>Foto del producto</b></label>
                                     <input type="file" name="product-image" id="product-image" accept=".jpg, .png"
                                         required>
+                                    </div>
                                 </div>
                                 <div class="product-form-button">
-                                    <button type="submit"><a href="/">Guardar</a></button>
-                                    <button type="reset">Cancelar</button>
+                                    <button type="submit"><a href="/">Agregar</a></button>
+                                    <button type="reset"><a href="/"></a>Cancelar</button>
                                 </div>
                         </form>
                         </div>
