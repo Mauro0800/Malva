@@ -5,25 +5,31 @@
 
     <body>
         <%- include('./partials/header') %>
-            <main class="product-form__main">
+            <main class="form__main">
                 <section class="product-form__section">
                     <article class="product-form">
-                        <h3 class="title-add-product">Agregar producto</h3>
-                        <div class="product-form-container">
-                        <form action="add-product" method="post">
-                                <label for="name"><b>Nombre</b></label>
-                                <input type="text" name="name" id="name" required>
-                                <div class="product-prices">
-                                    <label for="price"><b>Precio</b><span>$</span></label>
-                                    <input type="number" name="price" id="price" min="1000" required>
-                                    <label for="discount"><b>Descuento</b></label>
-                                    <input type="number" name="discount" id="discount" min="5" max="50"><span>%</span>
-                                </div>
-                                <label for="description"><b>Descripción</b></label>
-                                <input type="textarea" rows="10" cols="50" name="description" id="description" minlength="20" maxlength="250" required>
-                                <div class="product-details">
-                                    <h6><b>Marca</b></h6>
-                                    <select name="marca" id="marca">
+                        <form class="main__form--editproduct" action="add-product" method="post">
+                            <h3 class="title-add-product">Agregar producto</h3>
+                            <div class="main__form__div">
+                                <label for="name">Nombre del producto</label>
+                                <input class="main__form__div__input" type="text" name="name" id="name" required>
+                            </div>
+                            <div class="main__form__div__prices">
+                                <label for="price">Precio</label>
+                                <span>$</span><input type="number" name="price" id="price" min="1000" required>
+                                <label for="discount">Descuento</label>
+                                <input type="number" name="discount" id="discount" min="5" max="50"><span>%
+                                    (Opcional)</span>
+                            </div>
+                            <div class="main__form__div">
+                                <label for="description">Descripción del producto</label>
+                                <textarea class="main__form__div__textarea" type="textarea" name="description"
+                                    id="description" minlength="20" maxlength="250" required></textarea>
+                            </div>
+                            <div class="main__form__div">
+                                <div class="main__form__div">
+                                    <label for="marca">Marca</label>
+                                    <select class="main__form__div__selected" name="marca" id="marca">
                                         <option value="marca" hidden>Seleccione una marca</option>
                                         <option value="tramontina">Tramontina</option>
                                         <option value="the-candle-shop">The Candle Shop</option>
@@ -34,8 +40,10 @@
                                         <option value="pyrex">Pyrex</option>
                                         <option value="otro">Otro</option>
                                     </select>
-                                    <h6><b>Categoría</b></h6>
-                                    <select name="category" id="category">
+                                </div>
+                                <div class="main__form__div">
+                                    <label for="category">Categoría</label>
+                                    <select class="main__form__div__selected" name="category" id="category">
                                         <option value="category" hidden>Seleccione una categoría</option>
                                         <option value="deco">Deco</option>
                                         <option value="frascos">Frascos</option>
@@ -44,8 +52,10 @@
                                         <option value="jarras">Jarras</option>
                                         <option value="aromaticos">Aromáticos</option>
                                     </select>
-                                    <h6><b>Material</b></h6>
-                                    <select name="section" id="section">
+                                </div>
+                                <div class="main__form__div">
+                                    <label for="material">Material</label>
+                                    <select class="main__form__div__selected" name="section" id="section">
                                         <option value="section" hidden>Seleccione un material</option>
                                         <option value="silicona">Silicona</option>
                                         <option value="acero">Acero</option>
@@ -55,16 +65,17 @@
                                         <option value="marmol">Mármol</option>
                                         <option value="otro">Otro</option>
                                     </select>
-                                    <div class="product-images">
-                                    <label for="file"><b>Foto del producto</b></label>
-                                    <input type="file" name="product-image" id="product-image" accept=".jpg, .png"
+                                </div>
+                                <div class="main__form__div">
+                                    <label for="image">Imágen del producto</label>
+                                    <input class="main__form__div__textarea" type="file" name="image" id="image" accept=".jpg, .png, .webp"
                                         required>
-                                    </div>
                                 </div>
-                                <div class="product-form-button">
-                                    <button type="submit"><a href="/">Agregar</a></button>
-                                    <button type="reset"><a href="/"></a>Cancelar</button>
-                                </div>
+                            </div>
+                            
+                                <button class="button--form-product" type="submit"><a href="/">Agregar producto</a></button>
+                                <button class="button--form-product" type="reset"><a href="/"></a>Cancelar</button>
+                            
                         </form>
                         </div>
                     </article>
