@@ -24,6 +24,7 @@
     text-transform: uppercase;
     font-size: 1.2rem;
     margin-left: 13px;
+    text-align: center;
 }
 
 .add-product {
@@ -76,6 +77,90 @@
     background-color: var(--color2);
     color: var(--color5);
     font-size: 0.9em;
+}
+
+
+.form__main{
+    display: flex;
+    justify-content: center;
+}
+
+.main__form--editproduct{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 1.5rem;
+    padding: 1.5rem;
+    background-color: var(--color3);
+    border-radius: 15px;
+    box-shadow: 4px 4px 10px var(--color5);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 760px;
+    width: 90vw;
+}
+
+.main__form__div{
+    width: 100%;
+}
+
+.main__form__div--characteristics{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.main__form__div__label--characteristics{
+    display: block;
+    width: 100%;
+
+}
+
+.main__form__div__input--num{
+    width: 15%;
+}
+
+.main__form__div__input--characteristics{
+    width: 75%;
+}
+
+.main__form__div__input{
+    width: 100%;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding: 2px;
+}
+
+.main__form__div__selected{
+    width: 100%;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding: 2px;
+}
+
+.main__form__div__textarea{
+    width: 100%;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    padding: 2px;
+    background-color: #fff;
+}
+
+.button--form-product{
+    background-color: #a17c74;
+    color:#ffddd4;
+    border-radius: 3px;
+    border: none;
+    transition: all 0.5s;
+    height: 40px;
+    margin-top: 20px;
+}
+
+.button--form-product:hover{
+        background-color:
+        #e7c5bc;
+        color:#fff;
 }
 
 @media (min-width: 768px) {
