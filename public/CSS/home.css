@@ -76,6 +76,10 @@
     font-size: 0.8em;
 }
 
+.home__main__productos__div--verMas:hover{
+        color: #fff;
+}
+
 .precio-viejo{
     text-decoration: line-through;
     color: black;

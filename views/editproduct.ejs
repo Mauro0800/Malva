@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %> 
+<body class="form-editproduct">
+  <%- include('./partials/header') %> 
+    <main class="form__main">
+        <form class="main__form--editproduct" action="edit-product" method="post">
+            
+            <h3 class="title-add-product">Editar producto</h3>
+
+            <div class="main__form__div">
+                <label for="name">Nombre</label>
+                <input class="main__form__div__input" type="text" name="name" id="name">
+            </div>
+
+            <div class="main__form__div">
+                <label for="category">Categoria</label>
+                <select class="main__form__div__selected" name="category" id="category">
+                    <option value="category" hidden>Seleccione una categoría</option>
+                    <option value="deco">Deco</option>
+                    <option value="frascos">Frascos</option>
+                    <option value="utensilios">Utensilios</option>
+                    <option value="vasos">Vasos</option>
+                    <option value="jarras">Jarras</option>
+                    <option value="aromaticos">Aromáticos</option>
+                </select>
+            </div>
+
+            <div class="main__form__div">
+                <label for="price">Precio</label>
+                <input class="main__form__div__input" type="number" name="price" id="price" min="1000">
+            </div>
+
+            <div class="main__form__div">
+                <label for="stock">Stock</label>
+                <input class="main__form__div__input" type="number" id="stock" name="stock">
+            </div>
+
+            <div class="main__form__div">
+                <label for="description">Descripcion</label>
+                <textarea class="main__form__div__textarea" id="description" name="description"></textarea>
+            </div>
+
+            <div class="main__form__div--characteristics">
+                <label class="main__form__div__label--characteristics" for="characteristics">Caracteristicas</label>
+                <input class="main__form__div__input--num" type="number" id="characteristicsnum" name="characteristicsnum">
+                <input class="main__form__div__input--characteristics" type="text" name="characteristics" id="characteristics">
+            </div>
+
+            <div class="main__form__div">
+                <label for="image">Imagenes</label>
+                <input class="main__form__div__textarea" type="file" id="image" name="image" accept=".jpg, .png">
+            </div>
+
+            <button class="button--form-product" type="submit">Actualizar Producto</button>
+            <button class="button--form-product" type="reset">Cancelar</button>
+        </form>
+    </main>
+<%- include('./partials/footer') %>
+</body>
+</html>
