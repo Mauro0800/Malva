@@ -44,4 +44,9 @@ module.exports ={
             title: "Editar producto"
         })
     },
+    list :  (req,res) =>{
+        return res.render('list', {
+            title: "Listado de productos"
+        })
+    },
 }

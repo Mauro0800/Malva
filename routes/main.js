@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const {home, login, register, productdetail, resetpassword, shoppingcart, dashboard, addproduct,editproduct } = require('../controllers/mainController')
+const {home, login, register, productdetail, resetpassword, shoppingcart, dashboard, addproduct,editproduct,list } = require('../controllers/mainController')
 
 /* / */
 router
@@ -14,5 +14,6 @@ router
 .get('/dashboard', dashboard)
 .get('/add-product', addproduct)
 .get('/edit-product', editproduct)
+.get('/list', list)
 
 module.exports = router;

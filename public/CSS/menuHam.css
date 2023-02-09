@@ -8,7 +8,7 @@
     box-shadow: 2px 0 5px 2px #666;
     width: 400px;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     transition: all .5s ease;
