@@ -108,6 +108,9 @@ margin-top: 16.2px;
     .main__section__article__p--precio{
         font-size: 40px;
     }
+    .main__section__article__button--trash{
+        font-size: 4vw;
+    }
 }
 
 @media (min-width:1024px){
