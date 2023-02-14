@@ -2,13 +2,16 @@
 <html lang="en">
     <%- include('./partials/head') %> 
 <body class="form-editproduct">
+
   <%- include('./partials/header') %> 
+  <%- include('./partials/menuHam') %> 
+
     <main class="form__main">
         <form class="main__form--editproduct" action="edit-product" method="post">
             
-            <h3 class="title-add-product">Agregar producto</h3>
+            <h3 class="title-add-product">Editar producto</h3>
 
-            <div class="main__form__div>
+            <div class="main__form__div">
                 <label for="name">Nombre</label>
                 <input class="main__form__div__input" type="text" name="name" id="name">
             </div>
@@ -57,5 +60,6 @@
         </form>
     </main>
 <%- include('./partials/footer') %>
+<%- include('./partials/scripts') %>
 </body>
 </html>

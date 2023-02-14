@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head') %>
-<body>
+    <%- include('./partials/head',{title: "Listado"}) %>
+<body class="home">
     <%- include('./partials/header') %>
+    <%- include('./partials/menuHam') %> 
     
-    <main>
-        
+    <main class="home__main">
+        <section class="home__main__section--body">
+            <div class="home__main__productos">
+                <h3 >Todos los productos</h3>
+                <% products.forEach(({nombre,id,imagen,precio,descuento,categoria}) => { %>
+                <%- include('./partials/product',{
+                nombre,
+                id,
+                imagen,
+                precio,
+                descuento,
+                categoria
+                }) %> 
+                <% }) %>
+            /div>
+        </section>
     </main>
 
     <%- include('./partials/footer') %>
-
     <%- include('./partials/scripts') %>
 </body>
 </html>

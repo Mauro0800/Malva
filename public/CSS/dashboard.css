@@ -1,0 +1,33 @@
+body{
+    background: #fff;
+}
+.container{
+    display:flex;
+   
+}
+nav{
+    position: relative;
+    top:0;
+    bottom: 0;
+    height: 100vh;
+    left:0;
+    background-color: var(--color1);
+    width: 280px;
+    overflow: hidden;
+}
+span{
+    font-weight: bold;
+    padding-left: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.logo{
+    text-align: center;
+    display: flex;
+    margin: 10px 0 0 10px;
+}
+.logo img{
+    width: 45px;
+    height: 45px;
+    border-radius: 10%;
+}
