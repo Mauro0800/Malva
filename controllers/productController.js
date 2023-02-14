@@ -1,25 +1,48 @@
-module.exports ={
-   
-    productdetail :  (req,res) =>{
+const fs = require('fs');
+const products = require('../data/products.json');
+module.exports = {
+
+    productdetail: (req, res) => {
         return res.render('productdetail', {
             title: "Detalle del producto"
         })
     },
-    
-    shoppingcart :  (req,res) =>{
+
+    shoppingcart: (req, res) => {
         return res.render('shoppingcart', {
             title: "Carrito de compras"
         })
-    
+
     },
-    addproduct :  (req,res) =>{
+    addproduct: (req, res) => {
         return res.render('addproduct', {
             title: "Agregar producto"
         })
     },
-    editproduct :  (req,res) =>{
+    editproduct: (req, res) => {
         return res.render('editproduct', {
             title: "Editar producto"
         })
     },
-}
+    store: (req, res) => {
+        const {name, price, discount, description, section, categoría, marca } = req.body;
+
+        const newproduct ={
+            id: products[products.length -1].id +1,
+           name:name,
+            price: +price,
+            discount: +discount,
+            description: description,
+            marca,
+            categoría,
+            section,
+            imagen:null
+        }
+        /*return res.send(newproduct)*/
+      products.push(newproduct);
+
+        fs.writeFileSync('./data/products.json',JSON.stringify(products, null, 3),'utf-8')
+    
+        return res.redirect('/products/list');
+    }
+};
