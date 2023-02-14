@@ -15,9 +15,12 @@ module.exports = {
             toThousand
         })
     },
-    productdetail: (req, res) => {
+    detail: (req, res) => {
+        const {id}= req.params
+        const productDetails = products.find(product => product.id === +id);
         return res.render('productdetail', {
-            title: "Detalle del producto"
+            title: "Detalle del producto",
+            ...productDetails,
         })
     },
 
