@@ -1,8 +1,12 @@
+const products = require('../data/products.json');
+
 module.exports ={
    
     productdetail :  (req,res) =>{
+        const productDetails = products.find(productDetails => productDetails.id === +req.params.id);
         return res.render('productdetail', {
-            title: "Detalle del producto"
+            title: "Detalle del producto",
+            ...productDetails,
         })
     },
     

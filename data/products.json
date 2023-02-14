@@ -284,5 +284,20 @@
        "categoria": "vasos",
        "material": "plastico",
        "imagen":"set-posavasos-hexagonal-x-4-piezas-1.jpg"
-    }
+    },
+    {
+      "id": 27,
+      "nombre": "Caja Aladdin",
+      "precio": 5.472,
+      "descuento": 0,
+      "descripcion": "Set de cuidado personal: perfume y crema Aladdin marca Kala.",
+      "marca": "Kala",
+      "categoria": "aromaticos",
+      "material": "madera",
+      "images": [
+         "caja-aladin-c-perf-y-crem-1.jpg",
+         "caja-aladin-c-perf-y-crem-2.jpg",
+         "caja-aladin-c-perf-y-crem-3.jpg"
+      ]
+   }
  ]
