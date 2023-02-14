@@ -3,7 +3,6 @@ const path = require('path');
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-const fs = require('fs');
 const products = require('../data/products.json');
 module.exports = {
 
