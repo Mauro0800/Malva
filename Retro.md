@@ -23,3 +23,16 @@
 -Procrastinar
 5. Dejar de hacer
 -Posponer la retrospectiva
+# Sprint 3
+1. Comenzar a hacer.
+- Ser más creativos en cuanto a ideas para el proyecto
+2. Hacer más.
+- Dailies
+3. Continuar haciendo.
+-Comunicarnos
+-Reuniones
+-La distribucion de las tareas de forma equitativa
+4. Hacer menos.
+-Procrastinar
+5. Dejar de hacer
+-Posponer la retrospectiva
