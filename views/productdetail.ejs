@@ -54,6 +54,8 @@
                     <h6><del>$6.840,00</del></h6>
                     <h4 class="product-price"><b>$<%= precio %></b></h4>
                 </div>
+
+
             </article>
             <div class="product-detail__main__section__article--shopping-cart-button">
                 <button class="default-button" type="submit"><a href="#">Agregar al carrito</a></button>
@@ -69,7 +71,13 @@
                         </option>
                     </select>
                 </div>
+
+                    <form class="delete-product-form" action="/products/delete/<%= id %>?_method=DELETE" id="form-delete" method="POST">
+                        <button class="default-button" type="submit" class="btn btn-outline-info">Borrar producto</button>
+                    </form>
+                
             </div>
+            
         </section>
         <section class="product-detail__main__section--related-products">
             <h4>Productos relacionados</h4>

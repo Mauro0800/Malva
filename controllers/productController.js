@@ -69,6 +69,6 @@ module.exports = {
 		const {id} = req.params;
 		const productModified = products.filter(product => product.id !== +id)
 		fs.writeFileSync(productsFilePath, JSON.stringify(productModified, null, 3), 'utf-8');
-		return res.redirect('/products')
+		res.redirect('/products')
 	}
 };
