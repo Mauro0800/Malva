@@ -21,6 +21,7 @@ background-color: #D9D9D9;
     margin:33px 0;
     width: 80%;
     max-width: 590px;
+    box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 51%), 0 1px 3px 0 rgb(0 0 0 / 12%);
 }
 
 .main__section__article__button--trash{

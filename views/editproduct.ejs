@@ -7,52 +7,74 @@
   <%- include('./partials/menuHam') %> 
 
     <main class="form__main">
-        <form class="main__form--editproduct" action="edit-product" method="post">
+        <form class="main__form--editproduct" action="/products/update/<%= id %>?_method=PUT" method="post">
             
             <h3 class="title-add-product">Editar producto</h3>
 
             <div class="main__form__div">
-                <label for="name">Nombre</label>
-                <input class="main__form__div__input" type="text" name="name" id="name">
+                <label for="nombre">Nombre</label>
+                <input class="main__form__div__input" type="text" name="nombre" id="nombre" value="<%= nombre %>">
             </div>
 
             <div class="main__form__div">
-                <label for="category">Categoria</label>
-                <select class="main__form__div__selected" name="category" id="category">
-                    <option value="category" hidden>Seleccione una categoría</option>
-                    <option value="deco">Deco</option>
-                    <option value="frascos">Frascos</option>
-                    <option value="utensilios">Utensilios</option>
-                    <option value="vasos">Vasos</option>
-                    <option value="jarras">Jarras</option>
-                    <option value="aromaticos">Aromáticos</option>
+                <label for="categoria">Categoria</label>
+                <select class="main__form__div__selected" name="categoria" id="categoria">
+                    <option value="deco" <%= categoria === "deco" && 'selected' %>>Deco</option>
+                    <option value="frascos" <%= categoria === "frascos" && 'selected' %>>Frascos</option>
+                    <option value="utensilios" <%= categoria === "utensilios" && 'selected' %>>Utensilios</option>
+                    <option value="vasos" <%= categoria === "vasos" && 'selected' %>>Vasos</option>
+                    <option value="jarras" <%= categoria === "jarras" && 'selected' %>>Jarras</option>
+                    <option value="aromaticos" <%= categoria === "aromaticos" && 'selected' %>>Aromáticos</option>
                 </select>
             </div>
 
             <div class="main__form__div">
-                <label for="price">Precio</label>
-                <input class="main__form__div__input" type="number" name="price" id="price" min="1000">
+                <label for="precio">Precio</label>
+                <input class="main__form__div__input" type="number" name="precio" id="precio" value="<%= precio %>">
+            </div>
+
+            <div class="main__form__div">
+                <label for="descuento">Descuento</label>
+                <input class="main__form__div__input" type="number" name="descuento" id="descuento" value="<%= descuento %>">
+            </div>
+
+            <div class="main__form__div">
+                <label for="material">Material</label>
+                <select class="main__form__div__selected" name="material" id="material">
+                    <option value="silicona" <%= material === "silicona" && 'selected' %>>Silicona</option>
+                    <option value="acero" <%= material === "acero" && 'selected' %>>Acero</option>
+                    <option value="vidrio" <%= material === "vidrio" && 'selected' %>>Vidrio</option>
+                    <option value="mimbre" <%= material === "mimbre" && 'selected' %>>Mimbre</option>
+                    <option value="madera" <%= material === "madera" && 'selected' %>>Madera</option>
+                    <option value="marmol" <%= material === "marmol" && 'selected' %>>Mármol</option>
+                    <option value="otro" <%= material === "otro" && 'selected' %>>Otro</option>
+                </select>
             </div>
 
             <div class="main__form__div">
                 <label for="stock">Stock</label>
-                <input class="main__form__div__input" type="number" id="stock" name="stock">
+                <input class="main__form__div__input" type="number" id="stock" name="stock" value="<%= stock %>">
             </div>
 
             <div class="main__form__div">
-                <label for="description">Descripcion</label>
-                <textarea class="main__form__div__textarea" id="description" name="description"></textarea>
+                <label for="marca">Marca</label>
+                <input class="main__form__div__input" type="text" id="marca" name="marca" value="<%= marca %>">
             </div>
 
-            <div class="main__form__div--characteristics">
+            <div class="main__form__div">
+                <label for="descripcion">Descripcion</label>
+                <textarea class="main__form__div__textarea" id="descripcion" name="descripcion"><%= descripcion %></textarea>
+            </div>
+
+            <!-- <div class="main__form__div--characteristics">
                 <label class="main__form__div__label--characteristics" for="characteristics">Caracteristicas</label>
                 <input class="main__form__div__input--num" type="number" id="characteristicsnum" name="characteristicsnum">
                 <input class="main__form__div__input--characteristics" type="text" name="characteristics" id="characteristics">
-            </div>
+            </div> -->
 
             <div class="main__form__div">
                 <label for="image">Imagenes</label>
-                <input class="main__form__div__textarea" type="file" id="image" name="image" accept=".jpg, .png">
+                <input class="main__form__div__textarea" type="file" id="image" name="image" accept=".jpg, .png" value="<%= imagen %>">
             </div>
 
             <button class="button--form-product" type="submit">Actualizar Producto</button>

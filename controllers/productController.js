@@ -17,6 +17,9 @@ module.exports = {
         })
     },
     detail: (req, res) => {
+        const productsFilePath = path.join(__dirname, '../data/products.json');
+        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
         const {id}= req.params
         const productDetails = products.find(product => product.id === +id);
         return res.render('productdetail', {
@@ -37,9 +40,12 @@ module.exports = {
         })
     },
     editproduct: (req, res) => {
-        return res.render('editproduct', {
-            title: "Editar producto"
-        })
+        const { id } = req.params;
+    	const product = products.find(product => product.id === +id);
+		res.render("editproduct",{
+			...product,
+            title: "Editar Producto"
+		})
     },
     store: (req, res) => {
         const {name, price, discount, description, section, categoría, marca } = req.body;
@@ -61,5 +67,34 @@ module.exports = {
         fs.writeFileSync('./data/products.json',JSON.stringify(products, null, 3),'utf-8')
     
         return res.redirect('/products/list');
-    }
+    },
+    update: (req,res)=>{
+        const {id}= req.params
+		const product = products.find(product => product.id === +id);
+    	const {nombre,precio,descuento,categoria,descripcion,stock,marca,material} = req.body
+
+        const productModified = {
+			id : +id,
+			nombre: nombre.trim(),
+			precio: +precio,
+			descuento: +descuento,
+			categoria: categoria,
+			descripcion: descripcion.trim(),
+			imagen: product.imagen,
+            stock: +stock,
+            marca: marca,
+            material: material
+		}
+
+        const productosActualizados = products.map(product =>{
+			if(product.id === +id ){
+			  return productModified
+			}
+			return product
+		  })
+		  fs.writeFileSync('./data/products.json',JSON.stringify(productosActualizados, null, 3), 'utf-8')
+
+		//   return res.send(req.body)
+		  return res.redirect(`/products/detail/${id}`)
+    },
 };
