@@ -1,9 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 
+const productsFilePath = path.join(__dirname, '../data/products.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-const products = require('../data/products.json');
+
 module.exports = {
 
     index : (req,res) => {
@@ -60,5 +63,12 @@ module.exports = {
         fs.writeFileSync('./data/products.json',JSON.stringify(products, null, 3),'utf-8')
     
         return res.redirect('/products/list');
-    }
+    },
+    destroy : (req, res) => {
+
+		const {id} = req.params;
+		const productModified = products.filter(product => product.id !== +id)
+		fs.writeFileSync(productsFilePath, JSON.stringify(productModified, null, 3), 'utf-8');
+		return res.redirect('/products')
+	}
 };
