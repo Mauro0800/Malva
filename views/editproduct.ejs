@@ -80,6 +80,9 @@
             <button class="button--form-product" type="submit">Actualizar Producto</button>
             <button class="button--form-product" type="reset">Cancelar</button>
         </form>
+        <form class="main__form--editproduct" action="/products/delete/<%= id %>?_method=DELETE" method="POST">
+            <button class="button--form-product" type="submit">Eliminar Producto</button>
+        </form>
     </main>
 <%- include('./partials/footer') %>
 <%- include('./partials/scripts') %>

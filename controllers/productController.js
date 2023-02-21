@@ -1,9 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 
+const productsFilePath = path.join(__dirname, '../data/products.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-const products = require('../data/products.json');
 
 module.exports = {
 
@@ -97,4 +99,11 @@ module.exports = {
 		//   return res.send(req.body)
 		  return res.redirect(`/products/detail/${id}`)
     },
-};
+    destroy : (req, res) => {
+
+		const {id} = req.params;
+		const productModified = products.filter(product => product.id !== +id)
+		fs.writeFileSync(productsFilePath, JSON.stringify(productModified, null, 3), 'utf-8');
+		res.redirect('/products')
+}
+}
