@@ -13,11 +13,11 @@
                             <h3 class="title-add-product">Agregar producto</h3>
                             <div class="main__form__div">
                                 <label for="name">Nombre </label>
-                                <input class="main__form__div__input" type="text" name="name" id="name" required>
+                                <input class="main__form__div__input" type="text" name="name" id="name" >
                             </div>
                             <div class="main__form__div__prices">
                                 <label for="price">Precio</label>
-                                <span>$</span><input type="number" name="price" id="price" min="1000" required>
+                                <span>$</span><input type="number" name="price" id="price" min="1000" >
                                 <label for="discount">Descuento</label>
                                 <input type="number" name="discount" id="discount" min="5" max="50"><span>%
                                     (Opcional)</span>
@@ -25,12 +25,12 @@
                             <div class="main__form__div">
                                 <label for="description">Descripción del producto</label>
                                 <textarea class="main__form__div__textarea" type="textarea" name="description"
-                                    id="description" minlength="20" maxlength="250" required></textarea>
+                                    id="description" minlength="20" maxlength="250" ></textarea>
                             </div>
                             <div class="main__form__div">
                                 <div class="main__form__div">
-                                    <label for="marca">Marca</label>
-                                    <select class="main__form__div__selected" name="marca" id="marca">
+                                    <label for="brand">Marca</label>
+                                    <select class="main__form__div__selected" name="brand" id="brand">
                                         <option value="marca" hidden>Seleccione una marca</option>
                                         <option value="tramontina">Tramontina</option>
                                         <option value="the-candle-shop">The Candle Shop</option>
@@ -56,8 +56,8 @@
                                 </div>
                                 <div class="main__form__div">
                                     <label for="material">Material</label>
-                                    <select class="main__form__div__selected" name="section" id="section">
-                                        <option value="section" hidden>Seleccione un material</option>
+                                    <select class="main__form__div__selected" name="material" id="material">
+                                        <option value="" hidden>Seleccione un material</option>
                                         <option value="silicona">Silicona</option>
                                         <option value="acero">Acero</option>
                                         <option value="vidrio">Vidrio</option>
@@ -70,12 +70,12 @@
                                 <div class="main__form__div">
                                     <label for="image">Imágen del producto</label>
                                     <input class="main__form__div__textarea" type="file" name="image" id="image" accept=".jpg, .png, .webp"
-                                        required>
+                                        >
                                 </div>
                             </div>
                             
-                                <button class="button--form-product" type="submit"><a href="/">Agregar producto</a></button>
-                                <button class="button--form-product" type="reset"><a href="/"></a>Cancelar</button>
+                                <button class="button--form-product" type="submit">Agregar producto</button>
+                                <button class="button--form-product" type="reset">Cancelar</button>
                             
                         </form>
                         </div>
