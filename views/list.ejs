@@ -8,7 +8,7 @@
     <main class="home__main">
         <section class="home__main__section--body">
             <div class="home__main__productos">
-                <h3 >Todos los productos</h3>
+                <h3 ><%= titulo %></h3>
                 <% products.forEach(({name,id,image,price,discount,category}) => { %>
                 <%- include('./partials/product',{
                 name,

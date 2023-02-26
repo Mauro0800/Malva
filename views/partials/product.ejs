@@ -4,7 +4,7 @@
     </div>
     <div class="home__main__productos-detalle">
       <h4><%= name %></h4>
-      <p>$<%= price %></p>
+      <p>$<%= toThousand(price) %></p>
       <!-- <p class="precio-viejo">$1.350,00</p> -->
       <div class="ver-todos-los-productos">
         <button type="submit"><a class="home__main__productos__div--verMas" href="/products/detail/<%= id %>">Ver más</a></button>

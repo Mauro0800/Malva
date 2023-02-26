@@ -52,7 +52,7 @@
                     <p><b>Material:</b> <%= material %></p>
                     <p><b>Tamaño:</b> 16 cm.</p>
                     <h6><del>$6.840,00</del></h6>
-                    <h4 class="product-price"><b>$<%= price %></b></h4>
+                    <h4 class="product-price"><b>$<%= toThousand(price) %></b></h4>
                 </div>
 
 
@@ -65,9 +65,9 @@
                     <i class="fa-regular fa-credit-card"></i>
                     <select name="direccion" id="address">
                         <option value="medios-de-pago" hidden>Medios de pago</option>
-                        <option value="6-cuotas">6 cuotas sin interés de $<%= (5472/6) + (5472 * (3/100)) %></option>
-                        <option value="12-cuotas">12 cuotas fijas de $<%= (5472/12) + (5472 * (5/100)) %></option></option>
-                        <option value="efectivo">1 pago en efectivo de $5.472,00</option>
+                        <option value="6-cuotas">6 cuotas sin interés de $<%= toThousand((price/6) + (price * (3/100))) %></option>
+                        <option value="12-cuotas">12 cuotas fijas de $<%= toThousand((price/12) + (price * (5/100))) %></option></option>
+                        <option value="efectivo">1 pago en efectivo de $<%= toThousand(price) %></option>
                         </option>
                     </select>
                 </div>

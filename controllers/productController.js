@@ -3,6 +3,8 @@ const path = require('path');
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const categoriesFilePath = path.join(__dirname, '../data/category.json');
+const categories = JSON.parse(fs.readFileSync(categoriesFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -12,11 +14,28 @@ module.exports = {
     index : (req,res) => {
         const productsFilePath = path.join(__dirname, '../data/products.json');
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
+        
         res.render("list",{
             products,
+            titulo: "Todos Los productos",
+            categories,
             toThousand
         })
+    },
+    category:(req,res)=>{
+    const productsFilePath = path.join(__dirname, '../data/products.json');
+    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        
+    const {idCategory} = req.params;
+    const productsFilter = products.filter(product => product.category === idCategory);
+
+    return res.render('list',{
+        products: productsFilter,
+        titulo: `Categoria de ${idCategory}`,
+        categories,
+        toThousand
+        })
+        
     },
     detail: (req, res) => {
         const productsFilePath = path.join(__dirname, '../data/products.json');
@@ -27,17 +46,21 @@ module.exports = {
         return res.render('productdetail', {
             title: "Detalle del producto",
             ...productDetails,
+            categories,
+            toThousand
         })
     },
 
     shoppingcart: (req, res) => {
         return res.render('shoppingcart', {
+            categories,
             title: "Carrito de compras"
         })
 
     },
     addproduct: (req, res) => {
         return res.render('addproduct', {
+            categories,
             title: "Agregar producto"
         })
     },
@@ -46,6 +69,7 @@ module.exports = {
     	const product = products.find(product => product.id === +id);
 		res.render("editproduct",{
 			...product,
+            categories,
             title: "Editar Producto"
 		})
     },

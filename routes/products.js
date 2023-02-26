@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-const { detail, shoppingcart, addproduct, editproduct, store, index,destroy, update} = require('../controllers/productController')
+const { detail, shoppingcart, addproduct, editproduct, store, index,destroy, update, category} = require('../controllers/productController')
 
 /* /products */
 router
     .get('/', index)
+    .get('/category/:idCategory', category)
     .get('/detail/:id', detail)
     .get('/shopping-cart', shoppingcart)
     .get('/add', addproduct)

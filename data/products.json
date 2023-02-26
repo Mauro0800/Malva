@@ -304,12 +304,12 @@
       "name": "Plato Verbano Mozart",
       "price": 1,
       "discount": 0,
-      "category": "deco",
       "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-      "image": "000896-1_plato_postre_verbano_mozart.jpg",
-      "stock": 0,
       "brand": "Mozart",
-      "material": "silicona"
+      "category": "deco",
+      "material": "silicona",
+      "stock": 0,
+      "image": "000896-1_plato_postre_verbano_mozart.jpg"
    },
    {
       "id": 27,
@@ -365,7 +365,7 @@
       "price": 0,
       "discount": 0,
       "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-      "brand": "",
+      "brand": "otro",
       "category": "vasos",
       "material": "vidrio",
       "image": "vaso-whisky-2-anillos-2.jpg"
