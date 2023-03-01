@@ -81,10 +81,12 @@
             
             <button class="button--form-product" type="reset">Volver</button>
             
-            <form class="main__form--editproduct" action="/products/delete/<%= id %>?_method=DELETE" method="POST">
-                <button class="button--form-product" type="submit">Eliminar Producto</button>
-            </form>
         </form>
+        
+        <form class="main__form--deleteproduct" action="/products/delete/<%= id %>?_method=DELETE" method="POST">
+            <button class="button--form-product" type="submit">Eliminar Producto</button>
+        </form>
+
     </main>
 <%- include('./partials/footer') %>
 <%- include('./partials/scripts') %>

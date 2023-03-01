@@ -300,18 +300,6 @@
       "image": "vaso-alto-acril-scales-fume-g-1.jpg"
    },
    {
-      "id": 26,
-      "name": "Plato Verbano Mozart",
-      "price": 1,
-      "discount": 0,
-      "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-      "brand": "Mozart",
-      "category": "deco",
-      "material": "silicona",
-      "stock": 0,
-      "image": "000896-1_plato_postre_verbano_mozart.jpg"
-   },
-   {
       "id": 27,
       "name": "Copa Bohemia Gin",
       "price": 0,
