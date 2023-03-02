@@ -211,8 +211,12 @@
         border-top: 1px solid #000;
     }
 
+    .home__main__productos__figure{
+        width: 33%;
+    }
+
     .home__main__section__figure{
-        width: 25%;
+        width: 33%;
     }
 
 }
@@ -226,5 +230,12 @@
 
     .home__main__section--body img {
         width: 50%;
+    }
+
+    .home__main__productos__figure{
+        width: 25%;
+    }
+    .home__main__section__figure{
+        width: 25%;
     }
 }
