@@ -1,128 +1,136 @@
 [
-    {
-    "id" : 1,
-    "name": "consequat metus",
-    "surname": "sit amet",
-    "email" : "dbramont0@etsy.com",
-    "password" : "IPjXfkDKDOK",
-    "category" : "Admin",
-    "image": ""
-    },
-    {
-    "id" : 2,
-    "name": "elit proin",
-    "surname": "mauris vulputate",
-    "email" : "rchopin1@webs.com",
-    "password" : "oBBQ9G",
-    "category" : "Admin",
-    "image": "/images/avatars/polloCorazon.jpg"
-    },
-    {
-    "id" : 3,
-    "name": "duis",
-    "surname": "ipsum",
-    "email" : "rbonder2@google.it",
-    "password" : "hFQXEyr",
-    "category" : "Customer",
-    "image": ""
-    },
-    {
-    "id" : 4,
-    "name": "nulla",
-    "surname": "posuere",
-    "email" : "mrootes3@tiny.cc",
-    "password" : "zsuJj5fEGK",
-    "category" : "Customer",
-    "image": "/images/avatars/pletzale.jpg"
-    },
-    {
-    "id" : 5,
-    "name": "lacinia nisi",
-    "surname": "commodo",
-    "email" : "camoss4@cbslocal.com",
-    "password" : "kS3Uaqf0vqt",
-    "category" : "Customer",
-    "image": ""
-    },
-    {
-    "id" : 6,
-    "name": "etiam",
-    "surname": "consequat",
-    "email" : "oashbridge5@vkontakte.ru",
-    "password" : "d4sroPCIm64P",
-    "category" : "Customer",
-    "image": "/images/avatars/kipa.jpg"
-    },
-    {
-    "id" : 7,
-    "name": "interdum",
-    "surname": "fusce congue",
-    "email" : "ahamberstone6@springer.com",
-    "password" : "XOHxHOZ",
-    "category" : "Admin",
-    "image": "/images/avatars/pretzel.jpg"
-    },
-    {
-    "id" : 8,
-    "name": "orci mauris",
-    "surname": "metus vitae",
-    "email" : "smcmakin7@deliciousdays.com",
-    "password" : "zKZiWj",
-    "category" : "Customer",
-    "image": "/images/avatars/polloCorazon.jpg"
-    },
-    {
-    "id" : 9,
-    "name": "convallis",
-    "surname": "praesent blandit",
-    "email" : "lcahan8@vk.com",
-    "password" : "ImqZiPpB",
-    "category" : "Customer",
-    "image": "/images/avatars/tostada.jpg"
-    },
-    {
-    "id" : 10,
-    "name": "augue",
-    "surname": "donec pharetra",
-    "email" : "jniezen9@oakley.com",
-    "password" : "qNtPkxl",
-    "category" : "Customer",
-    "image": "/images/avatars/tostada.jpg"
-    },
-    {
-    "id" : 11,
-    "name": "ante vel",
-    "surname": "est",
-    "email" : "hsparlinga@icio.us",
-    "password" : "YZUoefnc",
-    "category" : "Admin",
-    "image": "/images/avatars/pretzel.jpg"
-    },
-    {
-    "id" : 12,
-    "name": "auctor sed",
-    "surname": "porttitor pede",
-    "email" : "lpalombab@so-net.ne.jp",
-    "password" : "sCf1xFKbTz",
-    "category" : "Customer",
-    "image": "/images/avatars/pletzale.jpg"
-    },
-    {
-    "id" : 13,
-    "name": "orci nullam",
-    "surname": "in felis",
-    "email" : "sswailec@businessinsider.com",
-    "password" : "YQmsmr9edD",
-    "category" : "Admin",
-    "image": ""
-    },
-    {
-    "id" : 14,
-    "name": "donec ut",
-    "surname": "non",
-    "email" : "lfusedaled@ted.com",
-    "password" : "HmiN0jVg9BaM",
-    "category" : "Customer",
-    "image": "/images/avatars/tostada.jpg"
-    }
+   {
+      "id": 1,
+      "name": "consequat metus",
+      "surname": "sit amet",
+      "email": "dbramont0@etsy.com",
+      "password": "IPjXfkDKDOK",
+      "category": "Admin",
+      "image": ""
+   },
+   {
+      "id": 2,
+      "name": "elit proin",
+      "surname": "mauris vulputate",
+      "email": "rchopin1@webs.com",
+      "password": "oBBQ9G",
+      "category": "Admin",
+      "image": "/images/avatars/polloCorazon.jpg"
+   },
+   {
+      "id": 3,
+      "name": "duis",
+      "surname": "ipsum",
+      "email": "rbonder2@google.it",
+      "password": "hFQXEyr",
+      "category": "Customer",
+      "image": ""
+   },
+   {
+      "id": 4,
+      "name": "nulla",
+      "surname": "posuere",
+      "email": "mrootes3@tiny.cc",
+      "password": "zsuJj5fEGK",
+      "category": "Customer",
+      "image": "/images/avatars/pletzale.jpg"
+   },
+   {
+      "id": 5,
+      "name": "lacinia nisi",
+      "surname": "commodo",
+      "email": "camoss4@cbslocal.com",
+      "password": "kS3Uaqf0vqt",
+      "category": "Customer",
+      "image": ""
+   },
+   {
+      "id": 6,
+      "name": "etiam",
+      "surname": "consequat",
+      "email": "oashbridge5@vkontakte.ru",
+      "password": "d4sroPCIm64P",
+      "category": "Customer",
+      "image": "/images/avatars/kipa.jpg"
+   },
+   {
+      "id": 7,
+      "name": "interdum",
+      "surname": "fusce congue",
+      "email": "ahamberstone6@springer.com",
+      "password": "XOHxHOZ",
+      "category": "Admin",
+      "image": "/images/avatars/pretzel.jpg"
+   },
+   {
+      "id": 8,
+      "name": "orci mauris",
+      "surname": "metus vitae",
+      "email": "smcmakin7@deliciousdays.com",
+      "password": "zKZiWj",
+      "category": "Customer",
+      "image": "/images/avatars/polloCorazon.jpg"
+   },
+   {
+      "id": 9,
+      "name": "convallis",
+      "surname": "praesent blandit",
+      "email": "lcahan8@vk.com",
+      "password": "ImqZiPpB",
+      "category": "Customer",
+      "image": "/images/avatars/tostada.jpg"
+   },
+   {
+      "id": 10,
+      "name": "augue",
+      "surname": "donec pharetra",
+      "email": "jniezen9@oakley.com",
+      "password": "qNtPkxl",
+      "category": "Customer",
+      "image": "/images/avatars/tostada.jpg"
+   },
+   {
+      "id": 11,
+      "name": "ante vel",
+      "surname": "est",
+      "email": "hsparlinga@icio.us",
+      "password": "YZUoefnc",
+      "category": "Admin",
+      "image": "/images/avatars/pretzel.jpg"
+   },
+   {
+      "id": 12,
+      "name": "auctor sed",
+      "surname": "porttitor pede",
+      "email": "lpalombab@so-net.ne.jp",
+      "password": "sCf1xFKbTz",
+      "category": "Customer",
+      "image": "/images/avatars/pletzale.jpg"
+   },
+   {
+      "id": 13,
+      "name": "orci nullam",
+      "surname": "in felis",
+      "email": "sswailec@businessinsider.com",
+      "password": "YQmsmr9edD",
+      "category": "Admin",
+      "image": ""
+   },
+   {
+      "id": 14,
+      "name": "donec ut",
+      "surname": "non",
+      "email": "lfusedaled@ted.com",
+      "password": "HmiN0jVg9BaM",
+      "category": "Customer",
+      "image": "/images/avatars/tostada.jpg"
+   },
+   {
+      "id": 15,
+      "name": "",
+      "surname": "",
+      "email": "",
+      "password": "$2a$10$m6dYBuEfCzktrGpDQ1JH2eERBXLriWtSl58TL6lToqY2mfpHV.Daa",
+      "category": "category"
+   }
 ]

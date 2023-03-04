@@ -4,6 +4,8 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
+const session = require('express-session');
+const bcrypt = require('bcryptjs');
 
 
 
@@ -24,6 +26,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
+app.use(session({
+  secret: 'Malva2023',
+  resave : false,
+  saveUninitialized : true
+}));
 
 app.use('/', mainRouter);
 app.use( usersRouter);
