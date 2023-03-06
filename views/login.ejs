@@ -18,14 +18,23 @@
                 <div id="login">
                    
                     <form id="loginform" action="" method="POST">
-                        
-                        <small class="text-danger ms-2 d-inline-block"><%= (locals.errors && errors.email) && errors.email.msg %></small>
+
+                        <div>
+                            <small class="text-danger ms-2 d-inline-block"><%= (locals.errors && errors.email) && errors.email.msg %></small>
+                        </div>
                         <input type="email" name="email" placeholder="Email">
                         
                         <small class="text-danger ms-2 d-inline-block"><%= (locals.errors && errors.password) && errors.password.msg %></small>
                         <input type="password" placeholder="Contraseña" name="password">
 
-                        
+                        <div class="termcond">
+
+                            <input type="checkbox" name="remember" id="terminos-condiciones">
+                            <label for="terminos-condiciones">Recordarme</label>
+                            <div>
+                              <small class="text-danger ms-2"><%= locals.errors && errors.terminos ? errors.terminos.msg : null %></small>
+                            </div>
+                          </div>
                         
                         <button type="submit" title="Log in" name="Log in">Ingresar</button>
                     </form>
