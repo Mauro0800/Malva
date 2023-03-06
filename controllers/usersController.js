@@ -27,7 +27,7 @@ module.exports ={
                 category
             };
             if(req.body.remember){
-                res.cookie('usermalva',req.session.userLogin, {maxAge: 1000 * 60 * 5}) //vida de la cookie
+                res.cookie('usermalva',req.session.userLogin, {maxAge: 1000 * 60 * 1}) //vida de la cookie
             }
             return res.redirect('/')
         }else{
@@ -82,5 +82,9 @@ module.exports ={
             categories,
             title: "Restablecer mi contraseña"
         })
+    },
+    logout: (req,res)=>{
+        req.session.destroy();
+        return res.redirect('/')
     }
 };
