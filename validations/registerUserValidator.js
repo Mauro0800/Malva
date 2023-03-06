@@ -44,6 +44,6 @@ module.exports = [
             return true
         }).withMessage('Las contraseñas no coinciden'),
 
-    check('acepta-tyc')
+    check('terminos')
         .notEmpty().withMessage('Debes aceptar los terminos y condiciones para registrarte').bail()
 ]

@@ -17,10 +17,15 @@
                   <hr id="linea">
                 <div id="login">
                    
-                    <form id="loginform">
-                        <input type="text" name="nombre" placeholder="Nombre" required>
+                    <form id="loginform" action="" method="POST">
                         
-                        <input type="password" placeholder="contraseña" name="Contraseña" required>
+                        <small class="text-danger ms-2 d-inline-block"><%= (locals.errors && errors.email) && errors.email.msg %></small>
+                        <input type="email" name="email" placeholder="Email">
+                        
+                        <small class="text-danger ms-2 d-inline-block"><%= (locals.errors && errors.password) && errors.password.msg %></small>
+                        <input type="password" placeholder="Contraseña" name="password">
+
+                        
                         
                         <button type="submit" title="Log in" name="Log in">Ingresar</button>
                     </form>

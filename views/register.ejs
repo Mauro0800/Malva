@@ -41,9 +41,11 @@
 
         <div class="termcond">
 
-          <input type="checkbox" name="acepta-tyc" id="terminos-condiciones">
+          <input type="checkbox" name="terminos" id="terminos-condiciones">
           <label for="terminos-condiciones">Acepta los términos y condiciones de uso del sitio</label>
-
+          <div>
+            <small class="text-danger ms-2"><%= locals.errors && errors.terminos ? errors.terminos.msg : null %></small>
+          </div>
         </div>
 
 

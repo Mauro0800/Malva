@@ -27,11 +27,16 @@ module.exports ={
                 category
             };
             if(req.body.remember){
-                res.cookie('') //vida de la cookie
+                res.cookie('usermalva',req.session.userLogin, {maxAge: 1000 * 60 * 5}) //vida de la cookie
             }
             return res.redirect('/')
         }else{
-            return res.render('user/login')
+            return res.render('login',{
+                title : "Inicio de sesión",
+                categories,
+                old : req.body,
+                errors : errors.mapped()
+            })
         }
     },
     
@@ -59,10 +64,10 @@ module.exports ={
             users.push(newUser);
 
             writeJSON('users.json', users);
-            return res.redirect('/users/login');
+            return res.redirect('/login');
 
         }else{
-            res.send(errors.mapped())
+            
             return res.render('register', {
                 title : 'Registro de usuario',
                 errors : errors.mapped(),
