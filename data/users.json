@@ -6,5 +6,13 @@
       "email": "mauricioamado@gmail.com",
       "password": "$2a$10$3XNYo.IQc4.Xso2WSphWjejNl885Es/28FmSQoEriwzeeMovLvQmq",
       "category": "admin"
+   },
+   {
+      "id": 4,
+      "name": "Gabriela",
+      "surname": "Acuña",
+      "email": "acugabi@gmail.com",
+      "password": "$2a$10$mjH5NF7i1u9bUJZqx7Czu.X1aVk4SXWo8TBsKbJY0E0SNEWx8tiSS",
+      "category": "user"
    }
 ]

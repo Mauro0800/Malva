@@ -1,21 +1,38 @@
+
 body{
+    font-family: 'Domine', serif;
     background: #fff;
 }
 .container{
     display:flex;
-   
+    
 }
+.logo{
+    align-items: center;
+}
+
 nav{
     position: relative;
     top:0;
     bottom: 0;
     height: 100vh;
     left:0;
-    background-color: var(--color1);
+    background-color:  #a17c74;
     width: 280px;
     overflow: hidden;
+   
 }
-span{
+.accesos{
+    display: flex;
+    justify-content: space-between;
+}
+nav ul li{
+    padding: 18px;
+    list-style:none;
+   
+}
+.span{
+
     font-weight: bold;
     padding-left: 15px;
     font-size: 18px;
@@ -31,3 +48,4 @@ span{
     height: 45px;
     border-radius: 10%;
 }
+
