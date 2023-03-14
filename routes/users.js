@@ -8,15 +8,15 @@ const checkUserLogin = require('../middlewares/checkUserLogin');
 const { registerUserValidator,loginUserValidator} = require('../validations')
 
 
-/* / */
+/* /users */
 router
-    .get('/login',checkUser, login)
-    .post('/login',loginUserValidator ,processLogin)
-    .get('/register',checkUser, register)
-    .post('/register', registerUserValidator, processRegister)
-    .get('/reset-password', resetpassword)
-    .get('/logout', logout)
-    .get('/profile',checkUserLogin, profile)
+    .get('/users/login',checkUser, login)
+    .post('/users/login',loginUserValidator ,processLogin)
+    .get('/users/register',checkUser, register)
+    .post('/users/register', registerUserValidator, processRegister)
+    .get('/users/reset-password', resetpassword)
+    .get('/users/logout', logout)
+    .get('/users/profile',checkUserLogin, profile)
 
 
 module.exports = router;

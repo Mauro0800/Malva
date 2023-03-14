@@ -9,7 +9,7 @@ const { validationResult } = require('express-validator');
 
 module.exports ={
    login :  (req,res) =>{
-        return res.render('login', {
+        return res.render('users/login', {
             categories,
             title: "Ingresá a tu cuenta"
         })
@@ -31,7 +31,7 @@ module.exports ={
             }
             return res.redirect('/')
         }else{
-            return res.render('login',{
+            return res.render('users/login',{
                 title : "Inicio de sesión",
                 categories,
                 old : req.body,
@@ -41,7 +41,7 @@ module.exports ={
     },
     
     register :  (req,res) =>{
-        return res.render('register', {
+        return res.render('users/register', {
             categories,
             title: "Registrá tu cuenta"
         })
@@ -64,11 +64,11 @@ module.exports ={
             users.push(newUser);
 
             writeJSON('users.json', users);
-            return res.redirect('/login');
+            return res.redirect('/users/login');
 
         }else{
             
-            return res.render('register', {
+            return res.render('users/register', {
                 title : 'Registro de usuario',
                 errors : errors.mapped(),
                 old : req.body,
@@ -77,13 +77,13 @@ module.exports ={
         }
     },
     profile : (req,res) => {
-        return res.render('/profile',{
+        return res.render('users/profile',{
             title : "Perfil de usuario"
         })
     },
 
     resetpassword :  (req,res) =>{
-        return res.render('resetpassword', {
+        return res.render('users/resetpassword', {
             categories,
             title: "Restablecer mi contraseña"
         })

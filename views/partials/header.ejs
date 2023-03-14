@@ -2,12 +2,12 @@
     <section class="home__header__section--cuenta">
       <% if (locals.userLogin) { %>
        <a href="#">Hola, <%= userLogin.name %></a>
-       <a href="/logout" class="home__header__section__a">Salir</a>
+       <a href="/users/logout" class="home__header__section__a">Salir</a>
       <% } else{%>
-        <a href="/login" class="home__header__section__a">Iniciar Sesión</a>
-      <a href="/register" class="home__header__section__a">Registrarse</a>
+        <a href="/users/login" class="home__header__section__a">Iniciar Sesión</a>
+      <a href="/users/register" class="home__header__section__a">Registrarse</a>
       <% }%>
-      <a href="/profile" class="home__header__section__a--icono"><i class="fa-solid fa-user"></i></a>
+      <a href="/users/profile" class="home__header__section__a--icono"><i class="fa-solid fa-user"></i></a>
     </section>
     <section class="home__header-section">
 
