@@ -357,16 +357,5 @@
       "category": "vasos",
       "material": "vidrio",
       "image": "vaso-whisky-2-anillos-2.jpg"
-   },
-   {
-      "id": 32,
-      "name": "zapatillas Nike air Jordan 1",
-      "price": 62000,
-      "discount": 10,
-      "description": "asdfasdfasdfasdfafdgsdzfgzdfg",
-      "brand": "otro",
-      "category": "deco",
-      "material": "otro",
-      "image": null
    }
 ]
