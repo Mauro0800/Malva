@@ -36,3 +36,14 @@
 - Procrastinar
 5. Dejar de hacer
 - Posponer la retrospectiva
+# Sprint 4
+1. Comenzar a hacer.
+- Ser mas activos en cuanto a comunicacion y aprovechar el tiempo que tenemos en las reuniones
+2. Hacer más.
+- Dailies
+3. Continuar haciendo.
+- Divison de tareas de manera equitativa y reuniones en las que trabajamos juntos
+4. Hacer menos.
+- Dispersarnos en las reuniones.
+5. Dejar de hacer
+- Esperar mucho tiempo para resolver problemas con nuestras tareas
