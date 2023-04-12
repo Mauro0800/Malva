@@ -6,6 +6,8 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const categoriesFilePath = path.join(__dirname, '../data/category.json');
 const categories = JSON.parse(fs.readFileSync(categoriesFilePath, 'utf-8'));
 
+const db = require('../database/models');
+
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
