@@ -6,7 +6,7 @@ const categories = require('../../data/category.json');
 const categoriesUpdated = categories.map(({category}) => {
   return {
     name: category,
-    cratedAt: new Date(),
+    createdAt: new Date(),
     updatedAt: new Date()
   }
 })

@@ -6,7 +6,7 @@ const { detail, shoppingcart, addproduct, editproduct, store, index,destroy, upd
 
 /* /products */
 router
-    .get('/', index)
+    .get('/', list)
     .get('/category/:idCategory', category)
     .get('/detail/:id', detail)
     .get('/shopping-cart', shoppingcart)
