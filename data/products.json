@@ -8,7 +8,9 @@
       "brandId": 1,
       "categoryId": 3,
       "materialId": 1, 
-      "stock": 123123,
+      "stock": 1,
+      "home":false,
+      "distinguished":false,
       "image": "tabla-28-cm-bamboo-1.jpg"
    },
    {
@@ -20,7 +22,9 @@
       "brandId":2,
       "categoryId": 3,
       "materialId": 2,
-      "stock": 0,
+      "stock": 1,
+      "home":false,
+      "distinguished":false,
       "image": "pincel-silicona-gourmet-3.jpg"
    },
    {
@@ -32,7 +36,9 @@
       "brandId":2,
       "categoryId": 3,
       "materialId": 3,
-      "stock": 0,
+      "stock": 1,
+      "home":false,
+      "distinguished":false,
       "image": "espumadera-acero-1.jpg"
    },
    {
@@ -44,7 +50,9 @@
       "brandId":2,
       "categoryId": 3,
       "materialId": 4,
-      "stock": 0,
+      "stock": 1,
+      "home":false,
+      "distinguished":false,
       "image": "cuchara-para-helado-black-1.jpg"
    },
    {
@@ -56,7 +64,9 @@
       "brandId":2,
       "categoryId": 3,
       "materialId": 3,
-      "stock": 0,
+      "stock": 1,
+      "home":false,
+      "distinguished":false,
       "image": "batidor-acero-1.jpg"
    },
    {
@@ -68,7 +78,9 @@
       "brandId":2,
       "categoryId": 6,
       "materialId": 4,
-      "stock": 0,
+      "stock": 1,
+      "home":true,
+      "distinguished":false,
       "image": "caja-honey-c-perf-y-crem-3.jpg"
    },
    {
@@ -80,7 +92,9 @@
       "brandId":2,
       "categoryId": 6,
       "materialId": 4,
-      "stock": 0,
+      "stock": 1,
+      "home":true,
+      "distinguished":false,
       "image": "home-spray-vain-cedr-x500cc-1.jpg"
    },
    {
@@ -92,7 +106,9 @@
       "brandId":2,
       "categoryId": 6,
       "materialId": 3,
-      "stock": 0,
+      "stock": 1,
+      "home":false,
+      "distinguished":false,
       "image": "lata-emporium-labrad-esp-1.jpg"
    },
    {
@@ -104,7 +120,9 @@
       "brandId":2,
       "categoryId": 6,
       "materialId": 5,
-      "stock": 0,
+      "stock": 1,
+      "home":false,
+      "distinguished":false,
       "image": "vela-aromatica-tin-the-candle-shop-1.jpg"
    },
    {
@@ -116,7 +134,9 @@
       "brandId":2,
       "categoryId": 6,
       "materialId": 6,
-      "stock": 0,
+      "stock": 1,
+      "home":false,
+      "distinguished":false,
       "image": "difusor-de-ambiente-glossy-the-candle-shop-1.jpg"
    },
    {
@@ -128,7 +148,9 @@
       "brandId":2,
       "categoryId": 1,
       "materialId": 7,
-      "stock": 0,
+      "stock": 1,
+      "home":false,
+      "distinguished":false,
       "image": "canasto-yute-tejido-23-cm-1.jpg"
    },
    {
@@ -140,7 +162,9 @@
       "brandId":2,
       "categoryId": 1,
       "materialId": 4,
-      "stock": 0,
+      "stock": 1,
+      "home":false,
+      "distinguished":false,
       "image": "reloj-brooklin-30-cm-1.jpg"
    },
    {
@@ -152,7 +176,9 @@
       "brandId":2,
       "categoryId": 1,
       "materialId": 6,
-      "stock": 0,
+      "stock": 1,
+      "home":false,
+      "distinguished":false,
       "image": "florero-vidrio-clasico-20-cm-1.jpg"
    },
    {
@@ -164,7 +190,9 @@
       "brandId":2,
       "categoryId": 1,
       "materialId": 8,
-      "stock": 0,
+      "stock": 1,
+      "home":true,
+      "distinguished":false,
       "image": "reloj-mesa-metal-rosa-19-cm-1.jpg"
    },
    {
@@ -176,7 +204,9 @@
       "brandId":2,
       "categoryId": 1,
       "materialId": 9,
-      "stock": 0,
+      "stock": 1,
+      "home":false,
+      "distinguished":false,
       "image": "fanal-cuerda-y-vidrio-28-cm-1.jpg"
    },
    {
@@ -188,7 +218,9 @@
       "brandId":2,
       "categoryId": 2,
       "materialId": 6,
-      "stock": 0,
+      "stock": 1,
+      "home":false,
+      "distinguished":false,
       "image": "frasco-hermetico-tapa-vison-1.jpg"
    },
    {
@@ -200,7 +232,9 @@
       "brandId":2,
       "categoryId": 2,
       "materialId": 10,
-      "stock": 0,
+      "stock": 1,
+      "home":true,
+      "distinguished":false,
       "image": "frasco-vidrio-mimbre-1,5-l-1.jpg"
    },
    {
@@ -212,7 +246,9 @@
       "brandId":2,
       "categoryId": 2,
       "materialId": 6,
-      "stock": 0,
+      "stock": 1,
+      "home":true,
+      "distinguished":false,
       "image": "frasco-mason-4-5-lt-1.jpg"
    },
    {
@@ -224,7 +260,9 @@
       "brandId":2,
       "categoryId": 5,
       "materialId": 6,
-      "stock": 0,
+      "stock": 1,
+      "home":false,
+      "distinguished":false,
       "image": "jarro-termico-bodum-45-cc-1.jpg"
    },
    {
@@ -236,7 +274,9 @@
       "brandId":2,
       "categoryId": 5,
       "materialId": 11,
-      "stock": 0,
+      "stock": 1,
+      "home":false,
+      "distinguished":false,
       "image": "jarra-termica-ng-1.jpg"
    },
    {
@@ -248,7 +288,9 @@
       "brandId":2,
       "categoryId": 5,
       "materialId": 11,
-      "stock": 0,
+      "stock": 1,
+      "home":false,
+      "distinguished":false,
       "image": "jarra-acril-hammered-1-2lt-1.jpg"
    },
    {
@@ -260,7 +302,9 @@
       "brandId":2,
       "categoryId": 5,
       "materialId": 3,
-      "stock": 0,
+      "stock": 1,
+      "home":false,
+      "distinguished":false,
       "image": "jarro-termico-bodum-35-cc-1.jpg"
    },
    {
@@ -272,7 +316,9 @@
       "brandId":2,
       "categoryId": 4,
       "materialId": 6,
-      "stock": 0,
+      "stock": 1,
+      "home":true,
+      "distinguished":false,
       "image": "vaso-doble-vidrio-450-cc-1.jpg"
    },
    {
@@ -284,7 +330,9 @@
       "brandId":2,
       "categoryId": 4,
       "materialId": 6,
-      "stock": 0,
+      "stock": 1,
+      "home":false,
+      "distinguished":false,
       "image": "vaso-eclipse-whisky-lfp-1.jpg"
    },
    {
@@ -296,7 +344,9 @@
       "brandId":2,
       "categoryId": 4,
       "materialId": 11,
-      "stock": 0,
+      "stock": 1,
+      "home":true,
+      "distinguished":false,
       "image": "vaso-alto-acril-scales-fume-g-1.jpg"
    },
    {
@@ -308,7 +358,9 @@
       "brandId":3,
       "categoryId": 4,
       "materialId": 6,
-      "stock": 0,
+      "stock": 1,
+      "home":false,
+      "distinguished":false,
       "image": "020034-0-copa-bohemia-gin-820ml.jpg"
    },
    {
@@ -320,7 +372,9 @@
       "brandId":4,
       "categoryId": 3,
       "materialId": 8,
-      "stock": 0,
+      "stock": 1,
+      "home":false,
+      "distinguished":true,
       "image": "1139-0-cuchillo-faca-polywood.jpg"
    },
    {
@@ -332,7 +386,9 @@
       "brandId":5,
       "categoryId": 1,
       "materialId": 1,
-      "stock": 0,
+      "stock": 1,
+      "home":false,
+      "distinguished":true,
       "image": "bandeja-red-simil-madera-1.jpg"
    },
    {
@@ -344,7 +400,9 @@
       "brandId":6,
       "categoryId": 2,
       "materialId": 6,
-      "stock": 0,
+      "stock": 1,
+      "home":false,
+      "distinguished":true,
       "image": "frasco-mason-3-6-lt-2.jpg"
    },
    {
@@ -355,8 +413,10 @@
       "description": "El vaso de whisky con dos anillos es un accesorio elegante y sofisticado para disfrutar de una buena bebida. Está fabricado en vidrio transparente de alta calidad y cuenta con dos anillos decorativos en su parte inferior que le dan un toque de distinción. Tiene una capacidad de aproximadamente 300 ml y es perfecto para servir un whisky solo, con hielo o con una mezcla de tu elección. Además, su diseño y acabado lo hacen ideal como regalo para cualquier amante del whisky o para complementar la decoración de una barra o un espacio dedicado a la degustación de bebidas.",
       "brandId": 7,
       "categoryId": 4,
-      "stock": 0,
+      "stock": 1,
+      "home":false,
       "materialId": 6,
+      "distinguished":true,
       "image": "vaso-whisky-2-anillos-2.jpg"
    }
 ]

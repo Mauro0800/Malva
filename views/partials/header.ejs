@@ -30,8 +30,8 @@
     <nav class="home__header__nav">
       <ul class="home__header__nav-ul">
 
-        <% categories.forEach(({category,id}) => { %>
-            <li><a href="/products/category/<%= category %>"><%= category %></a></li>
+        <% categories.forEach(({name,id}) => { %>
+            <li><a href="/products/category/<%= id %>"><%= name %></a></li>
         <% }) %>
         
       </ul>

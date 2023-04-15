@@ -1,22 +1,38 @@
-const fs = require('fs');
-const path = require('path');
-
-const productsFilePath = path.join(__dirname, '../data/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-const categoriesFilePath = path.join(__dirname, '../data/category.json');
-const categories = JSON.parse(fs.readFileSync(categoriesFilePath, 'utf-8'));
-
+const db = require('../database/models');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports ={
     home : (req,res) =>{
-        return res.render('home', {
-            title: "Home",
-            products,
-            categories,
-            toThousand
+        
+        const productsHome = db.Product.findAll({
+            where: {
+                home: true,
+              },
+            include: ["category"]
         })
-    
+        const productsdistinguished = db.Product.findAll({
+            where: {
+                distinguished: true
+              },
+            include: ["category"]
+        });
+        const categories =  db.Category.findAll();
+
+        Promise.all([productsHome,productsdistinguished,categories])
+        .then(([productsHome,productsdistinguished,categories]) =>{
+            // return res.send(categories)
+
+            return res.render("home", {
+                title: "Malva | Home",
+                productsHome,
+                productsdistinguished,
+                categories,
+                toThousand
+            })
+        })
+        .catch(error=>console.log(error))
+        
+        
     },
    
     dashboard :  (req,res) =>{

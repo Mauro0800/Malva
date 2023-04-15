@@ -25,6 +25,16 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: true
       },
+      home: {
+        type: Sequelize.BOOLEAN,
+        allowNull: true,
+        defaultValue : false
+      },
+      distinguished: {
+        type: Sequelize.BOOLEAN,
+        allowNull: true,
+        defaultValue : false
+      },
       stock: {
         type: Sequelize.INTEGER,
         allowNull: false

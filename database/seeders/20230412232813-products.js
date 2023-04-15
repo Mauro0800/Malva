@@ -4,12 +4,14 @@
 
 const productsJSON = require('../../data/products.json');
 
-const products = productsJSON.map(({name,price,description,discount,stock,image,brandId,categoryId,materialId}) => {
+const products = productsJSON.map(({name,price,description,discount,stock,image,distinguished,home,brandId,categoryId,materialId}) => {
   return{
     name,
     price,
     description,
     discount,
+    home,
+    distinguished,
     stock,
     image,
     brandId,

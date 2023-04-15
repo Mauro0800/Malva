@@ -13,44 +13,77 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
 
-    index : (req,res) => {
-        const productsFilePath = path.join(__dirname, '../data/products.json');
-        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    list : (req,res) => {
         
-        res.render("list",{
-            products,
-            titulo: "Todos Los productos",
-            categories,
-            toThousand
+        const products = db.Product.findAll({
+            include: ["category"]
+        });
+        const categories =  db.Category.findAll();
+
+        Promise.all([products,categories])
+        .then(([products,categories]) =>{
+            // return res.send(categories)
+
+            return res.render("list", {
+                title: "Todos Los productos",
+                products,
+                categories,
+                toThousand
+            })
         })
+        .catch(error=>console.log(error))
+        
+        
     },
     category:(req,res)=>{
-    const productsFilePath = path.join(__dirname, '../data/products.json');
-    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        
-    const {idCategory} = req.params;
-    const productsFilter = products.filter(product => product.category === idCategory);
 
-    return res.render('list',{
-        products: productsFilter,
-        titulo: `Categoria de ${idCategory}`,
-        categories,
-        toThousand
+        const {idCategory} = req.params;
+    
+        const products = db.Product.findAll({
+            include: ["category"],
+            where: {
+                categoryId:idCategory
+            }
         })
+        const categories =  db.Category.findAll();
+
+        Promise.all([products,categories])
+        .then(([products,categories]) =>{
+            // return res.send(products)
+            return res.render("list",{
+                title: idCategory ? products[0].category.name : "Todos los productos",
+                products,
+                categories,
+                toThousand
+            })
+        })
+        .catch(error=>console.log(error))
         
     },
     detail: (req, res) => {
-        const productsFilePath = path.join(__dirname, '../data/products.json');
-        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
         const {id}= req.params
-        const productDetails = products.find(product => product.id === +id);
-        return res.render('productdetail', {
-            title: "Detalle del producto",
-            ...productDetails,
-            categories,
-            toThousand
+        const product = db.Product.findByPk(id,{
+            include:["brand","category","material","images"]
         })
+        const categories =  db.Category.findAll();
+        const images =  db.Image.findAll({
+            where:{
+                productId: id
+            }
+        });
+        Promise.all([product,categories,images])
+        .then(([product,categories,images]) =>{
+            // return res.send(images)
+            return res.render("productdetail",{
+                title:"Detalle",
+                ...product.dataValues,
+                categories,
+                images,
+                toThousand
+            })
+        })
+        .catch(error=>console.log(error))
+        
     },
 
     shoppingcart: (req, res) => {

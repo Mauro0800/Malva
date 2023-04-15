@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const checkUseradmin = require('../middlewares/checkUserAdmin');
-const { detail, shoppingcart, addproduct, editproduct, store, index,destroy, update, category} = require('../controllers/productController')
+const { detail, shoppingcart, addproduct, editproduct, store, list,destroy, update, category} = require('../controllers/productController')
 
 /* /products */
 router

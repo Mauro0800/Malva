@@ -59,141 +59,32 @@
       <div class="home__main__productos">
         <h3 class="home__main__section__h3">productos</h3>
 
-        <figure class="home__main__productos__figure">
-          <div class="home__main__productos-imagen">
-            <img src="/images/home/000896-1_plato_postre_verbano_mozart.jpg" alt="">
-          </div>
-          <div class="home__main__productos-detalle">
-            <h4>Plato Verbano Mozart</h4>
-            <p>$1.000,00</p>
-            <h6 class="precio-viejo">$1.350,00</h6>
-            <div class="ver-todos-los-productos">
-              <button type="submit"><a class="home__main__productos__div--verMas" href="/products/detail/26">Ver más</a></button>
-            </div>
-          </div>
-        </figure>
+        <% productsHome.forEach(({name,id,image,price,category}) => { %>
+          <%- include('./partials/productHome',{
+          name,
+          id,
+          image,
+          price,
+          category
+          }) %> 
+          <% }) %>
 
-        <figure class="home__main__productos__figure">
-          <div class="home__main__productos-imagen">
-            <img src="/images/home/020034-0-copa-bohemia-gin-820ml.jpg" alt="">
-          </div>
-          <div class="home__main__productos-detalle">
-            <h4>Copa Bohemia Gin</h4>
-            <p>$1.000,00</p>
-            <div class="ver-todos-los-productos">
-              <button type="submit"><a class="home__main__productos__div--verMas" href="/products/detail/27">Ver más</a></button>
-            </div>
-          </div>
-        </figure>
-
-        <figure class="home__main__productos__figure">
-          <div class="home__main__productos-imagen">
-            <img src="/images/home/1139-0-cuchillo-faca-polywood.jpg" alt="">
-          </div>
-          <div class="home__main__productos-detalle">
-            <h4>Cuchilo Polywood</h4>
-            <p>$1.000,00</p>
-            <div class="ver-todos-los-productos">
-              <button type="submit"><a class="home__main__productos__div--verMas" href="/products/detail/28">Ver más</a></button>
-            </div>
-          </div>
-        </figure>
-
-        <figure class="home__main__productos__figure">
-          <div class="home__main__productos-imagen">
-            <img src="/images/deco/bandeja-red-simil-madera-1.jpg" alt="">
-          </div>
-          <div class="home__main__productos-detalle">
-            <h4>Bandeja Red Simil Madera</h4>
-            <p>$1.000,00</p>
-            <div class="ver-todos-los-productos">
-              <button type="submit"><a class="home__main__productos__div--verMas" href="/products/detail/29">Ver más</a></button>
-            </div>
-          </div>
-        </figure>
-
-        <figure class="home__main__productos__figure">
-          <div class="home__main__productos-imagen">
-            <img src="/images/frascos/frasco-mason-3-6-lt-2.jpg" alt="">
-          </div>
-          <div class="home__main__productos-detalle">
-            <h4>Frasco Mason</h4>
-            <p>$1.000,00</p>
-            <div class="ver-todos-los-productos">
-              <button type="submit"><a class="home__main__productos__div--verMas" href="/products/detail/30">Ver más</a></button>
-            </div>
-          </div>
-        </figure>
-
-        <figure class="home__main__productos__figure">
-          <div class="home__main__productos-imagen">
-            <img src="/images/vasos/vaso-whisky-2-anillos-2.jpg" alt="">
-          </div>
-          <div class="home__main__productos-detalle">
-            <h4>Vaso Whisky 2 anillos</h4>
-            <p>$1.000,00</p>
-            <div class="ver-todos-los-productos">
-              <button type="submit"><a class="home__main__productos__div--verMas" href="/products/detail/31">Ver más</a></button>
-            </div>
-          </div>
-        </figure>
+        
 
         <section class="home__main__section--destacados">
           <div class="home__main__div-destacados">
             DESTACADOS
           </div>
 
-          <figure class="home__main__section__figure">
-            <div class="home__main__productos-imagen">
-              <img src="/images/home/1139-0-cuchillo-faca-polywood.jpg" alt="">
-            </div>
-            <div class="home__main__productos-detalle">
-              <h4>Cuchilo Polywood</h4>
-              <p>$1.000,00</p>
-              <div class="ver-todos-los-productos">
-                <button type="submit"><a href="/products/detail/28">Ver más</a></button>
-              </div>
-            </div>
-          </figure>
-
-          <figure class="home__main__section__figure">
-            <div class="home__main__productos-imagen">
-              <img src="/images/deco/bandeja-red-simil-madera-1.jpg" alt="">
-            </div>
-            <div class="home__main__productos-detalle">
-              <h4>Bandeja Red Simil Madera</h4>
-              <p>$1.000,00</p>
-              <div class="ver-todos-los-productos">
-                <button type="submit"><a href="/products/detail/29">Ver más</a></button>
-              </div>
-            </div>
-          </figure>
-
-          <figure class="home__main__section__figure">
-            <div class="home__main__productos-imagen">
-              <img src="/images/frascos/frasco-mason-3-6-lt-2.jpg" alt="">
-            </div>
-            <div class="home__main__productos-detalle">
-              <h4>Frasco Mason</h4>
-              <p>$1.000,00</p>
-              <div class="ver-todos-los-productos">
-                <button type="submit"><a href="/products/detail/30">Ver más</a></button>
-              </div>
-            </div>
-          </figure>
-
-          <figure class="home__main__section__figure">
-            <div class="home__main__productos-imagen">
-              <img src="/images/vasos/vaso-whisky-2-anillos-2.jpg" alt="">
-            </div>
-            <div class="home__main__productos-detalle">
-              <h4>Vaso Whisky 2 anillos</h4>
-              <p>$1.000,00</p>
-              <div class="ver-todos-los-productos">
-                <button type="submit"><a href="/products/detail/31">Ver más</a></button>
-              </div>
-            </div>
-          </figure>
+          <% productsdistinguished.forEach(({name,id,image,price,category}) => { %>
+            <%- include('./partials/productdistinguished',{
+            name,
+            id,
+            image,
+            price,
+            category
+            }) %> 
+            <% }) %>
 
         </section>
 

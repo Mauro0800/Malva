@@ -1,4 +1,5 @@
 require('dotenv').config();
+
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -7,9 +8,10 @@ const logger = require('morgan');
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 const session = require('express-session');
 const bcrypt = require('bcryptjs');
+
 const localsUserCheck = require("./middlewares/localsUserCheck");
 const cookieCheck = require("./middlewares/cookieCheck");
-
+// const infoProvider = require('./middlewares/infoProvider'); en mantenimiento
 
 const app = express();
 
@@ -36,6 +38,7 @@ app.use(session({
 
 app.use(cookieCheck)
 app.use(localsUserCheck)
+// app.use(infoProvider) en mantenimiento
 
 app.use('/', mainRouter);
 app.use( usersRouter);
