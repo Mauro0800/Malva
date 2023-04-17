@@ -9,14 +9,13 @@
         <section class="home__main__section--body">
             <div class="home__main__productos">
                 <h3 ><%= title %></h3>
-                <% products.forEach(({name,id,image,price,discount,category}) => { %>
+                <% products.forEach(({name,id,image,price,discount}) => { %>
                 <%- include('./partials/product',{
                 name,
                 id,
                 image,
                 price,
-                discount,
-                category
+                discount
                 }) %> 
                 <% }) %>
             </div>

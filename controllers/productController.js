@@ -10,14 +10,12 @@ module.exports = {
 
     list : (req,res) => {
         
-        const products = db.Product.findAll({
-            include: ["category"]
-        });
+        const products = db.Product.findAll();
         const categories =  db.Category.findAll();
 
         Promise.all([products,categories])
         .then(([products,categories]) =>{
-            // return res.send(categories)
+            // return res.send(products)
 
             return res.render("list", {
                 title: "Todos Los productos",
@@ -35,7 +33,6 @@ module.exports = {
         const {idCategory} = req.params;
     
         const products = db.Product.findAll({
-            include: ["category"],
             where: {
                 categoryId:idCategory
             }
@@ -93,35 +90,54 @@ module.exports = {
     },
 
     addproduct: (req, res) => {
-        db.Category.findAll()
-        .then(categories=>{
+       const categories = db.Category.findAll();
+       const brands = db.Brand.findAll();
+       const materials = db.Material.findAll();
+        Promise.all([categories,brands,materials])
+        .then(([categories,brands,materials])=>{
             return res.render('addproduct', {
                 categories,
+                brands,
+                materials,
                 title: "Agregar producto"
             })
         })
         .catch(error=>console.log(error))
     },
     store: (req, res) => {
-        const {name, price, discount, description, material, category, brand } = req.body;
         
-        const newproduct ={
-            id: products[products.length -1].id +1,
-            name:name,
+        
+    if (errors.isEmpty()) {
+        const {name, price, description, discount, stock, image, brandId, categoryId, materialId, images} = req.body;
+        db.Product.create({
+            name:name.trim(),
             price: +price,
-            discount: +discount,
-            description: description,
-            brand,
-            category,
-            material,
-            image:null
-        }
-        /*return res.send(newproduct)*/
-        products.push(newproduct);
+            description: description.trim(),
+            discount,
+            stock,
+            image,
+            brandId,
+            categoryId,
+            materialId,
+        })
+        .then((product) => {
+            req.files.forEach(image => {
+              db.Image.create({
+                name: image.filename,
+                productId: product.id,
+              });
+          return res.redirect("/products");
+        });
+        })
+        .catch(error=>console.log(error))
         
-        fs.writeFileSync('./data/products.json',JSON.stringify(products, null, 3),'utf-8')
         
-        return res.redirect('/products');
+        return res.send(req.body);
+    }else{
+        
+    }
+
+    
     },
     editproduct: (req, res) => {
         const { id } = req.params;

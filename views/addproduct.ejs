@@ -9,7 +9,7 @@
             <main class="form__main">
                 <section class="product-form__section">
                     <article class="product-form">
-                        <form class="main__form--editproduct" action="add-product" method="post" enctype="multipart/form-data">
+                        <form class="main__form--editproduct" action="add" method="post" enctype="multipart/form-data">
                             <h3 class="title-add-product">Agregar producto</h3>
                             <div class="main__form__div">
                                 <label for="name">Nombre </label>
@@ -31,40 +31,28 @@
                                 <div class="main__form__div">
                                     <label for="brand">Marca</label>
                                     <select class="main__form__div__selected" name="brand" id="brand">
-                                        <option value="marca" hidden>Seleccione una marca</option>
-                                        <option value="tramontina">Tramontina</option>
-                                        <option value="the-candle-shop">The Candle Shop</option>
-                                        <option value="kala">Kala</option>
-                                        <option value="leifheit">Leifheit</option>
-                                        <option value="oxo">Oxo</option>
-                                        <option value="pollywood">Pollywood</option>
-                                        <option value="pyrex">Pyrex</option>
-                                        <option value="otro">Otro</option>
+                                        <option value="" hidden>Seleccione una marca</option>
+                                        <% brands.forEach(({id,name}) => { %>
+                                            <option value=<%= id %>><%= name %></option>
+                                        <% }) %>
                                     </select>
                                 </div>
                                 <div class="main__form__div">
                                     <label for="category">Categoría</label>
                                     <select class="main__form__div__selected" name="category" id="category">
-                                        <option value="category" hidden>Seleccione una categoría</option>
-                                        <option value="deco">Deco</option>
-                                        <option value="frascos">Frascos</option>
-                                        <option value="utensilios">Utensilios</option>
-                                        <option value="vasos">Vasos</option>
-                                        <option value="jarras">Jarras</option>
-                                        <option value="aromaticos">Aromáticos</option>
+                                        <option value="" hidden>Seleccione una categoría</option>
+                                        <% categories.forEach(({id,name}) => { %>
+                                            <option value=<%= id %>><%= name %></option>
+                                        <% }) %>
                                     </select>
                                 </div>
                                 <div class="main__form__div">
                                     <label for="material">Material</label>
                                     <select class="main__form__div__selected" name="material" id="material">
                                         <option value="" hidden>Seleccione un material</option>
-                                        <option value="silicona">Silicona</option>
-                                        <option value="acero">Acero</option>
-                                        <option value="vidrio">Vidrio</option>
-                                        <option value="mimbre">Mimbre</option>
-                                        <option value="madera">Madera</option>
-                                        <option value="marmol">Mármol</option>
-                                        <option value="otro">Otro</option>
+                                        <% materials.forEach(({id,name}) => { %>
+                                            <option value=<%= id %>><%= name %></option>
+                                        <% }) %>
                                     </select>
                                 </div>
                                 <div class="main__form__div">
@@ -74,7 +62,7 @@
 
                                 <div class="main__form__div">
                                     <label for="images">Imágenes secundarias del producto</label>
-                                    <input class="main__form__div__textarea" type="file" name="images" id="image" accept=".jpg, .png, .webp" multiple>
+                                    <input class="main__form__div__textarea" type="file" name="images" id="images" accept=".jpg, .png, .webp" multiple>
                                 </div>
                             </div>
                             

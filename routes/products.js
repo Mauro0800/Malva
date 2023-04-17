@@ -10,10 +10,10 @@ router
     .get('/category/:idCategory', category)
     .get('/detail/:id', detail)
     .get('/shopping-cart', shoppingcart)
-    .get('/add',checkUseradmin, addproduct)
-    .post('/add-product', store)
-    .get('/edit/:id',checkUseradmin, editproduct)
+    .get('/add', addproduct)//checkUseradmin
+    .post('/add', store)
+    .get('/edit/:id', editproduct)//checkUseradmin
     .put('/update/:id', update)
-    .delete('/delete/:id',checkUseradmin, destroy)
+    .delete('/delete/:id', destroy)//checkUseradmin
 
 module.exports = router;

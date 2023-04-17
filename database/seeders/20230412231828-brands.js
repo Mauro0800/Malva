@@ -16,22 +16,22 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        name: 'Bohemia',
+        name: 'bohemia',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'Polywood',
+        name: 'polywood',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'Red Simil',
+        name: 'red Simil',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'Mason',
+        name: 'mason',
         createdAt: new Date(),
         updatedAt: new Date()
       },
