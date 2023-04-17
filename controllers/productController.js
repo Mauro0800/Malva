@@ -1,11 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-const categoriesFilePath = path.join(__dirname, '../data/category.json');
-const categories = JSON.parse(fs.readFileSync(categoriesFilePath, 'utf-8'));
-
 const db = require('../database/models');
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -87,30 +82,29 @@ module.exports = {
     },
 
     shoppingcart: (req, res) => {
-        return res.render('shoppingcart', {
-            categories,
-            title: "Carrito de compras"
+        db.Category.findAll()
+        .then(categories=>{
+            return res.render('shoppingcart', {
+                categories,
+                title: "Carrito de compras"
+            })
         })
+        .catch(error=>console.log(error))
+    },
 
-    },
     addproduct: (req, res) => {
-        return res.render('addproduct', {
-            categories,
-            title: "Agregar producto"
+        db.Category.findAll()
+        .then(categories=>{
+            return res.render('addproduct', {
+                categories,
+                title: "Agregar producto"
+            })
         })
-    },
-    editproduct: (req, res) => {
-        const { id } = req.params;
-    	const product = products.find(product => product.id === +id);
-		res.render("editproduct",{
-			...product,
-            categories,
-            title: "Editar Producto"
-		})
+        .catch(error=>console.log(error))
     },
     store: (req, res) => {
         const {name, price, discount, description, material, category, brand } = req.body;
-
+        
         const newproduct ={
             id: products[products.length -1].id +1,
             name:name,
@@ -123,11 +117,20 @@ module.exports = {
             image:null
         }
         /*return res.send(newproduct)*/
-      products.push(newproduct);
-
+        products.push(newproduct);
+        
         fs.writeFileSync('./data/products.json',JSON.stringify(products, null, 3),'utf-8')
-    
+        
         return res.redirect('/products');
+    },
+    editproduct: (req, res) => {
+        const { id } = req.params;
+    	const product = products.find(product => product.id === +id);
+		res.render("editproduct",{
+            ...product,
+            categories,
+            title: "Editar Producto"
+		})
     },
     update: (req,res)=>{
         const {id}= req.params

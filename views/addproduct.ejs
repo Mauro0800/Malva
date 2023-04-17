@@ -9,7 +9,7 @@
             <main class="form__main">
                 <section class="product-form__section">
                     <article class="product-form">
-                        <form class="main__form--editproduct" action="add-product" method="post">
+                        <form class="main__form--editproduct" action="add-product" method="post" enctype="multipart/form-data">
                             <h3 class="title-add-product">Agregar producto</h3>
                             <div class="main__form__div">
                                 <label for="name">Nombre </label>
@@ -68,9 +68,13 @@
                                     </select>
                                 </div>
                                 <div class="main__form__div">
-                                    <label for="image">Imágen del producto</label>
-                                    <input class="main__form__div__textarea" type="file" name="image" id="image" accept=".jpg, .png, .webp"
-                                        >
+                                    <label for="image">Imágen principal del producto</label>
+                                    <input class="main__form__div__textarea" type="file" name="image" id="image" accept=".jpg, .png, .webp">
+                                </div>
+
+                                <div class="main__form__div">
+                                    <label for="images">Imágenes secundarias del producto</label>
+                                    <input class="main__form__div__textarea" type="file" name="images" id="image" accept=".jpg, .png, .webp" multiple>
                                 </div>
                             </div>
                             
