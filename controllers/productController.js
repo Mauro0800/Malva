@@ -386,13 +386,13 @@ module.exports = {
         }
     },
     destroy: (req, res) => {
-        
+
         db.Product.destroy({
             where: {
               id: req.params.id
             }
           }).then(() => {
-            return res.redirect('/dashboard')
+            return res.redirect('/products')
           }).catch((error) => console.log(error))
         }
 }
