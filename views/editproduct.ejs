@@ -7,79 +7,75 @@
   <%- include('./partials/menuHam') %> 
 
     <main class="form__main">
-        <form class="main__form--editproduct" action="/products/update/<%= id %>?_method=PUT" method="post">
+        <form class="main__form--editproduct" action="/products/update/<%= id %>?_method=PUT" method="post" enctype="multipart/form-data">
             
-            <h3 class="title-add-product">Editar producto</h3>
+            <h3 class="title-add-product"><%= title %></h3>
 
             <div class="main__form__div">
                 <label for="name">Nombre</label>
                 <input class="main__form__div__input" type="text" name="name" id="name" value="<%= name %>">
             </div>
-
-            <div class="main__form__div">
-                <label for="category">Categoria</label>
-                <select class="main__form__div__selected" name="category" id="category">
-                    <option value="deco" <%= category === "deco" && 'selected' %>>Deco</option>
-                    <option value="frascos" <%= category === "frascos" && 'selected' %>>Frascos</option>
-                    <option value="utensilios" <%= category === "utensilios" && 'selected' %>>Utensilios</option>
-                    <option value="vasos" <%= category === "vasos" && 'selected' %>>Vasos</option>
-                    <option value="jarras" <%= category === "jarras" && 'selected' %>>Jarras</option>
-                    <option value="aromaticos" <%= category === "aromaticos" && 'selected' %>>Aromáticos</option>
-                </select>
-            </div>
-
             <div class="main__form__div">
                 <label for="price">Precio</label>
                 <input class="main__form__div__input" type="number" name="price" id="price" value="<%= price %>">
             </div>
-
             <div class="main__form__div">
                 <label for="discount">Descuento</label>
                 <input class="main__form__div__input" type="number" name="discount" id="discount" value="<%= discount %>">
             </div>
-
-            <div class="main__form__div">
-                <label for="material">Material</label>
-                <select class="main__form__div__selected" name="material" id="material">
-                    <option value="silicona" <%= material === "silicona" && 'selected' %>>Silicona</option>
-                    <option value="acero" <%= material === "acero" && 'selected' %>>Acero</option>
-                    <option value="vidrio" <%= material === "vidrio" && 'selected' %>>Vidrio</option>
-                    <option value="mimbre" <%= material === "mimbre" && 'selected' %>>Mimbre</option>
-                    <option value="madera" <%= material === "madera" && 'selected' %>>Madera</option>
-                    <option value="marmol" <%= material === "marmol" && 'selected' %>>Mármol</option>
-                    <option value="otro" <%= material === "otro" && 'selected' %>>Otro</option>
-                </select>
-            </div>
-
             <div class="main__form__div">
                 <label for="stock">Stock</label>
                 <input class="main__form__div__input" type="number" id="stock" name="stock" value="<%= stock %>">
             </div>
-
-            <div class="main__form__div">
-                <label for="brand">Marca</label>
-                <input class="main__form__div__input" type="text" id="brand" name="brand" value="<%= brand %>">
-            </div>
-
             <div class="main__form__div">
                 <label for="description">Descripcion</label>
                 <textarea class="main__form__div__textarea" id="description" name="description"><%= description %></textarea>
             </div>
-
-            <!-- <div class="main__form__div--characteristics">
-                <label class="main__form__div__label--characteristics" for="characteristics">Caracteristicas</label>
-                <input class="main__form__div__input--num" type="number" id="characteristicsnum" name="characteristicsnum">
-                <input class="main__form__div__input--characteristics" type="text" name="characteristics" id="characteristics">
-            </div> -->
-
             <div class="main__form__div">
-                <label for="image">Imagenes</label>
-                <input class="main__form__div__textarea" type="file" id="image" name="image" accept=".jpg, .png" value="<%= image %>">
-            </div>
-
-            <button class="button--form-product" type="submit">Actualizar Producto</button>
-            
-            <button class="button--form-product" type="reset">Volver</button>
+                <label for="brand">Marca</label>
+                <select class="main__form__div__selected" name="brand" id="brand">
+                    <option value="" hidden>Seleccione una marca</option>
+                <% brands.forEach(({id,name})=> { %>
+                    <option value=<%=id %> <%= brandId === id && 'selected' %>><%= name %></option>
+                    <% }) %>
+            </select>
+        </div>
+        <div class="main__form__div">
+            <label for="category">Categoria</label>
+            <select class="main__form__div__selected" name="category" id="category">
+                <% categories.forEach(({id,name}) => { %>
+                    <option value=<%= id %> <%= categoryId === id && 'selected' %>><%= name %></option>
+                <% }) %>
+            </select>
+        </div>
+        <div class="main__form__div">
+            <label for="material">Material</label>
+            <select class="main__form__div__selected" name="material" id="material">
+                <% materials.forEach(({id,name})=> { %>
+                <option value=<%=id %> <%= materialId === id && 'selected' %>><%= name %></option>
+                <% }) %>
+            </select>
+        </div>
+        <!-- <div class="main__form__div--characteristics">
+            <label class="main__form__div__label--characteristics" for="characteristics">Caracteristicas</label>
+            <input class="main__form__div__input--num" type="number" id="characteristicsnum" name="characteristicsnum">
+            <input class="main__form__div__input--characteristics" type="text" name="characteristics" id="characteristics">
+        </div> -->
+        <div class="main__form__div">
+                <label for="image">Imágen principal del producto</label>
+                <input class="main__form__div__textarea" type="file" name="image" id="image">
+        </div>
+        <small class="text-danger ms-2"><%= locals.errors && errors.image ? errors.image.msg : null %></small>
+        <div class="main__form__div">
+                <label for="images">Imágenes secundarias del producto</label>
+                <input class="main__form__div__textarea" type="file" name="images" id="images" multiple>
+        </div>
+        <small class="text-danger ms-2">
+            <%= locals.errors && errors.images ? errors.images.msg : null %>
+        </small>
+        <button class="button--form-product" type="submit">Actualizar Producto</button>
+        
+        <button class="button--form-product" type="reset">Volver</button>
             
         </form>
         
