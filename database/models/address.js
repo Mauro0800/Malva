@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Address.init({
-    name: DataTypes.STRING,
+    address: DataTypes.STRING,
     city: DataTypes.STRING,
     province: DataTypes.STRING,
     zipCode: DataTypes.INTEGER

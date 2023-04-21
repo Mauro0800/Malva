@@ -4,9 +4,9 @@
 
 const addressesJSON = require('../../data/addresses.json');
 
-const addresses = addressesJSON.map(({name, city, province, zipCode}) => {
+const addresses = addressesJSON.map(({address, city, province, zipCode}) => {
    return{
-      name,
+      address,
       city,
       province,
       zipCode,

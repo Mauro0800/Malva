@@ -41,7 +41,7 @@ app.use(localsUserCheck)
 // app.use(infoProvider) en mantenimiento
 
 app.use('/', mainRouter);
-app.use( usersRouter);
+app.use( '/users', usersRouter);
 app.use('/products', productsRouter);
 
 

@@ -1,6 +1,7 @@
-module.exports = (req,res,next) =>{
-    if(!req.session.userLogin){
-        next()
+module.exports = (req,res,next) => {
+    if(req.session.userLogin){
+        return next() //podría acceder al perfil de usuario
     }
-    return res.redirect('/login')
+
+    return res.redirect('/users/login')    
 }

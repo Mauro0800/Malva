@@ -9,21 +9,21 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      address: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: true
       },
       city: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: true
       },
       province: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: true
       },
       zipCode: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: true
       },
       createdAt: {
         allowNull: false,

@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-
-const { login, register, resetpassword, processRegister, processLogin, logout, profile } = require('../controllers/usersController')
+const { login, register, resetpassword, processRegister, processLogin,update,  logout, profile, destroy } = require('../controllers/usersController')
+const {storageUserImage, uploadUserImage} = require('../middlewares/upload');
 const checkUser = require('../middlewares/checkUser');
 const checkUserLogin = require('../middlewares/checkUserLogin');
 const { registerUserValidator,loginUserValidator} = require('../validations')
@@ -10,13 +10,15 @@ const { registerUserValidator,loginUserValidator} = require('../validations')
 
 /* /users */
 router
-    .get('/users/login',checkUser, login)
-    .post('/users/login',loginUserValidator ,processLogin)
-    .get('/users/register',checkUser, register)
-    .post('/users/register', registerUserValidator, processRegister)
-    .get('/users/reset-password', resetpassword)
-    .get('/users/logout', logout)
-    .get('/users/profile',checkUserLogin, profile)
+    .get('/login', login) //borre middleware de checkUser
+    .post('/login',loginUserValidator ,processLogin)
+    .get('/register', register) //borre middleware de checkUser
+    .post('/register',registerUserValidator, processRegister) //borre middleware de registerUserValidator
+    .get('/profile',checkUserLogin, profile) 
+    .put('/update', update)
+    .get('/reset-password', resetpassword)
+    .get('/logout', logout)
+    .delete('/delete', destroy)
 
 
 module.exports = router;

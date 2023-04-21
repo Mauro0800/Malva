@@ -1,1 +1,57 @@
-Acá iría el perfil del usuario (en construcción ♥)
+<!doctype html>
+
+<html lang="es">
+    
+  <%- include('../partials/head') %>
+
+    <body>
+      
+      <%- include('../partials/header') %>
+      <%- include('../partials/menuHam') %> 
+
+        <div>
+            <form action="/users/update?_method=PUT" method="POST">
+                <img src="/images/users/<%= user.image ? user.image : 'default-image.png' %>" alt="">
+                <label>Cambiar imagen</label>
+                <input type="file", name="image" hidden>
+
+                <label for="name">Nombre</label>
+                <input type="text" name="name" id="name" value="<%= user.name %>">
+                <small class="text-danger ms-2"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
+
+                <label for="surname">Apellido</label>
+                <input type="text" name="surname" id="surname" value="<%= user.surname %>">
+                <small class="text-danger ms-2"><%= locals.errors && errors.surname ? errors.surname.msg : null %></small>
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" value="<%= user.email %>" disabled>
+                <small class="text-danger ms-2"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
+
+
+                <label for="address">Direccion</label>
+                <input type="text" name="address" id="address" value="<%= user.address.address %>">
+
+                
+                <label for="city">Ciudad</label>
+                <input type="text" name="city" id="city" value="<%= user.address.city %>">
+
+                <label for="province">Provincia</label>
+                <input type="text" name="province" id="province" value="<%= user.address.province %>">
+
+                <label for="zipCode">Codigo Postal</label>
+                <input type="text" name="zipCode" id="zipCode" value="<%= user.address.zipCode %>">
+
+                <button type="submit">Actualizar datos</button>
+                
+            </form>
+            <form action="/users/delete?_method=DELETE" method="POST">
+                <button type="submit">Eliminar</button>
+            </form>
+        </div>
+
+    </body>
+    
+    <%- include('../partials/footer') %>
+    <%- include('../partials/scripts') %> 
+
+</html>

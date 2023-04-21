@@ -1,95 +1,211 @@
 const fs = require('fs');
 const path = require('path');
 
-const categoriesFilePath = path.join(__dirname, '../data/category.json');
-const categories = JSON.parse(fs.readFileSync(categoriesFilePath, 'utf-8'));
-const { readJSON, writeJSON} = require('../data');
+const db = require('../database/models');
+
+
+// const categoriesFilePath = path.join(__dirname, '../data/category.json');
+// const categories = JSON.parse(fs.readFileSync(categoriesFilePath, 'utf-8'));
+// const { readJSON, writeJSON} = require('../data');
 const { hashSync } = require('bcryptjs');
 const { validationResult } = require('express-validator');
 
-module.exports ={
-   login :  (req,res) =>{
-        return res.render('users/login', {
-            categories,
-            title: "Ingresá a tu cuenta"
-        })
+module.exports = {
+
+    login: (req, res) => {
+        db.Category.findAll()
+            .then(categories => {
+                return res.render('users/login', {
+                    categories,
+                    title: "Ingresá a tu cuenta"
+                })
+            })
     },
-    processLogin : (req, res) => {
+
+    processLogin: (req, res) => {
         const errors = validationResult(req);
 
-        if(errors.isEmpty()){
+        if (errors.isEmpty()) {
 
-            const {id, name, category} = readJSON('users.json').find(user => user.email === req.body.email);
-
-            req.session.userLogin = {
-                id,
-                name,
-                category
-            };
-            if(req.body.remember){
-                res.cookie('usermalva',req.session.userLogin, {maxAge: 1000 * 60 * 1}) //vida de la cookie
-            }
-            return res.redirect('/')
-        }else{
-            return res.render('users/login',{
-                title : "Inicio de sesión",
-                categories,
-                old : req.body,
-                errors : errors.mapped()
+            db.User.findOne({
+                where: {
+                    email: req.body.email
+                }
             })
+                .then(({ id, name, rolId }) => {
+
+                    req.session.userLogin = {
+                        id,
+                        name,
+                        rol: rolId
+                    };
+
+                    if (req.body.remember) {
+                        res.cookie('usermalva', req.session.userLogin, { maxAge: 1000 * 60 * 1 }) //vida de la cookie
+                    }
+                    return res.redirect('/')
+                })
+                .catch(error => console.log(error))
+        } else {
+
+            db.Category.findAll()
+                .then(categories => {
+
+                    return res.render('users/login', {
+                        title: "Inicio de sesión",
+                        categories,
+                        old: req.body,
+                        errors: errors.mapped()
+                    })
+                })
         }
     },
-    
-    register :  (req,res) =>{
-        return res.render('users/register', {
-            categories,
-            title: "Registrá tu cuenta"
-        })
+
+    register: (req, res) => {
+        db.Category.findAll()
+            .then(categories => {
+                return res.render('users/register', {
+                    categories,
+                    title: "Registrá a tu cuenta"
+                })
+            })
     },
-    processRegister : (req, res) => {
+    processRegister: (req, res) => {
+
         const errors = validationResult(req);
 
-        if(errors.isEmpty()){
-            const users = readJSON('users.json')
+        if (errors.isEmpty()) {
+
             const { name, surname, email, password } = req.body;
 
-            const newUser = {
-                id: users.length ? users[users.length -1].id + 1 : 1,
-                name : name.trim(),
-                surname : surname.trim(),
-                email : email.trim(),
-                password : hashSync(password, 10),
-                category : 'user'
-            }
-            users.push(newUser);
+            db.Address.create()
+                .then(address => {
+                    db.User.create({
+                        name: name.trim(),
+                        surname: surname.trim(),
+                        email: email.trim(),
+                        password: hashSync(password, 10),
+                        image: 'default-image.jpg',
+                        rolId: 2,
+                        addressId: address.id
+                    })
+                        .then(({ id, name, rolId }) => {
 
-            writeJSON('users.json', users);
-            return res.redirect('/users/login');
+                            req.session.userLogin = {
+                                id,
+                                name,
+                                rol: rolId
+                            };
+                            return res.redirect('/');
+                        })
 
-        }else{
-            
-            return res.render('users/register', {
-                title : 'Registro de usuario',
-                errors : errors.mapped(),
-                old : req.body,
-                categories
-            })
+                }).catch(error => console.log(error))
+        } else {
+            db.Category.findAll()
+                .then(categories => {
+
+                    return res.render('users/register', {
+                        categories,
+                        title: "Registro de usuario",
+                        errors: errors.mapped(),
+                        old: req.body
+                    })
+                })
         }
     },
-    profile : (req,res) => {
-        return res.render('users/profile',{
-            title : "Perfil de usuario"
+    profile: (req, res) => {
+
+        const user = db.User.findByPk(req.session.userLogin.id, {
+            attributes: ['name', 'surname', 'email', 'image'],
+            include: [
+                {
+                    association: 'address',
+                    attributes: ['address', 'city', 'province', 'zipCode']
+                }
+            ],
         })
+        const categories = db.Category.findAll();
+
+        Promise.all(([user, categories]))
+            .then(([user, categories]) => {
+                return res.render('users/profile', {
+                    categories,
+                    title: "Perfil de usuario",
+                    user,
+                })
+            }).catch(error => console.log(error))
     },
 
-    resetpassword :  (req,res) =>{
+    update: (req, res) => {
+        
+        const { name, surname, address, city, province, zipCode } = req.body
+        const { id } = req.session.userLogin;
+
+        db.User.findByPk(id)
+            .then(user => {
+
+
+
+                const categories = db.Category.findAll();
+
+                const addressUpdated = db.Address.update(
+                    {
+                        address: address ? address.trim() : null,
+                        city: city ? city.trim() : null,
+                        province: province ? province.trim() : null,
+                        zipCode: zipCode ? zipCode : null
+                    },
+                    {
+                        where: {
+                            id: user.addressId
+                        }
+                    }
+                )
+                const userUpdated = db.User.update(
+                    {
+                        name: name.trim(),
+                        surname: surname.trim(),
+                        image: req.file ? req.file.filename : user.image
+                    },
+                    {
+                        where: {
+                            id
+                        }
+                    }
+                )
+                Promise.all(([categories, addressUpdated, userUpdated]))
+                    .then(() => {
+                        (req.file && fs.existsSync('public/images/users' + user.image)) && fs.unlinkSync('public/images/users' + user.image)
+                        req.session.message = "Datos actualizados"
+                        return res.redirect('/users/profile')
+                    })
+            }).catch(error => console.log(error))
+    },
+
+    resetpassword: (req, res) => {
         return res.render('users/resetpassword', {
             categories,
             title: "Restablecer mi contraseña"
         })
     },
-    logout: (req,res)=>{
-        req.session.destroy();
+    logout: (req, res) => {
+        req.session.destroy()
         return res.redirect('/')
+    },
+    destroy: (req, res) => {
+
+        const { id } = req.session.userLogin;
+
+        db.User.findByPk(id)
+            .then((user) => {
+                req.session.destroy()
+
+                db.User.destroy({
+                    where: { id }
+                }).then(() => {
+                    return res.redirect('/')
+                })
+            })
+            .catch(error => console.log(error))
     }
 };

@@ -37,7 +37,7 @@ module.exports = {
           },
           key : 'id'
         },
-        allowNull: false
+        allowNull: true
       },
       rolId: {
         type: Sequelize.INTEGER,
