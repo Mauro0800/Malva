@@ -63,10 +63,19 @@ body {
     
     
 }
+#loginform{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 #loginform input{
     border-color: #080808;
     
     margin-bottom: 15px;;
+}
+
+.termcond{
+
 }
 
 #login button {

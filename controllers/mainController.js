@@ -16,17 +16,17 @@ module.exports ={
               },
             include: ["category"]
         });
-        const categories =  db.Category.findAll();
+        // const categories =  db.Category.findAll();
 
-        Promise.all([productsHome,productsdistinguished,categories])
-        .then(([productsHome,productsdistinguished,categories]) =>{
+
+        Promise.all([productsHome,productsdistinguished])
+        .then(([productsHome,productsdistinguished]) =>{
             // return res.send(categories)
 
             return res.render("home", {
-                title: "Malva | Home",
+                title: "Home",
                 productsHome,
                 productsdistinguished,
-                categories,
                 toThousand
             })
         })

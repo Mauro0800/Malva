@@ -10,9 +10,9 @@ const { registerUserValidator,loginUserValidator} = require('../validations')
 
 /* /users */
 router
-    .get('/login', login) //borre middleware de checkUser
+    .get('/login',checkUser, login) //borre middleware de checkUser
     .post('/login',loginUserValidator ,processLogin)
-    .get('/register', register) //borre middleware de checkUser
+    .get('/register',checkUser, register) //borre middleware de checkUser
     .post('/register',registerUserValidator, processRegister) //borre middleware de registerUserValidator
     .get('/profile',checkUserLogin, profile) 
     .put('/update', update)

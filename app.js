@@ -11,7 +11,7 @@ const bcrypt = require('bcryptjs');
 
 const localsUserCheck = require("./middlewares/localsUserCheck");
 const cookieCheck = require("./middlewares/cookieCheck");
-// const infoProvider = require('./middlewares/infoProvider'); en mantenimiento
+const infoProvider = require('./middlewares/infoProvider');
 
 const app = express();
 
@@ -33,12 +33,13 @@ app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el 
 app.use(session({
   secret: 'Malva2023',
   resave : false,
-  saveUninitialized : true
+  saveUninitialized : true,
+  cookie:{maxAge: 1000 * 60 * 20}
 }));
 
 app.use(cookieCheck)
 app.use(localsUserCheck)
-// app.use(infoProvider) en mantenimiento
+app.use(infoProvider)
 
 app.use('/', mainRouter);
 app.use( '/users', usersRouter);

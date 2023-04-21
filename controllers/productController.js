@@ -10,17 +10,13 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 module.exports = {
 
     list: (req, res) => {
-
-        const products = db.Product.findAll();
-        const categories = db.Category.findAll();
-
-        Promise.all([products, categories])
-            .then(([products, categories]) => {
-
+        db.Product.findAll({
+            attributes: [`id`, `name`, `price`,`discount`,`image`,]
+        }).then((products) => {
+                // return res.send(products)
                 return res.render("list", {
                     title: "Todos Los productos",
                     products,
-                    categories,
                     toThousand
                 })
             })
@@ -32,19 +28,16 @@ module.exports = {
 
         const { idCategory } = req.params;
 
-        const products = db.Product.findAll({
+        db.Product.findAll({
             where: {
                 categoryId: idCategory
-            }
+            },
+            include: ["category"]
         })
-        const categories = db.Category.findAll();
-
-        Promise.all([products, categories])
-            .then(([products, categories]) => {
+            .then(products => {
                 return res.render("list", {
                     title: idCategory ? products[0].category.name : "Todos los productos",
                     products,
-                    categories,
                     toThousand
                 })
             })
@@ -56,14 +49,13 @@ module.exports = {
         const product = db.Product.findByPk(id, {
             include: ["brand", "category", "material", "images"]
         })
-        const categories = db.Category.findAll();
         const images = db.Image.findAll({
             where: {
                 productId: id
             }
         });
-        Promise.all([product, categories, images])
-            .then(([product, categories, images]) => {
+        Promise.all([product, images])
+            .then(([product, images]) => {
 
                 if (!product) {
                     return res.redirect("/")
@@ -72,7 +64,6 @@ module.exports = {
                 return res.render("productdetail", {
                     title: "Detalle",
                     ...product.dataValues,
-                    categories,
                     images,
                     toThousand
                 })
@@ -82,21 +73,19 @@ module.exports = {
     },
 
     shoppingcart: (req, res) => {
-        db.Category.findAll()
-            .then(categories => {
-                return res.render('shoppingcart', {
-                    categories,
-                    title: "Carrito de compras"
-                })
+        db.Category.findAll({
+            order: [["name"]],
+            attributes: ["name", "id"],
+        }).then(categories => {
+            return res.render('shoppingcart', {
+                title: "Carrito de compras",
+                categories
             })
-            .catch(error => console.log(error))
+        })
+        .catch(error=>console.log(error))
     },
 
     addproduct: (req, res) => {
-        const categories = db.Category.findAll({
-            order: [["name"]],
-            attributes: ["name", "id"],
-        });
         const brands = db.Brand.findAll({
             order: [["name"]],
             attributes: ["name", "id"],
@@ -105,10 +94,9 @@ module.exports = {
             order: [["name"]],
             attributes: ["name", "id"],
         });
-        Promise.all([categories, brands, materials])
-            .then(([categories, brands, materials]) => {
+        Promise.all([brands,materials])
+            .then(([brands, materials]) => {
                 return res.render('addproduct', {
-                    categories,
                     brands,
                     materials,
                     title: "Agregar producto"
@@ -186,10 +174,6 @@ module.exports = {
                 .catch(error => console.log(error))
         } else {
 
-            const categories = db.Category.findAll({
-                order: [["name"]],
-                attributes: ["name", "id"],
-            });
             const brands = db.Brand.findAll({
                 order: [["name"]],
                 attributes: ["name", "id"],
@@ -211,13 +195,12 @@ module.exports = {
                 });
             }
 
-            Promise.all([categories, brands, materials])
-                .then(([categories, brands, materials]) => {
+            Promise.all([brands, materials])
+                .then(([brands, materials]) => {
                     // return res.send([errors.mapped(),req.files.image[0].filename,req.files.image])
                     return res.render("addproduct", {
                         title: "Agregar producto",
                         brands,
-                        categories,
                         materials,
                         errors: errors.mapped(),
                         old: req.body,
@@ -233,10 +216,6 @@ module.exports = {
         const product = db.Product.findByPk(id, {
             include: ["images"]
         })
-        const categories = db.Category.findAll({
-            order: [["name"]],
-            attributes: ["name", "id"],
-        });
         const brands = db.Brand.findAll({
             order: [["name"]],
             attributes: ["name", "id"],
@@ -250,14 +229,13 @@ module.exports = {
                 productId: id
             }
         });
-        Promise.all([product, categories, brands, materials,images])
-            .then(([product, categories,brands,materials,images]) => {
+        Promise.all([product, brands, materials, images])
+            .then(([product, brands, materials, images]) => {
                 if (!product) {
                     return res.redirect("/")
                   }
                 return res.render('editproduct', {
                     ...product.dataValues,
-                    categories,
                     brands,
                     materials,
                     images,
@@ -345,10 +323,6 @@ module.exports = {
             const product = db.Product.findByPk(id, {
                 include: ["images"]
             })
-            const categories = db.Category.findAll({
-                order: [["name"]],
-                attributes: ["name", "id"],
-            });
             const brands = db.Brand.findAll({
                 order: [["name"]],
                 attributes: ["name", "id"],
@@ -375,12 +349,11 @@ module.exports = {
                 });
             }
             
-            Promise.all([product, categories, brands, materials,images])
-                .then(([product, categories,brands,materials,images]) => {
+            Promise.all([product, brands, materials, images])
+                .then(([product, brands, materials, images]) => {
 
                     return res.render('editproduct/'+id, {
                         ...product.dataValues,
-                        categories,
                         brands,
                         materials,
                         images,

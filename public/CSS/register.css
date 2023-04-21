@@ -69,7 +69,7 @@
     border-radius: 50%;
     position: absolute;
     left: 17px;
-    top: 12px;
+    top: 8px;
 }
 
 .termcond input:checked + label{
@@ -111,18 +111,6 @@
 @media (min-width: 768px){
     .register__form-box{
         width: 65%;
-    }
-    .termcond label:before{
-        content: '';
-        width: 15px;
-        height: 15px;
-        display: inline-block;
-        background: none;
-        border: 3px solid var(--color5);
-        border-radius: 50%;
-        position: absolute;
-        left: 17px;
-        top: 4px;
     }
 }
 

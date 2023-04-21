@@ -41,7 +41,7 @@ module.exports = {
                     };
 
                     if (req.body.remember) {
-                        res.cookie('usermalva', req.session.userLogin, { maxAge: 1000 * 60 * 1 }) //vida de la cookie
+                        res.cookie('usermalva', req.session.userLogin, { maxAge: 1000 * 60 }) //vida de la cookie
                     }
                     return res.redirect('/')
                 })
@@ -58,6 +58,7 @@ module.exports = {
                         errors: errors.mapped()
                     })
                 })
+
         }
     },
 
@@ -124,12 +125,9 @@ module.exports = {
                 }
             ],
         })
-        const categories = db.Category.findAll();
-
-        Promise.all(([user, categories]))
-            .then(([user, categories]) => {
-                return res.render('users/profile', {
-                    categories,
+        
+           .then(user => {
+                return res.render('users/profile', {                   
                     title: "Perfil de usuario",
                     user,
                 })
@@ -143,10 +141,6 @@ module.exports = {
 
         db.User.findByPk(id)
             .then(user => {
-
-
-
-                const categories = db.Category.findAll();
 
                 const addressUpdated = db.Address.update(
                     {
@@ -173,7 +167,7 @@ module.exports = {
                         }
                     }
                 )
-                Promise.all(([categories, addressUpdated, userUpdated]))
+                Promise.all(([addressUpdated, userUpdated]))
                     .then(() => {
                         (req.file && fs.existsSync('public/images/users' + user.image)) && fs.unlinkSync('public/images/users' + user.image)
                         req.session.message = "Datos actualizados"
