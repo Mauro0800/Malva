@@ -13,7 +13,8 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Image.belongsTo(models.Product,{
         as: 'product',
-        foreignKey: 'productId'
+        foreignKey: 'productId',
+        onDelete : 'cascade'
       })
     }
   }

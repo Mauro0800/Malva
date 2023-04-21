@@ -13,7 +13,7 @@ const storageProductImages = multer.diskStorage({
 const configUploadProductImages = multer({
     storage: storageProductImages,
     limits: {
-        files: 3,
+        files: 4,
     },
     fileFilter: (req, file, cb) => {
         if (!file.originalname.match(/\.(jpg|jpeg|png|gif|webp)$/)) {
@@ -35,7 +35,7 @@ const uploadProductImages = (req, res, next) => {
         next();
     });
 };
-
+/* 
 const storageUserImage = multer.diskStorage({
     destination: function (req, file, callback) {
         callback(null, "public/images/users");
@@ -56,10 +56,10 @@ const uploadUserImage = multer({
 
         cb(null, true);
     },
-});
+}); */
 
 
 module.exports = {
     uploadProductImages,
-    uploadUserImage,
+    // uploadUserImage,
 };

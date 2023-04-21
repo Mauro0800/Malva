@@ -3,6 +3,8 @@ const router = express.Router();
 
 const checkUseradmin = require('../middlewares/checkUserAdmin');
 const { detail, shoppingcart, addproduct, editproduct, store, list,destroy, update, category} = require('../controllers/productController')
+const {uploadProductImages} = require('../middlewares/upload')
+const productValidator = require('../validations/productsValidator')
 
 /* /products */
 router
@@ -11,9 +13,9 @@ router
     .get('/detail/:id', detail)
     .get('/shopping-cart', shoppingcart)
     .get('/add', addproduct)//checkUseradmin
-    .post('/add', store)
+    .post('/add',uploadProductImages,productValidator, store)
     .get('/edit/:id', editproduct)//checkUseradmin
-    .put('/update/:id', update)
+    .put('/update/:id',uploadProductImages,productValidator, update)
     .delete('/delete/:id', destroy)//checkUseradmin
 
 module.exports = router;
