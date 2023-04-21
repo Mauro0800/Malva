@@ -64,6 +64,11 @@ module.exports = {
         });
         Promise.all([product, categories, images])
             .then(([product, categories, images]) => {
+
+                if (!product) {
+                    return res.redirect("/")
+                  }
+
                 return res.render("productdetail", {
                     title: "Detalle",
                     ...product.dataValues,
@@ -247,7 +252,9 @@ module.exports = {
         });
         Promise.all([product, categories, brands, materials,images])
             .then(([product, categories,brands,materials,images]) => {
-                // return res.send(product)
+                if (!product) {
+                    return res.redirect("/")
+                  }
                 return res.render('editproduct', {
                     ...product.dataValues,
                     categories,
@@ -370,7 +377,7 @@ module.exports = {
             
             Promise.all([product, categories, brands, materials,images])
                 .then(([product, categories,brands,materials,images]) => {
-                    // return res.send(product)
+
                     return res.render('editproduct/'+id, {
                         ...product.dataValues,
                         categories,

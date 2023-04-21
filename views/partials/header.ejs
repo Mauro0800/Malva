@@ -1,7 +1,7 @@
 <header class="home__header">
     <section class="home__header__section--cuenta">
       <% if (locals.userLogin) { %>
-       <a href="#">Hola, <%= userLogin.name %></a>
+       <a href="/users/profile">Hola, <%= userLogin.name %></a>
        <a href="/users/logout" class="home__header__section__a">Salir</a>
       <% } else{%>
         <a href="/users/login" class="home__header__section__a">Iniciar Sesión</a>
