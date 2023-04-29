@@ -46,11 +46,10 @@ app.use(infoProvider)
 app.use('/', mainRouter);
 app.use( '/users', usersRouter);
 app.use('/products', productsRouter);
-app.use('/api', apiRouter)
 
 /* APIs */
-app
-.use('/api/products', require('./routes/api/productsApi')) // API de productos
+app.use('/api/users', require('./routes/api/apiUser'))
+app.use('/api/products', require('./routes/api/productsApi')) // API de productos
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

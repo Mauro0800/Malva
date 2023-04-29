@@ -8,8 +8,8 @@ const  {index,detail} = require('../../controllers/api/apiUserController');
 
 //Rutas a Api de Usuarios//
 router
-.get('/users', index)
-.get('/users/detail/:id', detail);
+.get('/', index)
+.get('/:id', detail);
 
 
 module.exports = router;
