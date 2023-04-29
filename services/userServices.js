@@ -1,5 +1,5 @@
 const db = require('../database/models');
-const { literalQueryUrlImage, literalQueryUrlDetail } = require('../helpers');
+const { literalQueryUrlImageUser, literalQueryUrlDetailUser } = require('../helpers');
 
 module.exports = {
     getAllUsers : async (req)  =>{
@@ -17,7 +17,7 @@ module.exports = {
                 ],
                 attributes: {
                     exclude: [ 'password','createdAt','updatedAt','rolId','image'],
-                     include: [literalQueryUrlDetail(req,'user.id','urlDetail'), literalQueryUrlImage(req, 'image', 'urlImage')] 
+                     include: [literalQueryUrlDetailUser(req,'user.id','urlDetail'), literalQueryUrlImageUser(req, 'image', 'urlImage')] 
                  }
             })
             return {
@@ -36,10 +36,9 @@ module.exports = {
     getUserById :  async (id,req) => {
         try{
             const user = await db.User.findByPk(id, {
-                
                     attributes: {
                         exclude: ['password','createdAt','updatedAt','rolId','image'], // Excluye fecha de creación y actualización
-                        include:[literalQueryUrlImage(req, 'image', 'urlImage')]
+                        include:[literalQueryUrlImageUser(req, 'image', 'urlImage')]
                     }
                
             })

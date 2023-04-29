@@ -1,4 +1,4 @@
-const { getAllProducts, getByIdProduct } = require('../../services/productsServices');
+const { getAllProducts, getProductById } = require('../../services/productsServices');
 
 module.exports = {
     index: async (req, res) => {
@@ -16,14 +16,14 @@ module.exports = {
                 ok: false,
                 error: {
                     status: error.status || 500,
-                    message: error.message || "Disculpe, pero hubo un error en su petición."
+                    message: error.message || "Hubo un error en su petición."
                 }
             })
         }
     },
     detail: async (req, res) => {
         try {
-            const product = await getByIdProduct(req.params.id); // Esperando que la función se procese y responda
+            const product = await getProductById(req.params.id, req); // Esperando que la función se procese y responda
             return res.status(200).json({ // Respuesta de petición exitosa para el cliente
                 ok: true,
                 product
@@ -34,7 +34,7 @@ module.exports = {
                 ok: false,
                 error: {
                     status: error.status || 500,
-                    message: error.message || "Disculpe, pero hubo un error en su petición."
+                    message: error.message || "Hubo un error en su petición."
                 }
             })
         }

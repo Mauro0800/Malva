@@ -20,7 +20,7 @@ module.exports = {
                 ok: false,
                 error: {
                     status: error.status || 500,
-                    message: error.message || "hubo un error"
+                    message: error.message || "Hubo un error"
                 }
             })
         }
@@ -31,9 +31,7 @@ module.exports = {
             const user = await getUserById(req.params.id,req);
             return res.status(200).json({
                 ok: true,
-                count: user.length,
                 user
-
             })
         } catch (error) {
             console.log(error)
@@ -41,7 +39,7 @@ module.exports = {
                 ok: false,
                 error: {
                     status: error.status || 500,
-                    message: error.message || "Ocurrio un error"
+                    message: error.message || "Hubo un error"
                 }
             })
         }

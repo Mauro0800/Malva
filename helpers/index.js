@@ -1,10 +1,7 @@
 module.exports = {
-    // /helpers/products
-    literalQueryUrlImage: require('./users/literalQueryUrlImage'),
-    literalQueryDetailUrl: require('./users/literalQueryDetailUrl'),
-}
-module.exports = {
-    // /helpers/products
-    literalQueryUrlImage: require('./products/literalQueryUrlImage'),
-    literalQueryUrlDetail: require('./products/literalQueryUrlDetail'),
+    // /helpers/users
+    literalQueryUrlImageUser: require('./users/literalQueryUrlImage'),
+    literalQueryUrlDetailUser: require('./users/literalQueryUrlDetail'),
+    literalQueryUrlImageProduct: require('./products/literalQueryUrlImage'),
+    literalQueryUrlDetailProduct: require('./products/literalQueryUrlDetail'),
 }
