@@ -28,7 +28,7 @@ module.exports = {
     detail : async (req,res) =>{
         try {
 
-            const user = await getUserById(req.params.id);
+            const user = await getUserById(req.params.id,req);
             return res.status(200).json({
                 ok: true,
                 count: user.length,

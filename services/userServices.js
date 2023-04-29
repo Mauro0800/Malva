@@ -33,13 +33,13 @@ module.exports = {
             };
         }
     },
-    getUserById :  async (id) => {
+    getUserById :  async (id,req) => {
         try{
             const user = await db.User.findByPk(id, {
                 
                     attributes: {
-                        exclude: ['password'], // Excluye fecha de creación y actualización
-                       
+                        exclude: ['password','createdAt','updatedAt','rolId','image'], // Excluye fecha de creación y actualización
+                        include:[literalQueryUrlImage(req, 'image', 'urlImage')]
                     }
                
             })
