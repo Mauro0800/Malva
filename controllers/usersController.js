@@ -85,7 +85,7 @@ module.exports = {
                         name: name.trim(),
                         surname: surname.trim(),
                         email: email.trim(),
-                        password: hashSync(password, 10),
+                        password: hashSync(password, 12),
                         image: 'default-image.jpg',
                         rolId: 2,
                         addressId: address.id

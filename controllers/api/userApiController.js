@@ -1,6 +1,6 @@
-const db = require('../../database/models')
-
-const { getAllUsers,  getUserById } = require('../../services/userServices')
+const { getAllUsers, getUserById, createUser, updateUser, deleteUser} = require('../../services/userServices')
+const errorResponse = require('../../helpers/errorResponse')
+const { validationResult } = require('express-validator');
 
 
 module.exports = {
@@ -43,43 +43,78 @@ module.exports = {
                 }
             })
         }
+    },
+    register: async (req,res) => {
+        try {
+            const errors = validationResult(req);
+
+        if (errors.isEmpty()) throw {
+            status: 400,
+            message: errors.mapped()
+        }
+            const newUser = await createUser(req.body);
+            return res.status(200).json({
+                ok:true,
+                data: newUser,
+                meta:{
+                    status:200,
+                    total:1,
+                    url:`/api/users/${newUser.id}`,
+                }
+            })
+
+        } catch (error) {
+            return errorResponse(res,error)
+        }
+    },
+    update: async (req,res) => {
+        try {
+            const {id} = req.params;
+            await updateUser(id,req);
+            const user = await getUserById(id,req);
+
+            return res.status(200).json({
+                ok:true,
+                data: user,
+                meta:{
+                    status:200,
+                    total:1,
+                    url:`/api/users/${id}`,
+                }
+            })
+        } catch (error) {
+            return res.status(error.status || 500).json({
+                ok : false,
+                error : {
+                    status : error.status || 500,
+                    message : error.message || "Upss. Error!!"
+                }
+            })
+        }
+    },
+    destroy: async (req,res) => {
+        try {
+            const {id} = req.params;
+            await deleteUser(id)
+
+            return res.status(200).json({
+                ok:true,
+                data: `El usuario ${id} ha sido eliminado`,
+                meta:{
+                    status:200,
+                    total:1,
+                    url:`/api/users/${id}`,
+                }
+            })
+
+        } catch (error) {
+            return res.status(error.status || 500).json({
+                ok : false,
+                error : {
+                    status : error.status || 500,
+                    message : error.message || "Upss. Hubo error!!"
+                }
+            })
+        }
     }
 }
-
-
-    /*db.User.findAll()
-.then(user => {
-let detail = []
-    user.forEach(user => {
-        detail.push({
-        id : user.id,
-        name : user.name + " " + user.surname,
-        email : user.email,
-        detail : "http://localhost:2023/api/users/" + user.id,
-        })
-    })
-
-    return res.status(200).json({
-        name: "Total de Usuarios",
-        count :  user.length,
-        users : detail,
-        status : 200  
-    })
-})
- 
-},
-detail : (req, res) => {
-db.User.findByPk(req.params.id)
-    .then(user => {
-        return res.status(200).json({
-            Name: user.name,
-            surname: user.surname,
-            Email: user.email,
-            rolId: user.rolId,
-            address: user.addressId,
-            image: "http://localhost:2023/" + user.image,
-            status: 200
-        })
-    })
-}
-}*/

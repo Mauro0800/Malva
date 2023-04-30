@@ -1,13 +1,18 @@
-const { getAllProducts, getProductById } = require('../../services/productsServices');
+const { getAllProducts, getProductById, getAllCategories } = require('../../services/productsServices');
 
 module.exports = {
     index: async (req, res) => {
         try {
             const products = await getAllProducts(req); // Esperando que la función se procese y responda
+            const categories = await getAllCategories()
+            const countByCategory = categories.reduce((obj,category)=>{
+                obj[category.name] = category.products.length
+                return obj
+            },{})
             return res.status(200).json({ // Respuesta de petición exitosa para el cliente
                 ok: true,
                 count: products.length,
-                countByCategory: {},
+                countByCategory,
                 products
             });
         } catch (error) {

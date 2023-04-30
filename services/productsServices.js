@@ -67,5 +67,16 @@ module.exports = {
                 message: error.message
             }
         }
+    },
+    getAllCategories : async () => {
+        try {
+          const categories = await db.Category.findAll({include:['products']});
+      return categories 
+     } catch (error){
+         throw {
+             status : 500,
+             message : error.message
+         }
+     }
     }
 }

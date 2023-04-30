@@ -1,15 +1,16 @@
 const express = require('express');
 const router = express.Router();
+const  {index,detail,register,update, destroy} = require('../../controllers/api/userApiController');
+const { registerUserValidator} = require('../../validations')
 
+//  /api/users
 
-const  {index,detail} = require('../../controllers/api/userApiController');
-
-
-
-//Rutas a Api de Usuarios//
 router
 .get('/', index)
-.get('/:id', detail);
+.get('/:id', detail)
+.post('/',registerUserValidator, register)
+.put('/:id', update)
+.delete('/:id', destroy)
 
 
 module.exports = router;
