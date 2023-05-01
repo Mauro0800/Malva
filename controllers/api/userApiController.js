@@ -53,9 +53,11 @@ module.exports = {
             message: errors.mapped()
         }
             const newUser = await createUser(req.body);
+            const user = await getUserById(newUser.id,req);
+
             return res.status(200).json({
                 ok:true,
-                data: newUser,
+                data: user,
                 meta:{
                     status:200,
                     total:1,
