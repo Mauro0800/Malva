@@ -81,6 +81,10 @@
   }
 
 @media (min-width: 768px){
+  .home__header__nav-ul{
+    justify-content: space-around;
+  }
+
   .home__header__figure-button{
     display: none;
   }
