@@ -5,6 +5,10 @@
     font-family: var(--tipografia);
 }
 
+body{
+    background-color: rgb(246, 243, 243);
+}
+
 textarea {
     resize: none;
 }

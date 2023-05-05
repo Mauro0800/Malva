@@ -1,183 +1,133 @@
-body {
-    font-family: 'Domine', serif;
-    font-weight: normal;
-    font-size: 100%;
-    color: #1b262c;
-    
-    margin: 0;
-    background-color:#fff;
-}
-
-#contenedor {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width :90%;
-    margin :70px auto;
-    padding: 0;
-}
-
-#central {
-    max-width: 520px;
-    width: 200%;
-}
-
-.titulo {
+.login__form-box{
+    width: 90%;
+    margin: 70px auto;
+    padding-top: 20px;
+    background-color: white;
     text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.login__form-box h1{
     font-size: 1.2rem;
-    margin-left: 13px
+    margin-bottom: 5px;
 }
 
-#linea{
-   
-    border-color :inherit;
-    color :var(--color3);
-    background-color: var(--color3);
-    height: 2px;
+.login__form-box hr{
+    border-color: var(--color5);
+    color: var(--color5);
+    background-color: var(--color5);
+    height: 4px;
+    margin: 0 auto 15px;
 }
-#login {
-  
-    display :flex;
-    flex-direction :column;
+
+.login__form{
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    gap: 10px;
-    box-sizing :border-box;
-    align-items :center;
-    margin-top :10px;
-    margin-bottom: 10px;
+    gap: 3px;
+    box-sizing: border-box;
+    align-items: center;
+    margin-top: 10px;
 }
 
-#login input {
-   
+.login__form label{
+    width: 85%;
+    text-align: start;
+    margin: 15px 10px 0;
+}
+
+.login__form input{
     width: 90%;
     height: 30px;
     padding: 10px;
-    font-size :0.8rem;
-    border-style :groove;
-    
-}
+    font-size: 0.8rem;
 
-#login input::placeholder {
-    font-family: 'Domine', sans-serif;
-    color: #080808;
     
-    
-}
-#loginform{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-#loginform input{
-    border-color: #080808;
-    
-    margin-bottom: 15px;;
-}
-
-.termcond{
-
-}
-
-#login button {
-    font-family: 'Domine', sans-serif;
-    font-size: 110%;
-    color:#ffddd4;
-    width: 90%;
-    height: 40px;
     border: none;
-    transition: all 0.5s;
-    border-radius: 3px 3px 3px 3px;
-    -moz-border-radius: 3px 3px 3px 3px;
-    -webkit-border-radius: 3px 3px 3px 3px;
-    
-    background-color: #a17c74;
-    
-    margin-top: 10px;
+    outline: none;
+    border-bottom: 1px solid black;
+    background-color: transparent;
 }
 
-#login button:hover {
-    background-color:
-    #e7c5bc;
-    color:#fff;
+.rememberme input{
+    display: none;
 }
 
-.pie-form {
-    font-size: 90%;
-    text-align: center;    
-    margin-top: 15px;
-    
-}
-
-.pie-form a {
-    display: block;
-    text-decoration: none;
+.rememberme label{
     color: var(--color5);
-    margin-bottom: 3px;
-}
-
-.pie-form a:hover {
-    background-color :var(--color1);
-    color: #e7c5bc;
-}
-
-.inferior {
-    margin-top: 10px;
-    font-size: 90%;
+    padding: 5px 15px 5px 25px;
+    display: inline-block;
+    position: relative;
+    font-size: 0.9em;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
     text-align: center;
 }
-.inferior button{
-    font-family: 'Domine', sans-serif;
-    font-size: 110%;
-    color:#ffddd4;
-    width: 90%;
-    height: 40px;
-    border: none;
-    
-    transition: all 0.5s;
-    border-radius: 3px 3px 3px 3px;
-    -moz-border-radius: 3px 3px 3px 3px;
-    -webkit-border-radius: 3px 3px 3px 3px;
-    
-    background-color: #a17c74;
-    
-    margin-top: 10px;
+
+.rememberme label:hover{
+    background-color: var(--color1);
 }
 
-.inferior button:hover{
-    background-color:
-    #e7c5bc;
-    color:#fff;
-}
-.inferior a {
-    display: block;
-    text-decoration: none;
-    color: #ffddd4;
-    margin-bottom: 3px;
+.rememberme label:before{
+    content: '';
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    background: none;
+    border: 3px solid var(--color5);
+    border-radius: 50%;
+    position: absolute;
+    left: 8px;
+    top: 8px;
 }
 
-.inferior a:hover {
-    color: #e7c5bc;
+.rememberme input:checked + label{
+     padding: 5px 15px;
+     background: var(--color2);
+     border-radius: 2px;
+     color: var(--color5);
 }
-@media (min-width :768px){
-    #contenedor{
-        width: 65%;
+
+.rememberme input:checked + label:before{
+    display: none;
+}
+
+.pie-form{
+    margin: 10px auto 10px;
+    display:flex;
+    flex-direction: column;
+}
+
+.pie-form a { 
+    color: var(--color5);
+    padding: 0;
+    margin-bottom: 5px;
+    width: 100%;
+    font-size: 0.9em;
+} 
+
+.pie-form a:hover { 
+    color: var(--color4); 
+} 
+ 
+@media (min-width: 768px){
+    .login__body{
+        background-image: url("/images/fondoregister2.jpeg");
     }
-    /* .pie-form{
-        content :'';
-        width: 15px;
-        height: 15px;
-        display :inline-block;
-        background: none;
-        border: 3px solid var(--color5);
-        border-radius: 50%;
-        position :absolute;
-        left: 17px;
-        top :4px;
-    } */
+    
+    .login__form-box{
+        width: 60%;
+    }
+    .rememberme label:before{
+        left: 8px;
+        top: 8px;
+    }
 }
-
+   
 @media (min-width: 1024px){
-    #contenedor{
-        width: 50%;
+    .login__form-box{
+        width: 40%;
     }
-    }
+}
