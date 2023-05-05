@@ -5,6 +5,8 @@
     padding: 5px;
     border: none;
     border-bottom: 1px solid #fff ;
+    text-align: center;
+    font-size: 0.9em;
 }
 
 .form__mobile__input::placeholder{
@@ -16,13 +18,18 @@
 }
 
 .form__mobile__button{
-    border-radius: 30px;
-    padding: 5px;
-    width: 70%;
+    width: 40%;
+    height: 37px;
+    border: none;
     background-color: var(--color4);
-    color: #fff;
+    color: white;
+    /*background-color: var(--color5);
+    color: var(--color1);*/
+    transition: all 0.5s;
     text-transform: uppercase;
-    box-shadow: rgba(167, 167, 167,0.8) 0px 6px 7px -1px;;
+    font-size: 0.80em;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .form__mobile__button--submit{

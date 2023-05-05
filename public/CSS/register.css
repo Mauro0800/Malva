@@ -1,33 +1,48 @@
-.ingresa {
-    color: var(--color5);
-}
+.ingresa { 
+    color: var(--color5); 
+} 
 
+.ingresa:hover { 
+    color: var(--color4); 
+} 
+ 
 .register__form-box{
     width: 90%;
     margin: 70px auto;
-    padding: 0;
+    padding-top: 20px;
+    background-color: white;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .register__form-box h1{
     font-size: 1.2rem;
-    margin-left: 13px;
+    margin-bottom: 5px;
 }
 
 .register__form-box hr{
-    border-color: inherit;
-    color: var(--color3);
-    background-color: var(--color3);
-    height: 1px;
+    border-color: var(--color5);
+    color: var(--color5);
+    background-color: var(--color5);
+    height: 4px;
+    margin: 0 auto 15px;
 }
 
 .register__form{
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 10px;
+    gap: 3px;
     box-sizing: border-box;
     align-items: center;
     margin-top: 10px;
+}
+
+.register__form label{
+    width: 85%;
+    text-align: start;
+    margin: 15px 10px 0;
 }
 
 .register__form input{
@@ -35,7 +50,12 @@
     height: 30px;
     padding: 10px;
     font-size: 0.8rem;
-    border-style: groove;
+
+    
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    background-color: transparent;
 }
 
 
@@ -45,10 +65,10 @@
 
 .termcond label{
     color: var(--color5);
-    padding: 5px 15px 5px 51px;
+    padding: 5px 15px 5px 35px;
     display: inline-block;
     position: relative;
-    font-size: 1em;
+    font-size: 0.9em;
     border-radius: 3px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -69,7 +89,7 @@
     border-radius: 50%;
     position: absolute;
     left: 17px;
-    top: 8px;
+    top: 18px;
 }
 
 .termcond input:checked + label{
@@ -91,31 +111,41 @@
     margin: 10px;
 }
 .submit button{
-    width: 70%;
+    width: 65%;
     height: 37px;
     border: none;
-    background-color: var(--color5);
-    color: var(--color1);
+    background-color: var(--color3);
+    color: white;
     transition: all 0.5s;
     text-transform: uppercase;
     font-size: 0.8em;
     border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .submit button:hover{
-    background-color: var(--color2);
-    color: var(--color5);
-    font-size: 0.9em;
+    background-color: var(--color4);
+    width: 66%;
+    font-size: 0.9;
+
 }
 
 @media (min-width: 768px){
+    .register__body{
+        background-image: url("/images/fondoregister2.jpeg");
+    }
+    
     .register__form-box{
-        width: 65%;
+        width: 60%;
+    }
+    .termcond label:before{
+        left: 17px;
+        top: 8px;
     }
 }
 
 @media (min-width: 1024px){
     .register__form-box{
-        width: 50%;
+        width: 40%;
     }
 }
