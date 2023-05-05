@@ -1,3 +1,7 @@
+.home__footer{
+    margin-top: 25px;
+}
+
 .home__footer__section--novedades{
     background-color: var(--color3);
     padding: 20px 10px 10px;
@@ -8,8 +12,14 @@
     color: #fff;
 }
 
+.home__footer__section__div--subtitulo{
+    font-size: 1.1em;
+    color: white;
+}
+
 .home__footer__section__div--parrafo{
-    font-size: 0.9rem;
+    font-size: 0.8em;
+    color: white;
 }
 
 .home__footer section{
@@ -44,6 +54,7 @@
     padding: 20px 10px 20px; 
 }
 
+
 .home__footer__section--final h4{
     text-transform: uppercase;
     font-size: 1.10rem;
@@ -61,7 +72,6 @@
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-bottom: 15px;
 }
 
 .home__footer__section__div h4{
@@ -91,6 +101,12 @@
 }
 
 @media (min-width: 768px){
+
+    .home__footer__section__div h4{
+        text-transform: uppercase;
+        font-size: 1.10rem;
+        
+    }
     
     .home__footer__div--novedades{
         display: flex;
@@ -138,12 +154,14 @@
         justify-content: space-around;
         flex-wrap: wrap;
         position: relative;
+        padding: 0 10px 5px; 
+        
     }
 
     .home__footer__section__div--sobre-nosotros{
         width: 50%;
         position: relative;
-        top: 80px;
+        top: 140px;
     }
 
     .home__footer__section__div--sobre-nosotros h4{
@@ -152,7 +170,7 @@
     
     .home__footer__section__div__p{
         font-size: 0.7rem;
-        text-align: center;
+        text-align:end;
     }
     
     .home__footer__section__div--atencion-cliente {
@@ -166,4 +184,13 @@
     .home__footer__section__div--malva{
         width: 100%;
     }
+}
+
+@media (min-width:1024px) {
+    .home__footer__section__div--sobre-nosotros{
+        width: 50%;
+        position: relative;
+        top: 110px;
+    }
+
 }

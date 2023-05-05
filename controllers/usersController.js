@@ -67,7 +67,7 @@ module.exports = {
             .then(categories => {
                 return res.render('users/register', {
                     categories,
-                    title: "Registrá a tu cuenta"
+                    title: "Crea tu cuenta"
                 })
             })
     },
