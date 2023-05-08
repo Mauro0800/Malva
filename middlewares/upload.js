@@ -6,7 +6,7 @@ const storageProductImages = multer.diskStorage({
         callback(null, "public/images/Products");
     },
     filename: function (req, file, callback) {
-        callback(null, `${Date.now()}_Product_${path.extname(file.originalname)}`);
+        callback(null, `${Date.now()}_Product${path.extname(file.originalname)}`);
     },
 });
 
@@ -35,13 +35,13 @@ const uploadProductImages = (req, res, next) => {
         next();
     });
 };
-/* 
+
 const storageUserImage = multer.diskStorage({
     destination: function (req, file, callback) {
         callback(null, "public/images/users");
     },
     filename: function (req, file, callback) {
-        callback(null, `${Date.now()}_users_${path.extname(file.originalname)}`);
+        callback(null, `${Date.now()}_Users${path.extname(file.originalname)}`);
     },
 });
 
@@ -56,10 +56,10 @@ const uploadUserImage = multer({
 
         cb(null, true);
     },
-}); */
+});
 
 
 module.exports = {
     uploadProductImages,
-    // uploadUserImage,
+    uploadUserImage
 };

@@ -37,13 +37,19 @@
     margin: 15px 10px 0;
 }
 
+.isValid{
+    border-bottom: 1px solid #4ad489 !important;
+}
+
+.isInvalid{
+    border-bottom: 1px solid #f27474 !important;
+}
+
 .login__form input{
     width: 90%;
     height: 30px;
     padding: 10px;
     font-size: 0.8rem;
-
-    
     border: none;
     outline: none;
     border-bottom: 1px solid black;

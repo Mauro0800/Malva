@@ -197,8 +197,8 @@
         color: #fff;
         border-radius: 51%;
         padding: 3px;
-        width: 10%;
-        font-size: 3rem;
+        width: 65px;
+        font-size: 2.5rem;
     }
 
     .home__main__p--cuotas{
@@ -222,6 +222,7 @@
 
     .home__main__productos-detalle h4{
         font-size: 1,3em;
+        font-weight: 500;
     }
 
     .home__main__productos-detalle p{

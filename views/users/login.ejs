@@ -17,19 +17,19 @@
 
                         <hr>
 
-                        <form action="" class="login__form" method="POST">
+                        <form action="" class="login__form" id="login__form" method="POST">
 
 
                             <label for="email">Email</label>
                             <input type="email" name="email" id="email" placeholder="ingresa tu email"
                                 value="<%= (locals.old && old.email) && old.email %>">
-                            <small class="text-danger ms-2 d-inline-block">
+                            <small class="text-danger ms-2 d-inline-block" id="errorEmail">
                                 <%= (locals.errors && errors.email) && errors.email.msg %>
                             </small>
 
                             <label for="password">Contraseña</label>
                             <input type="password" name="password" id="password" placeholder="ingresa tu contraseña">
-                            <small class="text-danger ms-2 d-inline-block">
+                            <small class="text-danger ms-2 d-inline-block" id="errorPass">
                                 <%= (locals.errors && errors.password) && errors.password.msg %>
                             </small>
 
@@ -39,9 +39,11 @@
                                 <label for="terminos-condiciones">Recordarme</label>
                             </div>
 
+                            
                             <div class="submit">
                                 <button type="submit">ingresar</button>
                             </div>
+                            <small id="errorFormLogin"></small>
 
                             <div class="pie-form">
                                 <a class="ingresa" href="/users/reset-password">¿Olvidaste tu contraseña?</a>
@@ -56,5 +58,6 @@
 
     <%- include('../partials/footer') %>
         <%- include('../partials/scripts') %>
+        <script src="/javascripts/login.js"></script>
 
 </html>

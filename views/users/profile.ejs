@@ -12,16 +12,16 @@
       <main>
 
         <div class="profile__form_box">
-            <form class="profile__form" action="/users/update?_method=PUT" method="POST">
-                <img src="/images/users/<%= user.image ? user.image : 'default-image.png' %>" alt="">
+            <form class="profile__form" action="/users/update?_method=PUT" method="POST" enctype="multipart/form-data">
+                <img src="/images/users/<%= user.image ? user.image : 'default-image.jpg' %>" alt="">
                 <label for="image">Cambiar imagen</label>
-                <input type="file", name="image" hidden>
+                <input type="file", name="image" id="image" hidden>
 
                 <div class="profile__form_div-box">
                 <div class="profile__form_div">
                 <label for="name">Nombre</label>
                 <input type="text" name="name" id="name" value="<%= user.name %>">
-                <small class="text-danger ms-2"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
+                <small class="text-danger ms-3"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
                 </div>
 
                 <div class="profile__form_div">

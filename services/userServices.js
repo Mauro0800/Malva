@@ -1,6 +1,6 @@
 const db = require('../database/models');
 const { validationResult } = require('express-validator');
-const { hashSync } = require('bcryptjs');
+const {hashSync, compareSync} = require('bcryptjs');
 const { literalQueryUrlImageUser, literalQueryUrlDetailUser } = require('../helpers');
 
 module.exports = {
@@ -152,5 +152,41 @@ module.exports = {
                 message: error.message
             }
         }
-    }
+    },
+
+    ServiceVerifyEmail : async (email) => {
+       try {
+           let user = await db.User.findOne({
+               where : {
+                   email:email
+               }
+           })
+           return user ? true : false
+           
+       } catch (error) {
+           console.log(error)
+           throw{
+               status :500,
+               message : error.message
+           }
+       }
+    },
+
+    ServiceVerifyPass : async (data) => {
+      
+       try {
+           let user = await db.User.findOne({
+               where : {
+                   email:data.email
+               }
+           })
+           return user ? compareSync(data.password, user.password) : false 
+       } catch (error) {
+           console.log(error)
+           throw{
+               status :500,
+               message : error.message
+           }
+       }
+    },
 }

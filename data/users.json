@@ -7,7 +7,7 @@
       "password": "$2a$10$3XNYo.IQc4.Xso2WSphWjejNl885Es/28FmSQoEriwzeeMovLvQmq",
       "rolId": "2",
       "addressId": "1",
-      "image": "default-image.jpg"
+      "image": "null"
       
    },
    {
@@ -22,22 +22,12 @@
    },
    {
       "id": 3,
-      "name": "Gabriela",
-      "surname": "Acuña",
-      "email": "acugabi@gmail.com",
-      "password": "$2a$10$mjH5NF7i1u9bUJZqx7Czu.X1aVk4SXWo8TBsKbJY0E0SNEWx8tiSS",
-      "rolId": "2",
-      "addressId": "2",
-      "image": null
-   },
-   {
-      "id": 4,
-      "name": "Nazarena",
-      "surname": "Camarota",
-      "email": "nvcamarota@gmail.com",
-      "password": "$2a$10$WhRIgcm3CSBTMvsFfC.pyekvnj9AtdKzyJFR4bpqpsyTZD90qAtJa",
-      "rolId": "2",
-      "addressId": "2",
+      "name": "Giuliana",
+      "surname": "Gutierrez",
+      "email": "giulianagutierrez@gmail.com",
+      "password": "$2a$12$Z6azILqMKfxAgbf9owdRh.HRITxnYtHpq0WQ7amc4vmT6PVC4E9ne",
+      "rolId": "1",
+      "addressId": "1",
       "image": null
    }
 ]
