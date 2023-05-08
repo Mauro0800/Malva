@@ -154,13 +154,25 @@
 
 @media (min-width: 768px) {
     .product-price {
-        display: flex;
+        display: flex; 
         justify-content: space-between;
     }
 
     .product-details {
-        width: 32%;
-        display: flex;
+        width: 32%; 
+        display: flex; 
         justify-content: space-between;
     }
+}
+
+.input_error{
+    border-color: red;
+} 
+
+.input_success{
+    border-color: green;
+}
+
+.imageButton{
+    border: solid 1px red;
 }

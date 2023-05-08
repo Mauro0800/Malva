@@ -4,125 +4,137 @@
 <%- include('./partials/head') %>
     <%- include('./partials/menuHam') %>
 
-<body>
+        <body>
 
-    <%- include('./partials/header') %>
+            <%- include('./partials/header') %>
 
-    <main class="form__main">
-        <section class="product-form__section">
-            <article class="product-form">
-                <form class="main__form--editproduct" action="add" method="post"
-                    enctype="multipart/form-data">
+                <main class="form__main">
+                    <section class="product-form__section">
+                        <article class="product-form">
+                            <form id="form-add-product" class="main__form--editproduct" action="add" method="post"
+                                enctype="multipart/form-data">
 
-                <h3 class="title-add-product"><%= title %></h3>
-                <div class="main__form__div">
-                    <label for="name">Nombre</label>
-                    <input class="main__form__div__input" type="text" name="name" id="name"
-                        value="<%= locals.old && old.name ? old.name : null %>">
-                </div>
-                <small class="text-danger ms-2">
-                    <%= locals.errors && errors.name ? errors.name.msg : null %>
-                </small>
-                <div class="main__form__div">
-                    <label for="price">Precio</label>
-                    <span>$</span><input class="main__form__div__input" type="number" name="price" id="price"
-                        value="<%= locals.old && old.price ? +old.price : null %>">
-                    <div class="main__form__div">
-                        <label for="discount">Descuento (Opcional)</label>
-                        <input class="main__form__div__input" type="number" name="discount" id="discount" value="<%= locals.old && old.discount ? +old.discount : 0 %>">
-                    </div>
-                    <small class="text-danger ms-2">
-                        <%= locals.errors && errors.price ? errors.price.msg : null %>
-                    </small>
-                </div>
-                <div class="main__form__div">
-                    <label for="stock">Stock</label>
-                    <input class="main__form__div" type="number" name="stock" id="stock"
-                        value="<%= locals.old && old.stock ? +old.stock : null %>">
-                </div>
-                    <small class="text-danger ms-2">
-                        <%= locals.errors && errors.stock ? errors.stock.msg : null %>
-                    </small>
+                                <h3 class="title-add-product">
+                                    <%= title %>
+                                </h3>
+                                <div class="main__form__div">
+                                    <label for="name">Nombre</label>
+                                    <input class="main__form__div__input" type="text" name="name" id="name"
+                                        value="<%= locals.old && old.name ? old.name : null %>">
+                                </div>
+                                <small class="text-danger ms-2" id="nameError">
+                                    <%= locals.errors && errors.name ? errors.name.msg : null %>
+                                </small>
+                                <div class="main__form__div">
+                                    <label for="price">Precio</label>
+                                    <span>$</span><input class="main__form__div__input" type="number" name="price"
+                                        id="price" value="<%= locals.old && old.price ? +old.price : null %>">
+                                </div>
+                                <small class="text-danger ms-2" id="priceError">
+                                    <%= locals.errors && errors.price ? errors.price.msg : null %>
+                                </small>
+                                <div class="main__form__div">
+                                    <label for="discount">Descuento (Opcional)</label>
+                                    <input class="main__form__div__input" type="number" name="discount" id="discount"
+                                        value="<%= locals.old && old.discount ? +old.discount : 0 %>">
+                                </div>
+                                <small class="text-danger ms-2" id="discountError"></small>
 
-                <div class="main__form__div">
-                    <label for="description">Descripción del producto</label>
-                    <textarea class="main__form__div__textarea" type="textarea" name="description"
-                        id="description"><%= locals.old && old.description ? old.description : null %></textarea>
-                    <small class="text-danger ms-2">
-                        <%= locals.errors && errors.description ? errors.description.msg : null %>
-                    </small>
-                </div>
-                <div class="main__form__div">
-                    <div class="main__form__div">
-                        <label for="brand">Marca</label>
-                        <select class="main__form__div__selected" name="brand" id="brand">
-                            <option value="" hidden>Seleccione una marca</option>
-                            <% brands.forEach(({id,name})=> { %>
-                                <option value=<%=id %>
-                                    <%= locals.old && old.brand && +old.brand===id ? 'selected' : null
-                                        %>><%= name %>
-                                </option>
-                                <% }) %>
-                        </select>
-                        <small class="text-danger ms-2">
-                            <%= locals.errors && errors.brand ? errors.brand.msg : null %>
-                        </small>
-                </div>
-                <div class="main__form__div">
-                        <label for="category">Categoría</label>
-                        <select class="main__form__div__selected" name="category" id="category">
-                            <option value="" hidden>Seleccione una categoría</option>
-                            <% categories.forEach(({id,name})=> { %>
-                                <option value=<%=id %>
-                                    <%= locals.old && old.brand && +old.brand===id ? 'selected' : null
-                                        %>><%= name %>
-                                </option>
-                                <% }) %>
-                        </select>
-                        <small class="text-danger ms-2">
-                            <%= locals.errors && errors.category ? errors.category.msg : null %>
-                        </small>
-                    </div>
-                    <div class="main__form__div">
-                        <label for="material">Material</label>
-                        <select class="main__form__div__selected" name="material" id="material">
-                            <option value="" hidden>Seleccione un material</option>
-                            <% materials.forEach(({id,name})=> { %>
-                                <option value=<%=id %>
-                                    <%= locals.old && old.brand && +old.brand===id ? 'selected' : null
-                                        %>><%= name %>
-                                </option>
-                                <% }) %>
-                        </select>
-                        <small class="text-danger ms-2">
-                            <%= locals.errors && errors.material ? errors.material.msg : null %>
-                        </small>
-                    </div>
-                    <div class="main__form__div">
-                        <label for="image">Imágen principal del producto</label>
-                        <input class="main__form__div__textarea" type="file" name="image" id="image">
-                    </div>
-                    <small class="text-danger ms-2">
-                        <%= locals.errors && errors.image ? errors.image.msg : null %>
-                    </small>
-                    <div class="main__form__div">
-                        <label for="images">Imágenes secundarias del producto</label>
-                        <input class="main__form__div__textarea" type="file" name="images" id="images"
-                            multiple>
-                    </div>
-                    <small class="text-danger ms-2">
-                        <%= locals.errors && errors.images ? errors.images.msg : null %>
-                    </small>
-                </div>
-                <button class="button--form-product" type="submit">Agregar producto</button>
-                <button class="button--form-product" type="reset">Cancelar</button>
-                </form>
-                </div>
-            </article>
-        </section>
-    </main>
+                                <div class="main__form__div">
+                                    <label for="stock">Stock</label>
+                                    <input class="main__form__div__input" type="number" name="stock" id="stock"
+                                        value="<%= locals.old && old.stock ? +old.stock : 1 %>">
+                                </div>
+                                <small class="text-danger ms-2" id="stockError">
+                                    <%= locals.errors && errors.stock ? errors.stock.msg : null %>
+                                </small>
+
+                                <div class="main__form__div">
+                                    <label for="description">Descripción del producto</label><small id="descrptionInfo"
+                                        hidden> (<span id="numberCharacters"></span> / 1000)</small>
+                                    <textarea class="main__form__div__textarea" type="textarea" name="description"
+                                        id="description"><%= locals.old && old.description ? old.description : null %></textarea>
+                                </div>
+                                <small class="text-danger ms-2" id="descriptionError">
+                                    <%= locals.errors && errors.description ? errors.description.msg : null %>
+                                </small>
+
+
+                                <div class="main__form__div">
+                                    <label for="brand">Marca</label>
+                                    <select class="main__form__div__selected" name="brand" id="brand">
+                                        <option value="" hidden>Seleccione una marca</option>
+                                        <% brands.forEach(({id,name})=> { %>
+                                            <option value=<%=id %>
+                                                <%= locals.old && old.brand && +old.brand===id ? 'selected' : null %>>
+                                                    <%= name %>
+                                            </option>
+                                            <% }) %>
+                                    </select>
+                                </div>
+                                <small class="text-danger ms-2" id="brandError">
+                                    <%= locals.errors && errors.brand ? errors.brand.msg : null %>
+                                </small>
+                                <div class="main__form__div">
+                                    <label for="category">Categoría</label>
+                                    <select class="main__form__div__selected" name="category" id="category">
+                                        <option value="" hidden>Seleccione una categoría</option>
+                                        <% categories.forEach(({id,name})=> { %>
+                                            <option value=<%=id %>
+                                                <%= locals.old && old.category && +old.category===id ? 'selected' : null
+                                                    %>><%= name %>
+                                            </option>
+                                            <% }) %>
+                                    </select>
+                                </div>
+                                <small class="text-danger ms-2" id="categoryError">
+                                    <%= locals.errors && errors.category ? errors.category.msg : null %>
+                                </small>
+
+                                <div class="main__form__div">
+                                    <label for="material">Material</label>
+                                    <select class="main__form__div__selected" name="material" id="material">
+                                        <option value="" hidden>Seleccione un material</option>
+                                        <% materials.forEach(({id,name})=> { %>
+                                            <option value=<%=id %>
+                                                <%= locals.old && old.material && +old.material===id ? 'selected' : null
+                                                    %>><%= name %>
+                                            </option>
+                                            <% }) %>
+                                    </select>
+                                </div>
+                                <small class="text-danger ms-2" id="materialError">
+                                    <%= locals.errors && errors.material ? errors.material.msg : null %>
+                                </small>
+
+                                <div class="main__form__div">
+                                    <label for="image" id="mainImage">Imágen principal del producto</label>
+                                    <input class="main__form__div__textarea" type="file" name="image" id="image">
+                                </div>
+                                <small class="text-danger ms-2" id="imageError">
+                                    <%= locals.errors && errors.image ? errors.image.msg : null %>
+                                </small>
+                                <div class="main__form__div">
+                                    <label for="images">Imágenes secundarias del producto</label>
+                                    <input class="main__form__div__textarea" type="file" name="images" id="images"
+                                        multiple>
+                                </div>
+                                <small class="text-danger ms-2" id="imageError">
+                                    <%= locals.errors && errors.images ? errors.images.msg : null %>
+                                </small>
+
+
+                                <small class="text-danger" id="formError"></small>
+
+                                <button class="button--form-product" type="submit">Agregar producto</button>
+                                <button class="button--form-product" type="reset">Cancelar</button>
+                            </form>
+                        </article>
+                    </section>
+                </main>
                 <%- include('./partials/footer') %>
                     <%- include('./partials/scripts') %>
-</body>
+                        <script src="/javascripts/addProduct.js"></script>
+        </body>
 
 </html>
