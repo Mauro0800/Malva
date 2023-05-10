@@ -37,7 +37,7 @@ module.exports ={
    
     dashboard :  (req,res) =>{
         return res.render('dashboard', {
-            title: "Dashboard de administración"
+            title: "Dashboard"
         })
 }
 }

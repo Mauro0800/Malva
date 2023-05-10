@@ -1,14 +1,8 @@
 const fs = require('fs');
 const path = require('path');
-
-const db = require('../database/models');
-
-
-// const categoriesFilePath = path.join(__dirname, '../data/category.json');
-// const categories = JSON.parse(fs.readFileSync(categoriesFilePath, 'utf-8'));
-// const { readJSON, writeJSON} = require('../data');
 const { hashSync } = require('bcryptjs');
 const { validationResult } = require('express-validator');
+const db = require('../database/models');
 
 module.exports = {
 
@@ -67,7 +61,7 @@ module.exports = {
             .then(categories => {
                 return res.render('users/register', {
                     categories,
-                    title: "Registrá a tu cuenta"
+                    title: "Crea tu cuenta"
                 })
             })
     },
@@ -85,7 +79,7 @@ module.exports = {
                         name: name.trim(),
                         surname: surname.trim(),
                         email: email.trim(),
-                        password: hashSync(password, 10),
+                        password: hashSync(password, 12),
                         image: 'default-image.jpg',
                         rolId: 2,
                         addressId: address.id
@@ -136,9 +130,24 @@ module.exports = {
 
     update: (req, res) => {
         
+        const errors = validationResult(req);
+
+        if(!req.session.userLogin){
+            return res.redirect('/users/profile') 
+        }
         const { name, surname, address, city, province, zipCode } = req.body
         const { id } = req.session.userLogin;
 
+        if (req.fileValidationError) {
+            errors.errors.push({
+                value: "",
+                msg: req.fileValidationError,
+                param: "image",
+                location: "files",
+            });
+        }
+    
+        if(errors.isEmpty()) {
         db.User.findByPk(id)
             .then(user => {
 
@@ -169,11 +178,36 @@ module.exports = {
                 )
                 Promise.all(([addressUpdated, userUpdated]))
                     .then(() => {
-                        (req.file && fs.existsSync('public/images/users' + user.image)) && fs.unlinkSync('public/images/users' + user.image)
+                        (req.file && fs.existsSync('./public/images/users/' + user.image)) && fs.unlinkSync('./public/images/users/' + user.image)
                         req.session.message = "Datos actualizados"
+                        // return res.send([user,req.file])
                         return res.redirect('/users/profile')
                     })
             }).catch(error => console.log(error))
+        }else{
+
+            (req.file && fs.existsSync('./public/images/users/' + req.file.filename)) && fs.unlinkSync('./public/images/users/' + req.file.filename)
+
+            const user = db.User.findByPk(req.session.userLogin.id, {
+                attributes: ['name', 'surname', 'email', 'image'],
+                include: [
+                    {
+                        association: 'address',
+                        attributes: ['address', 'city', 'province', 'zipCode']
+                    }
+                ],
+            })
+            
+            .then(user => {
+                return res.render('users/profile', {                  
+                    errors: errors.mapped(),
+                    old: req.body,
+                    title : "Perfil de usuario",
+                    user,
+                 })
+             }).catch(error => console.log(error))
+            
+        }
     },
 
     resetpassword: (req, res) => {

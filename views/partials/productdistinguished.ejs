@@ -1,12 +1,14 @@
-<figure class="home__main__section__figure">
+<figure class="home__main__distinguished__figure">
+  <a href="/products/detail/<%= id %>">
     <div class="home__main__productos-imagen">
       <img src="/images/products/<%= image ? image : 'default-image.png' %>" alt="">
     </div>
     <div class="home__main__productos-detalle">
-      <h4><%= name %></h4>
-      <p>$<%= price %></p>
-      <div class="ver-todos-los-productos">
-        <button type="submit"><a href="/products/detail/<%= id %>">Ver más</a></button>
-      </div>
+      <h4>
+        <%= name %>
+      </h4>
+      <p>$<%= price %>
+      </p>
     </div>
-  </figure>
+  </a>
+</figure>

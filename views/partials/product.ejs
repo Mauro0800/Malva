@@ -1,13 +1,15 @@
-<figure class="home__main__productos__figure" class="home__main__productos__figure">
+<figure class="home__main__productos__figure">
+  <a href="/products/detail/<%= id %>">
     <div class="home__main__productos-imagen">
       <img src="/images/products/<%= image ? image : 'default-image.png' %>" alt="">
     </div>
     <div class="home__main__productos-detalle">
-      <h4><%= name %></h4>
-      <p>$<%= toThousand(price) %></p>
-      <!-- <p class="precio-viejo">$1.350,00</p> -->
-      <div class="ver-todos-los-productos">
-        <button type="submit"><a class="home__main__productos__div--verMas" href="/products/detail/<%= id %>">Ver más</a></button>
-      </div>
+      <h4>
+        <%= name %>
+      </h4>
+      <p>$<%= toThousand(price) %>
+      </p>
+      
     </div>
-  </figure>
+  </a>
+</figure>
