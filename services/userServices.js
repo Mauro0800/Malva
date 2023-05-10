@@ -1,14 +1,12 @@
 const db = require('../database/models');
 const user = require('../database/models/user');
-const { literalQueryUrlImage, literalQueryDetailUrl } = require('../helpers');
+const { literalQueryUrlImage, literalQueryDetailUrl} = require('../helpers');
 
 module.exports = {
     getAllUsers : async (req)  =>{
         try{
             const users = await db.User.findAll({
-                /*include: [{
-                   
-                }]*/
+               
                 attributes: {
                     exclude: [ 'password'], // Excluye  password
                      include: [literalQueryDetailUrl(req,'id', 'detailUrl'), literalQueryUrlImage(req, 'image', 'imageUrl')] 

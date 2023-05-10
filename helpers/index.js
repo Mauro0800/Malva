@@ -1,5 +1,5 @@
 module.exports = {
-    // /helpers/products
+    // /helpers/users
     literalQueryUrlImage: require('./users/literalQueryUrlImage'),
     literalQueryDetailUrl: require('./users/literalQueryDetailUrl'),
 }
