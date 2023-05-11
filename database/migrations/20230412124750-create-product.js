@@ -37,7 +37,8 @@ module.exports = {
       },
       stock: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
+        defaultValue : 1
       },
       image: {
         type: Sequelize.STRING,

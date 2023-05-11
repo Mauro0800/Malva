@@ -14,7 +14,7 @@
             <div class="main__form__div">
                 <label for="name">Nombre</label>
                 <input class="main__form__div__input" type="text" name="name" id="name" 
-                value="<%= (locals.old && old.name) ? old.name : null %>">
+                value="<%= (locals.old && old.name) ? old.name : name %>">
             </div>
             <small class="text-danger ms-2" id="nameError">
                 <%= (locals.errors && errors.name) ? errors.name.msg : null %>
@@ -22,7 +22,7 @@
             <div class="main__form__div">
                 <label for="price">Precio</label>
                 <input class="main__form__div__input" type="number" name="price" id="price" 
-                id="price" value="<%= (locals.old && old.price) ? +old.price : null %>">
+                id="price" value="<%= (locals.old && old.price) ? +old.price : price %>">
             </div>
             <small class="text-danger ms-2" id="priceError">
                 <%= (locals.errors && errors.price) ? errors.price.msg : null %>
@@ -30,13 +30,13 @@
             <div class="main__form__div">
                 <label for="discount">Descuento</label>
                 <input class="main__form__div__input" type="number" name="discount" id="discount" 
-                value="<%= (locals.old && old.discount) ? +old.discount : 0 %>">
+                value="<%= (locals.old && old.discount) ? +old.discount : discount %>">
             </div>
             <small class="text-danger ms-2" id="discountError"></small>
             <div class="main__form__div">
                 <label for="stock">Stock</label>
                 <input class="main__form__div__input" type="number" id="stock" name="stock" 
-                value="<%= (locals.old && old.stock) ? +old.stock : 1 %> ">
+                value="<%= (locals.old && old.stock) ? +old.stock : stock %> ">
             </div>
             <small class="text-danger ms-2" id="stockError">
                 <%= (locals.errors && errors.stock) ? errors.stock.msg : null %>
@@ -45,7 +45,7 @@
             <div class="main__form__div">
                 <label for="description">Descripcion</label><small id="descrptionInfo"
                 hidden> (<span id="numberCharacters"></span> / 1000)</small>
-                <textarea class="main__form__div__textarea" id="description"><%= (locals.old && old.description) ? old.description : null %></textarea>
+                <textarea class="main__form__div__textarea" id="description"><%= (locals.old && old.description) ? old.description : description %></textarea>
             </div>
             <small class="text-danger ms-2" id="descriptionError">
                 <%= (locals.errors && errors.description) ? errors.description.msg : null %>
@@ -53,7 +53,6 @@
             <div class="main__form__div">
                 <label for="brand">Marca</label>
                 <select class="main__form__div__selected" name="brand" id="brand">
-                    <option value="" hidden>Seleccione una marca</option>
                 <% brands.forEach(({id,name})=> { %>
                     <option value=<%=id %> <%= brandId === id && 'selected' %>><%= name %></option>
                     <% }) %>
@@ -76,8 +75,12 @@
         <div class="main__form__div">
             <label for="material">Material</label>
             <select class="main__form__div__selected" name="material" id="material">
-                <% materials.forEach(({id,name})=> { %>locals.old && old.material && +old.material===id ? 'selected' : null  %>><%= name %></option>
-                <% }) %>
+                <% materials.forEach(({id,name})=> { %>
+                    <option value=<%=id %>
+                        <%= locals.old && old.material && +old.material===id ? 'selected' : null
+                            %>><%= name %>
+                    </option>
+                    <% }) %>
             </select>
         </div>
         <small class="text-danger ms-2" id="materialError">
