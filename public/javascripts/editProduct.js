@@ -13,11 +13,17 @@ window.onload = function () {
     const image = $('image');
     const images = $('images')
 
+    /*const errorMessage = (element, message, { target }) => {
+        $(element).innerHTML = message
+        target.classList.add('input_error')
+    }*/
     const errorMessage = (element, message, { target }) => {
+        console.log(`Error message: ${message}`)
+        console.log(`Target element: ${target}`)
         $(element).innerHTML = message
         target.classList.add('input_error')
     }
-
+    
     const cleanError = (element, { target }) => {
         target.classList.remove('input_error')
         target.classList.remove('input_success')
@@ -27,10 +33,10 @@ window.onload = function () {
     name.addEventListener('blur', function (event) {
         switch (true) {
             case !this.value.trim():
-                errorMessage('nameError', 'el nombre es obligatorio', event)
+                errorMessage('nameError', 'El nombre es obligatorio', event)
                 break;
             case this.value.trim().length < 5:
-                errorMessage('nameError', 'el nombre debe tener al menos 5 caracteres', event)
+                errorMessage('nameError', 'El nombre debe contener al menos 5 caracteres', event)
             default:
                 this.classList.add('input_success')
                 break;
@@ -43,10 +49,10 @@ window.onload = function () {
     price.addEventListener('blur', function (event) {
         switch (true) {
             case !this.value.trim():
-                errorMessage('priceError', 'el precio es obligatorio', event)
+                errorMessage('priceError', 'El precio es obligatorio', event)
                 break;
             case this.value < 0:
-                errorMessage('priceError', 'el precio debe ser mayor a 0', event)
+                errorMessage('priceError', 'El precio debe ser mayor a 0', event)
             default:
                 this.classList.add('input_success')
                 break;
@@ -171,7 +177,7 @@ window.onload = function () {
 
     image.addEventListener('change', function (e) {
         switch (true) {
-            case !extension.exec(this.value):
+            case !regExExt.exec(this.value):
                 $('imageError').innerHTML = "Solo se admiten archivos jpg | jpeg | png | gif | webp"
                 this.classList.add('input_error')
 
@@ -186,7 +192,7 @@ window.onload = function () {
         }
     })
 
-    formEditProduct.addEventListener('submit', function (event) {
+    /*formEditProduct.addEventListener('submit', function (event) {
         event.preventDefault();
         let error = false;
         for (let i = 0; i < this.elements.length - 2; i++) {
@@ -207,6 +213,32 @@ window.onload = function () {
                 }
             }
         }
-        $('formError').innerHTML = 'Estos campos son obligatorios'
-    })
+        $('formError').innerHTML = 'Estos campos son obligatorios'*/
+        formEditProduct.addEventListener('submit', function (event) {
+    event.preventDefault();
+    let error = false;
+    for (let i = 0; i < this.elements.length - 2; i++) {
+        if (!this.elements[i].value || this.elements[i].classList.contains('input_error')) {
+            error = true;
+            if (!this.elements[i].value) {
+                $('formError').innerHTML = 'Estos campos son obligatorios';
+            }
+        }
+    }
+
+    if (!error) {
+        this.submit();
+    } else {
+        for (let i = 0; i < this.elements.length - 3; i++) {
+            !this.elements[i].value && this.elements[i].classList.add('input_error');
+
+            if (this.elements[i].id === 'image' || this.elements[i].id === 'images' && this.elements[i].files.length === 0) {
+                image.classList.add('imageButton');
+                images.classList.add('imageButton');
+            }
+        }
+    }
+});
+
+    
 }
