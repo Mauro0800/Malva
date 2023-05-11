@@ -1,4 +1,4 @@
-const { getAllUsers, getUserById, createUser, updateUser, deleteUser} = require('../../services/userServices')
+const { getAllUsers, getUserById, createUser, updateUser, deleteUser, ServiceVerifyEmail, ServiceVerifyPass} = require('../../services/userServices')
 const errorResponse = require('../../helpers/errorResponse')
 const { validationResult } = require('express-validator');
 
@@ -117,6 +117,39 @@ module.exports = {
                     message : error.message || "Upss. Hubo error!!"
                 }
             })
+        }
+    },
+
+    verifyEmail : async (req,res) => {
+        try {
+            let existUser = await ServiceVerifyEmail(req.body.email)
+            return res.status(200).json({
+                ok: true,            
+                data : {
+                    existUser
+                },    
+            })
+            
+
+        } catch (error) {
+            console.log(error)
+            return errorResponse(res,error)
+        }
+    },
+
+    verifyPass : async (req,res) => {
+        try {
+            let password = await ServiceVerifyPass(req.body)
+            return res.status(200).json({
+                ok: true,            
+                data : {
+                    password
+                },    
+            })
+
+        } catch (error) {
+            console.log(error)
+            return errorResponse(res,error)
         }
     }
 }

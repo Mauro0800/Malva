@@ -7,30 +7,49 @@
   <%- include('./partials/menuHam') %> 
 
     <main class="form__main">
-        <form class="main__form--editproduct" action="/products/update/<%= id %>?_method=PUT" method="post" enctype="multipart/form-data">
+        <form  id="form-edit-product" class="main__form--editproduct" action="/products/update/<%= id %>?_method=PUT" method="post" enctype="multipart/form-data">
             
             <h3 class="title-add-product"><%= title %></h3>
 
             <div class="main__form__div">
                 <label for="name">Nombre</label>
-                <input class="main__form__div__input" type="text" name="name" id="name" value="<%= name %>">
+                <input class="main__form__div__input" type="text" name="name" id="name" 
+                value="<%= (locals.old && old.name) ? old.name : null %>">
             </div>
+            <small class="text-danger ms-2" id="nameError">
+                <%= (locals.errors && errors.name) ? errors.name.msg : null %>
+            </small>
             <div class="main__form__div">
                 <label for="price">Precio</label>
-                <input class="main__form__div__input" type="number" name="price" id="price" value="<%= price %>">
+                <input class="main__form__div__input" type="number" name="price" id="price" 
+                id="price" value="<%= (locals.old && old.price) ? +old.price : null %>">
             </div>
+            <small class="text-danger ms-2" id="priceError">
+                <%= (locals.errors && errors.price) ? errors.price.msg : null %>
+            </small>
             <div class="main__form__div">
                 <label for="discount">Descuento</label>
-                <input class="main__form__div__input" type="number" name="discount" id="discount" value="<%= discount %>">
+                <input class="main__form__div__input" type="number" name="discount" id="discount" 
+                value="<%= (locals.old && old.discount) ? +old.discount : 0 %>">
             </div>
+            <small class="text-danger ms-2" id="discountError"></small>
             <div class="main__form__div">
                 <label for="stock">Stock</label>
-                <input class="main__form__div__input" type="number" id="stock" name="stock" value="<%= stock %>">
+                <input class="main__form__div__input" type="number" id="stock" name="stock" 
+                value="<%= (locals.old && old.stock) ? +old.stock : 1 %> ">
             </div>
+            <small class="text-danger ms-2" id="stockError">
+                <%= (locals.errors && errors.stock) ? errors.stock.msg : null %>
+            </small>
+
             <div class="main__form__div">
-                <label for="description">Descripcion</label>
-                <textarea class="main__form__div__textarea" id="description" name="description"><%= description %></textarea>
+                <label for="description">Descripcion</label><small id="descrptionInfo"
+                hidden> (<span id="numberCharacters"></span> / 1000)</small>
+                <textarea class="main__form__div__textarea" id="description"><%= (locals.old && old.description) ? old.description : null %></textarea>
             </div>
+            <small class="text-danger ms-2" id="descriptionError">
+                <%= (locals.errors && errors.description) ? errors.description.msg : null %>
+            </small>
             <div class="main__form__div">
                 <label for="brand">Marca</label>
                 <select class="main__form__div__selected" name="brand" id="brand">
@@ -40,22 +59,30 @@
                     <% }) %>
             </select>
         </div>
+        <small class="text-danger ms-2" id="brandError">
+            <%= (locals.errors && errors.brand) ? errors.brand.msg : null %>
+        </small>
         <div class="main__form__div">
             <label for="category">Categoria</label>
             <select class="main__form__div__selected" name="category" id="category">
                 <% categories.forEach(({id,name}) => { %>
-                    <option value=<%= id %> <%= categoryId === id && 'selected' %>><%= name %></option>
+                    <option value=<%= id %>   <%= (locals.old && old.category) && +old.category===id ? 'selected' : null %>><%= name %></option>
                 <% }) %>
             </select>
         </div>
+        <small class="text-danger ms-2" id="categoryError">
+            <%= (locals.errors && errors.category) ? errors.category.msg : null %>
+        </small>
         <div class="main__form__div">
             <label for="material">Material</label>
             <select class="main__form__div__selected" name="material" id="material">
-                <% materials.forEach(({id,name})=> { %>
-                <option value=<%=id %> <%= materialId === id && 'selected' %>><%= name %></option>
+                <% materials.forEach(({id,name})=> { %>locals.old && old.material && +old.material===id ? 'selected' : null  %>><%= name %></option>
                 <% }) %>
             </select>
         </div>
+        <small class="text-danger ms-2" id="materialError">
+            <%= (locals.errors && errors.material) ? errors.material.msg : null %>
+        </small>
         <!-- <div class="main__form__div--characteristics">
             <label class="main__form__div__label--characteristics" for="characteristics">Caracteristicas</label>
             <input class="main__form__div__input--num" type="number" id="characteristicsnum" name="characteristicsnum">
@@ -65,14 +92,15 @@
                 <label for="image">Imágen principal del producto</label>
                 <input class="main__form__div__textarea" type="file" name="image" id="image">
         </div>
-        <small class="text-danger ms-2"><%= locals.errors && errors.image ? errors.image.msg : null %></small>
+        <small class="text-danger ms-2" id="imageError"><%= (locals.errors && errors.image) ? errors.image.msg : null %></small>
         <div class="main__form__div">
                 <label for="images">Imágenes secundarias del producto</label>
                 <input class="main__form__div__textarea" type="file" name="images" id="images" multiple>
         </div>
-        <small class="text-danger ms-2">
-            <%= locals.errors && errors.images ? errors.images.msg : null %>
+        <small class="text-danger ms-2" id="imageError">
+            <%= (locals.errors && errors.images) ? errors.images.msg : null %>
         </small>
+        <small class="text-danger" id="formError"></small>
         <button class="button--form-product" type="submit">Actualizar Producto</button>
         
         <button class="button--form-product" type="reset">Volver</button>
@@ -86,5 +114,6 @@
     </main>
 <%- include('./partials/footer') %>
 <%- include('./partials/scripts') %>
+<script src="/javascripts/editProduct.js"></script>
 </body>
 </html>

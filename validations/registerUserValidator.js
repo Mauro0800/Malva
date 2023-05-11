@@ -41,9 +41,9 @@ module.exports = [
     check('password')
         .notEmpty().withMessage('Debes colocar tu contraseña').bail()
         .isLength({
-            min: 6,
+            min: 8,
             max: 12
-        }).withMessage('La contraseña debe tener entre 6 y 12 caracteres'),
+        }).withMessage('La contraseña debe tener entre 8 y 12 caracteres'),
     
     body('password2')
         .notEmpty().withMessage('Debes confirmar tu contraseña').bail()
@@ -55,5 +55,5 @@ module.exports = [
         }).withMessage('Las contraseñas no coinciden'),
 
     check('terminos')
-        .notEmpty().withMessage('Debes aceptar los terminos y condiciones para registrarte').bail()
+        .notEmpty().withMessage('Debes aceptar los términos y condiciones para registrarte').bail()
 ]

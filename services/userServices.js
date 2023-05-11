@@ -1,6 +1,6 @@
 const db = require('../database/models');
 const { validationResult } = require('express-validator');
-const { hashSync } = require('bcryptjs');
+const { hashSync, compareSync } = require('bcryptjs');
 const { literalQueryUrlImageUser, literalQueryUrlDetailUser } = require('../helpers');
 
 module.exports = {
@@ -41,17 +41,17 @@ module.exports = {
                 include: [
                     {
                         association: "address",
-                        attributes:{
-                            exclude:['id','createdAt', 'updatedAt']
+                        attributes: {
+                            exclude: ['id', 'createdAt', 'updatedAt']
                         }
                     },
                     {
                         association: "rol",
-                        attributes:["name"]
+                        attributes: ["name"]
                     }
                 ],
                 attributes: {
-                    exclude: ['password', 'createdAt', 'updatedAt', 'rolId', 'image','addressId'], // Excluye fecha de creación y actualización
+                    exclude: ['password', 'createdAt', 'updatedAt', 'rolId', 'image', 'addressId'], // Excluye fecha de creación y actualización
                     include: [literalQueryUrlImageUser(req, 'image', 'urlImage')]
                 }
 
@@ -92,7 +92,7 @@ module.exports = {
             }
         }
     },
-    updateUser: async (id,req) => {
+    updateUser: async (id, req) => {
         try {
 
             const { name, surname, address, city, province, zipCode } = req.body
@@ -139,12 +139,12 @@ module.exports = {
         try {
             const deletedUser = db.User.destroy(
                 {
-                    where: {id}
+                    where: { id }
                 }
             )
 
             return deletedUser
-            
+
         } catch (error) {
             console.log(error)
             throw {
@@ -152,5 +152,41 @@ module.exports = {
                 message: error.message
             }
         }
-    }
+    },
+
+    ServiceVerifyEmail: async (email) => {
+        try {
+            let user = await db.User.findOne({
+                where: {
+                    email: email
+                }
+            })
+            return user ? true : false
+
+        } catch (error) {
+            console.log(error)
+            throw {
+                status: 500,
+                message: error.message
+            }
+        }
+    },
+
+    ServiceVerifyPass: async (data) => {
+
+        try {
+            let user = await db.User.findOne({
+                where: {
+                    email: data.email
+                }
+            })
+            return user ? compareSync(data.password, user.password) : false
+        } catch (error) {
+            console.log(error)
+            throw {
+                status: 500,
+                message: error.message
+            }
+        }
+    },
 }

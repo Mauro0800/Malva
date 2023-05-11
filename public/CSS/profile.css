@@ -30,7 +30,7 @@
 }
 
 .profile__form input{
-    width: 90%;
+    width: 95%;
     height: 30px;
     padding: 10px;
     font-size: 0.8rem;
@@ -85,13 +85,23 @@
     width: 96%;
 }
 
+.profile__form_box img{
+    height: 40vw;
+    width: 40vw;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
 .profile__form_div{
     width: 100%;
 }
 
+
 @media (min-width: 768px){
     .profile__body{
         background-image: url("/images/fondoregister2.jpeg");
+        background-size: cover;
     }
     
     .profile__form_box{
@@ -104,9 +114,15 @@
         justify-content: center;
         width: 100%;
     }
-
+    .profile__form_box img{
+        height: 15vw;
+        width: 15vw;
+    }
     .profile__form_div{
         width: 45%;
+    }
+    .profile__form input{
+        width: 92%;
     }
 }
 
@@ -115,10 +131,8 @@
         width: 60%;
     }
     
-    .profile__form_box img{
-        width: 20%;
-        border-radius: 50%;
-    }
+
+        
 
     .profile__form{
         display: flex;
