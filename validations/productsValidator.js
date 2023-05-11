@@ -6,7 +6,7 @@ module.exports = [
         .isLength({min:5, max:50}).withMessage('El nombre del producto debe tener entre 5 y 50 caracteres'),
     check('price')
         .notEmpty().withMessage('El precio del producto es obligatorio').bail()
-        .isInt({min:2}).withMessage('Solo números positivos'),
+        .isInt({min:1}).withMessage('Solo números positivos'),
     check('description')
         .notEmpty().withMessage('La descripción del producto es obligatoria').bail()
         .isLength({min:20}).withMessage('La descripción debe tener como minimo 20 caracteres'),

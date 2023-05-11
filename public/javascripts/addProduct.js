@@ -189,7 +189,7 @@ window.onload = function () {
     formAddProduct.addEventListener('submit', function (event) {
         event.preventDefault();
         let error = false;
-        for (let i = 0; i < this.elements.length - 2; i++) {
+        for (let i = 0; i < this.elements.length - 3; i++) {
             if (!this.elements[i].value || this.elements[i].classList.contains('input_error')) {
                 error = true
             }
@@ -206,7 +206,7 @@ window.onload = function () {
                     images.classList.add('imageButton')
                 }
             }
+            $('formError').innerHTML = 'Los campos señalados son obligatorios'
         }
-        $('formError').innerHTML = 'Los campos señalados son obligatorios'
     })
 }
