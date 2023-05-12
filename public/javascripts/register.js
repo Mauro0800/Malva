@@ -4,15 +4,15 @@ const surname = $('surname');
 const email = $('email');
 const password = $('password');
 const password2 = $('password2');
+const image = $('image');
 const terms = $('terminos-condiciones');
 const registerForm = $('registerForm');
-
 
 
 let regExLetter = /^[A-Z]+$/i;
 let regExEmail =
   /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
-let regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/; //mayuscula, numero y 6 a 12 caracteres
+let regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}$/; // Mayúscula, número y 8 a 12 caracteres
 let regExPass2 =
   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&_-])[A-Za-z\d$@$!%*?&_-]{6,12}/;
 
@@ -179,7 +179,7 @@ $('password').addEventListener('blur', function (e) {
       msgError('errorPass', "La contraseña es obligatoria", e);
       break;
     case !regExPass2.test(this.value.trim()):
-      msgError('errorPass', "La contraseña debe tener entre 8 y 12 caracteres, tener una mayúscula, una minúscula y un número", e);
+      msgError('errorPass', "La contraseña debe tener entre 8 y 12 caracteres, tener una mayúscula, una minúscula, un número y un carácter especial", e);
       break;
     default:
       this.classList.add('isValid');
@@ -202,7 +202,7 @@ $('password2').addEventListener('blur', function (e) {
       msgError('errorPass2', "Las contraseñas no coinciden", e);
       break;
     case !regExPass2.test(this.value.trim()):
-      msgError('errorPass2', "La contraseña debe tener entre 8 y 12 caracteres, tener una mayúscula, una minúscula y un número", e);
+      msgError('errorPass2', "La contraseña debe tener entre 8 y 12 caracteres, tener una mayúscula, una minúscula, un número y un carácter especial", e);
       break;
     default:
       this.classList.add('isValid');
@@ -221,21 +221,27 @@ $('password2').addEventListener('focus', function (e) {
 const regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
 
 $('image').addEventListener('change', function (e) {
-  $("errorImage").hidden = true;
-
-  switch (true) {
-    case !regExExt.exec(this.value):
-      $('errorImage').innerHTML = "Solo se admiten imágenes en formato .jpg, .jpeg, .png, .gif y .webp"
-      break;
-    default:
-      this.classList.add('isValid')
-      checkedFields()
-      break;
-  }
-});
-$('image').addEventListener('focus', function (e) {
-  cleanError('errorImage', e)
-})
+  let none = '';
+  
+    if ($('image') === none) {
+      this.classList.add('isValid');
+      checkedFields();
+    } else {
+      switch (true) {
+        case !regExExt.exec(this.value):
+          $('errorImage').innerHTML = "Solo se admiten imágenes en formato .jpg, .jpeg, .png, .gif y .webp"
+          break;
+        default:
+          this.classList.add('isValid');
+          checkedFields()
+          break;
+      }
+    }
+  });
+  
+  $('image').addEventListener('focus', function (e) {
+    cleanError('errorImage', e)
+  });
 
 
 // Términos y condiciones
@@ -255,7 +261,7 @@ $('registerForm').addEventListener('submit', function (e) {
 
   // Crear cuenta
 
-  for (let i = 0; i < this.elements.length - 1; i++) {
+  for (let i = 0; i < this.elements.length - 2; i++) {
     if (
       !this.elements[i].value.trim() ||
       this.elements[i].classList.contains('isInvalid')
