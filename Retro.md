@@ -76,3 +76,17 @@
 - No comunicarse con el grupo
 - Desvincularse del grupo
 
+# Sprint 7
+1. Comenzar a hacer.
+- Ser mas proactivos
+- Ultimar detalles
+2. Hacer más.
+- No descuidar el trello
+3. Continuar haciendo.
+- Distribucion de tareas
+- Entrega en tiempo y forma
+- Dailies
+4. Hacer menos.
+- No pushear sin chequear que el codigo funcione
+5. Dejar de hacer
+- pushear codigo que no cumpla con todas las consignas
