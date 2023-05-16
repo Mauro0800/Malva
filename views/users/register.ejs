@@ -45,6 +45,14 @@
               <small class="text-danger ms-2" id="errorPass">
                 <%= (locals.errors && errors.password) && errors.password.msg %>
               </small>
+              <ul id="msgPassword" class="small ms-2" hidden>
+                <li id="mayu">Una mayúscula</li>
+                <li id="minu">Una minúscula</li>
+                <li id="num">Un número</li>
+                <li id="esp">Un caracter especial ($@!%*?&_-)</li>
+                <li id="min">Mínimo 8 caracteres</li>
+                <li id="max">Máximo 12 caracteres</li>
+              </ul>
 
               <label for="password2">Confirmar contraseña</label>
               <input type="password" name="password2" id="password2" placeholder="Confirma tu contraseña">
