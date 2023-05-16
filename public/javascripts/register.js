@@ -220,28 +220,28 @@ $('password2').addEventListener('focus', function (e) {
 
 const regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
 
-$('image').addEventListener('change', function (e) {
-  let none = '';
+image.addEventListener('change', function (e) {
   
-    if ($('image') === none) {
+    if (!image) {
       this.classList.add('isValid');
       checkedFields();
     } else {
       switch (true) {
         case !regExExt.exec(this.value):
+          this.classList.add('isInvalid');
           $('errorImage').innerHTML = "Solo se admiten imágenes en formato .jpg, .jpeg, .png, .gif y .webp"
           break;
         default:
-          this.classList.add('isValid');
+          this.classList.remove('isInvalid');
+          this.classList.add('isValid')
+          $('errorImage').innerHTML = " "
           checkedFields()
           break;
       }
     }
   });
   
-  $('image').addEventListener('focus', function (e) {
-    cleanError('errorImage', e)
-  });
+  
 
 
 // Términos y condiciones
