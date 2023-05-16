@@ -42,8 +42,8 @@ module.exports = [
         .notEmpty().withMessage('Debes colocar tu contraseña').bail()
         .isLength({
             min: 8,
-            max: 12
-        }).withMessage('La contraseña debe tener entre 8 y 12 caracteres'),
+            max: 25
+        }).withMessage('La contraseña debe tener minimo 8 caracteres'),
     
     body('password2')
         .notEmpty().withMessage('Debes confirmar tu contraseña').bail()
