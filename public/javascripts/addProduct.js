@@ -170,18 +170,25 @@ window.onload = function () {
     const extension = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
 
     image.addEventListener('change', function (e) {
-        switch (true) {
-            case !extension.exec(this.value):
+        if (!extension.exec(this.value)){
                 $('imageError').innerHTML = "Solo se admiten archivos jpg | jpeg | png | gif | webp"
                 this.classList.add('input_error')
-
-                break;
-            case this.files.length > 3:
-                $('imageError').innerHTML = 'Máximo 3 imágenes'
-                this.classList.add('input_error')
-
-            default:
+        }else{
                 cleanError('imageError', event);
+        }
+    })
+    images.addEventListener('change', function (e) {
+        switch (true) {
+            case !extension.exec(this.value):
+                $('imagesError').innerHTML = "Solo se admiten archivos jpg | jpeg | png | gif | webp"
+                this.classList.add('input_error')
+                break;
+            case this.files.length > 3: 
+                $('imagesError').innerHTML = "Máximo 3 imágenes"
+                this.classList.add('input_error')
+                break;
+            default:
+                cleanError('imagesError', event);
                 break;
         }
     })
@@ -198,13 +205,25 @@ window.onload = function () {
         if (!error) {
             this.submit()
         } else {
-            for (let i = 0; i < this.elements.length - 3; i++) {
+            for (let i = 0; i < this.elements.length - 2; i++) {
                 !this.elements[i].value && this.elements[i].classList.add('input_error')
+                switch (true) {
 
-                if (this.elements[i].id === 'image' || this.elements[i].id === 'images' && this.elements[i].files.length === 0) {
+                    case (this.elements[i].id === 'image'  && this.elements[i].files.length === 0):
+                        image.classList.add('imageButton')
+                        break;
+
+                    case (this.elements[i].id === 'images' && this.elements[i].files.length === 0):
+                        images.classList.add('imageButton')
+                        break;
+                        
+                    default:
+                        break;
+                }
+                /* if ((this.elements[i].id === 'image'  && this.elements[i].files.length === 0) || (this.elements[i].id === 'images' && this.elements[i].files.length === 0)) {
                     image.classList.add('imageButton')
                     images.classList.add('imageButton')
-                }
+                } */
             }
             $('formError').innerHTML = 'Los campos señalados son obligatorios'
         }
