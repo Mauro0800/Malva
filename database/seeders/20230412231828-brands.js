@@ -39,6 +39,26 @@ module.exports = {
         name: 'otro',
         createdAt: new Date(),
         updatedAt: new Date()
+      },
+      {
+        name: 'tramontina',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'oxo',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'leifheit',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'the Candle Shop',
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
      ],
      {});
