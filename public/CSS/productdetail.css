@@ -23,6 +23,10 @@
     background-color: var(--color1);
 }
 
+.product-detail-description h2{
+    text-transform: capitalize;
+}
+
 .product-description {
     color: rgb(127, 127, 127);
 }
