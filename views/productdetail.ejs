@@ -41,13 +41,17 @@
                 </div>
                 <div class="product-detail-description">
                     <h2><%= name %></h2>
-                    <p class="product-description"><%= description %></p>
-                    <p><b>Uso:</b> Set cuidado personal</p>
-                    <p><b>Marca:</b> <%= brand.name %></p>
-                    <p><b>Material:</b> <%= material.name %></p>
-                    <p><b>Tamaño:</b> 16 cm.</p>
                     <h6><del>$6.840,00</del></h6>
                     <h4 class="product-price"><b>$<%= toThousand(price) %></b></h4>
+                    <hr>
+                    <div class="description-box">
+                    <p class="product-description"><%= description %></p>
+                    </div>
+                    <hr>
+                    <p><b>Uso : </b> Set cuidado personal</p>
+                    <p><b>Marca : </b> <%= brand.name %></p>
+                    <p><b>Material : </b> <%= material.name %></p>
+                    <p><b>Tamaño : </b> 16 cm.</p>
                 </div>
 
 
@@ -76,7 +80,7 @@
             <article class="product-detail__main__section__article--related-products">
                 <div class="related-products">
                     <img src="/images/products/cubo-aromatico-mini-the-candle-shop-1.jpg" alt="">
-                    <p>Cubo aromático Bergamine</p>
+                    <p class="related-product-title">Cubo aromático Bergamine</p>
                     <h6><del>$870,00</del></h6>
                     <h6 class="product-price"><b>$696,00</b></h6>
                     <button class="default-button" type="submit"><a href="/">Agregar</a></button>
