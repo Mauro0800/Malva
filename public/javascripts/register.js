@@ -12,8 +12,8 @@ const registerForm = $('registerForm');
 let regExLetter = /^[A-Z]+$/i;
 let regExEmail =
   /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
-let regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}$/; // Mayúscula, número y 8 a 12 caracteres
-let regExPass2 =
+// Mayúscula, número y 8 a 12 caracteres
+let regExPass =
   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&_-])[A-Za-z\d$@$!%*?&_-]{6,12}/;
 
 
@@ -137,6 +137,27 @@ $('email').addEventListener('focus', function (e) {
 
 // Contraseña
 
+password.addEventListener('blur', function (e) {
+  $("msgPassword").hidden = true;
+  switch (true) {
+    case !this.value.trim():
+      msgError('errorPass', "La contraseña es obligatoria", e);
+      break;
+    case !regExPass.test(this.value.trim()):
+      msgError('errorPass', "La contraseña debe tener entre 8 y 12 caracteres, tener una mayúscula, una minúscula, un número y un carácter especial", e);
+      break;
+    default:
+      this.classList.add('isValid');
+      checkedFields();
+      break;
+  }
+});
+
+password.addEventListener('focus', function (e) {
+  cleanError('errorPass', e);
+  $('msgPassword').hidden = false;
+});
+
 const exRegs = {
   exRegMayu: /[A-Z]/,
   exRegMinu: /[a-z]/,
@@ -164,7 +185,7 @@ const validMaxPassword = (element, exReg, value) => {
   }
 };
 
-$('password').addEventListener('keyup', function () {
+password.addEventListener('keyup', function () {
   validPassword('mayu', exRegs.exRegMayu, this.value);
   validPassword('minu', exRegs.exRegMinu, this.value);
   validPassword('num', exRegs.exRegNum, this.value);
@@ -172,36 +193,18 @@ $('password').addEventListener('keyup', function () {
   validPassword('min', exRegs.exRegMin, this.value);
   validMaxPassword('max', exRegs.exRegMax, this.value);
 });
-
-$('password').addEventListener('blur', function (e) {
-  switch (true) {
-    case !this.value.trim():
-      msgError('errorPass', "La contraseña es obligatoria", e);
-      break;
-    case !regExPass2.test(this.value.trim()):
-      msgError('errorPass', "La contraseña debe tener entre 8 y 12 caracteres, tener una mayúscula, una minúscula, un número y un carácter especial", e);
-      break;
-    default:
-      this.classList.add('isValid');
-      checkedFields();
-      break;
-  }
-});
-
-$('password').addEventListener('focus', function (e) {
-  cleanError('errorPass', e);
-  $('msgPassword').hidden = false;
-});
-
+ 
+ 
+ 
 $('password2').addEventListener('blur', function (e) {
   switch (true) {
     case !this.value.trim():
       msgError('errorPass2', "Debes confirmar la contraseña", e);
       break;
-    case this.value.trim() !== $('password').value.trim():
+    case this.value.trim() !== password.value.trim():
       msgError('errorPass2', "Las contraseñas no coinciden", e);
       break;
-    case !regExPass2.test(this.value.trim()):
+    case !regExPass.test(this.value.trim()):
       msgError('errorPass2', "La contraseña debe tener entre 8 y 12 caracteres, tener una mayúscula, una minúscula, un número y un carácter especial", e);
       break;
     default:
@@ -220,28 +223,28 @@ $('password2').addEventListener('focus', function (e) {
 
 const regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
 
-$('image').addEventListener('change', function (e) {
-  let none = '';
+image.addEventListener('change', function (e) {
   
-    if ($('image') === none) {
+    if (!image) {
       this.classList.add('isValid');
       checkedFields();
     } else {
       switch (true) {
         case !regExExt.exec(this.value):
+          this.classList.add('isInvalid');
           $('errorImage').innerHTML = "Solo se admiten imágenes en formato .jpg, .jpeg, .png, .gif y .webp"
           break;
         default:
-          this.classList.add('isValid');
+          this.classList.remove('isInvalid');
+          this.classList.add('isValid')
+          $('errorImage').innerHTML = " "
           checkedFields()
           break;
       }
     }
   });
   
-  $('image').addEventListener('focus', function (e) {
-    cleanError('errorImage', e)
-  });
+  
 
 
 // Términos y condiciones
@@ -261,11 +264,11 @@ $('registerForm').addEventListener('submit', function (e) {
 
   // Crear cuenta
 
-  for (let i = 0; i < this.elements.length - 2; i++) {
+  for (let i = 0; i < this.elements.length - 3; i++) {
     if (
-      !this.elements[i].value.trim() ||
-      this.elements[i].classList.contains('isInvalid')
-    ) {
+      (!this.elements[i].value.trim() ||
+      this.elements[i].classList.contains('isInvalid'))
+    ) { 
       error = true;
       this.elements[i].classList.add('isInvalid');
       $('errorCreate').innerHTML = "Hay campos con errores o están vacíos.";
