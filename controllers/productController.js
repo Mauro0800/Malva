@@ -61,7 +61,7 @@ module.exports = {
                     return res.redirect("/")
                   }
 
-                return res.render("productdetail", {
+                return res.render("detailproduct", {
                     title: "Detalle",
                     ...product.dataValues,
                     images,
@@ -292,7 +292,6 @@ module.exports = {
 
                 if(req.files.image){
                     productOld.then(product=>{
-                        console.log(product.name,"asdasdasdrdhjdryjh");
                             fs.existsSync(`public/images/products/${product.image}`) &&
                             fs.unlinkSync(`public/images/products/${product.image}`);
                         })

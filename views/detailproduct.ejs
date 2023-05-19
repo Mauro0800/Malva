@@ -69,7 +69,7 @@
                         <option value="efectivo">1 pago en efectivo de $<%= toThousand(price) %></option>
                         </option>
                     </select>
-                    <% if (locals.userLogin && locals.userLogin.rol == "admin") { %>
+                    <% if (locals.userLogin && locals.userLogin.rol == "1") { %>
                         </div>
                         <button class="default-button" type="submit" class="btn btn-outline-info"><a href="/products/edit/<%= id %>">Editar producto</a></button>
                         </div>
