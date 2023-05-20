@@ -124,6 +124,7 @@
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
     padding: 2px;
+    text-transform: capitalize;
 }
 
 .main__form__div__textarea {

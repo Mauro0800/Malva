@@ -61,7 +61,7 @@ module.exports = {
                     return res.redirect("/")
                   }
 
-                return res.render("productdetail", {
+                return res.render("detailproduct", {
                     title: "Detalle",
                     ...product.dataValues,
                     images,
@@ -244,8 +244,11 @@ module.exports = {
             })
             .catch(error => console.log(error))
     },
-    update: (req, res) => {
+    update: async (req, res) => {
 
+        const id = +req.params.id;
+        const {name, price, description, discount, stock, brand, category, material,image} = req.body;
+        const productOld=db.Product.findByPk(id)
         const errors = validationResult(req);
         
         if (req.fileValidationError) {
@@ -266,10 +269,9 @@ module.exports = {
             });
         }
 
-      const id = +req.params.id;
 
         if (errors.isEmpty()) {
-            const {name, price, description, discount, stock, brand, category, material,image} = req.body;
+            
             db.Product.update({
                 name: name.trim(),
                 price: +price,
@@ -286,52 +288,68 @@ module.exports = {
                   id,
                 },
               }
-              ).then(() => {
+              ).then(async () => {
 
-                        db.Image.findAll({
+                if(req.files.image){
+                    productOld.then(product=>{
+                            fs.existsSync(`public/images/products/${product.image}`) &&
+                            fs.unlinkSync(`public/images/products/${product.image}`);
+                        })
+                }
+                    
+                
+                       await db.Image.findAll({
                             where : {
                                 productId : id
                             }
                         })
                             .then(images => {
-                                console.log(req.files.images);
+                                
                                 if(req.files.images){
-                                    req.files.images.forEach((image,index) =>{
-                                            console.log(image);
-                                            db.Image.update(
-                                            {
-                                              images: req.files && req.files.images ? image.filename : images.name,
-                                            },
-                                            {
-                                                where : {
-                                                    porductId : id
-                                                }
-                                            }
-                                        )
+                                    db.Image.destroy({
+                                        where:{
+                                            productId:id
+                                        }
                                     })
+
+                                    req.files.images.forEach(async(image)=>{
+                                       await db.Image.create(
+                                        {
+                                            name: image.filename,
+                                            productId : id
+                                        }
+                                    )
+                                })
+
+                                
+                                    images.forEach(image => {
+                                        fs.existsSync(`public/images/products/${image.name}`) &&
+                                        fs.unlinkSync(`public/images/products/${image.name}`);
+                                    });
+                                
                                 }
-                                // console.log(req.files.images);
+                                
                             })
                         return res.redirect("/products/detail/"+id);
-
+                            
                     })
                  
                 .catch(error => console.log(error))
         } else {
 
-            const { id } = +req.params
-            const product = db.Product.findByPk(id, {
+            const id = +req.params.id
+            const product = await db.Product.findByPk(id, {
                 include: ["images"]
             })
-            const brands = db.Brand.findAll({
+            const brands = await db.Brand.findAll({
                 order: [["name"]],
                 attributes: ["name", "id"],
             });
-            const materials = db.Material.findAll({
+            const materials = await db.Material.findAll({
                 order: [["name"]],
                 attributes: ["name", "id"],
             });
-            const images = db.Image.findAll({
+            const images = await db.Image.findAll({
                 where: {
                     productId: id
                 }
@@ -351,8 +369,16 @@ module.exports = {
             
             Promise.all([product, brands, materials, images])
                 .then(([product, brands, materials, images]) => {
-
-                    return res.render('editproduct/'+id, {
+                    /* return res.send({
+                        product,
+                        brands,
+                        materials,
+                        images,
+                        errors: errors.mapped(),
+                        old: req.body,
+                        title: "Editar producto"
+                    }) */
+                    return res.render('editproduct', {
                         ...product.dataValues,
                         brands,
                         materials,

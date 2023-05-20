@@ -36,7 +36,7 @@
             <div class="main__form__div">
                 <label for="stock">Stock</label>
                 <input class="main__form__div__input" type="number" id="stock" name="stock" 
-                value="<%= (locals.old && old.stock) ? +old.stock : stock %> ">
+                value="<%= (locals.old && old.stock) ? +old.stock : stock %>">
             </div>
             <small class="text-danger ms-2" id="stockError">
                 <%= (locals.errors && errors.stock) ? errors.stock.msg : null %>
@@ -45,7 +45,7 @@
             <div class="main__form__div">
                 <label for="description">Descripcion</label><small id="descrptionInfo"
                 hidden> (<span id="numberCharacters"></span> / 1000)</small>
-                <textarea class="main__form__div__textarea" id="description"><%= (locals.old && old.description) ? old.description : description %></textarea>
+                <textarea name="description" class="main__form__div__textarea" id="description"><%= (locals.old && old.description) ? old.description : description %></textarea>
             </div>
             <small class="text-danger ms-2" id="descriptionError">
                 <%= (locals.errors && errors.description) ? errors.description.msg : null %>
@@ -86,21 +86,16 @@
         <small class="text-danger ms-2" id="materialError">
             <%= (locals.errors && errors.material) ? errors.material.msg : null %>
         </small>
-        <!-- <div class="main__form__div--characteristics">
-            <label class="main__form__div__label--characteristics" for="characteristics">Caracteristicas</label>
-            <input class="main__form__div__input--num" type="number" id="characteristicsnum" name="characteristicsnum">
-            <input class="main__form__div__input--characteristics" type="text" name="characteristics" id="characteristics">
-        </div> -->
-        <div class="main__form__div">
+        <div class="main__form__div div_image">
                 <label for="image">Imágen principal del producto</label>
                 <input class="main__form__div__textarea" type="file" name="image" id="image">
         </div>
         <small class="text-danger ms-2" id="imageError"><%= (locals.errors && errors.image) ? errors.image.msg : null %></small>
-        <div class="main__form__div">
+        <div class="main__form__div div_image">
                 <label for="images">Imágenes secundarias del producto</label>
                 <input class="main__form__div__textarea" type="file" name="images" id="images" multiple>
         </div>
-        <small class="text-danger ms-2" id="imageError">
+        <small class="text-danger ms-2" id="imagesError">
             <%= (locals.errors && errors.images) ? errors.images.msg : null %>
         </small>
         <small class="text-danger" id="formError"></small>
@@ -110,7 +105,7 @@
             
         </form>
         
-        <form class="main__form--deleteproduct" action="/products/delete/<%= id %>?_method=DELETE" method="POST">
+        <form class="main__form--deleteproduct" id="form-delete" action="/products/delete/<%= id %>?_method=DELETE" method="POST">
             <button class="button--form-product" type="submit">Eliminar Producto</button>
         </form>
 
