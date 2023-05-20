@@ -1,43 +1,46 @@
 <header class="home__header">
-    <section class="home__header__section--cuenta">
-      <% if (locals.userLogin) { %>
-        <% if (locals.userLogin.rol === 1) { %>
-       <a href="/dashboard">Admin</a>
+  <section class="home__header__section--cuenta">
+    <% if (locals.userLogin) { %>
+      <% if (locals.userLogin.rol===1) { %>
+        <a href="/dashboard">Admin</a>
         <% } %>
-       <a href="/users/profile">Hola, <%= userLogin.name %></a>
-       <a href="/users/logout" class="home__header__section__a">Salir</a>
-      <% } else{%>
-        <a href="/users/login" class="home__header__section__a">Iniciar Sesión</a>
-      <a href="/users/register" class="home__header__section__a">Registrarse</a>
-      <% }%>
-      <a href="/users/profile" class="home__header__section__a--icono"><i class="fa-solid fa-user"></i></a>
-    </section>
-    <section class="home__header-section">
+          <a href="/users/profile">Hola, <%= userLogin.name %></a>
+          <a href="/users/logout" class="home__header__section__a">Salir</a>
+          <% } else{%>
+            <a href="/users/login" class="home__header__section__a">Iniciar Sesión</a>
+            <a href="/users/register" class="home__header__section__a">Registrarse</a>
+            <% }%>
+              <a href="/users/profile" class="home__header__section__a--icono"><i class="fa-solid fa-user"></i></a>
+  </section>
+  <section class="home__header-section">
 
-      <figure class="home__header__figure">
-        <button class="home__header__figure-button" id="icono-menu"><i class="fa-solid fa-bars"></i></button>
-        <button><i class="fa-solid fa-magnifying-glass"></i></button>
-      </figure>
+    <div class="home__header-section-div-1">
 
-      <figure class="home__header__figure--logo">
+      <div class="home__header__button">
+        <button id="icono-menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+      <div>
         <a href="/"><img src="/images/malva-logo-1.png" alt=""></a>
-      </figure>
-
-      <figure class="home__header__figure">
+      </div>
+      <div class="home__header__button">
         <a href="/products/shopping-cart"><button><i class="fa-solid fa-cart-shopping"></i></button></a>
-      </figure>
+      </div>
 
-    </section>
+    </div>
+
+  </section>
 
 
-    <nav class="home__header__nav">
-      <ul class="home__header__nav-ul">
+  <nav class="home__header__nav">
+    <ul class="home__header__nav-ul">
 
-        <% categories.forEach(({name,id}) => { %>
-            <li><a href="/products/category/<%= id %>"><%= name %></a></li>
+      <% categories.forEach(({name,id})=> { %>
+        <li><a href="/products/category/<%= id %>">
+            <%= name %>
+          </a></li>
         <% }) %>
-        
-      </ul>
-    </nav>
 
-  </header>
+    </ul>
+  </nav>
+
+</header>
