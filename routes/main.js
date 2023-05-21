@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const {home, dashboard, search } = require('../controllers/mainController')
+const {home, dashboard, search, addMoreProducts } = require('../controllers/mainController')
 
 /* / */
 router

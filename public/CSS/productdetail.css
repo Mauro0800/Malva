@@ -95,10 +95,8 @@ select {
     height: 37px;
     border: none;
     background-color: var(--color3);
-    color: var(--color5);
-    /*background-color: var(--color5);
-    color: var(--color1);*/
-    transition: all 0.5s;
+    color: white;
+    transition: all 0.5s; 
     text-transform: uppercase;
     font-size: 0.8em;
     border-radius: 5px;
@@ -107,30 +105,14 @@ select {
 
 .default-button:hover {
     background-color: var(--color2);
-    color: var(--color5);
+    color: white;
     font-size: 0.9em;
 }
 
 .payment-method select {
     width: 60%;
 }
-
-.product-detail__main__section--related-products {
-    display: none;
-    text-transform: capitalize;
-    font-size: 14px;
-}
-
-.product-detail__main__section__article--related-products {
-    width: 22%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.product-detail__main__section__article--related-products img {
-    width: 100%;
-}
-
+ 
 .ver-mas-productos {
     display: none;
     width: 70%;
@@ -209,42 +191,7 @@ select {
         font-size: 0.9em;
     }
 
-    .product-detail__main__section--related-products {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }
-
-    .product-detail__main__section--related-products h4 {
-        font-weight: 100;
-    }
-
-    .product-detail__main__section__article--related-products {
-        width: 85%;
-        display: flex;
-        align-items: stretch;
-    }
-
-    .related-products {
-        margin: 10px;
-        background-color: #fff;
-        padding: 10px;
-        border-radius: 5px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .related-products:hover{
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .related-products button {
-        text-align: center;
-        width: 100%;
-        padding: 8px;
-    }
+    
 
     .ver-mas-productos {
         display: flex;

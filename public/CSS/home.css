@@ -64,7 +64,7 @@
 .home__main__productos h4{
     font-size: 0.9em;
     color: black;
-    font-weight: bolder;
+    text-transform: capitalize;
 }
 .home__main__section--body img{
     width: 100%;
