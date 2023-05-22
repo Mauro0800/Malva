@@ -18,7 +18,7 @@ module.exports = {
                     }
                 ],
                 attributes: {
-                    exclude: ['password', 'createdAt', 'updatedAt', 'rolId', "addressId", 'image'],
+                    exclude: ['password', 'createdAt', 'rolId', "addressId", 'image'],
                     include: [literalQueryUrlDetailUser(req, 'user.id', 'urlDetail'), literalQueryUrlImageUser(req, 'image', 'urlImage')]
                 }
             })
