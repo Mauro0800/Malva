@@ -1,4 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+.header--dashboard{
+  display: flex;
+  flex-direction: row;
+  padding: 5px 15px;
+  width: 100%;
+  align-items: center;
+}
+
+.header--dashboard button{
+  border: none;
+  background: rgb(226, 226, 226);
+  margin-right: 34%;
+}
+
 .body--dashboard{
   margin: 0;
   padding: 0;
@@ -11,22 +24,24 @@
 .body--dashboard{
   background: rgb(226, 226, 226);
 }
+
+.active11{
+  transform: translate(-284px);
+}
+
 .nav--dashboard{
-  position: sticky;
+  display: block;
+  position: fixed;
   top: 0;
   bottom: 0;
   height: 100vh;
-  left: 0;
-  width: 90px;
-  /* width: 280px; */
+  width: 280px;
   background: #fff;
   overflow: hidden;
-  transition: 1s;
+  transition: 0.5s;
+  z-index: 10;
 }
-.nav--dashboard:hover{
-  width: 280px;
-  transition: 1s;
-}
+
 .li--logo{
   text-align: center;
   display: flex;
@@ -70,7 +85,7 @@
   background: #eee;
 }
 .body--dashboard a:hover i{
-  color: #34AF6D;
+  color: var(--color5);
   transition: 0.5s;
 }
 .a--logout{
@@ -80,6 +95,7 @@
 
 .body__div--container{
   display: flex;
+  flex-wrap: wrap;
 }
 
 .body__section--main{
@@ -98,6 +114,9 @@
   color: rgb(110, 109, 109);
   cursor: pointer;
 }
+.section__div--main-top i:hover{
+  color:var(--color5)
+}
 .body__section--main .section__div--users{
   display: flex;
   width: 100%;
@@ -110,6 +129,9 @@
   border-radius: 10px;
   padding: 10px;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .section__div--users .section__div--card img{
   width: 70px;
@@ -143,17 +165,16 @@
   cursor: pointer;
   border-radius: 10px;
   background: transparent;
-  border: 1px solid #4AD489;
+  border: 1px solid var(--color3);
 }
 .section__div--users .section__div--card button:hover{
-  background: #4AD489;
+  background: var(--color3);
   color: #fff;
   transition: 0.5s;
 }
 
 .body__section--attendance{
   margin-top: 20px;
-  text-transform: capitalize;
 }
 .body__section--attendance-list{
   width: 100%;
@@ -163,17 +184,32 @@
   border-radius: 10px;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
-.div__table{
+.body__section--attendance-list h2{
+display: none;
+}
+  .div__table{
   border-collapse: collapse;
   margin: 25px 0;
   font-size: 15px;
   min-width: 100%;
-  overflow: hidden;
-  border-radius: 5px 5px 0 0;
+  border-radius: 5px;
+  display: flow-root;
+  overflow: scroll;
 }
+
+.div__table__tr:hover{
+  font-weight: bold;
+  color: var(--color5);
+  transition: 0.2s;
+}
+
+.div__table__tr{
+  cursor:default;
+}
+
 .div__table thead tr{
   color: #fff;
-  background: #34AF6D;
+  background: var(--color3);
   text-align: left;
   font-weight: bold;
 }
@@ -187,22 +223,67 @@
 .div__table tbody tr:nth-of-type(odd){
   background: #f3f3f3;
 }
-.div__table tbody .tr--active{
-  font-weight: bold;
-  color: #4AD489;
-}
-.div__table tbody tr:last-of-type{
-  border-bottom: 2px solid #4AD489;
-}
+
+
 .div__table button{
   padding: 6px 20px;
   border-radius: 10px;
   cursor: pointer;
   background: transparent;
-  border: 1px solid #4AD489;
+  border: 1px solid var(--color3);
 }
 .div__table button:hover{
-  background: #4AD489;
+  background: var(--color3);
   color: #fff;
   transition: 0.5rem;
+}
+
+@media (min-width:810px){
+  .div__table{
+    display: table;
+  }
+  .no-table{
+    display: block;
+  }
+}
+@media (min-width:990px){
+
+  .nav--dashboard{
+    width: 90px;
+  }
+  .nav--dashboard:hover{
+    width: 280px;
+    transition: 0.7s;
+  }
+  .nav--dashboard ul li:last-child{
+    display: none;
+  }
+.active11{
+  transform: translate(0px);
+}
+
+.header--dashboard{
+  display: none;
+}
+
+.nav--dashboard{
+  display: block;
+  position: sticky;
+}
+
+.body__div--container{
+  flex-wrap: nowrap;
+}
+
+.body__section--attendance{
+  text-transform: capitalize;
+}
+
+.body__section--attendance-list h2{
+  display: block;
+}
+
+.div__table{
+  display: table;
+}
 }

@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-@import './dashboard.css';
 @import './general.css';
 @import './home.css';
 @import './header.css';
@@ -14,3 +13,4 @@
 @import './shoppingcart.css';
 @import './menuHam.css';
 @import './profile.css';
+@import './dashboard.css';

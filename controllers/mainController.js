@@ -1,3 +1,4 @@
+const {getAllUsers} = require('../services/userServices')
 const db = require('../database/models');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -16,12 +17,10 @@ module.exports ={
               },
             include: ["category"]
         });
-        // const categories =  db.Category.findAll();
 
 
         Promise.all([productsHome,productsdistinguished])
         .then(([productsHome,productsdistinguished]) =>{
-            // return res.send(categories)
 
             return res.render("home", {
                 title: "Home",
@@ -35,9 +34,22 @@ module.exports ={
         
     },
    
-    dashboard :  (req,res) =>{
-        return res.render('dashboard', {
-            title: "Dashboard"
+    dashboardUsers : async  (req,res) =>{
+
+        return res.render("dashboardUsers",{
+            title:"Usuarios"
+        }) 
+
+        
+    },
+    dashboardProducts :  (req,res) =>{
+        return res.render('dashboardProducts', {
+            title: "Productos"
         })
-}
+    },
+    dashboardOrders :  (req,res) =>{
+        return res.render('dashboardOrders', {
+            title: "Ordenes"
+        })
+    },
 }
