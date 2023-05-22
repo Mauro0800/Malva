@@ -10,34 +10,9 @@
       <%- include('./partials/menuHam') %>
 
         <main class="home__main">
-          <section class="home__main__section--banner">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                  aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                  aria-label="Slide 2"></button>
-              </div>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="/images/banners/bannercap.png" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                  <img src="/images/banners/web-c.jpg" class="d-block w-100" alt="...">
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-          </section>
+
+          <%- include('./partials/mainBanner') %>
+
           <div class="home__main__div--wsp">
             <button class="home__main__div__button--wpp"><i class="fa-brands fa-whatsapp"></i></button>
           </div>
@@ -46,138 +21,57 @@
             en
             productos seleccionados</p>
 
+          <%- include('./partials/search') %>
 
-          <section class="home__main__section--body">
+            <section class="home__main__section--body">
 
-            <img class="home__main__section__img--principal" src="/images/products/pino-con-maceta-arpillera-1.jpg"
-              alt="">
+              <img class="home__main__section__img--principal" src="/images/products/pino-con-maceta-arpillera-1.jpg"
+                alt="">
 
-            <figure class="home__main__botones-fijos">
-              <a href="/products/shopping-cart"><button class="boton-shopping"><i
-                    class="fa-solid fa-cart-shopping"></i></button></a>
-              <a href="#footer"><button class="boton-down"><i class="fa-solid fa-chevron-down"></i></button></a>
-              <a href="#"><button class="boton-wpp"><i class="fa-brands fa-whatsapp"></i></button></a>
-            </figure>
+              <figure class="home__main__botones-fijos">
+                <a href="/products/shopping-cart"><button class="boton-shopping"><i
+                      class="fa-solid fa-cart-shopping"></i></button></a>
+                <a href="#footer"><button class="boton-down"><i class="fa-solid fa-chevron-down"></i></button></a>
+                <a href="#"><button class="boton-wpp"><i class="fa-brands fa-whatsapp"></i></button></a>
+              </figure>
 
-            <div class="home__main__productos">
-              <h3 class="home__main__section__h3">PRODUCTOS</h3>
-
-              <% productsHome.forEach(({name,id,image,price,category})=> { %>
-                <%- include('./partials/productHome',{ name, id, image, price, category }) %>
-                  <% }) %>
-
-            </div>
-
-
-            <section class="home__main__section--destacados">
               <div class="home__main__productos">
-                <h3 class="home__main__section__h3">DESTACADOS</h3>
+                <h3 class="home__main__section__h3">PRODUCTOS</h3>
 
-
-                <% productsdistinguished.forEach(({name,id,image,price,category})=> { %>
-                  <%- include('./partials/productdistinguished',{ name, id, image, price, category }) %>
+                <% productsHome.forEach(({name,id,image,price,category})=> { %>
+                  <%- include('./partials/productHome',{ name, id, image, price, category }) %>
                     <% }) %>
+
+              </div>
+
+
+              <section class="home__main__section--destacados">
+                <div class="home__main__productos">
+                  <h3 class="home__main__section__h3">DESTACADOS</h3>
+
+
+                  <% productsdistinguished.forEach(({name,id,image,price,category})=> { %>
+                    <%- include('./partials/productdistinguished',{ name, id, image, price, category }) %>
+                      <% }) %>
+                </div>
+
+              </section>
+
+              <div class="ver-todos-los-productos">
+                <button><a href="/products">ver todos los productos</a></button>
+              </div>
+
               </div>
 
             </section>
-
-            <div class="ver-todos-los-productos">
-              <button><a href="/products">ver todos los productos</a></button>
-            </div>
-
-            </div>
-
-          </section>
 
         </main>
 
         <footer id="footer" class="home__footer">
-          <div class="home__footer__div--novedades">
-            <section class="home__footer__section--novedades" id="novedades">
-              <div class="home__footer__section__div--novedades">
-                <h2 class="home__footer__section__div--subtitulo">RECIBI NUESTRAS NOVEDADES</h2>
-                <p class="home__footer__section__div--parrafo">Nuevos lanzamientos, promociones y más!</p>
-              </div>
 
-              <div class="home__footer__section__div">
-                <form class="form__mobile--footer" action="" method="">
-                  <input type="text" class="form__mobile__input--nombre" placeholder="Nombre">
-                  <input type="email" class="form__mobile__input" placeholder="e-mail@miemail.com">
-                  <button class="form__mobile__button--submit" type="submit">></button>
-                  <button class="form__mobile__button" type="submit">Suscribirse</button>
-                </form>
-              </div>
+          <%- include('./partials/aboveFooter') %>
 
-            </section>
-
-            <section class="home__footer__section--info">
-
-              <div class="home__footer__section__div--info">
-                <div class="home__footer__section__div--iconos"><i class="fa-regular fa-credit-card"></i></div>
-                <h2 class="home__footer__section__div__h2">podes pagar con tarjeta o en efectivo</h2>
-                <p class="home__footer__section__div__p">!Tenemos 3 y 6 cuotas sin interés en todos los productos de la
-                  tienda
-                  y un 10% de descuento en productos
-                  seleccionados para vos!</p>
-              </div>
-
-              <div class="home__footer__section__div--info">
-                <div class="home__footer__section__div--iconos"><i class="fa-solid fa-truck-fast"></i></div>
-                <h2 class="home__footer__section__div__h2">envío rapido</h2>
-                <p class="home__footer__section__div__p">Elegí Mercado Envios y segui tu compra hasta recibirla. Todos
-                  tus
-                  envíos estarán protegidos</p>
-              </div>
-
-              <div class="home__footer__section__div--info">
-                <div class="home__footer__section__div--iconos"><i class="fa-regular fa-face-laugh-beam"></i></div>
-                <h2 class="home__footer__section__div__h2">compra protegida</h2>
-                <p class="home__footer__section__div__p">Te acompañamos hasta que recibas lo que compraste, y si no es
-                  lo que
-                  esperabas te devolvemos el dinero.</p>
-              </div>
-
-            </section>
-          </div>
-
-          <section class="home__footer__section--final" id="redes">
-            <div class="home__footer__section__div">
-
-              <h4>redes sociales</h4>
-
-              <div class="home__footer__section__div--social">
-                <a href=""><i class="fa-brands fa-google"></i></a>
-                <a href=""><i class="fa-brands fa-whatsapp"></i></a>
-                <a href=""><i class="fa-brands fa-facebook"></i></a>
-                <a href=""><i class="fa-brands fa-instagram"></i></a>
-              </div>
-
-            </div>
-
-            <div class="home__footer__section__div--sobre-nosotros">
-              <h4>sobre nosotros</h4>
-              <p class="home__footer__section__div__p">Como desarrolladores hemos trabajado en este proyecto e-commerce
-                llamado Malva, asignado por la empresa. La
-                tienda online ofrece diferentes productos de bazar y articulos para el hogar. En este trabajo, el cual
-                incluye
-                diferentes vistas y lógicas, se ve reflejado el desempeño y conocimiento adquirido hasta ahora por los
-                participantes.</p>
-            </div>
-
-            <div class="home__footer__section__div--atencion-cliente">
-              <h4 class="home__footer__section__div__h4">atención al cliente</h4>
-              <a class="home__footer__section__div__a" href="">Botón de arrepentimiento </a>
-              <a class="home__footer__section__div__a" href="">Formas de pago </a>
-              <a class="home__footer__section__div__a" href="">Políticas de privacidad y seguridad </a>
-              <a class="home__footer__section__div__a" href="">Términos y condiciones</a>
-              <a class="home__footer__section__div__a" href="">Defensa al consumidor</a>
-            </div>
-
-            <div class="home__footer__section__div--malva">
-              <h4>MALVA©</h4>
-            </div>
-
-          </section>
+            <%- include('./partials/footer') %>
 
         </footer>
 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head') %>
+
+    <body>
+
+        <%- include('./partials/header') %>
+
+            <%- include('./partials/menuHam') %>
+
+                <main>
+                    <section class="home__main__section--body">
+
+                        <%- include('./partials/search') %>
+
+                            <div class="home__main__productos">
+                                <h3 class="home__main__section__h3">Resultados para: <%= keywords %>
+                                </h3>
+
+                                <% if (productsFiltered.length) { %>
+                                    <% productsFiltered.forEach(({name,id,image,price,category})=> { %>
+                                        <%- include('./partials/product',{ name, id, image, price, category }) %>
+                                            <% }) %>
+                                                <% }else{ %>
+                                                    <h2>Upss... No se encuentran coincidencias con tu busqueda</h2>
+                                                    <div class="ver-todos-los-productos">
+                                                        <button><a href="/products">ver otros productos</a></button>
+                                                    </div>
+                                                    <% } %>
+
+                            </div>
+                    </section>
+                </main>
+
+                <footer id="footer" class="home__footer">
+
+                    <%- include('./partials/aboveFooter') %>
+
+                        <%- include('./partials/footer') %>
+
+                </footer>
+
+                <%- include('./partials/scripts') %>
+
+    </body>
+
+</html>

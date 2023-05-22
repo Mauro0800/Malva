@@ -17,5 +17,5 @@ router
     .get('/edit/:id',checkUseradmin, editproduct)//checkUseradmin
     .put('/update/:id',uploadProductImages,productValidator, update)
     .delete('/delete/:id',checkUseradmin, destroy)//checkUseradmin
-
+ 
 module.exports = router;

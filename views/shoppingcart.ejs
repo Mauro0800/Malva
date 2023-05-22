@@ -1,93 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <%- include('./partials/head') %>
+<%- include('./partials/head') %>
 
-<body class="home--cart">
+  <body class="home--cart">
 
-  <%- include('./partials/header') %>
-  <%- include('./partials/menuHam') %>
+    <%- include('./partials/header') %>
+      <%- include('./partials/menuHam') %>
 
-  <main class="main--cart">
-    <section class="main__section">
-      <article class="main__section__article">
-        <button class="main__section__article__button--trash"><i class="fa-solid fa-trash-can"></i></button>
-        <div class="main__section__article__div--img"><img
-            src="/images/products/abrelatas-acero-inoxidable-leifheit-1.jpg" alt=""></div>
-        <h2 class="main__section__article__h2--nombre">Lorem ipsum dolor sit amet.</h2>
+        <main class="main--cart">
 
-            <div class="main__section__article__div--contador">
-    
-              <span class="main__section__article__div__span-left">
-                <button class="main__section__article__div__button--mas">-</button>
-              </span>
+          <section class="main__section-cart">
+            <div class="main__section-cart-each-product">
+              <article class="main__section__article-cart">
+                <button class="main__section__article__button--trash"><i class="fa-solid fa-trash-can"></i></button>
+                <div class="main__section__article__div--img">
+                  <img src="/images/products/abrelatas-acero-inoxidable-leifheit-1.jpg" alt="">
+                </div>
 
-              <span class="main__section__article__div__button--numero">1</span>
+                <div class="main__section__article__div--box2">
+                  <h2 class="main__section__article__h2--nombre">Lorem ipsum dolor sit amet.</h2>
 
-              <span class="main__section__article__div__span-right">
-                <button class="main__section__article__div__button--menos">+</button>
-              </span>
-    
-            </div>
+                  <div class="contador-box">
+                    <div class="main__section__article__div--contador">
 
-        <p class="main__section__article__p--precio">$000,00</p>
+                      <span class="main__section__article__div__span-left">
+                        <button class="main__section__article__div__button--mas">-</button>
+                      </span>
 
-      </article>
-    </section>
+                      <span class="main__section__article__div__button--numero">1</span>
 
-    <section class="main__section">
-      <article class="main__section__article">
-        <button class="main__section__article__button--trash"><i class="fa-solid fa-trash-can"></i></button>
-        <div class="main__section__article__div--img"><img src="/images/products/batidor-acero-1.jpg" alt=""></div>
-        <h2 class="main__section__article__h2--nombre">Lorem ipsum dolor sit amet.</h2>
-        
-        <div class="main__section__article__div--contador">
-    
-          <span class="main__section__article__div__span-left">
-            <button class="main__section__article__div__button--mas">-</button>
-          </span>
+                      <span class="main__section__article__div__span-right">
+                        <button class="main__section__article__div__button--menos">+</button>
+                      </span>
 
-          <span class="main__section__article__div__button--numero">1</span>
+                    </div>
+                  </div>
 
-          <span class="main__section__article__div__span-right">
-            <button class="main__section__article__div__button--menos">+</button>
-          </span>
+                  <p class="main__section__article__p--precio">$000,00</p>
+                </div>
+            </article>
 
-        </div>
+            <article class="main__section__article-cart">
+              <button class="main__section__article__button--trash"><i class="fa-solid fa-trash-can"></i></button>
+              <div class="main__section__article__div--img">
+                <img src="/images/products/difusor-bergam-y-rosas-1.jpg" alt="">
+              </div>
 
-        <p class="main__section__article__p--precio">$000,00</p>
-      </article>
-    </section>
+              <div class="main__section__article__div--box2">
+                <h2 class="main__section__article__h2--nombre">Lorem ipsum dolor sit amet.</h2>
 
-    <section class="main__section">
-      <article class="main__section__article">
-        <button class="main__section__article__button--trash"><i class="fa-solid fa-trash-can"></i></button>
-        <div class="main__section__article__div--img"><img src="/images/products/tabla-30-cm-marmol-1.jpg" alt="">
-        </div>
-        <h2 class="main__section__article__h2--nombre">Lorem ipsum dolor sit amet.</h2>
-        
-        <div class="main__section__article__div--contador">
-    
-          <span class="main__section__article__div__span-left">
-            <button class="main__section__article__div__button--mas">-</button>
-          </span>
+                <div class="contador-box">
+                  <div class="main__section__article__div--contador">
 
-          <span class="main__section__article__div__button--numero">1</span>
+                    <span class="main__section__article__div__span-left">
+                      <button class="main__section__article__div__button--mas">-</button>
+                    </span>
 
-          <span class="main__section__article__div__span-right">
-            <button class="main__section__article__div__button--menos">+</button>
-          </span>
+                    <span class="main__section__article__div__button--numero">1</span>
 
-        </div>
+                    <span class="main__section__article__div__span-right">
+                      <button class="main__section__article__div__button--menos">+</button>
+                    </span>
 
-        <p class="main__section__article__p--precio">$000,00</p>
-      </article>
-    </section>
-  </main>
+                  </div>
+                </div>
 
-  <%- include('./partials/footer') %>
-  <%- include('./partials/scripts') %>
+                <p class="main__section__article__p--precio">$000,00</p>
+              </div>
+          </article>
 
-</body>
+          </div>
+
+            <article class="main__section-cart-total">
+              <h4>Total : $000</h4>
+              <button class="default-button" type="submit">Realizar compra</button>
+            </article>
+
+            <article class="main__section__article-cart-add">
+              <%- include('./partials/relatedProduct') %>
+            </article>
+
+
+          </section>
+
+
+
+        </main>
+        <%- include('./partials/scripts') %>
+
+  </body>
 
 </html>

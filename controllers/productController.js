@@ -73,16 +73,25 @@ module.exports = {
     },
 
     shoppingcart: (req, res) => {
-        db.Category.findAll({
+
+        const categories = db.Category.findAll({
             order: [["name"]],
             attributes: ["name", "id"],
-        }).then(categories => {
+        });
+
+        const productsToAdd = db.Product.findAll({
+                    limit: 10,
+                    include: ["category"]
+                });
+        Promise.all([categories, productsToAdd])
+        .then(([categories, productsToAdd]) => {
             return res.render('shoppingcart', {
                 title: "Carrito de compras",
-                categories
+                categories,
+                productsToAdd,
+                toThousand
             })
-        })
-        .catch(error=>console.log(error))
+        }).catch(error=>console.log(error))
     },
 
     addproduct: (req, res) => {
