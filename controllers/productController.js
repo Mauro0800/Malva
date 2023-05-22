@@ -290,7 +290,7 @@ module.exports = {
               }
               ).then(async () => {
 
-                if(req.files.image){
+                if(req.files.image && req.files.image.length){
                     productOld.then(product=>{
                             fs.existsSync(`public/images/products/${product.image}`) &&
                             fs.unlinkSync(`public/images/products/${product.image}`);
