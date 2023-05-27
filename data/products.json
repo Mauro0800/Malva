@@ -586,10 +586,11 @@
       "materialId": 11,
       "distinguished":false,
       "image": "caja-aladin-c-perf-y-crem-1.jpg"
-   },
+   }
+   ,
    {
       "id": 43,
-      "name": "Canasta",
+      "name": "Canasta Le Pain",
       "price": 1,
       "discount": 0,
       "description": "La canasta Le Pain es una hermosa canasta de mimbre que es perfecta para almacenar pan y otros productos de panadería. Hecha de materiales de alta calidad y con un diseño elegante y moderno, esta canasta es una excelente manera de mantener tus productos de panadería frescos y organizados. Además, su tamaño la hace perfecta para cualquier cocina",
@@ -600,5 +601,1475 @@
       "materialId": 7,
       "distinguished":false,
       "image": "canasta-le-pain-ch-1.jpg"
+   }
+   ,
+   {
+      "id": 44,
+      "name": "Canasto Dante chico",
+      "price": 1,
+      "discount": 0,
+      "description": "Un práctico y versátil canasto de tamaño reducido, ideal para organizar y almacenar tus objetos personales. Su diseño moderno y resistente lo convierte en una excelente opción para mantener el orden en tu hogar o lugar de trabajo.",
+      "brandId": 7,
+      "categoryId": 7,
+      "stock": 1,
+      "home":false,
+      "materialId": 7,
+      "distinguished":false,
+      "image":"canasto-dante-chico-1.jpg" 
+   }
+   ,
+   {
+      "id": 45,
+      "name": "Canasto tejido",
+      "price": 1,
+      "discount": 0,
+      "description": "Este encantador canasto tejido de yute, con un diámetro de 23 cm, es perfecto para añadir un toque rústico y acogedor a cualquier espacio. Su diseño artesanal y duradero te permitirá almacenar y transportar tus objetos de manera fácil y elegante.",
+      "brandId": 7,
+      "categoryId": 7,
+      "stock": 1,
+      "home":false,
+      "materialId": 7,
+      "distinguished":false,
+      "image":"canasto-yute-tejido-23-cm-1.jpg" 
+   }
+   ,
+   {
+      "id": 46,
+      "name": "canasto tejido chico",
+      "price": 1,
+      "discount": 0,
+      "description": "Con un estilo natural y delicado, este canasto de yute tejido en tamaño chico es ideal para organizar pequeños objetos en tu hogar. Su diseño compacto y resistente lo convierte en una opción práctica y decorativa para cualquier ambiente.",
+      "brandId": 7,
+      "categoryId": 7,
+      "stock": 1,
+      "home":false,
+      "materialId": 7,
+      "distinguished":false,
+      "image":"canasto-yute-tejido-ch-1.jpg" 
+   }
+   ,
+   {
+      "id": 47,
+      "name": "Canasto tejido grande",
+      "price": 1,
+      "discount": 0,
+      "description": "Un canasto de yute tejido en tamaño grande, perfecto para almacenar y organizar objetos de mayor tamaño. Su diseño robusto y estilizado brinda funcionalidad y elegancia, convirtiéndolo en una excelente opción para mantener tu espacio ordenado.",
+      "brandId": 7,
+      "categoryId": 7,
+      "stock": 1,
+      "home":false,
+      "materialId": 7,
+      "distinguished":false,
+      "image":"canasto-yute-tejido-g-1.jpg" 
+   }
+   ,
+   {
+      "id": 48,
+      "name": "Cepillo Bubble Up Brush",
+      "price": 1,
+      "discount": 0,
+      "description": "Este cepillo innovador cuenta con cerdas de alta calidad y una base de succión para facilitar la limpieza de tus utensilios de cocina. Su diseño ergonómico y su color blanco brillante lo convierten en un accesorio moderno y práctico para tu rutina diaria.",
+      "brandId": 7,
+      "categoryId": 6,
+      "stock": 1,
+      "home":false,
+      "materialId": 1,
+      "distinguished":false,
+      "image":"cepillo-bubble-up-brush-white-1.jpg" 
+   }
+   ,
+   {
+      "id": 49,
+      "name": "Colador",
+      "price": 1,
+      "discount": 0,
+      "description": "Un colador funcional y elegante con mango negro, ideal para escurrir y colar alimentos de manera eficiente. Su diseño resistente y fácil de limpiar lo convierte en un utensilio imprescindible en tu cocina.",
+      "brandId": 7,
+      "categoryId": 6,
+      "stock": 1,
+      "home":false,
+      "materialId": 4,
+      "distinguished":false,
+      "image":"colador-con-mango-black-1.jpg" 
+   }
+   ,
+   {
+      "id": 50,
+      "name": "Cubetera",
+      "price": 1,
+      "discount": 0,
+      "description": "Práctica y versátil, esta cubetera con tapa te permitirá hacer y conservar cubos de hielo de forma conveniente. Su diseño hermético evita la absorción de olores y garantiza cubitos de hielo frescos en todo momento.",
+      "brandId": 7,
+      "categoryId": 6,
+      "stock": 1,
+      "home":false,
+      "materialId": 4,
+      "distinguished":false,
+      "image":"cubetera-con-tapa-1.jpg" 
+   }
+   ,
+   {
+      "id": 51,
+      "name": "cubiertero",
+      "price": 1,
+      "discount": 0,
+      "description": "Organiza tus cubiertos de manera ordenada y elegante con este cubiertero de Madesmart con una división. Su diseño duradero y de calidad garantiza una organización eficiente y un acceso fácil a tus utensilios de mesa.",
+      "brandId": 7,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 4,
+      "distinguished":false,
+      "image":"cubiertero-madesmart-1-div-39c-1.jpg" 
+   }
+   ,
+   {
+      "id": 52,
+      "name": "Cubo Aromatico The Candle Shop",
+      "price": 1,
+      "discount": 0,
+      "description": "Este pequeño y encantador cubo aromático de The Candle Shop llenará tu hogar con fragancias envolventes y relajantes. Su diseño compacto y elegante lo convierte en una opción perfecta para aromatizar espacios reducidos.",
+      "brandId": 11,
+      "categoryId": 5,
+      "stock": 1,
+      "home":false,
+      "materialId": 5,
+      "distinguished":false,
+      "image":"cubo-aromatico-mini-the-candle-shop-1.jpg" 
+   }
+   ,
+   {
+      "id": 53,
+      "name": "cuchara acanalada",
+      "price": 1,
+      "discount": 0,
+      "description": "Una cuchara versátil y práctica con un diseño acanalado, ideal para servir salsas, sopas y otros platos. Su forma ergonómica y su material resistente hacen que sea un utensilio duradero y fácil de usar en la cocina.",
+      "brandId": 1,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 4,
+      "distinguished":false,
+      "image":"cuchara-acanalada-1.jpg" 
+   }
+   ,
+   {
+      "id": 54,
+      "name": "cuchara acanalada silicona",
+      "price": 1,
+      "discount": 0,
+      "description": "Una cuchara de silicona con agujeros, perfecta para escurrir líquidos mientras sirves alimentos. Su material resistente al calor y su diseño ergonómico la convierten en una herramienta práctica y duradera en la cocina.",
+      "brandId": 1,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 2,
+      "distinguished":false,
+      "image":"cuchara-agujereada-silicona-1.jpg" 
+   }
+   ,
+   {
+      "id": 55,
+      "name": "cuchara para cafe",
+      "price": 1,
+      "discount": 0,
+      "description": "Esta cuchara de café está especialmente diseñada para medir la cantidad perfecta de café en tu contenedor. Su tamaño compacto y su forma ergonómica te permitirán disfrutar de una taza de café deliciosa en cada preparación.",
+      "brandId": 1,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 4,
+      "distinguished":false,
+      "image":"cuchara-cafe-para-contenedor-1.jpg" 
+   }
+   ,
+   {
+      "id": 56,
+      "name": "cuchara nylon",
+      "price": 1,
+      "discount": 0,
+      "description": "Una cuchara resistente de color gris fabricada en nylon, ideal para mezclar ingredientes y servir platos con comodidad. Su diseño duradero y su acabado elegante la convierten en un utensilio imprescindible en tu cocina.",
+      "brandId": 1,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 2,
+      "distinguished":false,
+      "image":"cuchara-nulon-gris-1.jpg" 
+   }
+   ,
+   {
+      "id": 57,
+      "name": "cucharon",
+      "price": 1,
+      "discount": 0,
+      "description": "Una cuchara versátil y práctica para servir una variedad de alimentos, desde ensaladas hasta guisos. Su diseño resistente y su forma ergonómica la convierten en una herramienta confiable en tu cocina.",
+      "brandId": 7,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 3,
+      "distinguished":false,
+      "image":"cuchara-para-servir-1.jpg" 
+   }
+   ,
+   {
+      "id": 58,
+      "name": "cuchara para pastas",
+      "price": 1,
+      "discount": 0,
+      "description": "Una cuchara de pasta con mango de silicona te permitirá servir porciones generosas de pasta de manera fácil y segura. Su diseño antiadherente y su mango ergonómico garantizan una manipulación cómoda y sin derrames.",
+      "brandId": 7,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 2,
+      "distinguished":false,
+      "image":"cuchara-pasta-silicona-mango-m-1.jpg" 
+   }
+   ,
+   {
+      "id": 59,
+      "name": "cuchara silicona",
+      "price": 1,
+      "discount": 0,
+      "description": "Una cuchara resistente con cabeza de silicona, perfecta para mezclar y servir tus recetas favoritas. Su diseño duradero y su mango cómodo ofrecen un agarre firme y una experiencia culinaria sin complicaciones.",
+      "brandId": 1,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 2,
+      "distinguished":false,
+      "image":"cuchara-rosty-silicona-1.jpg" 
+   }
+   ,
+   {
+      "id": 60,
+      "name": "cucharon acero",
+      "price": 1,
+      "discount": 0,
+      "description": "Este cucharón de acero inoxidable es ideal para servir sopas, caldos y guisos con facilidad. Su diseño resistente y su tamaño generoso te permitirán disfrutar de tus platos favoritos sin preocuparte por derrames.",
+      "brandId": 1,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 3,
+      "distinguished":false,
+      "image":"cucharon-acero-1.jpg"
+   }
+   ,
+   {
+      "id": 61,
+      "name": "cucharon de madera",
+      "price": 1,
+      "discount": 0,
+      "description": "Un cucharón duradero con cabeza de nylon y mango de madera, perfecto para cocinar y servir alimentos calientes. Su diseño resistente al calor y su construcción de calidad garantizan un uso prolongado en la cocina.",
+      "brandId": 1,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 1,
+      "distinguished":false,
+      "image":"cucharon-nylon-mad-acero-1.jpg" 
+   }
+   ,
+   {
+      "id": 62,
+      "name": "cucharon Tramontina",
+      "price": 1,
+      "discount": 0,
+      "description": "Este cucharón de arroz de la reconocida marca Tramontina es ideal para servir porciones de arroz de manera precisa y cómoda. Su diseño funcional y su material resistente hacen que sea una opción confiable en tu cocina.",
+      "brandId": 8,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 2,
+      "distinguished":false,
+      "image":"cucharon-para-arroz-tramontina-1.jpg" 
+   }
+   ,
+   {
+      "id": 63,
+      "name": "cucharon panquequero",
+      "price": 1,
+      "discount": 0,
+      "description": "Un cucharón especialmente diseñado para preparar y servir panqueques de manera fácil y precisa. Su forma redondeada y su material antiadherente garantizan resultados perfectos en cada ocasión.",
+      "brandId": 8,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 2,
+      "distinguished":false,
+      "image":"cucharon-para-panqueques-1.jpg" 
+   }
+   ,
+   {
+      "id": 64,
+      "name": "cucharon de silicona",
+      "price": 1,
+      "discount": 0,
+      "description": "Este cucharón de silicona es resistente al calor y perfecto para cocinar y servir alimentos sin rayar tus utensilios de cocina. Su diseño duradero y su mango ergonómico ofrecen un agarre cómodo y seguro.",
+      "brandId": 1,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 2,
+      "distinguished":false,
+      "image":"cucharon-silicona-1.jpg" 
+   }
+   ,
+   {
+      "id": 65,
+      "name": "cucharon mango de madera",
+      "price": 1,
+      "discount": 0,
+      "description": "Un cucharón de cocina con cabeza de silicona y mango de madera, que combina funcionalidad y estilo. Ideal para servir sopas, salsas y guisos, su diseño resistente y atractivo lo convierte en un complemento elegante para tu cocina.",
+      "brandId": 1,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 2,
+      "distinguished":false,
+      "image":"cucharon-silicona-mango-madera-1.jpg" 
+   }
+   ,
+   {
+      "id": 66,
+      "name": "cucharon de teflon",
+      "price": 1,
+      "discount": 0,
+      "description": "Este cucharón recubierto de teflón facilita la preparación y el servicio de tus comidas favoritas. Su revestimiento antiadherente permite una limpieza rápida y sencilla, mientras que su forma ergonómica garantiza un manejo cómodo.",
+      "brandId": 1,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 12,
+      "distinguished":false,
+      "image":"cucharon-teflon-1.jpg" 
+   }
+   ,
+   {
+      "id": 67,
+      "name": "descorazonador de manzanas",
+      "price": 1,
+      "discount": 0,
+      "description": "Extrae fácilmente el corazón de las manzanas con este descorazonador práctico y eficiente. Su diseño ergonómico y sus afiladas cuchillas hacen que preparar tus manzanas sea rápido y sin complicaciones.",
+      "brandId": 10,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 3,
+      "distinguished":false,
+      "image":"descorazonador-de-manzanas-leifheit-1.jpg" 
+   }
+   ,
+   {
+      "id": 68,
+      "name": "difusor de ambiente",
+      "price": 1,
+      "discount": 0,
+      "description": "Disfruta de un ambiente relajante y aromático con este difusor de bergamota y rosas. Su fragancia encantadora y duradera llenará tu hogar con una sensación de calma y bienestar.",
+      "brandId": 7,
+      "categoryId": 5,
+      "stock": 1,
+      "home":false,
+      "materialId": 4,
+      "distinguished":false,
+      "image":"difusor-bergam-y-rosas-1.jpg" 
+   }
+   ,
+   {
+      "id": 69,
+      "name": "defusor de ambiente basic",
+      "price": 1,
+      "discount": 0,
+      "description": "Este difusor de ambiente básico de The Candle Shop difunde suave y gradualmente fragancias agradables en tu hogar. Su diseño minimalista y su aroma fresco crean una atmósfera acogedora y relajante.",
+      "brandId": 11,
+      "categoryId": 5,
+      "stock": 1,
+      "home":false,
+      "materialId": 6,
+      "distinguished":false,
+      "image":"difusor-de-ambiente-basic-the-candle-shop-1.jpg" 
+   }
+   ,
+   {
+      "id": 70,
+      "name": "defusor de ambiente glossy",
+      "price": 1,
+      "discount": 0,
+      "description": "Dale un toque de elegancia a tu hogar con este difusor de ambiente glossy de The Candle Shop. Su diseño sofisticado y su fragancia cautivadora crean un ambiente refinado y armonioso.",
+      "brandId": 11,
+      "categoryId": 5,
+      "stock": 1,
+      "home":false,
+      "materialId": 6,
+      "distinguished":false,
+      "image":"difusor-de-ambiente-glossy-the-candle-shop-1.jpg" 
+   }
+   ,
+   {
+      "id": 71,
+      "name": "difusor de ambiente grey",
+      "price": 1,
+      "discount": 0,
+      "description": "Este difusor de ambiente en tono gris de The Candle Shop es perfecto para añadir un toque moderno y sutilmente aromático a cualquier espacio. Su diseño estilizado y su fragancia suave crean un ambiente relajante y agradable.",
+      "brandId": 11,
+      "categoryId": 5,
+      "stock": 1,
+      "home":false,
+      "materialId": 6,
+      "distinguished":false,
+      "image":"difusor-grey-the-candle-shop-1.jpg" 
+   }
+   ,
+   {
+      "id": 72,
+      "name": "difusor aromatico Musky",
+      "price": 1,
+      "discount": 0,
+      "description": "Crea una atmósfera envolvente y exquisita con este difusor de jazmín, orquídea y musk. Su fragancia cautivadora y su diseño elegante te transportarán a un mundo de serenidad y belleza.",
+      "brandId": 7,
+      "categoryId": 5,
+      "stock": 1,
+      "home":false,
+      "materialId": 4,
+      "distinguished":false,
+      "image":"difusor-jaz-orq-musky-1.jpg" 
+   }
+   ,
+   {
+      "id": 73,
+      "name": "difusor de ambiente rosa",
+      "price": 1,
+      "discount": 0,
+      "description": "Crea una atmósfera encantadora con este difusor de aroma de rosas blancas y magnolia. Su fragancia delicada y floral llenará tu hogar de serenidad y frescura.",
+      "brandId": 7,
+      "categoryId": 5,
+      "stock": 1,
+      "home":false,
+      "materialId": 4,
+      "distinguished":false,
+      "image":"difusor-rosas-bcas-magn-1.jpg" 
+   }
+   ,
+   {
+      "id": 74,
+      "name": "espatula acanalada de madera",
+      "price": 1,
+      "discount": 0,
+      "description": "Esta espátula de madera de acacia cuenta con un diseño acanalado que facilita el manejo y la manipulación de alimentos. Ideal para voltear y servir alimentos delicados sin dañarlos.",
+      "brandId": 1,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 1,
+      "distinguished":false,
+      "image":"espatula-acanalada-mad-ace-1.jpg" 
+   }
+   ,
+   {
+      "id": 75,
+      "name": "espatula de acero",
+      "price": 1,
+      "discount": 0,
+      "description": "Una espátula resistente y duradera hecha de acero inoxidable de alta calidad. Perfecta para cocinar, mezclar y raspar ingredientes con facilidad.",
+      "brandId": 1,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 3,
+      "distinguished":false,
+      "image":"espatula-acero-1.jpg" 
+   }
+   ,
+   {
+      "id": 76,
+      "name": "espatula dorada",
+      "price": 1,
+      "discount": 0,
+      "description": "Esta elegante espátula presenta una hoja dorada y un mango de cerámica negra, combinando estilo y funcionalidad. Ideal para una presentación sofisticada y para mezclar ingredientes con precisión.",
+      "brandId": 1,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 3,
+      "distinguished":false,
+      "image":"espatula-dorada-mgo-cer-ng-1.jpg" 
+   }
+   ,
+   {
+      "id": 77,
+      "name": "espatula para manteca",
+      "price": 1,
+      "discount": 0,
+      "description": "Con un mango ergonómico de madera de polywood y una hoja de acero inoxidable, esta espátula es perfecta para untar y distribuir manteca de manera uniforme.",
+      "brandId": 4,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 3,
+      "distinguished":false,
+      "image":"espatula-manteca-polywood-1.jpg" 
+   }
+   ,
+   {
+      "id": 78,
+      "name": "espatula dorada blanca",
+      "price": 1,
+      "discount": 0,
+      "description": "Esta espátula combina un mango dorado con una hoja de cerámica blanca, brindando un aspecto moderno y elegante. Ideal para mezclar y servir alimentos con estilo.",
+      "brandId": 4,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 3,
+      "distinguished":false,
+      "image":"espatula-mgo-dorado-cer-blanco-1.jpg" 
+   }
+   ,
+   {
+      "id": 79,
+      "name": "espatula de nylon",
+      "price": 1,
+      "discount": 0,
+      "description": "Una espátula resistente con una hoja de nylon y un mango de madera de acacia. Ideal para uso diario en la cocina, resistente al calor y fácil de limpiar.",
+      "brandId": 1,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 1,
+      "distinguished":false,
+      "image":"espatula-nylon-mad-acero-1.jpg" 
+   }
+   ,
+   {
+      "id": 80,
+      "name": "espatula de silicona acanalada",
+      "price": 1,
+      "discount": 0,
+      "description": "Con su cabeza de silicona resistente al calor y su mango ergonómico, esta espátula es perfecta para mezclar y raspar ingredientes de forma segura y eficiente.",
+      "brandId": 1,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 2,
+      "distinguished":false,
+      "image":"espatula-silicona-1.jpg" 
+   }
+   ,
+   {
+      "id": 81,
+      "name": "espatula de silicona larga",
+      "price": 1,
+      "discount": 0,
+      "description": "Esta espátula de silicona de tamaño grande es ideal para mezclar grandes cantidades de ingredientes y raspar los recipientes de manera eficiente. Su diseño duradero y flexible la convierte en una herramienta imprescindible en la cocina.",
+      "brandId": 1,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 2,
+      "distinguished":false,
+      "image":"espatula-silicona-large-1.jpg" 
+   }
+   ,
+   {
+      "id": 82,
+      "name": "espumadera de acero",
+      "price": 1,
+      "discount": 0,
+      "description": "Una espumadera duradera y versátil hecha de acero inoxidable de alta calidad. Ideal para remover espumas y recoger alimentos de líquidos.",
+      "brandId": 1,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 3,
+      "distinguished":false,
+      "image":"espumadera-acero-1.jpg" 
+   }
+   ,
+   {
+      "id": 83,
+      "name": "espumadera de silicona",
+      "price": 1,
+      "discount": 0,
+      "description": "Esta espumadera de silicona resistente al calor es perfecta para remover alimentos de líquidos sin rayar las superficies. Su diseño perforado permite un drenaje eficiente.",
+      "brandId": 1,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 2,
+      "distinguished":false,
+      "image":"espumadera-silicona-1.jpg" 
+   }
+   ,
+   {
+      "id": 84,
+      "name": "espumadera de silicona Oxo",
+      "price": 1,
+      "discount": 0,
+      "description": "La espumadera de silicona Oxo es una herramienta de cocina versátil y resistente al calor. Su diseño ergonómico y su mango antideslizante garantizan un uso cómodo y seguro.",
+      "brandId": 9,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 2,
+      "distinguished":false,
+      "image":"espumadera-silicona-oxo-1.jpg" 
+   }
+   ,
+   {
+      "id": 85,
+      "name": "espumadera de teflon",
+      "price": 1,
+      "discount": 0,
+      "description": "Con su revestimiento antiadherente de teflón, esta espumadera facilita la extracción de alimentos de líquidos calientes. Su diseño resistente y suave al tacto hacen que sea fácil de usar y limpiar.",
+      "brandId": 1,
+      "categoryId": 2,
+      "stock": 1,
+      "home":false,
+      "materialId": 12,
+      "distinguished":false,
+      "image":"espumadera-teflon-1.jpg" 
+   }
+   ,
+   {
+      "id": 86,
+      "name": "exprimidor de citricos",
+      "price": 1,
+      "discount": 0,
+      "description": "Exprime fácilmente el jugo fresco de tus cítricos favoritos con este exprimidor de alta calidad. Su diseño eficiente y resistente te permite obtener el máximo rendimiento de tus frutas.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"exprimidor-citricos-leifheit-1.jpg" 
+   }
+   ,
+   {
+      "id": 87,
+      "name": "fanal de cuerda y vidrio",
+      "price": 1,
+      "discount": 0,
+      "description": "Crea un ambiente cálido y acogedor con este hermoso fanal. Hecho de vidrio y decorado con cuerda, es perfecto para iluminar tus espacios con una suave luz.",
+      "brandId": 1,
+      "categoryId": 6,
+      "stock": 1,
+      "home":false,
+      "materialId": 9,
+      "distinguished":false,
+      "image":"fanal-cuerda-y-vidrio-28-cm-1.jpg" 
+   }
+   ,
+   {
+      "id": 88,
+      "name": "florero de vidrio",
+      "price": 1,
+      "discount": 0,
+      "description": "Decora tu hogar con estilo clásico con este elegante florero de vidrio. Su diseño atemporal complementará cualquier tipo de arreglo floral.",
+      "brandId": 1,
+      "categoryId": 6,
+      "stock": 1,
+      "home":false,
+      "materialId": 6,
+      "distinguished":false,
+      "image":"florero-vidrio-clasico-20-cm-1.jpg" 
+   }
+   ,
+   {
+      "id": 89,
+      "name": "frasco vison",
+      "price": 1,
+      "discount": 0,
+      "description": "Guarda tus alimentos en este elegante frasco con tapa visón de 700 ml. Su diseño moderno y funcional te permite mantener tus ingredientes frescos y visibles.",
+      "brandId": 7,
+      "categoryId": 1,
+      "stock": 1,
+      "home":false,
+      "materialId": 6,
+      "distinguished":false,
+      "image":"frasco-tapa-vison-700-ml.jpg" 
+   }
+   ,
+   {
+      "id": 90,
+      "name": "frasco Vison 980ml",
+      "price": 1,
+      "discount": 0,
+      "description": "Almacena y organiza tus ingredientes en este frasco con tapa visón de 980 ml. Su diseño práctico y estético hará que tus despensas luzcan ordenadas y elegantes.",
+      "brandId": 7,
+      "categoryId": 1,
+      "stock": 1,
+      "home":false,
+      "materialId": 6,
+      "distinguished":false,
+      "image":"frasco-tapa-vison-980-ml.jpg" 
+   }
+   ,
+   {
+      "id": 91,
+      "name": "frasco de vidrio",
+      "price": 1,
+      "discount": 0,
+      "description": "Este encantador frasco de vidrio cuenta con una hermosa malla de mimbre que le da un toque rústico. Ideal para almacenar alimentos secos o como elemento decorativo.",
+      "brandId": 1,
+      "categoryId": 1,
+      "stock": 1,
+      "home":false,
+      "materialId": 10,
+      "distinguished":false,
+      "image":"frasco-vid-malla-mimbre-1lt-1.jpg" 
+   }
+   ,
+   {
+      "id": 92,
+      "name": "frascos de vidrio",
+      "price": 1,
+      "discount": 0,
+      "description": "Con una capacidad de 1.5 kg, este frasco de vidrio es perfecto para almacenar y preservar tus ingredientes favoritos. Su diseño hermético mantiene los alimentos frescos por más tiempo.",
+      "brandId": 1,
+      "categoryId": 1,
+      "stock": 1,
+      "home":false,
+      "materialId": 6,
+      "distinguished":false,
+      "image":"frasco-vidrio-1,5kg.jpg"
+   }
+   ,
+   {
+      "id": 93,
+      "name": "frasco de vidrio y mimbre 1000ml",
+      "price": 1,
+      "discount": 0,
+      "description": "Dale un toque elegante a tu cocina con este frasco de vidrio con mimbre y línea negra. Perfecto para almacenar alimentos y mantener su frescura.",
+      "brandId": 1,
+      "categoryId": 1,
+      "stock": 1,
+      "home":false,
+      "materialId": 10,
+      "distinguished":false,
+      "image":"frasco-vidrio-mimbre-linea-negra-1000-ml-1.jpg" 
+   }
+   ,
+   {
+      "id": 94,
+      "name": "frasco de vidrio y mimbre 1500ml",
+      "price": 1,
+      "discount": 0,
+      "description": "Almacena tus ingredientes de manera segura y estilizada con este frasco de vidrio con mimbre y línea negra. Su diseño funcional y atractivo hará que destaque en tu despensa.",
+      "brandId": 1,
+      "categoryId": 1,
+      "stock": 1,
+      "home":false,
+      "materialId": 10,
+      "distinguished":false,
+      "image":"frasco-vidrio-mimbre-linea-negra-1500-ml-1.jpg" 
+   }
+   ,
+   {
+      "id": 95,
+      "name": "Fuente 47cm",
+      "price": 1,
+      "discount": 0,
+      "description": "Presenta tus platos de forma sofisticada con esta fuente dorada de 47 cm. Su elegante diseño agregará un toque de glamour a tus comidas y eventos especiales.",
+      "brandId": 1,
+      "categoryId": 6,
+      "stock": 1,
+      "home":false,
+      "materialId": 3,
+      "distinguished":false,
+      "image":"fuente-oro-47-cm-1.jpg" 
+   }
+   ,
+   {
+      "id": 96,
+      "name": "incienso aromatico x30",
+      "price": 1,
+      "discount": 0,
+      "description": "Disfruta de una fragancia relajante y envolvente con este set de inciensos aromáticos. Cada caja contiene 30 varillas que te ayudarán a crear un ambiente tranquilo y armonioso.",
+      "brandId": 11,
+      "categoryId": 5,
+      "stock": 1,
+      "home":false,
+      "materialId": 12,
+      "distinguished":false,
+      "image":"incienso-aromatico-x-30-u-the-candle-shop-1.jpg" 
+   }
+   ,
+   {
+      "id": 97,
+      "name": "jabonera oklahoma",
+      "price": 1,
+      "discount": 0,
+      "description": "Esta jabonera de madera de bambú es perfecta para mantener tus jabones organizados y secos. Su diseño natural y elegante añade un toque de estilo a tu baño.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"jaboneraa-oklahoma-bamboo-wood-1.jpg" 
+   }
+   ,
+   {
+      "id": 98,
+      "name": "jarra Taksim 1,5L",
+      "price": 1,
+      "discount": 0,
+      "description": "Esta jarra acrílica de 1.5 litros es ideal para servir bebidas frías durante reuniones y eventos. Su diseño moderno y resistente la convierte en una opción práctica y elegante.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"jarra-acrilico-taksim-1-5lt-1.jpg" 
+   }
+   ,
+   {
+      "id": 99,
+      "name": "jarra Taksim Smoke 1,5L",
+      "price": 1,
+      "discount": 0,
+      "description": "Agrega un toque de sofisticación a tu mesa con esta jarra acrílica ahumada de 1500 ml. Perfecta para servir agua, jugo u otras bebidas con estilo.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"jarra-acril-taksim-smoke-1500m-1.jpg" 
+   }
+   ,
+   {
+      "id": 100,
+      "name": "jarra medidora Pyrex",
+      "price": 1,
+      "discount": 0,
+      "description": "Con esta jarra medidora de Pyrex, podrás medir tus ingredientes con precisión. Su material resistente al calor y las marcas de medición claras la convierten en una herramienta imprescindible en la cocina.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"jarra-medidora-pyrex-1.jpg" 
+   }
+   ,
+   {
+      "id": 101,
+      "name": "Jarra Medidora de Silicona Oxo",
+      "price": 1,
+      "discount": 0,
+      "description": "Esta jarra medidora de silicona flexible es perfecta para medir líquidos de forma precisa. Su diseño ergonómico y vertido sin goteo la hacen muy cómoda de usar.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"jarra-medidora-silicona-oxo-1.jpg" 
+   }
+   ,
+   {
+      "id": 102,
+      "name": "Lata Green Leave Show",
+      "price": 1,
+      "discount": 0,
+      "description": "Guarda tus objetos pequeños o alimentos en esta lata decorativa con diseño de hojas verdes. Perfecta para añadir un toque de naturaleza y estilo a tu hogar.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"lata-green-leave-show-esp-1.jpg" 
+   }
+   ,
+   {
+      "id": 103,
+      "name": "Lata Honey Bristo",
+      "price": 1,
+      "discount": 0,
+      "description": "Mantén tus productos de belleza o joyas organizados en esta lata decorativa. Su diseño encantador y funcionalidad la convierten en un accesorio versátil.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"lata-honey-bristo-jab-coraz-bc-1.jpg" 
+   }
+   ,
+   {
+      "id": 104,
+      "name": "pelapapas",
+      "price": 1,
+      "discount": 0,
+      "description": "Simplifica tus tareas en la cocina con este práctico pelapapas. Con su cuchilla afilada y diseño ergonómico, podrás pelar tus papas y vegetales",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"pelapapas-1.jpg" 
+   }
+   ,
+   {
+      "id": 105,
+      "name": "pelapapas con sierra",
+      "price": 1,
+      "discount": 0,
+      "description": "Pelar tus papas y vegetales nunca ha sido tan fácil. Este pelapapas cuenta con una cuchilla con sierra para un pelado rápido y eficiente, ahorrándote tiempo y esfuerzo en la cocina.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"pelapapas-c-sierra-1.jpg" 
+   }
+   ,
+   {
+      "id": 106,
+      "name": "Pino con Maceta Arpillera",
+      "price": 1,
+      "discount": 0,
+      "description": "Agrega un toque de naturaleza a tu hogar con este encantador pino en maceta. Con su diseño realista y la textura de la arpillera, es perfecto para decorar tu espacio con un toque rústico.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"pino-con-maceta-arpillera-1.jpg" 
+   }
+   ,
+   {
+      "id": 107,
+      "name": "Espatula con pinza",
+      "price": 1,
+      "discount": 0,
+      "description": "Este práctico conjunto de pinza y espátula es ideal para dar vuelta alimentos a la parrilla o en la cocina. Hechas con materiales de alta calidad, te brindarán un buen agarre y durabilidad.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"pinza-y-espatula-1.jpg" 
+   }
+   ,
+   {
+      "id": 108,
+      "name": "pisapapas",
+      "price": 1,
+      "discount": 0,
+      "description": "Prepara deliciosos purés y guarniciones con facilidad usando este pisapapas. Su diseño resistente y cómodo mango te permite obtener una consistencia suave y homogénea en tus preparaciones.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"pisapapas-1.jpg" 
+   }
+   ,
+   {
+      "id": 109,
+      "name": "plato playo Verbano",
+      "price": 1,
+      "discount": 0,
+      "description": "Sirve tus platos favoritos con elegancia en este plato playo de la línea Vanna de Verbano. Con su diseño clásico y acabado de alta calidad, realzará la presentación de tus comidas.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"plato-playo-verbano-vanna_1.jpg" 
+   }
+   ,
+   {
+      "id": 110,
+      "name": "rallador de nuez moscada",
+      "price": 1,
+      "discount": 0,
+      "description": "Disfruta del sabor fresco y aromático de la nuez moscada rallada en tus recetas. Este rallador de nuez moscada te permite obtener fácilmente el máximo sabor y aroma de esta especia.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"rallador-nuez-moscada-1.jpg" 
+   }
+   ,
+   {
+      "id": 111,
+      "name": "reabanador de queso",
+      "price": 1,
+      "discount": 0,
+      "description": "Corta rebanadas perfectas de queso con este rebanador de queso de acero inoxidable de Hudson. Su diseño ergonómico y cuchilla afilada te garantizan cortes precisos y uniformes.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"rebanador-queso-hudson-1.jpg" 
+   }
+   ,
+   {
+      "id": 112,
+      "name": "Repuesto de difusor",
+      "price": 1,
+      "discount": 0,
+      "description": "Renueva el aroma de tu difusor con este repuesto de The Candle Shop. Disponible en diferentes fragancias, te permitirá disfrutar de un ambiente aromático y relajante en tu hogar.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"repuesto-difusor-the-candle-shop-1.jpg" 
+   }
+   ,
+   {
+      "id": 113,
+      "name": "salero de acrilico",
+      "price": 1,
+      "discount": 0,
+      "description": "Agrega estilo a tu cocina con este salero acrílico facetado. Su diseño moderno y elegante te permite tener la sal siempre a mano mientras le da un toque decorativo a tu espacio culinario.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"salero-acrilico-facetado-1.jpg" 
+   }
+   ,
+   {
+      "id": 114,
+      "name": "separador de grasas Oxo",
+      "price": 1,
+      "discount": 0,
+      "description": "Elimina el exceso de grasa de tus sopas, caldos y salsas con este práctico separador de grasas. Su diseño inteligente te permite verter el líquido sin la grasa acumulada, obteniendo platos más saludables.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"separador-grasas-oxo-1.jpg" 
+   }
+   ,
+   {
+      "id": 115,
+      "name": "set de 6 utensilios",
+      "price": 1,
+      "discount": 0,
+      "description": "Equipa tu cocina con este completo set de 6 utensilios de cocina de Hudson. Hechos con materiales duraderos y cómodos mangos, te ayudarán a preparar tus recetas con facilidad y estilo.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"set-6-utensilios-hudson-1.jpg" 
+   }
+   ,
+   {
+      "id": 116,
+      "name": "set de posavasos",
+      "price": 1,
+      "discount": 0,
+      "description": "Protege tus superficies de manchas y marcas con este set de 4 posavasos hexagonales. Su diseño moderno y resistente los convierte en un accesorio práctico y decorativo.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"set-posavasos-hexagonal-x-4-piezas-1.jpg" 
+   }
+   ,
+   {
+      "id": 117,
+      "name": "tabla de laja",
+      "price": 1,
+      "discount": 0,
+      "description": "Corta y prepara tus ingredientes en esta tabla de 25 cm de laja natural. Su superficie resistente y fácil de limpiar la hace ideal para cualquier tarea en la cocina.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"tabla-25-cm-laja-1.jpg" 
+   }
+   ,
+   {
+      "id": 118,
+      "name": "tabla de marmol y madera",
+      "price": 1,
+      "discount": 0,
+      "description": "Añade un toque de elegancia a tu cocina con esta tabla de mármol de 25 cm. Perfecta para cortar y servir quesos, frutas y otros alimentos, brinda una superficie duradera y estilizada.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"tabla-25-cm-marmol-1.jpg" 
+   }
+   ,
+   {
+      "id": 119,
+      "name": "tabla de madera",
+      "price": 1,
+      "discount": 0,
+      "description": "Prepárate para cocinar con estilo con esta tabla de madera de 28 cm. Su diseño robusto y superficie de corte amplia te brindan la estabilidad y espacio necesarios para tus preparaciones.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"tabla-28-cm-madera-1.jpg" 
+   }
+   ,
+   {
+      "id": 120,
+      "name": "",
+      "price": 1,
+      "discount": 0,
+      "description": "Dale un toque de lujo a tu cocina con esta tabla de mármol de 30 cm. Ideal para cortar y presentar alimentos, su acabado pulido y duradero la convierten en un accesorio elegante.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"tabla-30-cm-marmol-1.jpg" 
+   }
+   ,
+   {
+      "id": 121,
+      "name": "set de 8 velas",
+      "price": 1,
+      "discount": 0,
+      "description": "Crea un ambiente acogedor y romántico con este set de 8 velas tea lights de The Candle Shop. Perfectas para decorar y agregar un toque de luz suave en cualquier espacio.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"tea-lights-x-8-u-the-candle-shop-1.jpg" 
+   }
+   ,
+   {
+      "id": 122,
+      "name": "tenedor para ensalada",
+      "price": 1,
+      "discount": 0,
+      "description": "Mezcla y sirve tus ensaladas con este tenedor para ensalada de mango color negro. Su diseño elegante y ergonómico te permite disfrutar de tus ensaladas de forma práctica y estilizada.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"tenedor-para-ensalada-mgo-negr-1.jpg" 
+   }
+   ,
+   {
+      "id": 123,
+      "name": "termometro digital",
+      "price": 1,
+      "discount": 0,
+      "description": "Obtén lecturas precisas de temperatura con este termómetro digital. Perfecto para cocinar carnes, líquidos y alimentos en general, te ayuda a asegurar la cocción adecuada en tus preparaciones.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"termometro-digital-1.jpg" 
+   }
+   ,
+   {
+      "id": 124,
+      "name": "termometro para carnes",
+      "price": 1,
+      "discount": 0,
+      "description": "Asegúrate de que tus carnes estén cocidas a la perfección con este termómetro especializado. Con indicadores de temperatura y fácil lectura, obtendrás resultados jugosos y bien cocidos.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"termometro-para-carnes-1.jpg" 
+   }
+   ,
+   {
+      "id": 125,
+      "name": "Vaporizador de Ambiente",
+      "price": 1,
+      "discount": 0,
+      "description": "Refresca y aromatiza tus telas con este vaporizador de ambiente textil de The Candle Shop. Con sus fragancias únicas, disfrutarás de un ambiente agradable y fresco en tu hogar.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"vaporizador-ambiente-textil-the-candel-shop-1.jpg" 
+   }
+   ,
+   {
+      "id": 126,
+      "name": "vaso sidney",
+      "price": 1,
+      "discount": 0,
+      "description": "Disfruta de tus bebidas favoritas con estilo en este vaso acrílico de 600 ml. Su diseño resistente y transparente te permite ver el contenido y es perfecto para usar en interiores y exteriores.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"vaso-acril-sidney-600ml-1.jpg" 
+   }
+   ,
+   {
+      "id": 127,
+      "name": "Vaso Alto Champagne",
+      "price": 1,
+      "discount": 0,
+      "description": "Celebra momentos especiales con este vaso alto de champagne con un diámetro de 12 cm. Su diseño elegante y delicado realza el brillo de las burbujas y añade un toque de lujo a tus brindis.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"vaso-alto-champagne-diam-12cm-1.jpg" 
+   }
+   ,
+   {
+      "id": 128,
+      "name": "vaso alto Margot",
+      "price": 1,
+      "discount": 0,
+      "description": "Sorprende a tus invitados con este vaso alto Margot. Con su forma y diseño exclusivos, es ideal para servir cócteles y bebidas especiales, agregando un toque de distinción a tus eventos.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"vaso-alto-margot-1.jpg" 
+   }
+   ,
+   {
+      "id": 129,
+      "name": "vaso bajo",
+      "price": 1,
+      "discount": 0,
+      "description": "Disfruta de tus bebidas refrescantes en este vaso bajo acrílico con diseño de escamas en color humo. Su tamaño compacto y diseño estético lo convierten en una opción versátil para cualquier ocasión.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"vaso-bajo-acril-fume-scale-1.jpg" 
+   }
+   ,
+   {
+      "id": 130,
+      "name": "vaso bombee",
+      "price": 1,
+      "discount": 0,
+      "description": "Añade color y estilo a tu vajilla con este vaso bombee en tonos vibrantes. Su forma curva y colores llamativos lo convierten en un complemento divertido y funcional para tus bebidas.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"vaso-bombee-color-1.jpg" 
+   }
+   ,
+   {
+      "id": 131,
+      "name": "vaso bombee lunares",
+      "price": 1,
+      "discount": 0,
+      "description": "Celebra con estilo usando este vaso bombee con lunares. Su diseño contemporáneo y acabado brillante añaden un toque de glamour a tus celebraciones.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"vaso-bombee-mirror-lunares-1.jpg" 
+   }
+   ,
+   {
+      "id": 132,
+      "name": "vaso para cerveza weizen",
+      "price": 1,
+      "discount": 0,
+      "description": "Disfruta de la cerveza de trigo en todo su esplendor con este vaso Weizen de Rona. Su forma alta y estilizada realza los aromas y sabores de esta refrescante bebida.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"vaso-cerveza-weizen-rona-420-ml-1.jpg" 
+   }
+   ,
+   {
+      "id": 133,
+      "name": "vaso Dubai",
+      "price": 1,
+      "discount": 0,
+      "description": "Dale un toque de elegancia a tus cócteles con este vaso de diseño exclusivo. Su forma estilizada y detalles sofisticados hacen que cada sorbo sea una experiencia lujosa.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"vaso-dubai-1.jpg" 
+   }
+   ,
+   {
+      "id": 134,
+      "name": "vaso whisky Satinado",
+      "price": 1,
+      "discount": 0,
+      "description": "Sirve y disfruta de tu whisky con estilo en este vaso Esquel con acabado satinado. Su diseño sofisticado y material resistente hacen que cada sorbo sea un momento de placer.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"vaso-esquel-whisky-satinado-1.jpg" 
+   }
+   ,
+   {
+      "id": 135,
+      "name": "vaso Kingdom",
+      "price": 1,
+      "discount": 0,
+      "description": "Añade un toque de realeza a tus bebidas con este vaso Kingdom de 350 ml. Su diseño elegante y forma ergonómica lo convierten en un complemento perfecto para tus momentos de disfrute.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"vaso-kingdom-350-ml-1.jpg" 
+   }
+   ,
+   {
+      "id": 136,
+      "name": "vaso alto London",
+      "price": 1,
+      "discount": 0,
+      "description": "Siéntete como en un elegante pub londinense con este vaso alto inspirado en el estilo clásico. Perfecto para cervezas, cócteles y refrescos, te transportará a la vibrante ciudad de Londres.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"vaso-london-alto-1.jpg" 
+   }
+   ,
+   {
+      "id": 137,
+      "name": "vaso whisky Amassadinho",
+      "price": 1,
+      "discount": 0,
+      "description": "Disfruta de tus whiskies y destilados con este vaso amassadinho. Su forma cómoda y diseño tradicional realzan los sabores y aromas de tus bebidas preferidas.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"vaso-whisky-amassadinho-1.jpg" 
+   }
+   ,
+   {
+      "id": 138,
+      "name": "vaso whisky XL",
+      "price": 1,
+      "discount": 0,
+      "description": " Sirve tus whiskies de forma generosa en este vaso XL de 460 ml. Su diseño amplio y elegante te permite apreciar todos los matices y disfrutar de una experiencia completa.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"vaso-whisky-xl-460-ml-1.jpg" 
+   }
+   ,
+   {
+      "id": 139,
+      "name": "vela luxe collection",
+      "price": 1,
+      "discount": 0,
+      "description": "Disfruta de la fragancia refrescante y delicada de la pera inglesa y la fresia con esta vela aromática. Su suave aroma llenará tu hogar con notas florales y frutales.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"vela-english-pear-fressia-1.jpg" 
+   }
+   ,
+   {
+      "id": 140,
+      "name": "velon aromatico 6cm",
+      "price": 1,
+      "discount": 0,
+      "description": "Ilumina y perfuma tu espacio con este velón aromático de 6 cm. Su duración prolongada y aroma envolvente crean una atmósfera acogedora y relajante.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"velon-aromatico-6-cm-the-candle-shop-1.jpg" 
+   }
+   ,
+   {
+      "id": 141,
+      "name": "velon aromatico 10cm",
+      "price": 1,
+      "discount": 0,
+      "description": "Disfruta de un ambiente sereno y perfumado con este velón aromático de 10 cm. Su llama cálida y fragancia embriagadora te invitan a un momento de calma y bienestar.",
+      "brandId": ,
+      "categoryId": ,
+      "stock": 1,
+      "home":false,
+      "materialId": ,
+      "distinguished":false,
+      "image":"velon-aromatico-10-cm-the-candle-shop-1.jpg" 
    }
 ]
