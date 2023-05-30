@@ -37,7 +37,7 @@
 }
 
 .home__header-section img{
-    width: 100px;
+    width: 110px;
 }
 
 .home__header-section-div-1 i{
@@ -122,5 +122,12 @@
   .home__header__section__a--icono{
     margin-right: 20px;
   }
+  .home__header-section img{
+    width: 120px;
+  }
 }
-
+@media (min-width: 1024px){
+  .home__header-section img{
+    width: 140px;
+  }
+}
