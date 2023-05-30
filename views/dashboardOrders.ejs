@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" class="dashboard">
+
+    <%- include('./partials/head') %>
+
+<body class="body--dashboard">
+  <div class="body__div--container">
+
+    <%- include('./partials/navDashboard') %>
+
+    <section class="body__section--main">
+      <section class="body__section--attendance">
+        <div class="body__section--attendance-list">
+          <h2>Ordenes</h2>
+          <table class="div__table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Estado</th>
+                <th>Emisión</th>
+                <th>Hora</th>
+                <th>Total</th>
+                <th>Detalle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="div__table__tr">
+                <td>01</td>
+                <td>Mauricio Amado</td>
+                <td>Pendiente</td>
+                <td>21-05-23</td>
+                <td>8:00AM</td>
+                <td>$10000</td>
+                <td><button>Ver</button></td>
+              </tr>
+              <tr class="div__table__tr">
+                <td>02</td>
+                <td>Giuliana Gutierrez</td>
+                <td>En proceso</td>
+                <td>22-05-23</td>
+                <td>9:00AM</td>
+                <td>$1000000</td>
+                <td><button>Ver</button></td>
+              </tr>
+              <tr class="div__table__tr">
+                <td>03</td>
+                <td>Nazarena Camarota</td>
+                <td>Entregado</td>
+                <td>23-05-23</td>
+                <td>8:00AM</td>
+                <td>$1000000000</td>
+                <td><button>Ver</button></td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </div>
+
+  <script src="/javascripts/menuHamDashboard.js"></script>
+
+  </body>
+</html>

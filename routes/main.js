@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-const {home, dashboard, search} = require('../controllers/mainController')
+const {home, search, dashboardProducts, dashboardUsers,dashboardOrders } = require('../controllers/mainController')
 
 /* / */
 router
 .get('/', home)
-
-.get('/dashboard', dashboard)
+.get('/dashboardUsers', dashboardUsers)
+.get('/dashboardProducts', dashboardProducts)
+.get('/dashboardOrders', dashboardOrders)
 
 .get('/search', search)
 

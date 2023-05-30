@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="dashboard">
+
+    <%- include('./partials/head') %>
+
+<body class="body--dashboard">
+  <div class="body__div--container">
+    
+    <%- include('./partials/navDashboard') %>
+
+    <section class="body__section--main">
+      
+        <div class="section__div--main-top">
+            <h1>Administradores</h1>
+            <i class="fas fa-user-cog"></i>
+          </div>
+          <div class="section__div--users">
+            <!-- Hacer foreach con la cantidad de administradores -->
+            <div class="section__div--card">
+              <img src="./images/imageUserDefault.png">
+              <h4>Mauricio Amado</h4>
+              <p>Administrador</p>
+              
+              <button>Detalle</button>
+            </div>
+          </div>
+
+      <section class="body__section--attendance">
+        <div class="body__section--attendance-list">
+          <h2>Usuarios</h2>
+          <table class="div__table no-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Creación</th>
+                <th>Ordenes</th>
+                <th>Total</th>
+                <th>Detalle</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr class="div__table__tr">
+                <td>01</td>
+                <td>Mauricio Amado</td>
+                <td>mauricioamado@gmail.com</td>
+                <td>21-05-23</td>
+                <td>10</td>
+                <td>$10000</td>
+                <td><button>Ver</button></td>
+              </tr>
+              <tr class="div__table__tr">
+                <td>02</td>
+                <td>Giuliana Gutierrez</td>
+                <td>giulianagutierrez@gmail.com</td>
+                <td>22-05-23</td>
+                <td>200</td>
+                <td>$1000000</td>
+                <td><button>Ver</button></td>
+              </tr>
+              <tr class="div__table__tr">
+                <td>03</td>
+                <td>Nazarena Camarota</td>
+                <td>nazarenacamarota@gmail.com</td>
+                <td>23-05-23</td>
+                <td>3000</td>
+                <td>$1000000000</td>
+                <td><button>Ver</button></td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </div>
+
+  <script src="/javascripts/menuHamDashboard.js"></script>
+
+</body>
+</html>

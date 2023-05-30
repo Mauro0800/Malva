@@ -1,3 +1,4 @@
+const {getAllUsers} = require('../services/userServices')
 const db = require('../database/models');
 const { Op } = require('sequelize');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -17,7 +18,6 @@ module.exports = {
             },
             include: ["category"]
         });
-        // const categories =  db.Category.findAll();
 
 
         Promise.all([productsHome, productsdistinguished])
@@ -33,13 +33,15 @@ module.exports = {
             })
             .catch(error => console.log(error))
     },
+   
+    dashboardUsers : async  (req,res) =>{
 
-    dashboard: (req, res) => {
-        return res.render('dashboard', {
-            title: "Dashboard"
-        })
+        return res.render("dashboardUsers",{
+            title:"Usuarios"
+        }) 
+
+        
     },
-
     search: (req, res) => {
         const { keywords } = req.query;
 
@@ -68,5 +70,15 @@ module.exports = {
                 keywords
             });
         }).catch(error => console.log(error))
-    }
+    },
+    dashboardProducts :  (req,res) =>{
+        return res.render('dashboardProducts', {
+            title: "Productos"
+        })
+    },
+    dashboardOrders :  (req,res) =>{
+        return res.render('dashboardOrders', {
+            title: "Ordenes"
+        })
+}
 }
