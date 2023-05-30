@@ -23,7 +23,7 @@ module.exports = {
                 }
             })
             return {
-                count,
+                countUser:count,
                 users
             };
         }

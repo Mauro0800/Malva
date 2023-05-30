@@ -7,11 +7,11 @@ module.exports = {
     index: async (req, res) => {
         try {
 
-            const {count,users} = await getAllUsers(req);
+            const {countUser,users} = await getAllUsers(req);
             return res.status(200).json({
                 ok: true,
                 data: {
-                    count,
+                    countUser,
                     users
                 }
             })

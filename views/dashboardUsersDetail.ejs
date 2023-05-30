@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" class="dashboard">
+
+    <%- include('./partials/head') %>
+
+<body class="body--dashboard">
+  <div class="body__div--container">
+    
+    <%- include('./partials/navDashboard') %>
+    <div class="profile__form_box">
+      <form class="profile__form" action="/users/update?_method=PUT" method="POST" enctype="multipart/form-data">
+          <img src="/images/users/<%= user.image ? user.image : 'default-image.png' %>" alt="">
+          <label for="image">Cambiar imagen</label>
+          <input type="file", name="image" id="image" hidden>
+
+          <div class="profile__form_div-box">
+          <div class="profile__form_div">
+          <label for="name">Nombre</label>
+          <input type="text" name="name" id="name" value="<%= user.name %>">
+          <small class="text-danger ms-3"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
+          </div>
+
+          <div class="profile__form_div">
+          <label for="surname">Apellido</label>
+          <input type="text" name="surname" id="surname" value="<%= user.surname %>">
+          <small class="text-danger ms-2"><%= locals.errors && errors.surname ? errors.surname.msg : null %></small>
+          </div>
+          </div>
+
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" value="<%= user.email %>" disabled>
+          <small class="text-danger ms-2"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
+
+
+          <label for="address">Direccion</label>
+          <input type="text" name="address" id="address" value="<%= user.address.address %>">
+
+          
+          <label for="city">Ciudad</label>
+          <input type="text" name="city" id="city" value="<%= user.address.city %>">
+
+          <label for="province">Provincia</label>
+          <input type="text" name="province" id="province" value="<%= user.address.province %>">
+
+          <label for="zipCode">Codigo Postal</label>
+          <input type="text" name="zipCode" id="zipCode" value="<%= user.address.zipCode %>">
+
+          <div class="submit">
+          <button type="submit">Actualizar datos</button>
+          </div>
+
+      </form>
+      
+      <form class="form__delete" action="/users/delete?_method=DELETE" method="POST">
+          <div class="submit">
+          <button type="submit">Eliminar</button>
+          </div>
+      </form>
+  </div>
+    
+  </div>
+
+  <script src="/javascripts/menuHamDashboard.js"></script>
+
+</body>
+</html>

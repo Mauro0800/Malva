@@ -19,9 +19,7 @@
             <div class="section__div--card">
               <img src="./images/imageUserDefault.png">
               <h4>Mauricio Amado</h4>
-              <p>Administrador</p>
-              
-              <button>Detalle</button>
+              <a href="#"><button>Detalle</button></a>
             </div>
           </div>
 
@@ -35,40 +33,20 @@
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Creación</th>
-                <th>Ordenes</th>
-                <th>Total</th>
                 <th>Detalle</th>
               </tr>
             </thead>
             <tbody>
               
-              <tr class="div__table__tr">
-                <td>01</td>
-                <td>Mauricio Amado</td>
-                <td>mauricioamado@gmail.com</td>
-                <td>21-05-23</td>
-                <td>10</td>
-                <td>$10000</td>
-                <td><button>Ver</button></td>
-              </tr>
-              <tr class="div__table__tr">
-                <td>02</td>
-                <td>Giuliana Gutierrez</td>
-                <td>giulianagutierrez@gmail.com</td>
-                <td>22-05-23</td>
-                <td>200</td>
-                <td>$1000000</td>
-                <td><button>Ver</button></td>
-              </tr>
-              <tr class="div__table__tr">
-                <td>03</td>
-                <td>Nazarena Camarota</td>
-                <td>nazarenacamarota@gmail.com</td>
-                <td>23-05-23</td>
-                <td>3000</td>
-                <td>$1000000000</td>
-                <td><button>Ver</button></td>
-              </tr>
+              <% users.forEach(({id,name,email,updatedAt}) => { %>
+                <tr class="div__table__tr">
+                  <td><%= id %></td>
+                  <td><%= name %></td>
+                  <td><%= email %></td>
+                  <td><%= updatedAt.toISOString().split('T')[0] %></td>
+                  <td><a href="/dashboardUsers/<%= id %>"><button>Ver</button></a></td>
+                </tr>
+              <% }) %>
               
             </tbody>
           </table>
