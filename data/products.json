@@ -1239,11 +1239,11 @@
       "price": 1,
       "discount": 0,
       "description": "Exprime fácilmente el jugo fresco de tus cítricos favoritos con este exprimidor de alta calidad. Su diseño eficiente y resistente te permite obtener el máximo rendimiento de tus frutas.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 1,
+      "categoryId": 2,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 3,
       "distinguished":false,
       "image":"exprimidor-citricos-leifheit-1.jpg" 
    }
@@ -1404,11 +1404,11 @@
       "price": 1,
       "discount": 0,
       "description": "Esta jabonera de madera de bambú es perfecta para mantener tus jabones organizados y secos. Su diseño natural y elegante añade un toque de estilo a tu baño.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 7,
+      "categoryId": 6,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 1,
       "distinguished":false,
       "image":"jaboneraa-oklahoma-bamboo-wood-1.jpg" 
    }
@@ -1419,11 +1419,11 @@
       "price": 1,
       "discount": 0,
       "description": "Esta jarra acrílica de 1.5 litros es ideal para servir bebidas frías durante reuniones y eventos. Su diseño moderno y resistente la convierte en una opción práctica y elegante.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 7,
+      "categoryId": 4,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 11,
       "distinguished":false,
       "image":"jarra-acrilico-taksim-1-5lt-1.jpg" 
    }
@@ -1434,11 +1434,11 @@
       "price": 1,
       "discount": 0,
       "description": "Agrega un toque de sofisticación a tu mesa con esta jarra acrílica ahumada de 1500 ml. Perfecta para servir agua, jugo u otras bebidas con estilo.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 7,
+      "categoryId": 4,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 11,
       "distinguished":false,
       "image":"jarra-acril-taksim-smoke-1500m-1.jpg" 
    }
@@ -1449,11 +1449,11 @@
       "price": 1,
       "discount": 0,
       "description": "Con esta jarra medidora de Pyrex, podrás medir tus ingredientes con precisión. Su material resistente al calor y las marcas de medición claras la convierten en una herramienta imprescindible en la cocina.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 7,
+      "categoryId": 4,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 4,
       "distinguished":false,
       "image":"jarra-medidora-pyrex-1.jpg" 
    }
@@ -1464,11 +1464,11 @@
       "price": 1,
       "discount": 0,
       "description": "Esta jarra medidora de silicona flexible es perfecta para medir líquidos de forma precisa. Su diseño ergonómico y vertido sin goteo la hacen muy cómoda de usar.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 9,
+      "categoryId": 4,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 2,
       "distinguished":false,
       "image":"jarra-medidora-silicona-oxo-1.jpg" 
    }
@@ -1479,11 +1479,11 @@
       "price": 1,
       "discount": 0,
       "description": "Guarda tus objetos pequeños o alimentos en esta lata decorativa con diseño de hojas verdes. Perfecta para añadir un toque de naturaleza y estilo a tu hogar.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 7,
+      "categoryId": 6,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 8,
       "distinguished":false,
       "image":"lata-green-leave-show-esp-1.jpg" 
    }
@@ -1494,11 +1494,11 @@
       "price": 1,
       "discount": 0,
       "description": "Mantén tus productos de belleza o joyas organizados en esta lata decorativa. Su diseño encantador y funcionalidad la convierten en un accesorio versátil.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 7,
+      "categoryId": 6,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 8,
       "distinguished":false,
       "image":"lata-honey-bristo-jab-coraz-bc-1.jpg" 
    }
@@ -1509,11 +1509,11 @@
       "price": 1,
       "discount": 0,
       "description": "Simplifica tus tareas en la cocina con este práctico pelapapas. Con su cuchilla afilada y diseño ergonómico, podrás pelar tus papas y vegetales",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 1,
+      "categoryId": 2,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 3,
       "distinguished":false,
       "image":"pelapapas-1.jpg" 
    }
@@ -1524,11 +1524,11 @@
       "price": 1,
       "discount": 0,
       "description": "Pelar tus papas y vegetales nunca ha sido tan fácil. Este pelapapas cuenta con una cuchilla con sierra para un pelado rápido y eficiente, ahorrándote tiempo y esfuerzo en la cocina.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 1,
+      "categoryId": 2,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 3,
       "distinguished":false,
       "image":"pelapapas-c-sierra-1.jpg" 
    }
@@ -1539,11 +1539,11 @@
       "price": 1,
       "discount": 0,
       "description": "Agrega un toque de naturaleza a tu hogar con este encantador pino en maceta. Con su diseño realista y la textura de la arpillera, es perfecto para decorar tu espacio con un toque rústico.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 1,
+      "categoryId": 6,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 12,
       "distinguished":false,
       "image":"pino-con-maceta-arpillera-1.jpg" 
    }
@@ -1554,11 +1554,11 @@
       "price": 1,
       "discount": 0,
       "description": "Este práctico conjunto de pinza y espátula es ideal para dar vuelta alimentos a la parrilla o en la cocina. Hechas con materiales de alta calidad, te brindarán un buen agarre y durabilidad.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 1,
+      "categoryId": 2,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 3,
       "distinguished":false,
       "image":"pinza-y-espatula-1.jpg" 
    }
@@ -1569,11 +1569,11 @@
       "price": 1,
       "discount": 0,
       "description": "Prepara deliciosos purés y guarniciones con facilidad usando este pisapapas. Su diseño resistente y cómodo mango te permite obtener una consistencia suave y homogénea en tus preparaciones.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 1,
+      "categoryId": 2,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 3,
       "distinguished":false,
       "image":"pisapapas-1.jpg" 
    }
@@ -1584,11 +1584,11 @@
       "price": 1,
       "discount": 0,
       "description": "Sirve tus platos favoritos con elegancia en este plato playo de la línea Vanna de Verbano. Con su diseño clásico y acabado de alta calidad, realzará la presentación de tus comidas.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 7,
+      "categoryId": 6,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 13,
       "distinguished":false,
       "image":"plato-playo-verbano-vanna_1.jpg" 
    }
@@ -1599,11 +1599,11 @@
       "price": 1,
       "discount": 0,
       "description": "Disfruta del sabor fresco y aromático de la nuez moscada rallada en tus recetas. Este rallador de nuez moscada te permite obtener fácilmente el máximo sabor y aroma de esta especia.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 1,
+      "categoryId": 2,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 3,
       "distinguished":false,
       "image":"rallador-nuez-moscada-1.jpg" 
    }
@@ -1614,11 +1614,11 @@
       "price": 1,
       "discount": 0,
       "description": "Corta rebanadas perfectas de queso con este rebanador de queso de acero inoxidable de Hudson. Su diseño ergonómico y cuchilla afilada te garantizan cortes precisos y uniformes.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 1,
+      "categoryId": 2,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 3,
       "distinguished":false,
       "image":"rebanador-queso-hudson-1.jpg" 
    }
@@ -1629,11 +1629,11 @@
       "price": 1,
       "discount": 0,
       "description": "Renueva el aroma de tu difusor con este repuesto de The Candle Shop. Disponible en diferentes fragancias, te permitirá disfrutar de un ambiente aromático y relajante en tu hogar.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 11,
+      "categoryId": 5,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 12,
       "distinguished":false,
       "image":"repuesto-difusor-the-candle-shop-1.jpg" 
    }
@@ -1644,11 +1644,11 @@
       "price": 1,
       "discount": 0,
       "description": "Agrega estilo a tu cocina con este salero acrílico facetado. Su diseño moderno y elegante te permite tener la sal siempre a mano mientras le da un toque decorativo a tu espacio culinario.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 1,
+      "categoryId": 6,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 11,
       "distinguished":false,
       "image":"salero-acrilico-facetado-1.jpg" 
    }
@@ -1659,11 +1659,11 @@
       "price": 1,
       "discount": 0,
       "description": "Elimina el exceso de grasa de tus sopas, caldos y salsas con este práctico separador de grasas. Su diseño inteligente te permite verter el líquido sin la grasa acumulada, obteniendo platos más saludables.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 7,
+      "categoryId": 6,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 3,
       "distinguished":false,
       "image":"separador-grasas-oxo-1.jpg" 
    }
@@ -1674,11 +1674,11 @@
       "price": 1,
       "discount": 0,
       "description": "Equipa tu cocina con este completo set de 6 utensilios de cocina de Hudson. Hechos con materiales duraderos y cómodos mangos, te ayudarán a preparar tus recetas con facilidad y estilo.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 7,
+      "categoryId": 2,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 3,
       "distinguished":false,
       "image":"set-6-utensilios-hudson-1.jpg" 
    }
@@ -1689,11 +1689,11 @@
       "price": 1,
       "discount": 0,
       "description": "Protege tus superficies de manchas y marcas con este set de 4 posavasos hexagonales. Su diseño moderno y resistente los convierte en un accesorio práctico y decorativo.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 1,
+      "categoryId": 6,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 4,
       "distinguished":false,
       "image":"set-posavasos-hexagonal-x-4-piezas-1.jpg" 
    }
@@ -1704,11 +1704,11 @@
       "price": 1,
       "discount": 0,
       "description": "Corta y prepara tus ingredientes en esta tabla de 25 cm de laja natural. Su superficie resistente y fácil de limpiar la hace ideal para cualquier tarea en la cocina.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 7,
+      "categoryId": 6,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 12,
       "distinguished":false,
       "image":"tabla-25-cm-laja-1.jpg" 
    }
@@ -1719,11 +1719,11 @@
       "price": 1,
       "discount": 0,
       "description": "Añade un toque de elegancia a tu cocina con esta tabla de mármol de 25 cm. Perfecta para cortar y servir quesos, frutas y otros alimentos, brinda una superficie duradera y estilizada.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 1,
+      "categoryId": 6,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 12,
       "distinguished":false,
       "image":"tabla-25-cm-marmol-1.jpg" 
    }
@@ -1734,26 +1734,26 @@
       "price": 1,
       "discount": 0,
       "description": "Prepárate para cocinar con estilo con esta tabla de madera de 28 cm. Su diseño robusto y superficie de corte amplia te brindan la estabilidad y espacio necesarios para tus preparaciones.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 1,
+      "categoryId": 7,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 1,
       "distinguished":false,
       "image":"tabla-28-cm-madera-1.jpg" 
    }
    ,
    {
       "id": 120,
-      "name": "",
+      "name": "tabla de marmol 30cm",
       "price": 1,
       "discount": 0,
       "description": "Dale un toque de lujo a tu cocina con esta tabla de mármol de 30 cm. Ideal para cortar y presentar alimentos, su acabado pulido y duradero la convierten en un accesorio elegante.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 1,
+      "categoryId": 7,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 12,
       "distinguished":false,
       "image":"tabla-30-cm-marmol-1.jpg" 
    }
@@ -1764,11 +1764,11 @@
       "price": 1,
       "discount": 0,
       "description": "Crea un ambiente acogedor y romántico con este set de 8 velas tea lights de The Candle Shop. Perfectas para decorar y agregar un toque de luz suave en cualquier espacio.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 11,
+      "categoryId": 5,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 5,
       "distinguished":false,
       "image":"tea-lights-x-8-u-the-candle-shop-1.jpg" 
    }
@@ -1779,11 +1779,11 @@
       "price": 1,
       "discount": 0,
       "description": "Mezcla y sirve tus ensaladas con este tenedor para ensalada de mango color negro. Su diseño elegante y ergonómico te permite disfrutar de tus ensaladas de forma práctica y estilizada.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 1,
+      "categoryId": 2,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 3,
       "distinguished":false,
       "image":"tenedor-para-ensalada-mgo-negr-1.jpg" 
    }
@@ -1794,11 +1794,11 @@
       "price": 1,
       "discount": 0,
       "description": "Obtén lecturas precisas de temperatura con este termómetro digital. Perfecto para cocinar carnes, líquidos y alimentos en general, te ayuda a asegurar la cocción adecuada en tus preparaciones.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 7,
+      "categoryId": 6,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 3,
       "distinguished":false,
       "image":"termometro-digital-1.jpg" 
    }
@@ -1809,11 +1809,11 @@
       "price": 1,
       "discount": 0,
       "description": "Asegúrate de que tus carnes estén cocidas a la perfección con este termómetro especializado. Con indicadores de temperatura y fácil lectura, obtendrás resultados jugosos y bien cocidos.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 7,
+      "categoryId": 6,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 3,
       "distinguished":false,
       "image":"termometro-para-carnes-1.jpg" 
    }
@@ -1824,11 +1824,11 @@
       "price": 1,
       "discount": 0,
       "description": "Refresca y aromatiza tus telas con este vaporizador de ambiente textil de The Candle Shop. Con sus fragancias únicas, disfrutarás de un ambiente agradable y fresco en tu hogar.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 11,
+      "categoryId": 5,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 12,
       "distinguished":false,
       "image":"vaporizador-ambiente-textil-the-candel-shop-1.jpg" 
    }
@@ -1839,11 +1839,11 @@
       "price": 1,
       "discount": 0,
       "description": "Disfruta de tus bebidas favoritas con estilo en este vaso acrílico de 600 ml. Su diseño resistente y transparente te permite ver el contenido y es perfecto para usar en interiores y exteriores.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 7,
+      "categoryId": 3,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 6,
       "distinguished":false,
       "image":"vaso-acril-sidney-600ml-1.jpg" 
    }
@@ -1854,11 +1854,11 @@
       "price": 1,
       "discount": 0,
       "description": "Celebra momentos especiales con este vaso alto de champagne con un diámetro de 12 cm. Su diseño elegante y delicado realza el brillo de las burbujas y añade un toque de lujo a tus brindis.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 1,
+      "categoryId": 3,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 6,
       "distinguished":false,
       "image":"vaso-alto-champagne-diam-12cm-1.jpg" 
    }
@@ -1869,11 +1869,11 @@
       "price": 1,
       "discount": 0,
       "description": "Sorprende a tus invitados con este vaso alto Margot. Con su forma y diseño exclusivos, es ideal para servir cócteles y bebidas especiales, agregando un toque de distinción a tus eventos.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 7,
+      "categoryId": 3,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 6,
       "distinguished":false,
       "image":"vaso-alto-margot-1.jpg" 
    }
@@ -1884,11 +1884,11 @@
       "price": 1,
       "discount": 0,
       "description": "Disfruta de tus bebidas refrescantes en este vaso bajo acrílico con diseño de escamas en color humo. Su tamaño compacto y diseño estético lo convierten en una opción versátil para cualquier ocasión.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 1,
+      "categoryId": 3,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 6,
       "distinguished":false,
       "image":"vaso-bajo-acril-fume-scale-1.jpg" 
    }
@@ -1899,11 +1899,11 @@
       "price": 1,
       "discount": 0,
       "description": "Añade color y estilo a tu vajilla con este vaso bombee en tonos vibrantes. Su forma curva y colores llamativos lo convierten en un complemento divertido y funcional para tus bebidas.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 7,
+      "categoryId": 3,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 6,
       "distinguished":false,
       "image":"vaso-bombee-color-1.jpg" 
    }
@@ -1914,11 +1914,11 @@
       "price": 1,
       "discount": 0,
       "description": "Celebra con estilo usando este vaso bombee con lunares. Su diseño contemporáneo y acabado brillante añaden un toque de glamour a tus celebraciones.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 7,
+      "categoryId": 3,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 5,
       "distinguished":false,
       "image":"vaso-bombee-mirror-lunares-1.jpg" 
    }
@@ -1929,11 +1929,11 @@
       "price": 1,
       "discount": 0,
       "description": "Disfruta de la cerveza de trigo en todo su esplendor con este vaso Weizen de Rona. Su forma alta y estilizada realza los aromas y sabores de esta refrescante bebida.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 1,
+      "categoryId": 3,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 6,
       "distinguished":false,
       "image":"vaso-cerveza-weizen-rona-420-ml-1.jpg" 
    }
@@ -1944,11 +1944,11 @@
       "price": 1,
       "discount": 0,
       "description": "Dale un toque de elegancia a tus cócteles con este vaso de diseño exclusivo. Su forma estilizada y detalles sofisticados hacen que cada sorbo sea una experiencia lujosa.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 7,
+      "categoryId": 3,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 6,
       "distinguished":false,
       "image":"vaso-dubai-1.jpg" 
    }
@@ -1959,11 +1959,11 @@
       "price": 1,
       "discount": 0,
       "description": "Sirve y disfruta de tu whisky con estilo en este vaso Esquel con acabado satinado. Su diseño sofisticado y material resistente hacen que cada sorbo sea un momento de placer.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 1,
+      "categoryId": 3,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 6,
       "distinguished":false,
       "image":"vaso-esquel-whisky-satinado-1.jpg" 
    }
@@ -1974,11 +1974,11 @@
       "price": 1,
       "discount": 0,
       "description": "Añade un toque de realeza a tus bebidas con este vaso Kingdom de 350 ml. Su diseño elegante y forma ergonómica lo convierten en un complemento perfecto para tus momentos de disfrute.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 7,
+      "categoryId": 3,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 6,
       "distinguished":false,
       "image":"vaso-kingdom-350-ml-1.jpg" 
    }
@@ -1989,11 +1989,11 @@
       "price": 1,
       "discount": 0,
       "description": "Siéntete como en un elegante pub londinense con este vaso alto inspirado en el estilo clásico. Perfecto para cervezas, cócteles y refrescos, te transportará a la vibrante ciudad de Londres.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 7,
+      "categoryId": 3,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 6,
       "distinguished":false,
       "image":"vaso-london-alto-1.jpg" 
    }
@@ -2004,11 +2004,11 @@
       "price": 1,
       "discount": 0,
       "description": "Disfruta de tus whiskies y destilados con este vaso amassadinho. Su forma cómoda y diseño tradicional realzan los sabores y aromas de tus bebidas preferidas.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 7,
+      "categoryId": 3,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 6,
       "distinguished":false,
       "image":"vaso-whisky-amassadinho-1.jpg" 
    }
@@ -2019,11 +2019,11 @@
       "price": 1,
       "discount": 0,
       "description": " Sirve tus whiskies de forma generosa en este vaso XL de 460 ml. Su diseño amplio y elegante te permite apreciar todos los matices y disfrutar de una experiencia completa.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 7,
+      "categoryId": 3,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 6,
       "distinguished":false,
       "image":"vaso-whisky-xl-460-ml-1.jpg" 
    }
@@ -2034,11 +2034,11 @@
       "price": 1,
       "discount": 0,
       "description": "Disfruta de la fragancia refrescante y delicada de la pera inglesa y la fresia con esta vela aromática. Su suave aroma llenará tu hogar con notas florales y frutales.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 7,
+      "categoryId": 5,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 5,
       "distinguished":false,
       "image":"vela-english-pear-fressia-1.jpg" 
    }
@@ -2049,11 +2049,11 @@
       "price": 1,
       "discount": 0,
       "description": "Ilumina y perfuma tu espacio con este velón aromático de 6 cm. Su duración prolongada y aroma envolvente crean una atmósfera acogedora y relajante.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 1,
+      "categoryId": 5,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 5,
       "distinguished":false,
       "image":"velon-aromatico-6-cm-the-candle-shop-1.jpg" 
    }
@@ -2064,11 +2064,11 @@
       "price": 1,
       "discount": 0,
       "description": "Disfruta de un ambiente sereno y perfumado con este velón aromático de 10 cm. Su llama cálida y fragancia embriagadora te invitan a un momento de calma y bienestar.",
-      "brandId": ,
-      "categoryId": ,
+      "brandId": 1,
+      "categoryId": 5,
       "stock": 1,
       "home":false,
-      "materialId": ,
+      "materialId": 5,
       "distinguished":false,
       "image":"velon-aromatico-10-cm-the-candle-shop-1.jpg" 
    }
