@@ -1,4 +1,5 @@
 const db = require('../database/models');
+const Op = require("sequelize")
 const { literalQueryUrlImageProduct, literalQueryUrlDetailProduct } = require('../helpers');
 
 module.exports = {
@@ -62,17 +63,6 @@ module.exports = {
         }
         catch (error) {
             console.log(error)
-            throw {
-                status: 500,
-                message: error.message
-            }
-        }
-    },
-    getAllCategories: async () => {
-        try {
-            const categories = await db.Category.findAll({ include: ['products'] });
-            return categories
-        } catch (error) {
             throw {
                 status: 500,
                 message: error.message
@@ -151,5 +141,123 @@ module.exports = {
                 message: error.message
             }
         }
-    }
+    },
+    getAllCategoriesCount : async () => {
+        try {
+            const count = await db.Product.findAll({
+            attributes: [
+              [db.sequelize.literal('(SELECT name FROM Categories WHERE Categories.id = Product.categoryId)'), 'Categoria'],
+              [db.sequelize.fn('COUNT', db.sequelize.col('*')), 'Total']
+            ],
+            group: ['categoryId']
+          });
+
+          return count;
+        } catch (error) {
+            throw {
+                status: 500,
+                message: error.message
+            }
+        }
+        
+    },
+    getAllBrandsCount : async () => {
+        try {
+           const count = await db.Product.findAll({
+            attributes: [
+              [db.sequelize.literal('(SELECT name FROM Brands WHERE Brands.id = Product.brandId)'), 'Marca'],
+              [db.sequelize.fn('COUNT', db.sequelize.col('*')), 'Total']
+            ],
+            group: ['brandId']
+          });
+        return count; 
+        } catch (error) {
+            throw {
+                status: 500,
+                message: error.message
+            }
+        }
+        
+    },
+    getAllMaterialsCount : async () => {
+        try {
+            const count = await db.Product.findAll({
+            attributes: [
+              [db.sequelize.literal('(SELECT name FROM Materials WHERE Materials.id = Product.materialId)'), 'Material'],
+              [db.sequelize.fn('COUNT', db.sequelize.col('*')), 'Total']
+            ],
+            group: ['materialId']
+          });
+        return count;
+        } catch (error) {
+            throw {
+                status: 500,
+                message: error.message
+            }
+        }
+       
+    },
+
+    getAllCount: async ()=> {
+        try {
+            
+            const countBrands = await db.Brand.count()
+
+            for (let i = 0; i < countBrands-1; i++) {
+                
+                
+            }
+            const count = await db.Product.count({
+                include: [{
+                  model: db.Brand,
+                  association:"brand",
+                  where: {
+                    name: "trademark"
+                  }
+                }]
+              });
+            return count
+
+        } catch (error) {
+            throw {
+                status: 500,
+                message: error.message
+            }
+        }
+        
+    },
+    getAllBrands: async ()=> {
+        try {
+            const { count, rows: brands } = await db.Brand.findAndCountAll();
+            return {brands,countBrand:count}
+        } catch (error) {
+            throw {
+                status: 500,
+                message: error.message
+            }
+        }
+    },
+    getAllMaterials: async ()=> {
+        try {
+            const { count, rows: materials } = await db.Material.findAndCountAll();
+            return {materials,countMaterial:count}
+        } catch (error) {
+            throw {
+                status: 500,
+                message: error.message
+            }
+        }
+    },
+    getAllCategories: async () => {
+        try {
+            const { count, rows: categories } = await db.Category.findAndCountAll({include:["products"]});
+            return {categories,countCategory:count}
+        } catch (error) {
+            throw {
+                status: 500,
+                message: error.message
+            }
+        }
+    },
+
 }

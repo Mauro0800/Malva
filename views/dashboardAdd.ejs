@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" class="dashboard">
+
+    <%- include('./partials/head') %>
+
+<body class="body--dashboard">
+  <div class="body__div--container">
+    
+    <%- include('./partials/navDashboard') %>
+
+    <div class="section__div--Add">
+      <div class="section__div--cardAdd">
+        <i class="fas fal fa-boxes-alt"></i>
+        <h4>Productos</h4>
+          <button id="addProduct">Agregar</button>
+        <button id="viewProducts">Ver</button>
+      </div>
+      <div class="section__div--cardAdd">
+        <i class="fa-solid fa-user-plus"></i>
+        <h4>Usuarios</h4>
+        <a href="/users/register"><button id="addUser">Agregar</button></a>
+        <button id="viewUsers">Ver</button>
+      </div>
+      <div class="section__div--cardAdd">
+        <i class="fa-solid fa-copyright"></i>
+        <h4>Marcas</h4>
+        <button id="addBrand">Agregar</button>
+        <button id="viewBrands">Ver</button>
+      </div>
+      <div class="section__div--cardAdd">
+        <i class="fas fa-regular fa-cube"></i>
+        <h4>Materiales</h4>
+        <button id="addMaterial">Agregar</button>
+        <button id="viewMaterials">Ver</button>
+      </div>
+      <div class="section__div--cardAdd">
+        <i class="fas fa-solid fa-tags"></i>
+        <h4>Categorías</h4>
+        <button id="addCategory">Agregar</button>
+        <button id="viewCategories">Ver</button>
+      </div>
+
+      <section class="body__section--main">
+
+      <section id="tableProduct" class="none">
+        <div class="body__section--attendance-list">
+          <div class="top-text">
+            <h2>Productos</h2>
+            <h2>Total: <%= count %></h2>
+          </div>
+          
+
+          <table class="div__table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Marca</th>
+                <th>Categoria</th>
+                <th>Material</th>
+                <th>Precio</th>
+                <th>Detalle</th>
+                <th>Editar</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <% products.forEach(({id,name,brand,category,material,price}) => { %>
+                <tr class="div__table__tr">
+                  <td><%= id %></td>
+                  <td><%= name %></td>
+                  <td><%= brand.name %></td>
+                  <td><%= category.name %></td>
+                  <td><%= material.name %></td>
+                  <td>$<%= price %></td>
+                  <td><a href="/products/detail/<%= id %>"><button>Ver</button></a></td>
+                  <td><a href="/products/edit/<%= id %>"><button>Editar</button></a></td>
+                </tr>
+              <% }) %>
+              
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="tableUser" class="none">
+        <div class="body__section--attendance-list">
+          <div class="top-text">
+          <h2>Usuarios</h2>
+          <h2>Total: <%= countUser %></h2>
+          </div>
+          <table class="div__table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Creación</th>
+                <th>Ordenes</th>
+                <th>Total</th>
+                <th>Detalle</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <% users.forEach(({id,name,email,updatedAt}) => { %>
+                <tr class="div__table__tr">
+                  <td><%= id %></td>
+                  <td><%= name %></td>
+                  <td><%= email %></td>
+                  <td><%= updatedAt.toISOString().split('T')[0] %></td>
+                  <td>10</td>
+                  <td>$10000</td>
+                  <td><a href="/dashboardUsers/<%= id %>"><button>Ver</button></a></td>
+                </tr>
+              <% }) %>
+              
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="tableBrand" class="none">
+        <div class="body__section--attendance-list">
+          <div class="top-text">
+          <h2>Marcas</h2>
+          <h2>Total: <%= countBrand %></h2>
+          </div>
+          <table class="div__table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Creacion</th>
+                <th>Productos</th>
+                <th>Detalle</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              
+              <% brands.forEach(({id,name,updatedAt},index) => { %>
+                <tr class="div__table__tr">
+                  <td><%= id %></td>
+                  <td><%= name %></td>
+                  <td><%= updatedAt.toISOString().split('T')[0] %></td>
+                  <td><%= brandCount[index] ? brandCount[index].dataValues.Total : 0 %></td>
+                  <td><a href="#"><button>Eliminar(mantenimiento)</button></a></td>
+                </tr>
+              <% }) %>
+              
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="tableMaterial" class="none">
+        <div class="body__section--attendance-list">
+          <div class="top-text">
+          <h2>Materiales</h2>
+          <h2>Total: <%= countMaterial %></h2>
+          </div>
+          <table class="div__table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Creacion</th>
+                <th>Productos</th>
+                <th>Detalle</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <% materials.forEach(({id,name,updatedAt},index) => { %>
+                <tr class="div__table__tr">
+                  <td><%= id %></td>
+                  <td><%= name %></td>
+                  <td><%= updatedAt.toISOString().split('T')[0] %></td>
+                  <td><%= materialCount[index] ? materialCount[index].dataValues.Total : 0 %></td>
+                  <td><a href="#"><button>Eliminar(mantenimiento)</button></a></td>
+                </tr>
+              <% }) %>
+              
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="tableCategory" class="none">
+        <div class="body__section--attendance-list">
+          <div class="top-text">
+          <h2>Categorías</h2>
+          <h2>Total: <%= countCategory %></h2>
+          </div>
+          <table class="div__table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Creacion</th>
+                <th>Productos</th>
+                <th>Detalle</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <% categories.forEach(({id,name,updatedAt},index) => { %>
+                <tr class="div__table__tr">
+                  <td><%= id %></td>
+                  <td><%= name %></td>
+                  <td><%= updatedAt.toISOString().split('T')[0] %></td>
+                  <td><%= categoryCount[index] ? categoryCount[index].dataValues.Total : 0 %></td>
+                  <td><a href="#"><button>Eliminar(mantenimiento)</button></a></td>
+                </tr>
+              <% }) %>
+              
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      </section>
+
+      <form id="formDashboardProduct" class="none" action="dashboardAdd/product" method="post" enctype="multipart/form-data">
+        <h2>Producto</h2>
+          <label for="name">Nombre</label>
+          <input type="text" name="name" id="name" value="<%= locals.old && old.name ? old.name : null %>">
+          <small id="nameError" class="text-danger ms-3"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
+
+          <label for="price">Precio $</label>
+          <input type="number" name="price" id="price" value="<%= locals.old && old.price ? +old.price : null %>">
+          <small id="priceError" class="text-danger ms-2"><%= locals.errors && errors.price ? errors.price.msg : null %></small>
+          
+          <label for="discount">Descuento(opcional)</label>
+          <input type="number" name="discount" id="discount" value="<%= locals.old && old.discount ? +old.discount : 0 %>">
+          <small id="discountError" class="text-danger ms-2"><%= locals.errors && errors.discount ? errors.discount.msg : null %></small>
+          
+          <label for="stock">Stock</label>
+          <input type="number" name="stock" id="stock" value="<%= locals.old && old.stock ? +old.stock : 1 %>">
+          <small id="stockError" class="text-danger ms-2"><%= locals.errors && errors.stock ? errors.stock.msg : null %></small>
+
+          <label for="description">Descripción</label><small id="descrptionInfo"
+          hidden> (<span id="numberCharacters"></span> / 1000)</small>
+          <textarea name="description" id="description"><%= locals.old && old.description ? old.description : null %></textarea>
+          <small id="descriptionError" class="text-danger ms-2"><%= locals.errors && errors.description ? errors.description.msg : null %></small>
+
+          <label for="brand">Marcas</label>
+          <select name="brand" id="brand" value="">
+          <option value="" hidden>Seleccione una marca</option>
+          <% brands.forEach(({id,name})=> { %>
+            <option value=<%=id %> <%= locals.old && old.brand && +old.brand===id ? 'selected' : null %>>
+              <%= name %>
+            </option>
+          <% }) %>
+          </select>
+          <small id="brandError" class="text-danger ms-2"><%= locals.errors && errors.brand ? errors.brand.msg : null %></small>
+
+          <label for="category">Categorías</label>
+          <select name="category" id="category">
+          <option value="" hidden>Seleccione una categoría</option>
+          <% categories.forEach(({id,name})=> { %>
+            <option value=<%=id %> <%= locals.old && old.category && +old.category===id ? 'selected' : null%>>
+              <%= name %>
+            </option>
+            <% }) %>
+          </select>
+          <small id="categoryError" class="text-danger ms-2"><%= locals.errors && errors.category ? errors.category.msg : null %></small>
+
+          <label for="material">Material</label>
+          <select name="material" id="material" value="">
+          <option value="" hidden>Seleccione un material</option>
+          <% materials.forEach(({id,name})=> { %>
+            <option value=<%=id %> <%= locals.old && old.material && +old.material===id ? 'selected' : null%>>
+              <%= name %>
+            </option>
+            <% }) %>
+          </select>
+          <small id="materialError" class="text-danger ms-2"><%= locals.errors && errors.material ? errors.material.msg : null %></small>
+
+          <label for="image" id="mainImage">Imágen principal del producto</label>
+          <input type="file" name="image" id="image">
+          <small id="imageError" class="text-danger ms-2" id="imageError">
+            <%= locals.errors && errors.image ? errors.image.msg : null %>
+          </small>
+
+          <label for="images">Imágenes secundarias del producto</label>
+          <input type="file" name="images" id="images" multiple>
+          <small id="imagesError" class="text-danger ms-2" id="imagesError">
+            <%= locals.errors && errors.images ? errors.images.msg : null %>
+          </small>
+
+          <small class="text-danger" id="formError"></small>
+
+          <button type="submit">Agregar</button>
+          <button type="reset">Cancelar</button>
+      </form>
+
+      <form id="formDashboardBrand" class="none" action="dashboardAdd/brand" method="post">
+        <h2>Marcas</h2>
+        <label for="addBrand">Nombre</label>
+        <input type="text" name="addBrand" id="addBrand" value="<%= locals.old && old.addBrand ? old.addBrand : null %>">
+        <small id="addBrandError" class="text-danger ms-3"><%= locals.errors && errors.addBrand ? errors.addBrand.msg : null %></small>
+        <button type="submit">Agregar</button>
+        <button type="reset">Cancelar</button>
+      </form>
+
+      <form id="formDashboardMaterial" class="none" action="dashboardAdd/material" method="post">
+        <h2>Materiales</h2>
+        <label for="addMaterial">Nombre</label>
+        <input type="text" name="addMaterial" id="addMaterial" value="<%= locals.old && old.addMaterial ? old.addMaterial : null %>">
+        <small id="addMaterialError" class="text-danger ms-3"><%= locals.errors && errors.addMaterial ? errors.addMaterial.msg : null %></small>
+        <button type="submit">Agregar</button>
+        <button type="reset">Cancelar</button>
+      </form>
+
+      <form id="formDashboardCategory" class="none" action="dashboardAdd/category" method="post">
+        <h2>Categorías</h2>
+        <label for="addCategory">Nombre</label>
+        <input type="text" name="addCategory" id="addCategory" value="<%= locals.old && old.addCategory ? old.addCategory : null %>">
+        <small id="addCategoryError" class="text-danger ms-3"><%= locals.errors && errors.addCategory ? errors.addCategory.msg : null %></small>
+        <button type="submit">Agregar</button>
+        <button type="reset">Cancelar</button>
+      </form>
+    </div>
+
+  
+  
+</div>
+
+  <script src="/javascripts/dashboard.js"></script>
+  <script src="/javascripts/menuHamDashboard.js"></script>
+
+</body>
+</html>

@@ -1,4 +1,7 @@
 .form__main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     color: #000;
     padding: 30px 8px;
     background: rgb(255, 221, 212);
@@ -41,14 +44,6 @@
 
 .product-form-button a:hover {
     color: #FFF;
-}
-
-
-.form__main {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
 }
 
 .main__form--editproduct {
@@ -164,16 +159,4 @@
         display: flex; 
         justify-content: space-between;
     }
-}
-
-.input_error{
-    border-color: red;
-} 
-
-.input_success{
-    border-color: green;
-}
-
-.imageButton{
-    border: solid 1px red;
 }

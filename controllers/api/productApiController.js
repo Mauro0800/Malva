@@ -1,4 +1,4 @@
-const { getAllProducts, getProductById, getAllCategories, storeProduct, updateProduct, deleteProduct } = require('../../services/productsServices');
+const { getAllProducts, getProductById, getAllCategoriesCount, storeProduct, updateProduct, deleteProduct } = require('../../services/productsServices');
 const errorResponse = require('../../helpers/errorResponse');
 
 
@@ -6,11 +6,7 @@ module.exports = {
     index: async (req, res) => {
         try {
             const products = await getAllProducts(req); // Esperando que la función se procese y responda
-            const categories = await getAllCategories()
-            const countByCategory = categories.reduce((obj,category)=>{
-                obj[category.name] = category.products.length
-                return obj
-            },{})
+            const countByCategory = await getAllCategoriesCount();
             return res.status(200).json({ // Respuesta de petición exitosa para el cliente
                 ok: true,
                 count: products.length,
