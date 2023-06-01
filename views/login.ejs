@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html lang="es">
+    
+  <%- include('./partials/head') %>
+
+    <body>
+      
+      <%- include('./partials/header') %>
+
+        <div id="contenedor">
+            <div id="central">
+                <div class="titulo">
+                   BIENVENIDO A MALVA
+                  </div>
+                  <hr id="linea">
+                <div id="login">
+                   
+                    <form id="loginform">
+                        <input type="text" name="nombre" placeholder="Nombre" required>
+                        
+                        <input type="password" placeholder="contraseña" name="Contraseña" required>
+                        
+                        <button type="submit" title="Log in" name="Log in">Ingresar</button>
+                    </form>
+                    <div class="pie-form">
+                        <a href="/reset-password">¿Olvidaste tu contraseña?</a>
+                        <a href="/register">¿No tenés cuenta todavia? Registrate</a>
+                        
+                    </div>
+                </div>
+                <div class="inferior">
+                    <hr id="linea">
+                        <button type="submit" title="Log in" name="Log in">Ingresá con Google</button>
+                    <a href="#">Volver al inicio</a>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+    
+    <%- include('./partials/footer') %>
+</html>

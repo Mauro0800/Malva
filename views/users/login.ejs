@@ -21,14 +21,14 @@
 
 
                             <label for="email">Email</label>
-                            <input type="email" name="email" id="email" placeholder="ingresa tu email"
+                            <input type="email" name="email" id="email" placeholder="Ingresa tu email"
                                 value="<%= (locals.old && old.email) && old.email %>">
                             <small class="text-danger ms-2 d-inline-block" id="errorEmail">
                                 <%= (locals.errors && errors.email) && errors.email.msg %>
                             </small>
 
                             <label for="password">Contraseña</label>
-                            <input type="password" name="password" id="password" placeholder="ingresa tu contraseña">
+                            <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña">
                             <small class="text-danger ms-2 d-inline-block" id="errorPass">
                                 <%= (locals.errors && errors.password) && errors.password.msg %>
                             </small>
@@ -40,14 +40,15 @@
                             </div>
 
                             
-                            <div class="submit">
+                            <div class="login__buttons">
                                 <button type="submit">ingresar</button>
+                                <button type="submit"><a href="/auth/login/google"><i class="fa-brands fa-google"></i> Iniciar sesión con Google</a></button>
                             </div>
                             <small id="errorFormLogin"></small>
 
                             <div class="pie-form">
                                 <a class="ingresa" href="/users/reset-password">¿Olvidaste tu contraseña?</a>
-                                <a class="ingresa" href="/users/register">¿No tenés cuenta todavia? Registrate</a>
+                                <p>¿No tenés cuenta todavía? <a class="ingresa" href="/users/register">Registrate</a></p>
                             </div>
 
                         </form>
