@@ -7,7 +7,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
     home: (req, res) => {
-
+        console.log(req.session?.userLogin)
         const productsHome = db.Product.findAll({
             where: {
                 home: true,
@@ -355,8 +355,5 @@ module.exports = {
                     })
                     .catch((error) => console.log(error));
             }
-    
-    
         },
-
 }
