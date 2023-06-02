@@ -14,7 +14,7 @@
           <div class="profile__form_box">
             <form class="profile__form" action="/users/update?_method=PUT" method="POST" enctype="multipart/form-data">
               <img
-                src="<%= /http/.test(user.image) ? user.image?toString().trim() : `/images/users/${user.image || 'default-image.jpg'}` %>"
+                src="<%= /http/.test(user.image) ? user.image : `/images/users/${user.image || 'default-image.jpg'}` %>"
                 alt="">
               <label for="image">Cambiar imagen</label>
               <input type="file" , name="image" id="image" hidden>
