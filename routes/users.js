@@ -10,10 +10,10 @@ const { registerUserValidator,loginUserValidator,profileValidator} = require('..
 
 /* /users */
 router
-    .get('/login',checkUser, login) //borre middleware de checkUser
+    .get('/login',checkUser, login)
     .post('/login',loginUserValidator ,processLogin)
-    .get('/register',checkUser, register) //borre middleware de checkUser
-    .post('/register',registerUserValidator, processRegister) //borre middleware de registerUserValidator
+    .get('/register',checkUser, register)
+    .post('/register',uploadUserImage.single('image'),registerUserValidator, processRegister)
     .get('/profile',checkUserLogin, profile) 
     .put('/update',uploadUserImage.single('image'),profileValidator, update)
     .get('/reset-password', resetpassword)

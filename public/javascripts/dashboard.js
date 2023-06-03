@@ -13,20 +13,56 @@ window.onload = function () {
     const image = $('image');
     const images = $('images')
 
+    let regExLetter = /^[A-Z]+$/i;
+    let regExEmail = /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
+    let regExPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&_-])[A-Za-z\d$@$!%*?&_-]{6,12}/;
+    
+    const checkedFields = () => {
+      const elements = $('registerForm').elements;
+      $('errorCreate').innerHTML = null;
+    
+      for (let i = 0; i < elements.length - 2; i++) {
+        if (elements[i].classList.contains('isInvalid')) {
+          $('errorCreate').innerHTML = "Hay campos con errores o están vacíos.";
+        }
+      }
+    };
+
+    const verifyEmail = async (email) => {
+        try {
+          let response = await fetch('/api/users/verify-email', {
+            method: 'POST',
+            body: JSON.stringify({
+              email: email
+            }),
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          });
+          let result = await response.json();
+          return result.data.existUser
+        } catch (error) {
+          console.error
+        }
+      }
+
     const errorMessage = (element, message, { target }) => {
         $(element).innerHTML = message
-        target.classList.add('input_error')
+        target.classList.add('isInvalid')
     }
 
     const cleanError = (element, { target }) => {
-        target.classList.remove('input_error')
-        target.classList.remove('input_success')
+        target.classList.remove('isInvalid')
+        target.classList.remove('isValid')
         $(element).innerHTML = null
     }
 
     const formsDisplayNone = () => {
         $("formDashboardProduct").classList.remove("form-dashboard")
         $("formDashboardProduct").classList.add("none")
+
+        $("formDashboardUser").classList.remove("form-dashboard")
+        $("formDashboardUser").classList.add("none")
 
         $("formDashboardBrand").classList.remove("form-dashboard")
         $("formDashboardBrand").classList.add("none")
@@ -37,6 +73,7 @@ window.onload = function () {
         $("formDashboardCategory").classList.remove("form-dashboard")
         $("formDashboardCategory").classList.add("none")
     }
+
     const tablesDisplayNone = () => {
         $("tableProduct").classList.remove("body__section--attendance")
         $("tableProduct").classList.add("none")
@@ -65,6 +102,7 @@ window.onload = function () {
         $(form).classList.add("form-dashboard")
        }
     }
+
     const tableToggleDisplay = (table) => {
         formsDisplayNone();
         tablesDisplayNone();
@@ -97,6 +135,10 @@ window.onload = function () {
         formToggleDisplay("formDashboardProduct")
     })
 
+    $("addUser").addEventListener("click",function(e){
+        formToggleDisplay("formDashboardUser")
+    })
+
     $("addBrand").addEventListener("click",function(e){
         formToggleDisplay("formDashboardBrand")
     })
@@ -117,14 +159,101 @@ window.onload = function () {
             case this.value.trim().length < 3:
                 errorMessage('nameError', 'el nombre del producto debe tener al menos 3 caracteres', event)
             default:
-                this.classList.add('input_success')
+                this.classList.add('isValid')
                 break;
         }
     })
+    
+
+    $("addBrandInput").addEventListener('blur', function (event) {
+        switch (true) {
+            case !this.value.trim():
+                errorMessage('addBrandError', 'El nombre de la marca es obligatorio', event)
+                break;
+            case this.value.trim().length < 3:
+                errorMessage('addBrandError', 'El nombre del producto debe tener al menos 3 caracteres', event)
+            default:
+                this.classList.add('isValid')
+                break;
+        }
+    })
+
+    $("addBrandInput").addEventListener('focus', function (event) {
+        cleanError('addBrandError', event)
+    })
+    
+    $("formDashboardBrand").addEventListener('submit', function (event) {
+        event.preventDefault();
+        let error = false;
+        for (let i = 0; i < this.elements.length - 2; i++) {
+            if (!this.elements[i].value || this.elements[i].classList.contains('isInvalid')) {
+                error = true
+            }
+        }
+        !error ? this.submit() : $('addBrandError').innerHTML = 'Los campos señalados son obligatorios'
+    })
+
+
+    $("addMaterialInput").addEventListener('blur', function (event) {
+        switch (true) {
+            case !this.value.trim():
+                errorMessage('addMaterialError', 'El nombre de la marca es obligatorio', event)
+                break;
+            case this.value.trim().length < 3:
+                errorMessage('addMaterialError', 'El nombre del producto debe tener al menos 3 caracteres', event)
+            default:
+                this.classList.add('isValid')
+                break;
+        }
+    })
+
+    $("addMaterialInput").addEventListener('focus', function (event) {
+        cleanError('addMaterialError', event)
+    })
+    
+    $("formDashboardMaterial").addEventListener('submit', function (event) {
+        event.preventDefault();
+        let error = false;
+        for (let i = 0; i < this.elements.length - 2; i++) {
+            if (!this.elements[i].value || this.elements[i].classList.contains('isInvalid')) {
+                error = true
+            }
+        }
+        !error ? this.submit() : $('addMaterialError').innerHTML = 'Los campos señalados son obligatorios'
+    })
+
+    $("addCategoryInput").addEventListener('blur', function (event) {
+        switch (true) {
+            case !this.value.trim():
+                errorMessage('addCategoryError', 'El nombre de la marca es obligatorio', event)
+                break;
+            case this.value.trim().length < 3:
+                errorMessage('addCategoryError', 'El nombre del producto debe tener al menos 3 caracteres', event)
+            default:
+                this.classList.add('isValid')
+                break;
+        }
+    })
+
+    $("addCategoryInput").addEventListener('focus', function (event) {
+        cleanError('addCategoryError', event)
+    })
+    
+    $("formDashboardCategory").addEventListener('submit', function (event) {
+        event.preventDefault();
+        let error = false;
+        for (let i = 0; i < this.elements.length - 2; i++) {
+            if (!this.elements[i].value || this.elements[i].classList.contains('isInvalid')) {
+                error = true
+            }
+        }
+        !error ? this.submit() : $('addCategoryError').innerHTML = 'Los campos señalados son obligatorios'
+    })
+    
     name.addEventListener('focus', function (event) {
         cleanError('nameError', event)
     })
-
+    
     price.addEventListener('blur', function (event) {
         switch (true) {
             case !this.value.trim():
@@ -133,7 +262,7 @@ window.onload = function () {
             case this.value < 0:
                 errorMessage('priceError', 'el precio del producto debe ser mayor a 0', event)
             default:
-                this.classList.add('input_success')
+                this.classList.add('isValid')
                 break;
         }
     })
@@ -145,7 +274,7 @@ window.onload = function () {
         if (this.value < 0) {
             errorMessage('discountError', 'Solo números positivos', event)
         } else {
-            this.classList.add('input_success')
+            this.classList.add('isValid')
         }
     })
     discount.addEventListener('focus', function (event) {
@@ -156,7 +285,7 @@ window.onload = function () {
         if (this.value < 1) {
             errorMessage('stockError', 'Minimo un producto en stock', event)
         } else {
-            this.classList.add('input_success')
+            this.classList.add('isValid')
         }
     })
     stock.addEventListener('focus', function (event) {
@@ -175,7 +304,7 @@ window.onload = function () {
                 errorMessage('descriptionError', 'Maximo 1000 caracteres', event)
                 break;
             default:
-                this.classList.add('input_success')
+                this.classList.add('isValid')
                 break;
         }
     })
@@ -217,9 +346,8 @@ window.onload = function () {
     selectBrand.addEventListener('blur', function (event) {
         if (!this.value) {
             errorMessage('brandError', 'Debes seleccionar una marca', event)
-            console.log(event)
         } else {
-            this.classList.add('input_success')
+            this.classList.add('isValid')
         }
     })
 
@@ -228,11 +356,10 @@ window.onload = function () {
     })
 
     selectCategory.addEventListener('blur', function (event) {
-        console.log(event)
         if (!this.value) {
             errorMessage('categoryError', 'Debes seleccionar una categoria', event)
         } else {
-            this.classList.add('input_success')
+            this.classList.add('isValid')
         }
     })
 
@@ -244,7 +371,7 @@ window.onload = function () {
         if (!this.value) {
             errorMessage('materialError', 'Debes seleccionar un material', event)
         } else {
-            this.classList.add('input_success')
+            this.classList.add('isValid')
         }
     })
 
@@ -257,7 +384,7 @@ window.onload = function () {
     image.addEventListener('change', function (e) {
         if (!extension.exec(this.value)){
                 $('imageError').innerHTML = "Solo se admiten archivos jpg | jpeg | png | gif | webp"
-                this.classList.add('input_error')
+                this.classList.add('isInvalid')
         }else{
                 cleanError('imageError', e);
         }
@@ -266,11 +393,11 @@ window.onload = function () {
         switch (true) {
             case !extension.exec(this.value):
                 $('imagesError').innerHTML = "Solo se admiten archivos jpg | jpeg | png | gif | webp"
-                this.classList.add('input_error')
+                this.classList.add('isInvalid')
                 break;
             case this.files.length > 3: 
                 $('imagesError').innerHTML = "Máximo 3 imágenes"
-                this.classList.add('input_error')
+                this.classList.add('isInvalid')
                 break;
             default:
                 cleanError('imagesError', e);
@@ -282,7 +409,7 @@ window.onload = function () {
         event.preventDefault();
         let error = false;
         for (let i = 0; i < this.elements.length - 3; i++) {
-            if (!this.elements[i].value || this.elements[i].classList.contains('input_error')) {
+            if (!this.elements[i].value || this.elements[i].classList.contains('isInvalid')) {
                 error = true
             }
         }
@@ -291,7 +418,7 @@ window.onload = function () {
             this.submit()
         } else {
             for (let i = 0; i < this.elements.length - 2; i++) {
-                !this.elements[i].value && this.elements[i].classList.add('input_error')
+                !this.elements[i].value && this.elements[i].classList.add('isInvalid')
                 switch (true) {
 
                     case (this.elements[i].id === 'image'  && this.elements[i].files.length === 0):
@@ -309,4 +436,223 @@ window.onload = function () {
             $('formError').innerHTML = 'Los campos señalados son obligatorios'
         }
     })
+      // Nombre
+      
+      $('name').addEventListener('blur', function (e) {
+        switch (true) {
+          case !this.value.trim():
+            msgError('errorName', "El nombre es obligatorio", e);
+            break;
+          case this.value.trim().length < 2 || this.value.trim().length > 50:
+            msgError('errorName', "El nombre debe tener un mínimo de 2 y un máximo de 50 caracteres", e);
+            break;
+          case !regExLetter.test(this.value.trim()):
+            msgError('errorName', "Solo se aceptan caracteres alfabéticos", e);
+            break;
+      
+          default:
+            this.classList.add('isValid');
+            checkedFields();
+            break;
+        }
+      });
+      
+      $('name').addEventListener('focus', function (e) {
+        cleanError('errorName', e);
+      });
+      
+      
+      // Apellido
+      
+      $('surname').addEventListener('blur', function (e) {
+        switch (true) {
+          case !this.value.trim():
+            msgError('errorSurname', "El apellido es obligatorio", e);
+            break;
+          case this.value.trim().length < 2 || this.value.trim().length > 50:
+            msgError('errorSurname', "El apellido debe tener un mínimo de 2 y un máximo de 50 caracteres", e);
+            break;
+          case !regExLetter.test(this.value.trim()):
+            msgError('errorSurname', "Solo se aceptan caracteres alfabéticos", e);
+            break;
+      
+          default:
+            this.classList.add('isValid');
+            checkedFields();
+            break;
+        }
+      });
+      
+      $('surname').addEventListener('focus', function (e) {
+        cleanError('errorSurname', e);
+      });
+      
+      
+      // E-mail
+      
+      $('email').addEventListener('blur', async function (e) {
+        switch (true) {
+          case !this.value.trim():
+            msgError('errorEmail', "El e-mail es obligatorio", e);
+            break;
+          case !regExEmail.test(this.value.trim()):
+            msgError('errorEmail', "Tiene que ser un e-mail válido", e);
+            break;
+          case await verifyEmail(this.value.trim()):
+            msgError('errorEmail', "Este e-mail ya se encuentra registrado", e)
+            break
+          default:
+            this.classList.add('isValid');
+            checkedFields();
+            break;
+        }
+      });
+      
+      $('email').addEventListener('focus', function (e) {
+        cleanError('errorEmail', e);
+      });
+      
+      
+      // Contraseña
+      
+      password.addEventListener('blur', function (e) {
+        $("msgPassword").hidden = true;
+        switch (true) {
+          case !this.value.trim():
+            msgError('errorPass', "La contraseña es obligatoria", e);
+            break;
+          case !regExPass.test(this.value.trim()):
+            msgError('errorPass', "La contraseña debe tener entre 8 y 12 caracteres, tener una mayúscula, una minúscula, un número y un carácter especial", e);
+            break;
+          default:
+            this.classList.add('isValid');
+            checkedFields();
+            break;
+        }
+      });
+      
+      password.addEventListener('focus', function (e) {
+        cleanError('errorPass', e);
+        $('msgPassword').hidden = false;
+      });
+      
+      const exRegs = {
+        exRegMayu: /[A-Z]/,
+        exRegMinu: /[a-z]/,
+        exRegNum: /[0-9]/,
+        exRegEsp: /[$@!%*?&_-]/,
+        exRegMin: /.{8,}/,
+        exRegMax: /.{13}/,
+      };
+      
+      const validPassword = (element, exReg, value) => {
+        if (!exReg.test(value)) {
+          $(element).classList.add('text-danger');
+        } else {
+          $(element).classList.add('text-success');
+          $(element).classList.remove('text-danger');
+        }
+      };
+      
+      const validMaxPassword = (element, exReg, value) => {
+        if (exReg.test(value)) {
+          $(element).classList.add('text-danger');
+        } else {
+          $(element).classList.add('text-success');
+          $(element).classList.remove('text-danger');
+        }
+      };
+      
+      password.addEventListener('keyup', function () {
+        validPassword('mayu', exRegs.exRegMayu, this.value);
+        validPassword('minu', exRegs.exRegMinu, this.value);
+        validPassword('num', exRegs.exRegNum, this.value);
+        validPassword('esp', exRegs.exRegEsp, this.value);
+        validPassword('min', exRegs.exRegMin, this.value);
+        validMaxPassword('max', exRegs.exRegMax, this.value);
+      });
+       
+       
+       
+      $('password2').addEventListener('blur', function (e) {
+        switch (true) {
+          case !this.value.trim():
+            msgError('errorPass2', "Debes confirmar la contraseña", e);
+            break;
+          case this.value.trim() !== password.value.trim():
+            msgError('errorPass2', "Las contraseñas no coinciden", e);
+            break;
+          case !regExPass.test(this.value.trim()):
+            msgError('errorPass2', "La contraseña debe tener entre 8 y 12 caracteres, tener una mayúscula, una minúscula, un número y un carácter especial", e);
+            break;
+          default:
+            this.classList.add('isValid');
+            checkedFields();
+            break;
+        }
+      });
+      
+      $('password2').addEventListener('focus', function (e) {
+        cleanError('errorPass2', e);
+      });
+      
+      
+      // Imágen de perfil
+      
+      const regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
+      
+      image.addEventListener('change', function (e) {
+        
+          if (!image) {
+            this.classList.add('isValid');
+            checkedFields();
+          } else {
+            switch (true) {
+              case !regExExt.exec(this.value):
+                this.classList.add('isInvalid');
+                $('errorImage').innerHTML = "Solo se admiten imágenes en formato .jpg, .jpeg, .png, .gif y .webp"
+                break;
+              default:
+                this.classList.remove('isInvalid');
+                this.classList.add('isValid')
+                $('errorImage').innerHTML = " "
+                checkedFields()
+                break;
+            }
+          }
+        });
+        
+        
+      
+      
+      // Términos y condiciones
+      
+      $('registerForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        let error = false;
+      
+        if (!$('terminos-condiciones').checked) {
+          error = true;
+          $('errorTermCond').innerHTML = "Debes aceptar los términos y condiciones para registrarte";
+          $('terminos-condiciones').classList.add('isInvalid');
+        } else {
+          cleanError('errorTermCond', e);
+        }
+      
+      
+        // Crear cuenta
+      
+        for (let i = 0; i < this.elements.length - 3; i++) {
+          if (
+            (!this.elements[i].value.trim() ||
+            this.elements[i].classList.contains('isInvalid'))
+          ) { 
+            error = true;
+            this.elements[i].classList.add('isInvalid');
+            $('errorCreate').innerHTML = "Hay campos con errores o están vacíos.";
+          }
+        }
+        !error && this.submit();
+      });
+
 }

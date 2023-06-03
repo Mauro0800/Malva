@@ -41,8 +41,10 @@
                 </div>
                 <div class="product-detail-description">
                     <h2><%= name %></h2>
-                    <h6><del>$6.840,00</del></h6>
-                    <h4 class="product-price"><b>$<%= toThousand(price) %></b></h4>
+                    <% if (discount) { %>
+                        <h6>$<del><%= price %></del> %<%= discount %> OFF</h6>
+                    <% } %>
+                    <h4 class="product-price"><b>$<%= toThousand(price * (1 - (discount/100))) %></b></h4>
                     <hr>
                     <div class="description-box">
                     <p class="product-description"><%= description %></p>

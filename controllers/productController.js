@@ -24,10 +24,10 @@ module.exports = {
 
 
     },
-    category: (req, res) => {
+    category: async (req, res) => {
 
-        const { idCategory } = req.params;
-
+        const {idCategory} = req.params;
+        const category = await db.Category.findByPk(idCategory);
         db.Product.findAll({
             where: {
                 categoryId: idCategory
@@ -36,7 +36,7 @@ module.exports = {
         })
             .then(products => {
                 return res.render("list", {
-                    title: idCategory ? products[0].category.name : "Todos los productos",
+                    title: idCategory ? category.dataValues.name : "Todos los productos",
                     products,
                     toThousand
                 })

@@ -13,9 +13,13 @@
                                 <h3>
                                     <%= title %>
                                 </h3>
-                                <% products.forEach(({name,id,image,price,discount})=> { %>
-                                    <%- include('./partials/product',{ name, id, image, price, discount }) %>
-                                        <% }) %>
+                                <% if (products[0]) { %>
+                                    <% products.forEach(({name,id,image,price,discount})=> { %>
+                                        <%- include('./partials/product',{ name, id, image, price, discount }) %>
+                                    <% }) %>
+                                <% } else { %>
+                                    <p class="no-products">No hay productos para esta categoria</p>
+                                <% } %>
                             </div>
                         </section>
                     </main>
