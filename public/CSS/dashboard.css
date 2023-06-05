@@ -180,6 +180,7 @@
 
 .section__div--users .section__div--card{
   width: 25%;
+  min-width: 108px;
   margin: 10px;
   background: #fff;
   text-align: center;
@@ -257,10 +258,6 @@
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
 
-.body__section--attendance-list h2{
-display: none;
-}
-
   .div__table{
   border-collapse: collapse;
   margin: 25px 0;
@@ -329,7 +326,7 @@ display: none;
   width: 90%;
   display: flex;
   flex-direction: column;
-  margin: 70px auto;
+  margin: 33px auto;
   padding: 20px;
   background-color: #fff;
   align-items: center;
@@ -382,15 +379,50 @@ display: none;
 .form-dashboard button:hover{
   background: #eee;
 }
+.top-text{
+  display: flex;
+  justify-content: space-between;
+}
+.form-box{
+  width: 90%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 40px auto;
+}
 
-@media (min-width:874px){
-  .div__table{
+@media (min-width:895px){
+
+  .products{
     display: table;
   }
-  .no-table{
-    display: block;
-  }
+
 }
+
+@media (min-width:844px){
+
+  .users{
+    display: table;
+  }
+
+}
+
+@media (min-width:666px){
+
+  .admins{
+    display: table;
+  }
+
+}
+
+@media (min-width:700px){
+
+  .other{
+    display: table;
+  }
+
+}
+
 @media (min-width:990px){
 
   .nav--dashboard{
@@ -422,14 +454,6 @@ display: none;
 
 .body__section--attendance{
   text-transform: capitalize;
-}
-
-.body__section--attendance-list h2{
-  display: block;
-}
-.top-text{
-  display: flex;
-  justify-content: space-between;
 }
 
 .div__table{

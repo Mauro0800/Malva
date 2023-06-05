@@ -13,7 +13,7 @@
 
         <div class="profile__form_box">
             <form class="profile__form" action="/users/update?_method=PUT" method="POST" enctype="multipart/form-data">
-                <img src="/images/users/<%= user.image ? user.image : 'default-image.jpg' %>" alt="">
+                <img src="/images/users/<%= user.image ? user.image : 'default-image.png' %>" alt="">
                 <label for="image">Cambiar imagen</label>
                 <input type="file", name="image" id="image" hidden>
 

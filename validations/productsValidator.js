@@ -3,7 +3,16 @@ const {check} = require('express-validator');
 module.exports = [
     check('name')
         .notEmpty().withMessage('El nombre del producto es obligatorio').bail()
-        .isLength({min:5, max:50}).withMessage('El nombre del producto debe tener entre 5 y 50 caracteres'),
+        .isLength({min:3, max:50}).withMessage('El nombre del producto debe tener entre 5 y 50 caracteres'),
+    check('addBrandInput')
+        .notEmpty().withMessage('El nombre de la marca es obligatorio').bail()
+        .isLength({min:3, max:12}).withMessage('El nombre de la marca debe tener entre 3 y 12 caracteres'),
+    check('addMaterialInput')
+        .notEmpty().withMessage('El nombre del material es obligatorio').bail()
+        .isLength({min:3, max:12}).withMessage('El nombre del material debe tener entre 3 y 12 caracteres'),
+    check('addCategoryInput')
+        .notEmpty().withMessage('El nombre de la categoria es obligatorio').bail()
+        .isLength({min:3, max:12}).withMessage('El nombre de la categoria debe tener entre 3 y 12 caracteres'),
     check('price')
         .notEmpty().withMessage('El precio del producto es obligatorio').bail()
         .isInt({min:1}).withMessage('Solo números mayores a 0'),

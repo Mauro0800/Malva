@@ -142,6 +142,19 @@ module.exports = {
             }
         }
     },
+
+    getCategoryById: async (id) => {
+        try {
+            const category = await db.Category.findByPk(id);
+            return category;
+        } catch (error) {
+            throw {
+                status: 500,
+                message: error.message
+            }
+        }
+    },
+
     getAllCategoriesCount : async () => {
         try {
             const count = await db.Product.findAll({
