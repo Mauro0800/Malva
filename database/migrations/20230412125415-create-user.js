@@ -31,27 +31,21 @@ module.exports = {
       },
       addressId: {
         type: Sequelize.INTEGER,
-        references: {
-          model: {
-            tableName: "Addresses"
+        references : {
+          model :{
+            tableName : "Addresses"
           },
-          key: 'id'
+          key : 'id'
         },
         allowNull: true
       },
-      socialId: {
-        type: Sequelize.STRING
-      },
-      socialProvider: {
-        type: Sequelize.STRING
-      },
       rolId: {
         type: Sequelize.INTEGER,
-        references: {
-          model: {
-            tableName: "Rols"
+        references : {
+          model :{
+            tableName : "Rols"
           },
-          key: 'id'
+          key : 'id'
         },
         allowNull: false
       },

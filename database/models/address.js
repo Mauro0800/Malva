@@ -25,7 +25,6 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Address',
-    timestamps: true
   });
   return Address;
 };
