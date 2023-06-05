@@ -218,6 +218,7 @@ module.exports = {
     },
     logout: (req, res) => {
         req.session.destroy()
+        res.clearCookie('usermalva');
         return res.redirect('/')
     },
     destroy: (req, res) => {

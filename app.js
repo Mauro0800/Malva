@@ -8,15 +8,19 @@ const logger = require('morgan');
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 const session = require('express-session');
 const bcrypt = require('bcryptjs');
+const passport = require('passport');
+const { loginGoogleInitialize } = require('./services/googleServices');
 
 const localsUserCheck = require("./middlewares/localsUserCheck");
 const cookieCheck = require("./middlewares/cookieCheck");
 const infoProvider = require('./middlewares/infoProvider');
 
 const app = express();
+loginGoogleInitialize();
 
 const mainRouter = require('./routes/main');
 const usersRouter = require('./routes/users');
+const authRouter = require('./routes/auth');
 const productsRouter = require('./routes/products');
 
 
@@ -40,10 +44,15 @@ app.use(session({
 app.use(cookieCheck)
 app.use(localsUserCheck)
 app.use(infoProvider)
+app.use(passport.initialize()) // Inicializa el servicio Passport de forma global
+app.use(passport.session()) // Almacena en la propiedad passport un objeto con la información del usuario
 
-app.use('/', mainRouter);
-app.use( '/users', usersRouter);
-app.use('/products', productsRouter);
+/* Rutas */
+app
+.use('/', mainRouter)
+.use( '/users', usersRouter)
+.use('/products', productsRouter)
+.use('/auth', authRouter) // Autenticación de usuario
 
 /* APIs */
 app.use('/api/users', require('./routes/api/userApi'))

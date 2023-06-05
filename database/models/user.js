@@ -10,19 +10,19 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-     
+
       // define association here
-      User.belongsTo(models.Address,{
+      User.belongsTo(models.Address, {
         as: 'address',
         foreignKey: 'addressId'
       });
 
-      User.belongsTo(models.Rol,{
+      User.belongsTo(models.Rol, {
         as: 'rol',
         foreignKey: 'rolId'
       });
 
-      User.hasMany(models.Order,{
+      User.hasMany(models.Order, {
         as: 'orders',
         foreignKey: 'userId'
       })
@@ -35,7 +35,9 @@ module.exports = (sequelize, DataTypes) => {
     password: DataTypes.STRING,
     image: DataTypes.STRING,
     addressId: DataTypes.INTEGER,
-    rolId: DataTypes.INTEGER
+    socialId: DataTypes.STRING,
+    socialProvider: DataTypes.STRING,
+    rolId: { type: DataTypes.INTEGER, defaultValue: 2 }
   }, {
     sequelize,
     modelName: 'User',

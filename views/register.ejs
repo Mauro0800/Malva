@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <%- include('./partials/head') %>
+
+<body>
+  
+  <%- include('./partials/header') %>
+
+  <main>
+
+    <div class="register__form-box">
+
+      <h1>Register</h1>
+      <hr>
+      <form class="register__form">
+
+
+        <label for="nombre"></label>
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+
+        <label for="apellido"></label>
+        <input type="text" name="apellido" id="apellido" placeholder="Apellido">
+
+        <label for="email"></label>
+        <input type="email" name="email" id="email" placeholder="Email">
+
+        <label for="contraseña"></label>
+        <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña">
+
+        <label for="contraseña"></label>
+        <input type="password" name="contraseña" id="contraseña" placeholder="Confirma tu contraseña">
+
+
+        <div class="termcond">
+
+          <input type="checkbox" name="acepta-tyc" id="terminos-condiciones">
+          <label for="terminos-condiciones">Acepta los términos y condiciones de uso del sitio</label>
+
+        </div>
+
+
+        <div class="submit">
+          <button type="submit">Crear Cuenta</button>
+          
+        </div>
+        <p>¿Ya estás registrado? <a class="ingresa" href="/login">Ingresa</a></p>
+    </div>
+
+    </form>
+
+  </main>
+
+  <%- include('./partials/footer') %>
+
+  <%- include('./partials/scripts') %>
+
+</body>
+
+</html>
