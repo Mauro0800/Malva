@@ -74,7 +74,7 @@
                   <td><%= material.name %></td>
                   <td>$<%= price %></td>
                   <td><a href="/products/detail/<%= id %>"><button>Ver</button></a></td>
-                  <td><a href="/products/edit/<%= id %>"><button>Editar</button></a></td>
+                  <td><a href="/dashboard/product/<%= id %>"><button>Editar</button></a></td>
                 </tr>
               <% }) %>
               
@@ -145,7 +145,7 @@
                   <td><%= name %></td>
                   <td><%= updatedAt.toISOString().split('T')[0] %></td>
                   <td><%= brandCount[index] ? brandCount[index].dataValues.Total : 0 %></td>
-                  <td><a href="#"><button>Eliminar(mantenimiento)</button></a></td>
+                  <td><a href="#"><button>Eliminar</button></a></td>
                 </tr>
               <% }) %>
               
@@ -178,7 +178,7 @@
                   <td><%= name %></td>
                   <td><%= updatedAt.toISOString().split('T')[0] %></td>
                   <td><%= materialCount[index] ? materialCount[index].dataValues.Total : 0 %></td>
-                  <td><a href="#"><button>Eliminar(mantenimiento)</button></a></td>
+                  <td><a href="#"><button>Eliminar</button></a></td>
                 </tr>
               <% }) %>
               
@@ -211,7 +211,7 @@
                   <td><%= name %></td>
                   <td><%= updatedAt.toISOString().split('T')[0] %></td>
                   <td><%= categoryCount[index] ? categoryCount[index].dataValues.Total : 0 %></td>
-                  <td><a href="#"><button>Eliminar(mantenimiento)</button></a></td>
+                  <td><a href="#"><button>Eliminar</button></a></td>
                 </tr>
               <% }) %>
               
@@ -222,7 +222,7 @@
 
       </section>
 
-      <form id="formDashboardProduct" class="none" action="product" method="POST" enctype="multipart/form-data">
+      <form id="formDashboardProduct" class="none" action="dashboard/product" method="POST" enctype="multipart/form-data">
         <h2>Producto</h2>
           <label for="name">Nombre</label>
           <input type="text" name="name" id="name" value="<%= locals.old && old.name ? old.name : null %>">
@@ -278,13 +278,13 @@
           </select>
           <small id="materialError" class="text-danger ms-2"><%= locals.errors && errors.material ? errors.material.msg : null %></small>
 
-          <label for="image" id="mainImage">Imágen principal del producto</label>
+          <label for="image" id="mainImage">Imágen principal del producto (Se recomienda una medida de 150px a 160px)</label>
           <input type="file" name="image" id="image">
           <small id="imageError" class="text-danger ms-2" id="imageError">
             <%= locals.errors && errors.image ? errors.image.msg : null %>
           </small>
 
-          <label for="images">Imágenes secundarias del producto</label>
+          <label for="images">Imágenes secundarias del producto (Se recomienda una medida de 150px a 160px)</label>
           <input type="file" name="images" id="images" multiple>
           <small id="imagesError" class="text-danger ms-2" id="imagesError">
             <%= locals.errors && errors.images ? errors.images.msg : null %>
@@ -296,14 +296,14 @@
           <button type="reset">Cancelar</button>
       </form>
 
-      <form id="formDashboardUser" class="none" action="user" method="POST" enctype="multipart/form-data">
+      <form id="formDashboardUser" class="none" action="dashboard/user" method="POST" enctype="multipart/form-data">
           <h2>Usuario</h2>
 
-          <label for="name">Nombre</label>
-          <input type="text" name="name" id="name" 
-            value="<%= (locals.old && old.name) && old.name %>">
-          <small class="text-danger ms-2" id="errorName">
-            <%= (locals.errors && errors.name) && errors.name.msg %>
+          <label for="nameUser">Nombre</label>
+          <input type="text" name="nameUser" id="nameUser" 
+            value="<%= (locals.old && old.nameUser) && old.nameUser %>">
+          <small class="text-danger ms-2" id="errorNameUser">
+            <%= (locals.errors && errors.nameUser) && errors.nameUser.msg %>
           </small>
 
           <label for="surname">Apellido</label>
@@ -341,14 +341,14 @@
           </small>
 
             <label for="file">Foto de perfil</label>
-            <input type="file" name="image" id="image">
-            <small class="text-danger ms-2" id="errorImage"></small>
+            <input type="file" name="imageUser" id="imageUser">
+            <small class="text-danger ms-2" id="errorImageUser"></small>
           
             <button type="submit" name="crear" id="crear">Crear Cuenta</button>
 
       </form>
 
-      <form id="formDashboardBrand" class="none" action="brand" method="POST">
+      <form id="formDashboardBrand" class="none" action="dashboard/brand" method="POST">
         <h2>Marcas</h2>
 
         <label for="addBrandInput">Nombre</label>
@@ -362,7 +362,7 @@
 
       </form>
 
-      <form id="formDashboardMaterial" class="none" action="material" method="POST">
+      <form id="formDashboardMaterial" class="none" action="dashboard/material" method="POST">
         <h2>Materiales</h2>
         
         <label for="addMaterialInput">Nombre</label>
@@ -375,7 +375,7 @@
         <button type="reset">Cancelar</button>
       </form>
 
-      <form id="formDashboardCategory" class="none" action="category" method="POST">
+      <form id="formDashboardCategory" class="none" action="dashboard/category" method="POST">
 
         <h2>Categorías</h2>
 

@@ -2,7 +2,7 @@
   <section class="home__header__section--cuenta">
     <% if (locals.userLogin) { %>
       <% if (locals.userLogin.rol===1) { %>
-        <a href="/dashboardAdd">Admin</a>
+        <a href="/dashboard">Admin</a>
         <% } %>
           <a href="/users/profile">Hola, <%= userLogin.name %></a>
           <a href="/users/logout" class="home__header__section__a">Salir</a>
@@ -44,3 +44,20 @@
   </nav>
 
 </header>
+
+<div class="cont-menu active10" id="menu">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="#novedades">Recibi novedades</a></li>
+    <li><a href="#redes">Redes</a></li>
+    <li><a href="/users/profile">Perfil</a></li>
+    <li><a href="/users/login">Login</a></li>
+    <li><a href="/users/register">Register</a></li>
+    <% if (locals.userLogin) { %>
+    <% if (locals.userLogin.rol===1) { %>
+      <li><a href="/dashboard">Admin</a></li>
+    <% } %>
+    <% } %>
+    <li><a id="cerrar">Cerrar</a></li>
+  </ul>
+</div>

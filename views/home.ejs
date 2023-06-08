@@ -38,8 +38,8 @@
               <div class="home__main__productos">
                 <h3 class="home__main__section__h3">PRODUCTOS</h3>
 
-                <% productsHome.forEach(({name,id,image,price,category})=> { %>
-                  <%- include('./partials/productHome',{ name, id, image, price, category }) %>
+                <% productsHome.forEach(({name,id,image,price,category, discount})=> { %>
+                  <%- include('./partials/productHome',{ name, id, image, price, category, discount }) %>
                     <% }) %>
 
               </div>
@@ -50,8 +50,8 @@
                   <h3 class="home__main__section__h3">DESTACADOS</h3>
 
 
-                  <% productsdistinguished.forEach(({name,id,image,price,category})=> { %>
-                    <%- include('./partials/productdistinguished',{ name, id, image, price, category }) %>
+                  <% productsdistinguished.forEach(({name,id,image,price,category, discount})=> { %>
+                    <%- include('./partials/productdistinguished',{ name, id, image, price, category, discount}) %>
                       <% }) %>
                 </div>
 

@@ -54,8 +54,10 @@
                 <label for="brand">Marca</label>
                 <select class="main__form__div__selected" name="brand" id="brand">
                 <% brands.forEach(({id,name})=> { %>
-                    <option value=<%=id %> <%= brandId === id && 'selected' %>><%= name %></option>
-                    <% }) %>
+                    <option value=<%=id %> <%= locals.old && old.brand && +old.brand===id ? 'selected' : null %>>
+                        <%= name %>
+                    </option>
+                <% }) %>
             </select>
         </div>
         <small class="text-danger ms-2" id="brandError">

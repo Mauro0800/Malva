@@ -379,50 +379,16 @@
 .form-dashboard button:hover{
   background: #eee;
 }
-.top-text{
-  display: flex;
-  justify-content: space-between;
-}
-.form-box{
-  width: 90%;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 15px;
-  margin: 40px auto;
-}
 
-@media (min-width:895px){
-
-  .products{
+@media (min-width:874px){
+  .div__table{
     display: table;
+  }
+  .no-table{
+    display: block;
   }
 
 }
-
-@media (min-width:844px){
-
-  .users{
-    display: table;
-  }
-
-}
-
-@media (min-width:666px){
-
-  .admins{
-    display: table;
-  }
-
-}
-
-@media (min-width:700px){
-
-  .other{
-    display: table;
-  }
-
-}
-
 @media (min-width:990px){
 
   .nav--dashboard{

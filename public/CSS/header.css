@@ -98,6 +98,11 @@
   }
 
 @media (min-width: 768px){
+
+  /* .home__header__button:first-of-type{
+    display: none;
+  } */
+
   .home__header__nav-ul{
     justify-content: space-around;
   }

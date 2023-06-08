@@ -59,13 +59,27 @@
     text-align: center;
 }
 
-
+.home__main__productos h5{
+    color: black;
+    display: inline-block;
+    font-weight: normal;
+    margin-right: 15px;
+}
 
 .home__main__productos h4{
     font-size: 0.9em;
-    color: black;
+    color: var(--color5);
     text-transform: capitalize;
 }
+
+.home__main__productos-detalle p{
+    color: #c77968;
+    font-size: 0.8em;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 0;
+}
+
 .home__main__section--body img{
     width: 100%;
     margin-bottom: 15px;
@@ -73,10 +87,6 @@
 
 .home__main__productos-detalle{
     width: 100%;
-}
-.home__main__productos-detalle p{
-    color: var(--color5);
-    font-size: 0.8em;
 }
 
 .home__main__distinguished__figure{
@@ -116,6 +126,7 @@
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding-bottom: 10px;
     position: relative;
 }
 
@@ -286,7 +297,7 @@
     .home__main__productos__figure{
         width: 19%;
         margin: 5px 10px 25px;
-        padding: 30px 0;
+        padding: 30px 0 10px;
     }
 
 
