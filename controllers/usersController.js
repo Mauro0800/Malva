@@ -35,7 +35,7 @@ module.exports = {
                     };
 
                     if (req.body.remember) {
-                        res.cookie('usermalva', req.session.userLogin, { maxAge: 1000 * 60 }) //vida de la cookie
+                        res.cookie("usermalva", req.session.userLogin, { maxAge: 1000 * 60 }) //vida de la cookie
                     }
                     return res.redirect('/')
                 })

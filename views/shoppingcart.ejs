@@ -11,70 +11,19 @@
         <main class="main--cart">
 
           <section class="main__section-cart">
-            <div class="main__section-cart-each-product">
-              <article class="main__section__article-cart">
-                <button class="main__section__article__button--trash"><i class="fa-solid fa-trash-can"></i></button>
-                <div class="main__section__article__div--img">
-                  <img src="/images/products/abrelatas-acero-inoxidable-leifheit-1.jpg" alt="">
-                </div>
-
-                <div class="main__section__article__div--box2">
-                  <h2 class="main__section__article__h2--nombre">Lorem ipsum dolor sit amet.</h2>
-
-                  <div class="contador-box">
-                    <div class="main__section__article__div--contador">
-
-                      <span class="main__section__article__div__span-left">
-                        <button class="main__section__article__div__button--mas">-</button>
-                      </span>
-
-                      <span class="main__section__article__div__button--numero">1</span>
-
-                      <span class="main__section__article__div__span-right">
-                        <button class="main__section__article__div__button--menos">+</button>
-                      </span>
-
-                    </div>
-                  </div>
-
-                  <p class="main__section__article__p--precio">$000,00</p>
-                </div>
-            </article>
-
-            <article class="main__section__article-cart">
-              <button class="main__section__article__button--trash"><i class="fa-solid fa-trash-can"></i></button>
-              <div class="main__section__article__div--img">
-                <img src="/images/products/difusor-bergam-y-rosas-1.jpg" alt="">
-              </div>
-
-              <div class="main__section__article__div--box2">
-                <h2 class="main__section__article__h2--nombre">Lorem ipsum dolor sit amet.</h2>
-
-                <div class="contador-box">
-                  <div class="main__section__article__div--contador">
-
-                    <span class="main__section__article__div__span-left">
-                      <button class="main__section__article__div__button--mas">-</button>
-                    </span>
-
-                    <span class="main__section__article__div__button--numero">1</span>
-
-                    <span class="main__section__article__div__span-right">
-                      <button class="main__section__article__div__button--menos">+</button>
-                    </span>
-
-                  </div>
-                </div>
-
-                <p class="main__section__article__p--precio">$000,00</p>
-              </div>
-          </article>
-
-          </div>
+            <div class="main__section-cart-each-product" id="cards-container">
+              
+            </div>
 
             <article class="main__section-cart-total">
-              <h4>Total : $000</h4>
-              <button class="default-button" type="submit">Realizar compra</button>
+              <span >
+                Total:
+              </span>
+              <output id="output-total">
+                0
+              </output>
+              <button class="default-button" id="btn-buy">Realizar compra</button>
+              <button class="clear-cart-k" id="clear-cart">Vaciar Carrito</button>
             </article>
 
             <article class="main__section__article-cart-add">
@@ -88,6 +37,7 @@
 
         </main>
         <%- include('./partials/scripts') %>
+        <script src="/javascripts/cart.js"></script>
 
   </body>
 

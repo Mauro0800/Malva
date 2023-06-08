@@ -17,7 +17,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false
       },
-      state: {
+      status: {
         type: Sequelize.STRING,
         allowNull: false
       },

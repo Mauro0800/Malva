@@ -1,3 +1,6 @@
+.main--cart{
+    padding-bottom: 70px;
+}
 .main__section-cart {
     display: flex;
     flex-direction: column;
@@ -120,7 +123,7 @@
     flex-wrap: wrap;
     width: 100%;
     margin: 10px 5px 0;
-    padding: 5px;
+    padding: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
     background-color: white;
     position: fixed;
@@ -139,7 +142,20 @@
     margin: 5px auto;
 }
 
-
+.clear-cart-k{
+    width: 70%;
+    padding: 5px;
+    margin-top: 20px;
+    border: 2px solid var(--color3);
+    border-radius: 8px;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: 100;
+}
+.clear-cart-k:hover{
+  background: #eee;
+}
 /* Agregar mas productos */
 .main__section__article-cart-add {
     display: flex;
@@ -186,7 +202,7 @@
         justify-content: center;
         flex-wrap: wrap;
         width: 30%;
-        height: 145px;
+        height: 185px;
         margin: 5px 0 auto 8px;
         padding: 5px;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -211,6 +227,12 @@
 
     .main__section-cart-each-product{
         width: 55%;
+    }
+    .main__section__article__button--trash {
+        padding: 10px;
+    }
+    .main__section__article__button--trash i {
+        font-size: 1.4em;
     }
     .main__section-cart-total{
         width: 25%;

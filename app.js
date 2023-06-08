@@ -46,8 +46,10 @@ app.use( '/users', usersRouter);
 app.use('/products', productsRouter);
 
 /* APIs */
-app.use('/api/users', require('./routes/api/userApi'))
-app.use('/api/products', require('./routes/api/productsApi')) // API de productos
+app
+  .use('/api/users', require('./routes/api/userApi'))
+  .use('/api/products', require('./routes/api/productsApi')) // API de productos
+  .use("/api/cart",require('./routes/api/cartApi'))
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -134,7 +134,7 @@ CREATE TABLE `orders` (
   `id` int NOT NULL AUTO_INCREMENT,
   `date` datetime NOT NULL,
   `total` int NOT NULL,
-  `state` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL,
   `userId` int NOT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,

@@ -116,10 +116,22 @@
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .home__main__productos__figure:hover{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.home__main__productos__figure i{
+    font-size: 1.6em;
+    color: var(--color5);
+}
+.home__main__productos__figure button{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    border: none;
+    background-color: white;
 }
 
 .home__main__productos-imagen{
