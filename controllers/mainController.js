@@ -322,7 +322,7 @@ module.exports = {
                             productId: product.id,
                         });
 
-                        return res.redirect("/products/#redes");
+                        return res.redirect("/products/detail/"+product.id);
 
                     });
                 })
