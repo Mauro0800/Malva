@@ -391,22 +391,6 @@
   margin: 40px auto;
 }
 
-@media (min-width:895px){
-
-  .products{
-    display: table;
-  }
-
-}
-
-@media (min-width:844px){
-
-  .users{
-    display: table;
-  }
-
-}
-
 @media (min-width:666px){
 
   .admins{
@@ -422,6 +406,27 @@
   }
 
 }
+
+@media (min-width:844px){
+
+  .form-dashboard{
+    width: 75%;
+  }
+
+  .users{
+    display: table;
+  }
+
+}
+
+@media (min-width:895px){
+  
+  .products{
+    display: table;
+  }
+
+}
+
 
 @media (min-width:990px){
 

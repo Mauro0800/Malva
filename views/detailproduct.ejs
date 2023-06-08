@@ -7,6 +7,9 @@
 
     <%- include('./partials/header') %>
 
+    <%- include('./partials/menuHam') %>
+
+
     <main class="product-detail__main">
         <section class="product-detail__main__section--product">
             <article class="product-detail__main__section__article--product">
@@ -44,16 +47,15 @@
                     <% if (discount) { %>
                         <h6>$<del><%= price %></del> %<%= discount %> OFF</h6>
                     <% } %>
-                    <h4 class="product-price"><b>$<%= toThousand(price * (1 - (discount/100))) %></b></h4>
+                    <h4 class="product-price"><b>$<%= toThousand((price * (1 - (discount/100))).toFixed(0)) %></b></h4>
                     <hr>
                     <div class="description-box">
                     <p class="product-description"><%= description %></p>
                     </div>
                     <hr>
-                    <p><b>Uso : </b> Set cuidado personal</p>
+                    <p><b>Categoria : </b> <%= category.name %></p>
                     <p><b>Marca : </b> <%= brand.name %></p>
                     <p><b>Material : </b> <%= material.name %></p>
-                    <p><b>Tamaño : </b> 16 cm.</p>
                 </div>
 
 

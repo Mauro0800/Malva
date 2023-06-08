@@ -7,8 +7,9 @@
   <div class="body__div--container">
     
     <%- include('./partials/navDashboard') %>
-    <form id="formDashboardProduct" class="form-dashboard" action="dashboard/product" method="POST" enctype="multipart/form-data">
-      <h2>Producto: <%= name %></h2>
+    
+    <form id="formDashboardProduct" class="form-dashboard" action="dashboard/product/<%= id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+      <h2>Producto</h2>
         <label for="name">Nombre</label>
         <input type="text" name="name" id="name" value="<%= locals.old && old.name ? old.name : name %>">
         <small id="nameError" class="text-danger ms-3"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
@@ -34,7 +35,7 @@
         <select name="brand" id="brand" value="">
         <option value="" hidden>Seleccione una marca</option>
         <% brands.forEach(({id,name})=> { %>
-          <option value=<%=id %> <%= locals.old && old.brand && +old.brand===id ? 'selected' : null %>>
+          <option value=<%=id %> <%= brandId===id ? 'selected' : null %> <%= locals.old && old.brand && +old.brand===id ? 'selected' : null %>>
             <%= name %>
           </option>
         <% }) %>
@@ -45,7 +46,7 @@
         <select name="category" id="category">
         <option value="" hidden>Seleccione una categoría</option>
         <% categories.forEach(({id,name})=> { %>
-          <option value=<%=id %> <%= locals.old && old.category && +old.category===id ? 'selected' : null%>>
+          <option value=<%=id %> <%= categoryId===id ? 'selected' : null %> <%= locals.old && old.category && +old.category===id ? 'selected' : null %>>
             <%= name %>
           </option>
           <% }) %>
@@ -56,7 +57,7 @@
         <select name="material" id="material" value="">
         <option value="" hidden>Seleccione un material</option>
         <% materials.forEach(({id,name})=> { %>
-          <option value=<%=id %> <%= locals.old && old.material && +old.material===id ? 'selected' : null%>>
+          <option value=<%=id %> <%= brandId===id ? 'selected' : null %> <%= locals.old && old.brand && +old.brand===id ? 'selected' : null %>>
             <%= name %>
           </option>
           <% }) %>

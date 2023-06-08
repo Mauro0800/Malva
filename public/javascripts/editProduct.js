@@ -220,7 +220,7 @@ window.onload = function () {
     formEditProduct.addEventListener('submit', function (e) {
         e.preventDefault();
         let error = false;
-        for (let i = 0; i < this.elements.length - 2; i++) {
+        for (let i = 0; i < this.elements.length - 4; i++) {
             if (this.elements[i].classList.contains('input_error')) {
                 error = true;
                 $('formError').innerHTML = 'Estos campos son obligatorios';

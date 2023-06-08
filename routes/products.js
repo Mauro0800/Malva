@@ -12,10 +12,8 @@ router
     .get('/category/:idCategory', category)
     .get('/detail/:id', detail)
     .get('/shopping-cart', shoppingcart)
-    .get('/add',checkUserAdmin, addproduct)//checkUseradmin
-    .post('/add',uploadProductImages,productValidator, store)
-    .get('/edit/:id',checkUserAdmin, editproduct)//checkUseradmin
+    .get('/edit/:id', editproduct)
     .put('/update/:id',uploadProductImages,productValidator, update)
-    .delete('/delete/:id',checkUserAdmin, destroy)//checkUseradmin
+    .delete('/delete/:id', destroy)
  
 module.exports = router;

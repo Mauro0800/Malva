@@ -233,13 +233,8 @@ module.exports = {
             order: [["name"]],
             attributes: ["name", "id"],
         });
-        const images = db.Image.findAll({
-            where: {
-                productId: id
-            }
-        });
-        Promise.all([product, brands, materials, images])
-            .then(([product, brands, materials, images]) => {
+        Promise.all([product, brands, materials])
+            .then(([product, brands, materials]) => {
                 if (!product) {
                     return res.redirect("/")
                   }
@@ -247,7 +242,6 @@ module.exports = {
                     ...product.dataValues,
                     brands,
                     materials,
-                    images,
                     title: "Editar producto"
                 })
             })
@@ -260,25 +254,6 @@ module.exports = {
         const productOld=db.Product.findByPk(id)
         const errors = validationResult(req);
         
-        if (req.fileValidationError) {
-            errors.errors.push({
-                value: "",
-                msg: req.fileValidationError,
-                param: "image",
-                location: "files",
-            });
-        }
-
-        if (req.fileValidationError) {
-            errors.errors.push({
-                value: "",
-                msg: req.fileValidationError,
-                param: "images",
-                location: "files",
-            });
-        }
-
-
         if (errors.isEmpty()) {
             
             db.Product.update({
@@ -297,16 +272,33 @@ module.exports = {
                   id,
                 },
               }
-              ).then(async () => {
-
+            ).then(async () => {
                 if(req.files.image && req.files.image.length){
+
+                    let error = false;
+
+                    await db.Image.findAll({
+                    where : {
+                        productId : id
+                    }
+                    })
+                    .then(async(images) => {
+                    images.forEach(image=>{
+                            productOld.then(product=>{
+                                image.name===product.image ? error = true : null
+                            })
+                        })
+                    })
+                    if(error===true){
                     productOld.then(product=>{
                             fs.existsSync(`public/images/products/${product.image}`) &&
                             fs.unlinkSync(`public/images/products/${product.image}`);
                         })
+                    }
                 }
                     
                 
+                if(req.files.images){
                        await db.Image.findAll({
                             where : {
                                 productId : id
@@ -314,7 +306,6 @@ module.exports = {
                         })
                             .then(images => {
                                 
-                                if(req.files.images){
                                     db.Image.destroy({
                                         where:{
                                             productId:id
@@ -336,9 +327,9 @@ module.exports = {
                                         fs.unlinkSync(`public/images/products/${image.name}`);
                                     });
                                 
-                                }
-                                
-                            })
+                                    
+                                })
+                            }
                         return res.redirect("/products/detail/"+id);
                             
                     })
