@@ -5,25 +5,48 @@
         <a href="/dashboard">Admin</a>
         <% } %>
           <a href="/users/profile">Hola, <%= userLogin.name %></a>
-          <a href="/users/logout" class="home__header__section__a">Salir</a>
-          <% } else{%>
-            <a href="/users/login" class="home__header__section__a">Iniciar Sesión</a>
-            <a href="/users/register" class="home__header__section__a">Registrarse</a>
             <% }%>
-              <a href="/users/profile" class="home__header__section__a--icono"><i class="fa-solid fa-user"></i></a>
   </section>
   <section class="home__header-section">
 
     <div class="home__header-section-div-1">
 
-      <div class="home__header__button">
+      <div class="home__header__button header-menu-ham">
         <button id="icono-menu"><i class="fa-solid fa-bars"></i></button>
       </div>
-      <div>
+      <div class="search-box-h">
+        <%- include('./searchHeader') %>
+      </div>
+      <div class="header-image">
         <a href="/"><img src="/images/malva-nuevo-logo.png" alt=""></a>
       </div>
-      <div class="home__header__button">
-        <a href="/products/shopping-cart"><button><i class="fa-solid fa-cart-shopping"></i></button></a>
+      <div class="home-header-icons-t">
+        <div class="home__header__button btn-heart">
+          <a href=""><button><i class="bi bi-heart"></i></button></a>
+        </div>
+        <div class="home__header__button btn-person">
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-person"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <% if (locals.userLogin) { %>
+                <% if (locals.userLogin.rol===1) { %>
+                  <li><a class="dropdown-item" href="/dashboard">Admin</a></li>
+                  <% } %>
+                  <li><a class="dropdown-item" href="/users/profile">Perfil</a></li>
+                  <li><a class="dropdown-item" href="/users/logout">Salir</a></li>
+                  <% } else{%>
+                    <li><a class="dropdown-item" href="/users/login">Iniciar Sesión</a></li>
+                    <li><a class="dropdown-item" href="/users/register">Registrarse</a></li>
+            <% }%>
+
+            </ul>
+          </div>
+        </div>
+        <div class="home__header__button btn-cartt">
+          <a href="/products/shopping-cart"><button><i class="bi bi-cart2"></i></button></a>
+        </div>
       </div>
 
     </div>
