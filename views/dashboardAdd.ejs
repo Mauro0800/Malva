@@ -103,16 +103,18 @@
             </thead>
             <tbody>
               
-              <% users.forEach(({id,name,email,updatedAt}) => { %>
-                <tr class="div__table__tr">
-                  <td><%= id %></td>
-                  <td><%= name %></td>
-                  <td><%= email %></td>
-                  <td><%= updatedAt.toISOString().split('T')[0] %></td>
-                  <td>10</td>
-                  <td>$10000</td>
-                  <td><a href="/dashboardUsers/<%= id %>"><button>Ver</button></a></td>
-                </tr>
+              <% users.forEach(({id,name,email,updatedAt,rol}) => { %>
+                <% if (rol.name==="user") { %>
+                  <tr class="div__table__tr">
+                    <td><%= id %></td>
+                    <td><%= name %></td>
+                    <td><%= email %></td>
+                    <td><%= updatedAt.toISOString().split('T')[0] %></td>
+                    <td>10</td>
+                    <td>$10000</td>
+                    <td><a href="/dashboardUsers/<%= id %>"><button>Ver</button></a></td>
+                  </tr>
+                <% } %>
               <% }) %>
               
             </tbody>

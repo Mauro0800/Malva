@@ -82,8 +82,13 @@ module.exports = {
     },
 
     dashboardOrders :  (req,res) =>{
-        return res.render('dashboardOrders', {
-            title: "Ordenes"
+        db.Order.findAll({include:["user","cart"]})
+        .then(orders=>{
+            // return res.send(orders)
+            return res.render('dashboardOrders', {
+                title: "Ordenes",
+                orders
+            })
         })
     },
     dashboardAdd : async  (req,res) =>{
@@ -96,6 +101,7 @@ module.exports = {
         const categoryCount = await getAllCategoriesCount();
         const {materials,countMaterial} = await getAllMaterials();
         const {categories,countCategory} = await getAllCategories();
+        // return res.send(users)
             return res.render('dashboardAdd', {
                 products,
                 users,
@@ -604,12 +610,9 @@ module.exports = {
     },
     dashboardUserUpdate : async (req,res) => {
         const errors = validationResult(req);
-
-        if(!req.session.userLogin){
-            return res.redirect('/users/profile') 
-        }
+        
         const { name, surname, address, city, province, zipCode } = req.body
-        const { id } = req.session.userLogin;
+        const id = +req.params.id;
 
         if (req.fileValidationError) {
             errors.errors.push({
@@ -623,7 +626,7 @@ module.exports = {
         if(errors.isEmpty()) {
         db.User.findByPk(id)
             .then(user => {
-
+                // return res.send(req.file)
                 const addressUpdated = db.Address.update(
                     {
                         address: address ? address.trim() : null,
@@ -653,44 +656,38 @@ module.exports = {
                     .then(() => {
                         (req.file && fs.existsSync('./public/images/users/' + user.image)) && fs.unlinkSync('./public/images/users/' + user.image)
                         req.session.message = "Datos actualizados"
-                        // return res.send([user,req.file])
-                        return res.redirect('/users/profile')
+                        return res.redirect('/dashboardUsers/'+id)
                     })
             }).catch(error => console.log(error))
         }else{
             try {
-                const {products,count} = await getAllProducts(req)
-                const {users,countUser} = await getAllUsers(req);
-                const {brands,countBrand} = await getAllBrands();
-                const materialCount = await getAllMaterialsCount();
-                const brandCount = await getAllBrandsCount();
-                const categoryCount = await getAllCategoriesCount();
-                const {materials,countMaterial} = await getAllMaterials();
-                const {categories,countCategory} = await getAllCategories();
-
-                (req.file && fs.existsSync('./public/images/users/' + req.file.filename)) && fs.unlinkSync('./public/images/users/' + req.file.filename)
-
-                    return res.render('dashboardAdd', {
-                        products,
-                        users,
-                        brands,
-                        materials,
-                        categories,
-                        count,
-                        countUser,
-                        countBrand,
-                        countMaterial,
-                        countCategory,
-                        materialCount,
-                        brandCount,
-                        categoryCount,
-                        errors: errors.mapped(),
+                const id = +req.params.id
+                const user = await getUserById(id,req);
+                    return res.render("dashboardUsersDetail",{
+                        title:"Usuarios",
+                        user,
                         old: req.body,
+                        errors: errors.mapped(),
                         title: "Agregar"
-                })
+                    })
+                
             } catch (error) {
                 console.log(error)
             };
         }
+    },
+    dashboardUserDelete: async(req,res) => {
+        const id = req.params.id;
+
+        db.User.findByPk(id)
+            .then((user) => {
+                req.session.destroy()
+                db.User.destroy({
+                    where: { id }
+                }).then(() => {
+                    return res.redirect('/')
+                })
+            })
+            .catch(error => console.log(error))
     }
 }

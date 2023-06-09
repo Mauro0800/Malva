@@ -204,6 +204,10 @@ window.onload = function () {
         !error ? this.submit() : $('addCategoryError').innerHTML = 'Los campos señalados son obligatorios'
     })
     
+    $()
+
+
+
     name.addEventListener('blur', function (event) {
         switch (true) {
             case !this.value.trim():
