@@ -372,16 +372,36 @@ module.exports = {
                 };
         }
     },
+    dashboardProductDetail: async (req,res) => {
+        const id = +req.params.id
+        const product = db.Product.findByPk(id);
+        const brands = await db.Brand.findAll({
+            order: [["name"]],
+            attributes: ["name", "id"],
+        });
+        const materials = await db.Material.findAll({
+            order: [["name"]],
+            attributes: ["name", "id"],
+        });
+        Promise.all([product, brands, materials,])
+            .then(([product, brands, materials,]) => {
+            // return res.send(product)
+            return res.render("dashboardProductDetail",{
+                brands,
+                materials,
+                ...product.dataValues,
+                title:"Producto",
+            })
+        })
+    },
     dashboardUpdate: async (req,res) =>{
-        
-
         const id = +req.params.id;
         const {name, price, description, discount, stock, brand, category, material,image} = req.body;
         const productOld=db.Product.findByPk(id)
         const errors = validationResult(req);
-        
+
         if (errors.isEmpty()) {
-            
+
             db.Product.update({
                 name: name.trim(),
                 price: +price,
@@ -400,9 +420,7 @@ module.exports = {
               }
             ).then(async () => {
                 if(req.files.image && req.files.image.length){
-
                     let error = false;
-
                     await db.Image.findAll({
                     where : {
                         productId : id
@@ -422,8 +440,8 @@ module.exports = {
                         })
                     }
                 }
-                    
-                
+
+
                 if(req.files.images){
                        await db.Image.findAll({
                             where : {
@@ -431,13 +449,12 @@ module.exports = {
                             }
                         })
                             .then(images => {
-                                
+
                                     db.Image.destroy({
                                         where:{
                                             productId:id
                                         }
                                     })
-
                                     req.files.images.forEach(async(image)=>{
                                        await db.Image.create(
                                         {
@@ -447,66 +464,68 @@ module.exports = {
                                     )
                                 })
 
-                                
                                     images.forEach(image => {
                                         fs.existsSync(`public/images/products/${image.name}`) &&
                                         fs.unlinkSync(`public/images/products/${image.name}`);
                                     });
                                 
-                                    
+
                                 })
                             }
                         return res.redirect("/products/detail/"+id);
-                            
+
                     })
-                 
+                
                 .catch(error => console.log(error))
         } else {
+            try {
 
-            const id = +req.params.id
-            const product = await db.Product.findByPk(id, {
-                include: ["images"]
-            })
-            const brands = await db.Brand.findAll({
-                order: [["name"]],
-                attributes: ["name", "id"],
-            });
-            const materials = await db.Material.findAll({
-                order: [["name"]],
-                attributes: ["name", "id"],
-            });
-            const images = await db.Image.findAll({
-                where: {
-                    productId: id
+                if (req.files && req.files.image) {
+                    fs.existsSync(`./public/images/products/${req.files.image[0].filename}`) &&
+                    fs.unlinkSync(`./public/images/products/${req.files.image[0].filename}`);
                 }
-            });
             
-            if (req.files && req.files.image) {
-                fs.existsSync(`./public/images/products/${req.files.image[0].filename}`) &&
-                fs.unlinkSync(`./public/images/products/${req.files.image[0].filename}`);
-            }
-            
-            if (req.files && req.files.images) {
-                req.files.images.forEach(files => {
-                    fs.existsSync(`./public/images/products/${files.filename}`) &&
-                    fs.unlinkSync(`./public/images/products/${files.filename}`);
+                if (req.files && req.files.images) {
+                    req.files.images.forEach(files => {
+                        fs.existsSync(`./public/images/products/${files.filename}`) &&
+                        fs.unlinkSync(`./public/images/products/${files.filename}`);
+                    });
+                }
+                const product = db.Product.findByPk(id);
+                const brands = await db.Brand.findAll({
+                    order: [["name"]],
+                    attributes: ["name", "id"],
                 });
-            }
-            
-            Promise.all([product, brands, materials, images])
-                .then(([product, brands, materials, images]) => {
-                    return res.render('editproduct', {
-                        ...product.dataValues,
+                const materials = await db.Material.findAll({
+                    order: [["name"]],
+                    attributes: ["name", "id"],
+                });
+                Promise.all([product, brands, materials,])
+                    .then(([product, brands, materials,]) => {
+                    return res.render("dashboardProductDetail",{
                         brands,
                         materials,
-                        images,
+                        ...product.dataValues,
                         errors: errors.mapped(),
                         old: req.body,
-                        title: "Editar producto"
+                        title:"Producto",
                     })
                 })
-                .catch((error) => console.log(error));
+                } catch (error) {
+                    console.log(error)
+                };
         }
+    },
+    dashboardDelete: async (req,res) => {
+
+            db.Product.destroy({
+                where: {
+                  id: req.params.id
+                }
+              }).then(() => {
+                return res.redirect("/dashboard")
+              }).catch((error) => console.log(error))
+
     },
     dashboardUser: async (req, res) => {
 
@@ -574,28 +593,6 @@ module.exports = {
                 console.log(error)
             };
         }
-    },
-    dashboardProductDetail: async (req,res) => {
-        const id = +req.params.id
-        const product = db.Product.findByPk(id);
-        const brands = await db.Brand.findAll({
-            order: [["name"]],
-            attributes: ["name", "id"],
-        });
-        const materials = await db.Material.findAll({
-            order: [["name"]],
-            attributes: ["name", "id"],
-        });
-        Promise.all([product, brands, materials,])
-            .then(([product, brands, materials,]) => {
-            // return res.send(product)
-            return res.render("dashboardProductDetail",{
-                brands,
-                materials,
-                ...product.dataValues,
-                title:"Product",
-            })
-        })
     },
     dashboardUsersDetail : async  (req,res) =>{
         const id = +req.params.id

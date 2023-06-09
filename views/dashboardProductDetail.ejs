@@ -8,82 +8,89 @@
     
     <%- include('./partials/navDashboard') %>
     
-    <form id="formDashboardProduct" class="form-dashboard" action="dashboard/product/<%= id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-      <h2>Producto</h2>
-        <label for="name">Nombre</label>
-        <input type="text" name="name" id="name" value="<%= locals.old && old.name ? old.name : name %>">
-        <small id="nameError" class="text-danger ms-3"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
-
-        <label for="price">Precio $</label>
-        <input type="number" name="price" id="price" value="<%= locals.old && old.price ? +old.price : price %>">
-        <small id="priceError" class="text-danger ms-2"><%= locals.errors && errors.price ? errors.price.msg : null %></small>
-        
-        <label for="discount">Descuento(opcional)</label>
-        <input type="number" name="discount" id="discount" value="<%= locals.old && old.discount ? +old.discount : discount %>">
-        <small id="discountError" class="text-danger ms-2"><%= locals.errors && errors.discount ? errors.discount.msg : null %></small>
-        
-        <label for="stock">Stock</label>
-        <input type="number" name="stock" id="stock" value="<%= locals.old && old.stock ? +old.stock : stock %>">
-        <small id="stockError" class="text-danger ms-2"><%= locals.errors && errors.stock ? errors.stock.msg : null %></small>
-
-        <label for="description">Descripción</label><small id="descrptionInfo"
-        hidden> (<span id="numberCharacters"></span> / 1000)</small>
-        <textarea name="description" id="description"><%= locals.old && old.description ? old.description : description %></textarea>
-        <small id="descriptionError" class="text-danger ms-2"><%= locals.errors && errors.description ? errors.description.msg : null %></small>
-
-        <label for="brand">Marcas</label>
-        <select name="brand" id="brand" value="">
-        <option value="" hidden>Seleccione una marca</option>
-        <% brands.forEach(({id,name})=> { %>
-          <option value=<%=id %> <%= brandId===id ? 'selected' : null %> <%= locals.old && old.brand && +old.brand===id ? 'selected' : null %>>
-            <%= name %>
-          </option>
-        <% }) %>
-        </select>
-        <small id="brandError" class="text-danger ms-2"><%= locals.errors && errors.brand ? errors.brand.msg : null %></small>
-
-        <label for="category">Categorías</label>
-        <select name="category" id="category">
-        <option value="" hidden>Seleccione una categoría</option>
-        <% categories.forEach(({id,name})=> { %>
-          <option value=<%=id %> <%= categoryId===id ? 'selected' : null %> <%= locals.old && old.category && +old.category===id ? 'selected' : null %>>
-            <%= name %>
-          </option>
+    <div class="div__container">
+      <form id="formDashboardProduct" class="form-dashboard" action="<%= id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <h2>Producto: <%= id %></h2>
+          <label for="name">Nombre</label>
+          <input type="text" name="name" id="name" value="<%= locals.old && old.name ? old.name : name %>">
+          <small id="nameError" class="text-danger ms-3"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
+  
+          <label for="price">Precio $</label>
+          <input type="number" name="price" id="price" value="<%= locals.old && old.price ? +old.price : price %>">
+          <small id="priceError" class="text-danger ms-2"><%= locals.errors && errors.price ? errors.price.msg : null %></small>
+          
+          <label for="discount">Descuento(opcional)</label>
+          <input type="number" name="discount" id="discount" value="<%= locals.old && old.discount ? +old.discount : discount %>">
+          <small id="discountError" class="text-danger ms-2"><%= locals.errors && errors.discount ? errors.discount.msg : null %></small>
+          
+          <label for="stock">Stock</label>
+          <input type="number" name="stock" id="stock" value="<%= locals.old && old.stock ? +old.stock : stock %>">
+          <small id="stockError" class="text-danger ms-2"><%= locals.errors && errors.stock ? errors.stock.msg : null %></small>
+  
+          <label for="description">Descripción</label><small id="descrptionInfo"
+          hidden> (<span id="numberCharacters"></span> / 1000)</small>
+          <textarea name="description" id="description"><%= locals.old && old.description ? old.description : description %></textarea>
+          <small id="descriptionError" class="text-danger ms-2"><%= locals.errors && errors.description ? errors.description.msg : null %></small>
+  
+          <label for="brand">Marcas</label>
+          <select name="brand" id="brand" value="">
+          <option value="" hidden>Seleccione una marca</option>
+          <% brands.forEach(({id,name})=> { %>
+            <option value=<%=id %> <%= brandId===id ? 'selected' : null %> <%= locals.old && old.brand && +old.brand===id ? 'selected' : null %>>
+              <%= name %>
+            </option>
           <% }) %>
-        </select>
-        <small id="categoryError" class="text-danger ms-2"><%= locals.errors && errors.category ? errors.category.msg : null %></small>
-
-        <label for="material">Material</label>
-        <select name="material" id="material" value="">
-        <option value="" hidden>Seleccione un material</option>
-        <% materials.forEach(({id,name})=> { %>
-          <option value=<%=id %> <%= brandId===id ? 'selected' : null %> <%= locals.old && old.brand && +old.brand===id ? 'selected' : null %>>
-            <%= name %>
-          </option>
-          <% }) %>
-        </select>
-        <small id="materialError" class="text-danger ms-2"><%= locals.errors && errors.material ? errors.material.msg : null %></small>
-
-        <label for="image" id="mainImage">Imágen principal del producto (Se recomienda una medida de 150px a 160px)</label>
-        <input type="file" name="image" id="image">
-        <small id="imageError" class="text-danger ms-2" id="imageError">
-          <%= locals.errors && errors.image ? errors.image.msg : null %>
-        </small>
-
-        <label for="images">Imágenes secundarias del producto (Se recomienda una medida de 150px a 160px)</label>
-        <input type="file" name="images" id="images" multiple>
-        <small id="imagesError" class="text-danger ms-2" id="imagesError">
-          <%= locals.errors && errors.images ? errors.images.msg : null %>
-        </small>
-
-        <small class="text-danger" id="formError"></small>
-
-        <button type="submit">Agregar</button>
-        <button type="reset">Cancelar</button>
-    </form>
+          </select>
+          <small id="brandError" class="text-danger ms-2"><%= locals.errors && errors.brand ? errors.brand.msg : null %></small>
+  
+          <label for="category">Categorías</label>
+          <select name="category" id="category">
+          <option value="" hidden>Seleccione una categoría</option>
+          <% categories.forEach(({id,name})=> { %>
+            <option value=<%=id %> <%= categoryId===id ? 'selected' : null %> <%= locals.old && old.category && +old.category===id ? 'selected' : null %>>
+              <%= name %>
+            </option>
+            <% }) %>
+          </select>
+          <small id="categoryError" class="text-danger ms-2"><%= locals.errors && errors.category ? errors.category.msg : null %></small>
+  
+          <label for="material">Material</label>
+          <select name="material" id="material" value="">
+          <option value="" hidden>Seleccione un material</option>
+          <% materials.forEach(({id,name})=> { %>
+            <option value=<%=id %> <%= brandId===id ? 'selected' : null %> <%= locals.old && old.brand && +old.brand===id ? 'selected' : null %>>
+              <%= name %>
+            </option>
+            <% }) %>
+          </select>
+          <small id="materialError" class="text-danger ms-2"><%= locals.errors && errors.material ? errors.material.msg : null %></small>
+  
+          <label for="image" id="mainImage">Imágen principal del producto (Se recomienda una medida de 150px a 160px)</label>
+          <input type="file" name="image" id="image">
+          <small id="imageError" class="text-danger ms-2" id="imageError">
+            <%= locals.errors && errors.image ? errors.image.msg : null %>
+          </small>
+  
+          <label for="images">Imágenes secundarias del producto (Se recomienda una medida de 150px a 160px)</label>
+          <input type="file" name="images" id="images" multiple>
+          <small id="imagesError" class="text-danger ms-2" id="imagesError">
+            <%= locals.errors && errors.images ? errors.images.msg : null %>
+          </small>
+  
+          <small class="text-danger" id="formError"></small>
+  
+          <button type="submit">Aceptar</button>
+          <button type="reset">Cancelar</button>
+      </form>
+  
+      <form class="form-dashboard-delete" action="<%= id %>?_method=DELETE" method="POST">
+        <button type="submit">Eliminar</button>
+      </form>
+    </div>
     
   </div>
 
+  <script src="/javascripts/editProduct.js"></script>
   <script src="/javascripts/menuHamDashboard.js"></script>
 
 </body>
