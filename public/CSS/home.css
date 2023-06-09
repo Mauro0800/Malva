@@ -94,10 +94,25 @@
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .home__main__distinguished__figure:hover{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.home__main__distinguished__figure i{
+    font-size: 1.6em;
+    color: var(--color5);
+}
+.home__main__distinguished__figure button{
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    height: 30px;
 }
 
 .precio-viejo{
@@ -139,10 +154,12 @@
 }
 .home__main__productos__figure button{
     position: absolute;
-    left: 10px;
+    left: 15px;
     top: 10px;
     border: none;
+    border-radius: 10px;
     background-color: white;
+    height: 30px;
 }
 
 .home__main__productos-imagen{
@@ -158,28 +175,12 @@
 }
 
 .ver-todos-los-productos button{
-    width: 65%;
-    height: 37px;
     border: none;
-    background-color: var(--color3);
-    color: var(--color5);
-    /*background-color: var(--color5);
-    color: var(--color1);*/
-    transition: all 0.5s;
-    text-transform: uppercase;
-    font-size: 0.8em;
-    border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
-
-.ver-todos-los-productos button:hover{
-    background-color: var(--color4);
-    color: var(--color1);
-    /*background-color: var(--color2);
-    color: var(--color5);*/
-    width: 67%;
-    font-size: 0.9;
-
+.ver-todos-los-productos a{
+    width: 100%;
+    text-align: center;
 }
 
 .home__main__div--wsp{
@@ -222,6 +223,7 @@
         padding: 3px;
         width: 65px;
         font-size: 2.5rem;
+        z-index: 1000;
     }
 
     .home__main__p--cuotas{
@@ -276,14 +278,6 @@
         width: 30%;
     }
     
-    .ver-todos-los-productos button{
-        width: 40%;
-        font-size: 0.9em;
-    }
-    
-    .ver-todos-los-productos button:hover{
-        width: 41%;
-    }
 
 }
 
@@ -316,27 +310,12 @@
     }
     
     .ver-todos-los-productos button{
-        width: 30%;
-        height: 37px;
         border: none;
-        background-color: var(--color3);
-        color: var(--color5);
-        /*background-color: var(--color5);
-        color: var(--color1);*/
-        transition: all 0.5s;
-        text-transform: uppercase;
-        font-size: 1em;
-        border-radius: 5px;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     }
-    
-    .ver-todos-los-productos button:hover{
-        background-color: var(--color4);
-        color: var(--color1);
-        /*background-color: var(--color2);
-        color: var(--color5);*/
-        width: 31%;
-        font-size: 0.85em;
-    
+    .ver-todos-los-productos a{
+        width: 100%;
+        text-align: center;
+        font-size: 1.3em;
     }
 }

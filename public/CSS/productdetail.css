@@ -106,7 +106,6 @@ select {
 .default-button:hover {
     background-color: var(--color2);
     color: white;
-    font-size: 0.9em;
 }
 
 .payment-method select {

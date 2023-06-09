@@ -107,7 +107,7 @@
       "categoryId": 6,
       "materialId": 3,
       "stock": 1,
-      "home":false,
+      "home":true,
       "distinguished":false,
       "image": "lata-emporium-labrad-esp-1.jpg"
    },
@@ -150,7 +150,7 @@
       "materialId": 7,
       "stock": 1,
       "home":false,
-      "distinguished":false,
+      "distinguished":true,
       "image": "canasto-yute-tejido-23-cm-1.jpg"
    },
    {
@@ -164,7 +164,7 @@
       "materialId": 4,
       "stock": 1,
       "home":false,
-      "distinguished":false,
+      "distinguished":true,
       "image": "reloj-brooklin-30-cm-1.jpg"
    },
    {
@@ -304,7 +304,7 @@
       "materialId": 3,
       "stock": 1,
       "home":false,
-      "distinguished":false,
+      "distinguished":true,
       "image": "jarro-termico-bodum-35-cc-1.jpg"
    },
    {
@@ -345,7 +345,7 @@
       "categoryId": 4,
       "materialId": 11,
       "stock": 1,
-      "home":true,
+      "home":false,
       "distinguished":false,
       "image": "vaso-alto-acril-scales-fume-g-1.jpg"
    },
@@ -360,7 +360,7 @@
       "materialId": 6,
       "stock": 1,
       "home":false,
-      "distinguished":false,
+      "distinguished":true,
       "image": "020034-0-copa-bohemia-gin-820ml.jpg"
    },
    {
@@ -374,7 +374,7 @@
       "materialId": 8,
       "stock": 1,
       "home":false,
-      "distinguished":true,
+      "distinguished":false,
       "image": "1139-0-cuchillo-faca-polywood.jpg"
    },
    {
@@ -568,7 +568,7 @@
       "brandId": 7,
       "categoryId": 1,
       "stock": 1,
-      "home":false,
+      "home":true,
       "materialId": 13,
       "distinguished":false,
       "image": "bandeja-irregular-filippo-35cm-1.jpg"
@@ -1679,7 +1679,7 @@
       "stock": 1,
       "home":false,
       "materialId": 3,
-      "distinguished":false,
+      "distinguished":true,
       "image":"set-6-utensilios-hudson-1.jpg" 
    }
    ,
