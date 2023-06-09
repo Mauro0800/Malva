@@ -258,6 +258,11 @@
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
 
+.top-text {
+  display: flex;
+  justify-content: space-between;
+}
+
   .div__table{
   border-collapse: collapse;
   margin: 25px 0;
@@ -320,6 +325,34 @@
 
 .none{
   display: none;
+}
+
+.div__container{
+  width: 100%;
+}
+
+.form-dashboard-delete{
+  background-color: #fff;
+  width: 90%;
+  margin: 33px auto;
+  text-align: center;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 15px 15px;
+  margin-top: -43px;
+  padding-top: 10px;
+}
+
+.form-dashboard-delete button{
+  width: 61%;
+  padding: 5px;
+  margin-bottom: 20px;
+  border: 2px solid var(--color3);
+  border-radius: 8px;
+  background-color: transparent;
+}
+
+.form-dashboard-delete button:hover{
+  background: #eee;
 }
 
 .form-dashboard{
@@ -386,6 +419,14 @@
   }
   .no-table{
     display: block;
+  }
+
+  .form-dashboard{
+    width: 70%;
+  }
+
+  .form-dashboard-delete{
+    width: 70%;
   }
 
 }

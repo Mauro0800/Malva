@@ -1,7 +1,5 @@
-window.onload = function () {
-
     const $ = id => document.getElementById(id);
-    const formEditProduct = $('form-edit-product');
+    const formEditProduct = $('formDashboardProduct');
     const name = $('name');
     const price = $('price');
     const discount = $('discount');
@@ -13,21 +11,14 @@ window.onload = function () {
     const image = $('image');
     const images = $('images')
 
-    /*const errorMessage = (element, message, { target }) => {
-        $(element).innerHTML = message
-        target.classList.add('input_error')
-    }*/
     const errorMessage = (element, message, { target }) => {
-        console.log(`Error message: ${message}`)
-        console.log(`Target element: ${target}`)
         $(element).innerHTML = message
-        target.classList.add('input_error')
+        target.classList.add('isInvalid')
     }
     
     const cleanError = (element, { target }) => {
-        console.log(`error borrado${target}`)
-        target.classList.remove('input_error')
-        target.classList.remove('input_success')
+        target.classList.remove('isInvalid')
+        target.classList.remove('isValid')
         $(element).innerHTML = null
     }
 
@@ -40,7 +31,7 @@ window.onload = function () {
                 errorMessage('nameError', 'El nombre debe contener al menos 5 caracteres', e)
                 break;
             default:
-                this.classList.add('input_success')
+                this.classList.add('isValid')
                 break;
         }
     })
@@ -57,7 +48,7 @@ window.onload = function () {
                 errorMessage('priceError', 'El precio debe ser mayor a 0', e)
                 break;
             default:
-                this.classList.add('input_success')
+                this.classList.add('isValid')
                 break;
         }
     })
@@ -69,7 +60,7 @@ window.onload = function () {
         if (this.value < 0) {
             errorMessage('discountError', 'Solo números mayores a 0', e)
         } else {
-            this.classList.add('input_success')
+            this.classList.add('isValid')
         }
     })
     discount.addEventListener('focus', function (e) {
@@ -80,7 +71,7 @@ window.onload = function () {
         if (this.value < 1) {
             errorMessage('stockError', 'Minimo un producto ', e)
         } else {
-            this.classList.add('input_success')
+            this.classList.add('isValid')
         }
     })
     stock.addEventListener('focus', function (e) {
@@ -99,7 +90,7 @@ window.onload = function () {
                 errorMessage('descriptionError', 'Maximo 1000 caracteres', e)
                 break;
             default:
-                this.classList.add('input_success')
+                this.classList.add('isValid')
                 break;
         }
     })
@@ -142,7 +133,7 @@ window.onload = function () {
         if (!this.value) {
             errorMessage('brandError', 'Debes seleccionar una marca', e)
         } else {
-            this.classList.add('input_success')
+            this.classList.add('isValid')
         }
     })
 
@@ -154,7 +145,7 @@ window.onload = function () {
         if (!this.value) {
             errorMessage('categoryError', 'Debes seleccionar una categoria', e)
         } else {
-            this.classList.add('input_success')
+            this.classList.add('isValid')
         }
     })
 
@@ -166,7 +157,7 @@ window.onload = function () {
         if (!this.value) {
             errorMessage('materialError', 'Debes seleccionar un material', e)
         } else {
-            this.classList.add('input_success')
+            this.classList.add('isValid')
         }
     })
 
@@ -180,15 +171,15 @@ window.onload = function () {
         switch (true) {
             case !extensiones.exec(this.value):
                 $('imageError').innerHTML = "Solo se admiten archivos jpg | jpeg | png | gif | webp"
-                this.classList.add('input_error')
+                this.classList.add('isInvalid')
                 break;
             case this.files.length > 1:
                 $('imageError').innerHTML = 'Máximo 1 imágen'
-                this.classList.add('input_error')
+                this.classList.add('isInvalid')
                 break;
             default:
                 cleanError('imageError', e);
-                this.classList.add('input_success')
+                this.classList.add('isValid')
                 break;
         }
         if(!this.value){
@@ -201,15 +192,15 @@ window.onload = function () {
         switch (true) {
             case !extensiones.exec(this.value):
                 $('imagesError').innerHTML = "Solo se admiten archivos jpg | jpeg | png | gif | webp"
-                this.classList.add('input_error')
+                this.classList.add('isInvalid')
                 break;
             case this.files.length > 3:
                 $('imagesError').innerHTML = 'Máximo 3 imágenes'
-                this.classList.add('input_error')
+                this.classList.add('isInvalid')
                 break;
             default:
                 cleanError('imagesError', e);
-                this.classList.add('input_success')
+                this.classList.add('isValid')
                 break;
         }
         if(!this.value){
@@ -220,14 +211,13 @@ window.onload = function () {
     formEditProduct.addEventListener('submit', function (e) {
         e.preventDefault();
         let error = false;
-        for (let i = 0; i < this.elements.length - 4; i++) {
-            if (this.elements[i].classList.contains('input_error')) {
-                error = true;
-                $('formError').innerHTML = 'Estos campos son obligatorios';
+            for (let i = 0; i < this.elements.length - 4; i++) {
+                if (this.elements[i].classList.contains('isInvalid')) {
+                    error = true;
+                    $('formError').innerHTML = 'Estos campos son obligatorios';
+                }
             }
-        }
-    !error&&this.submit();
-});
+        !error&&this.submit();
+    });
 
     
-}

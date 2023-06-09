@@ -82,8 +82,13 @@ module.exports = {
     },
 
     dashboardOrders :  (req,res) =>{
-        return res.render('dashboardOrders', {
-            title: "Ordenes"
+        db.Order.findAll({include:["user","cart"]})
+        .then(orders=>{
+            // return res.send(orders)
+            return res.render('dashboardOrders', {
+                title: "Ordenes",
+                orders
+            })
         })
     },
     dashboardAdd : async  (req,res) =>{
@@ -96,6 +101,7 @@ module.exports = {
         const categoryCount = await getAllCategoriesCount();
         const {materials,countMaterial} = await getAllMaterials();
         const {categories,countCategory} = await getAllCategories();
+        // return res.send(users)
             return res.render('dashboardAdd', {
                 products,
                 users,
@@ -372,16 +378,36 @@ module.exports = {
                 };
         }
     },
+    dashboardProductDetail: async (req,res) => {
+        const id = +req.params.id
+        const product = db.Product.findByPk(id);
+        const brands = await db.Brand.findAll({
+            order: [["name"]],
+            attributes: ["name", "id"],
+        });
+        const materials = await db.Material.findAll({
+            order: [["name"]],
+            attributes: ["name", "id"],
+        });
+        Promise.all([product, brands, materials,])
+            .then(([product, brands, materials,]) => {
+            // return res.send(product)
+            return res.render("dashboardProductDetail",{
+                brands,
+                materials,
+                ...product.dataValues,
+                title:"Producto",
+            })
+        })
+    },
     dashboardUpdate: async (req,res) =>{
-        
-
         const id = +req.params.id;
         const {name, price, description, discount, stock, brand, category, material,image} = req.body;
         const productOld=db.Product.findByPk(id)
         const errors = validationResult(req);
-        
+
         if (errors.isEmpty()) {
-            
+
             db.Product.update({
                 name: name.trim(),
                 price: +price,
@@ -400,9 +426,7 @@ module.exports = {
               }
             ).then(async () => {
                 if(req.files.image && req.files.image.length){
-
                     let error = false;
-
                     await db.Image.findAll({
                     where : {
                         productId : id
@@ -422,8 +446,8 @@ module.exports = {
                         })
                     }
                 }
-                    
-                
+
+
                 if(req.files.images){
                        await db.Image.findAll({
                             where : {
@@ -431,13 +455,12 @@ module.exports = {
                             }
                         })
                             .then(images => {
-                                
+
                                     db.Image.destroy({
                                         where:{
                                             productId:id
                                         }
                                     })
-
                                     req.files.images.forEach(async(image)=>{
                                        await db.Image.create(
                                         {
@@ -447,66 +470,68 @@ module.exports = {
                                     )
                                 })
 
-                                
                                     images.forEach(image => {
                                         fs.existsSync(`public/images/products/${image.name}`) &&
                                         fs.unlinkSync(`public/images/products/${image.name}`);
                                     });
                                 
-                                    
+
                                 })
                             }
                         return res.redirect("/products/detail/"+id);
-                            
+
                     })
-                 
+                
                 .catch(error => console.log(error))
         } else {
+            try {
 
-            const id = +req.params.id
-            const product = await db.Product.findByPk(id, {
-                include: ["images"]
-            })
-            const brands = await db.Brand.findAll({
-                order: [["name"]],
-                attributes: ["name", "id"],
-            });
-            const materials = await db.Material.findAll({
-                order: [["name"]],
-                attributes: ["name", "id"],
-            });
-            const images = await db.Image.findAll({
-                where: {
-                    productId: id
+                if (req.files && req.files.image) {
+                    fs.existsSync(`./public/images/products/${req.files.image[0].filename}`) &&
+                    fs.unlinkSync(`./public/images/products/${req.files.image[0].filename}`);
                 }
-            });
             
-            if (req.files && req.files.image) {
-                fs.existsSync(`./public/images/products/${req.files.image[0].filename}`) &&
-                fs.unlinkSync(`./public/images/products/${req.files.image[0].filename}`);
-            }
-            
-            if (req.files && req.files.images) {
-                req.files.images.forEach(files => {
-                    fs.existsSync(`./public/images/products/${files.filename}`) &&
-                    fs.unlinkSync(`./public/images/products/${files.filename}`);
+                if (req.files && req.files.images) {
+                    req.files.images.forEach(files => {
+                        fs.existsSync(`./public/images/products/${files.filename}`) &&
+                        fs.unlinkSync(`./public/images/products/${files.filename}`);
+                    });
+                }
+                const product = db.Product.findByPk(id);
+                const brands = await db.Brand.findAll({
+                    order: [["name"]],
+                    attributes: ["name", "id"],
                 });
-            }
-            
-            Promise.all([product, brands, materials, images])
-                .then(([product, brands, materials, images]) => {
-                    return res.render('editproduct', {
-                        ...product.dataValues,
+                const materials = await db.Material.findAll({
+                    order: [["name"]],
+                    attributes: ["name", "id"],
+                });
+                Promise.all([product, brands, materials,])
+                    .then(([product, brands, materials,]) => {
+                    return res.render("dashboardProductDetail",{
                         brands,
                         materials,
-                        images,
+                        ...product.dataValues,
                         errors: errors.mapped(),
                         old: req.body,
-                        title: "Editar producto"
+                        title:"Producto",
                     })
                 })
-                .catch((error) => console.log(error));
+                } catch (error) {
+                    console.log(error)
+                };
         }
+    },
+    dashboardDelete: async (req,res) => {
+
+            db.Product.destroy({
+                where: {
+                  id: req.params.id
+                }
+              }).then(() => {
+                return res.redirect("/dashboard")
+              }).catch((error) => console.log(error))
+
     },
     dashboardUser: async (req, res) => {
 
@@ -575,28 +600,6 @@ module.exports = {
             };
         }
     },
-    dashboardProductDetail: async (req,res) => {
-        const id = +req.params.id
-        const product = db.Product.findByPk(id);
-        const brands = await db.Brand.findAll({
-            order: [["name"]],
-            attributes: ["name", "id"],
-        });
-        const materials = await db.Material.findAll({
-            order: [["name"]],
-            attributes: ["name", "id"],
-        });
-        Promise.all([product, brands, materials,])
-            .then(([product, brands, materials,]) => {
-            // return res.send(product)
-            return res.render("dashboardProductDetail",{
-                brands,
-                materials,
-                ...product.dataValues,
-                title:"Product",
-            })
-        })
-    },
     dashboardUsersDetail : async  (req,res) =>{
         const id = +req.params.id
         const user = await getUserById(id,req);
@@ -607,12 +610,9 @@ module.exports = {
     },
     dashboardUserUpdate : async (req,res) => {
         const errors = validationResult(req);
-
-        if(!req.session.userLogin){
-            return res.redirect('/users/profile') 
-        }
+        
         const { name, surname, address, city, province, zipCode } = req.body
-        const { id } = req.session.userLogin;
+        const id = +req.params.id;
 
         if (req.fileValidationError) {
             errors.errors.push({
@@ -626,7 +626,7 @@ module.exports = {
         if(errors.isEmpty()) {
         db.User.findByPk(id)
             .then(user => {
-
+                // return res.send(req.file)
                 const addressUpdated = db.Address.update(
                     {
                         address: address ? address.trim() : null,
@@ -656,44 +656,38 @@ module.exports = {
                     .then(() => {
                         (req.file && fs.existsSync('./public/images/users/' + user.image)) && fs.unlinkSync('./public/images/users/' + user.image)
                         req.session.message = "Datos actualizados"
-                        // return res.send([user,req.file])
-                        return res.redirect('/users/profile')
+                        return res.redirect('/dashboardUsers/'+id)
                     })
             }).catch(error => console.log(error))
         }else{
             try {
-                const {products,count} = await getAllProducts(req)
-                const {users,countUser} = await getAllUsers(req);
-                const {brands,countBrand} = await getAllBrands();
-                const materialCount = await getAllMaterialsCount();
-                const brandCount = await getAllBrandsCount();
-                const categoryCount = await getAllCategoriesCount();
-                const {materials,countMaterial} = await getAllMaterials();
-                const {categories,countCategory} = await getAllCategories();
-
-                (req.file && fs.existsSync('./public/images/users/' + req.file.filename)) && fs.unlinkSync('./public/images/users/' + req.file.filename)
-
-                    return res.render('dashboardAdd', {
-                        products,
-                        users,
-                        brands,
-                        materials,
-                        categories,
-                        count,
-                        countUser,
-                        countBrand,
-                        countMaterial,
-                        countCategory,
-                        materialCount,
-                        brandCount,
-                        categoryCount,
-                        errors: errors.mapped(),
+                const id = +req.params.id
+                const user = await getUserById(id,req);
+                    return res.render("dashboardUsersDetail",{
+                        title:"Usuarios",
+                        user,
                         old: req.body,
+                        errors: errors.mapped(),
                         title: "Agregar"
-                })
+                    })
+                
             } catch (error) {
                 console.log(error)
             };
         }
+    },
+    dashboardUserDelete: async(req,res) => {
+        const id = req.params.id;
+
+        db.User.findByPk(id)
+            .then((user) => {
+                req.session.destroy()
+                db.User.destroy({
+                    where: { id }
+                }).then(() => {
+                    return res.redirect('/')
+                })
+            })
+            .catch(error => console.log(error))
     }
 }
