@@ -19,8 +19,8 @@
                                 </h3>
 
                                 <% if (productsFiltered.length) { %>
-                                    <% productsFiltered.forEach(({name,id,image,price,category})=> { %>
-                                        <%- include('./partials/product',{ name, id, image, price, category }) %>
+                                    <% productsFiltered.forEach(({name,id,image,price,category,discount})=> { %>
+                                        <%- include('./partials/product',{ name, id, image, price, category,discount }) %>
                                             <% }) %>
                                                 <% }else{ %>
                                                     <h2>Upss... No se encuentran coincidencias con tu busqueda</h2>

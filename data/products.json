@@ -1116,8 +1116,8 @@
    {
       "id": 78,
       "name": "espatula dorada blanca",
-      "price": 1,
-      "discount": 3830,
+      "price": 3830,
+      "discount": 0,
       "description": "Esta espátula combina un mango dorado con una hoja de cerámica blanca, brindando un aspecto moderno y elegante. Ideal para mezclar y servir alimentos con estilo.",
       "brandId": 4,
       "categoryId": 2,
