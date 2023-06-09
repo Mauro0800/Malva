@@ -1,15 +1,16 @@
 #icono-menu{
     position: relative;
     z-index: 11;
+    background-color: transparent;
 }
 #cerrar{
     cursor: pointer;
 }
 
 .cont-menu{
-    background-color: var(--color1);
-    box-shadow: 2px 0 5px 2px #666;
-    width: 400px;
+    background-color:white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    width: 200px;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -29,21 +30,59 @@
 }
 
 .cont-menu ul{
-    padding: 100px 0 20px 0;
+    padding: 20px 0 20px 5px;
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: center;
 }
 
 .cont-menu ul a{
     display: block;
-    font-size: 25px;
+    font-size: 0.9em;
     padding: 10px 50px;
     color: #000;
+    text-align: center;
 }
 
 .cont-menu ul a:hover{
-    background-color: #999;
+    display: block;
+    font-size: 0.9em;
+    padding: 10px 50px;
     color: #000;
+    font-weight: 500;
 }
+
+
+
+.cont-menu li:hover{
+    color: black;
+    cursor: pointer;
+}
+
+.cont-menu li {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .cont-menu li:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color5);
+    transform-origin: bottom;
+    transition: transform 0.4s ease-out;
+  }
+  
+  .cont-menu li:hover:after {
+    transform: scaleX(1);
+    transform-origin: right left;
+  }
 
 @media (min-width: 768px){
     .cont-menu{
