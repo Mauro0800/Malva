@@ -61,7 +61,7 @@
 
             </article>
             <div class="product-detail__main__section__article--shopping-cart-button">
-                <button class="default-button" type="submit"><a href="#">Agregar al carrito</a></button>
+                <button data-id="<%= id %>" class="btn-addCart default-button">Agregar al carrito</button>
                 <form action="medios-de-pago" method="post"></form> 
                 <div class="payment-method">
                     <label for="medios-de-pago"></label>
@@ -78,19 +78,19 @@
                         <button class="default-button" type="submit" class="btn btn-outline-info"><a href="/products/edit/<%= id %>">Editar producto</a></button>
                         </div>
                        <% } %>
-        </section>
+        </section> 
         
         <%- include('./partials/relatedProduct') %>
         <div class="ver-mas-productos">
             <button><a href="/">Ver más productos</a></button>
           </div>
-    </main>
-
+    </main> 
+ 
     <%- include('./partials/footer') %>
-
+ 
     <%- include('./partials/scripts') %>
-
-
-</body>
-
-</html>
+    <script src="/javascripts/productCart.js"></script>
+ 
+</body> 
+ 
+</html> 
