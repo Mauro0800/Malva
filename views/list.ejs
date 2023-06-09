@@ -5,6 +5,25 @@
     <body class="home">
         <%- include('./partials/header') %>
 
+
+        <nav class="home__header__nav-brand">
+            <ul class="home__header__nav-ul-brand">
+        
+              <% brands.forEach(({id,image,name})=> { %>
+                <li><div class="home__header__nav-ul-brand-box">
+                  <a href="/products/brand/<%= id %>">
+                      <img src="/images/logos/<%= image %>" alt="">
+                  </a>
+                </div>
+                <div class="home__header__nav-ul-brand-name">
+                <%= name %>
+                </div>
+              </li>
+                <% }) %>
+        
+            </ul>
+          </nav>
+
                     <main class="home__main">
                         <section class="home__main__section--body">
                             <div class="home__main__productos">

@@ -12,6 +12,7 @@ const bcrypt = require('bcryptjs');
 const localsUserCheck = require("./middlewares/localsUserCheck");
 const cookieCheck = require("./middlewares/cookieCheck");
 const infoProvider = require('./middlewares/infoProvider');
+const brandProvider = require('./middlewares/brandProvider');
 
 const app = express();
 
@@ -40,6 +41,7 @@ app.use(session({
 app.use(cookieCheck)
 app.use(localsUserCheck)
 app.use(infoProvider)
+app.use(brandProvider);
 
 app.use('/', mainRouter);
 app.use( '/users', usersRouter);

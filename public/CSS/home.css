@@ -126,7 +126,7 @@
     font-size: 1.2em;
     text-transform: uppercase;
     /*margin-top: 70px;*/
-    margin: 70px auto 20px;
+    margin: 15px auto 20px;
     width: 100%;
     text-align: center;
     /*font-weight:bolder;*/
@@ -188,6 +188,32 @@
 
 .home__main__p--cuotas{
     display: none;
+}
+
+.home__header__nav-ul-brand{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    overflow: scroll;
+    padding: 10px;
+    margin: 35px 0px 0px;
+}
+.home__header__nav-ul-brand-box{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    height: 80px;
+    border-radius: 50%;
+}
+.home__header__nav-ul-brand-name{  
+    font-size: 0.8em;  
+    color: black;
+    text-align: center;
+    margin-top: 5px;
+}
+.home__header__nav-ul-brand img{
+    width: 80px;
+    padding: 15px;
 }
 
 @media (min-width:768px) {
@@ -280,7 +306,31 @@
         width: 30%;
     }
     
-
+    .home__header__nav-ul-brand{
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        overflow: scroll;
+        padding: 10px;
+        margin: 30px 0px 0px;
+    }
+    .home__header__nav-ul-brand-box{
+        display: flex;
+        align-items: center;
+        background-color: white;
+        height: 80px;
+        border-radius: 50%;
+    }
+    .home__header__nav-ul-brand-name{  
+        font-size: 0.8em;  
+        color: black;
+        text-align: center;
+        margin-top: 5px;
+    }
+    .home__header__nav-ul-brand img{
+        width: 80px;
+        padding: 15px;
+    }
 }
 
 @media (min-width:1024px) {
@@ -319,5 +369,35 @@
         width: 100%;
         text-align: center;
         font-size: 1.3em;
+    }
+
+
+    .home__header__nav-ul-brand{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        overflow: scroll;
+        padding: 10px;
+        margin: 35px 0px 0px;
+    }
+    .home__header__nav-ul-brand-box{
+        display: flex;
+        align-items: center;
+        background-color: white;
+        height: 130px;
+        border-radius: 50%;
+    }
+    .home__header__nav-ul-brand-name{  
+        font-size: 0.9em;  
+        color: black;
+        text-align: center;
+        margin-top: 5px;
+    }
+    .home__header__nav-ul-brand img{
+        width: 130px;
+        padding: 25px;
+    }
+    .home__main__productos h3{
+        margin: 20px auto 20px;
     }
 }

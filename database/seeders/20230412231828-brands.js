@@ -6,57 +6,68 @@ module.exports = {
     
      await queryInterface.bulkInsert('Brands', [
       {
-        name: 'malva',
+        name: 'Malva',
+        image: 'malva-logo-1.png',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'trademark',
+        name: 'Trademark',
+        image: 'trademark.png',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'bohemia',
+        name: 'Bohemia',
+        image: 'bohemia.png',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'polywood',
+        name: 'Polywood',
+        image: 'polywood.webp',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'red Simil',
+        name: 'Red Simil',
+        image: 'red-simil.webp',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'mason',
+        name: 'Mason',
+        image: 'mason.jpg',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'otro',
+        name: 'Otro',
+        image: 'otros.jpg',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'tramontina',
+        name: 'Tramontina',
+        image: 'tramontina.jpg',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'oxo',
+        name: 'Oxo',
+        image: 'oxo.png',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'leifheit',
+        name: 'Leifheit',
+        image: 'leifheit.jpg',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'the Candle Shop',
+        name: 'The Candle Shop',
+        image: 'the-candle-shop.jpeg',
         createdAt: new Date(),
         updatedAt: new Date()
       }

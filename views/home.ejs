@@ -19,6 +19,24 @@
             en
             productos seleccionados</p>
 
+            <nav class="home__header__nav-brand">
+              <ul class="home__header__nav-ul-brand">
+          
+                <% brands.forEach(({id,image,name})=> { %>
+                  <li><div class="home__header__nav-ul-brand-box">
+                    <a href="/products/brand/<%= id %>">
+                        <img src="/images/logos/<%= image %>" alt="">
+                    </a>
+                  </div>
+                  <div class="home__header__nav-ul-brand-name">
+                  <%= name %>
+                  </div>
+                </li>
+                  <% }) %>
+          
+              </ul>
+            </nav>
+
           <div class="search-box">
           <%- include('./partials/search') %>
           </div>

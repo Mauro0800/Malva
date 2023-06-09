@@ -44,6 +44,26 @@ module.exports = {
             .catch(error => console.log(error))
 
     },
+    brand: async (req, res) => {
+
+        const {idBrand} = req.params;
+        const brand = await db.Brand.findByPk(idBrand);
+        db.Product.findAll({
+            where: {
+                brandId: idBrand
+            },
+            include: ["brand"]
+        })
+            .then(products => {
+                return res.render("list", {
+                    title: idBrand ? brand.dataValues.name : "Todos los productos",
+                    products,
+                    toThousand
+                })
+            })
+            .catch(error => console.log(error))
+
+    },
     detail: (req, res) => {
         const { id } = req.params
         const product = db.Product.findByPk(id, {
