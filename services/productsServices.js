@@ -21,8 +21,7 @@ module.exports = {
                     },
                 ],
                 attributes: {
-                    exclude: ['createdAt', 'updatedAt', 'image', 'categoryId', 'brandId', 'materialId'],
-                    include: [literalQueryUrlDetailProduct(req, 'product.id', 'detailUrl'), literalQueryUrlImageProduct(req, 'image', 'imageUrl')] // Detalle del producto e imágen con su respectiva URL
+                    exclude: ['createdAt', 'updatedAt', 'image', 'categoryId', 'brandId', 'materialId']
                 }
             })
             return {
