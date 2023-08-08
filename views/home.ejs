@@ -41,21 +41,23 @@
           <%- include('./partials/search') %>
           </div>
             <section class="home__main__section--body">
-
-              <div class="imagenes-extra-home">
-                <img src="/images/banners/banio.jpg" alt="">
-                <img src="/images/banners/mirror.jpg" alt="">
-                <img src="/images/banners/mimbre.jpg" alt="">
+              <div class="container-banner">
+                <h2>Encontrá eso que buscás</h2>
+                <div class="banners-categories">
+                  <a href="/products/category/3">
+                    <img src="/images/banners/vajillaok.jpg" alt="">
+                    <span>UTENSILIOS</span>
+                  </a>
+                  <a href="/products/category/1">
+                    <img src="/images/banners/decohogar.jpg" alt="">
+                    <span>DECO</span>
+                  </a>
+                  <a href="/products/category/8">
+                    <img src="/images/banners/canastos.jpg" alt="">
+                    <span>CANASTOS</span>
+                  </a>
+                </div>
               </div>
-
-              
-
-              <!-- <figure class="home__main__botones-fijos">
-                <a href="/products/shopping-cart"><button class="boton-shopping"><i
-                      class="fa-solid fa-cart-shopping"></i></button></a>
-                <a href="#footer"><button class="boton-down"><i class="fa-solid fa-chevron-down"></i></button></a>
-                <a href="#"><button class="boton-wpp"><i class="fa-brands fa-whatsapp"></i></button></a>
-              </figure> -->
 
               <div class="home__main__productos">
                 <h3 class="home__main__section__h3">PRODUCTOS</h3>
@@ -64,20 +66,6 @@
                   <%- include('./partials/productHome',{ name, id, image, price, category, discount }) %>
                     <% }) %>
 
-              </div>
-
-              <div class="imagenes-extra-home">
-                <img src="/images/banners/ollasysartenes.jpg" alt="">
-                <img src="/images/banners/TERMOS.jpg" alt="">
-                <img src="/images/banners/pasteleria.jpg" alt="">
-              </div>
-
-              <div class="imagenes-extra-home-tablet">
-                <img src="/images/banners/vajillaok.jpg" alt="">
-                <img src="/images/banners/banio.jpg" alt="">
-                <img src="/images/banners/ollasysartenes.jpg" alt="">
-                <img src="/images/banners/pasteleria.jpg" alt="">
-                <img src="/images/banners/decohogar.jpg" alt="">
               </div>
               
                 <div class="home__main__productos">

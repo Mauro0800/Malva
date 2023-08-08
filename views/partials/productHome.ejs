@@ -1,11 +1,13 @@
 <figure class="home__main__productos__figure">
-  <button data-id="<%= id %>" class="btn-addCart"><i class="bi bi-plus-circle"></i></button>
+  <button data-id="<%= id %>" class="btn-addCart"><i class="fas fa-cart-plus"></i></button>
   <a href="/products/detail/<%= id %>">
     <div class="home__main__productos-imagen">
       <img src="/images/products/<%= image ? image : 'default-image.png' %>" alt="">
     </div>
     <div class="home__main__productos-detalle">
-      <h4><%= name %></h4>
+      <h4>
+        <%= name %>
+      </h4>
       <h5>
         $<%= toThousand((price * (1 - (discount/100))).toFixed(0)) %>
       </h5>
@@ -13,7 +15,7 @@
         <p>
           %<%= discount %> OFF
         </p>
-      <% } %>
+        <% } %>
     </div>
   </a>
-  </figure>
+</figure>
