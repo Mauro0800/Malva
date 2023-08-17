@@ -119,9 +119,10 @@ module.exports = {
                 }
             ],
         })
-        
-           .then(user => {
-                return res.render('users/profile', {                   
+
+            .then(user => {
+                // return res.send(res.locals)
+                return res.render('users/profile', {
                     title: "Perfil de usuario",
                     user,
                 })
@@ -129,11 +130,11 @@ module.exports = {
     },
 
     update: (req, res) => {
-        
+
         const errors = validationResult(req);
 
-        if(!req.session.userLogin){
-            return res.redirect('/users/profile') 
+        if (!req.session.userLogin) {
+            return res.redirect('/users/profile')
         }
         const { name, surname, address, city, province, zipCode } = req.body
         const { id } = req.session.userLogin;
@@ -146,45 +147,45 @@ module.exports = {
                 location: "files",
             });
         }
-    
-        if(errors.isEmpty()) {
-        db.User.findByPk(id)
-            .then(user => {
 
-                const addressUpdated = db.Address.update(
-                    {
-                        address: address ? address.trim() : null,
-                        city: city ? city.trim() : null,
-                        province: province ? province.trim() : null,
-                        zipCode: zipCode ? zipCode : null
-                    },
-                    {
-                        where: {
-                            id: user.addressId
+        if (errors.isEmpty()) {
+            db.User.findByPk(id)
+                .then(user => {
+
+                    const addressUpdated = db.Address.update(
+                        {
+                            address: address ? address.trim() : null,
+                            city: city ? city.trim() : null,
+                            province: province ? province.trim() : null,
+                            zipCode: zipCode ? zipCode : null
+                        },
+                        {
+                            where: {
+                                id: user.addressId
+                            }
                         }
-                    }
-                )
-                const userUpdated = db.User.update(
-                    {
-                        name: name.trim(),
-                        surname: surname.trim(),
-                        image: req.file ? req.file.filename : user.image
-                    },
-                    {
-                        where: {
-                            id
+                    )
+                    const userUpdated = db.User.update(
+                        {
+                            name: name.trim(),
+                            surname: surname.trim(),
+                            image: req.file ? req.file.filename : user.image
+                        },
+                        {
+                            where: {
+                                id
+                            }
                         }
-                    }
-                )
-                Promise.all(([addressUpdated, userUpdated]))
-                    .then(() => {
-                        (req.file && fs.existsSync('./public/images/users/' + user.image)) && fs.unlinkSync('./public/images/users/' + user.image)
-                        req.session.message = "Datos actualizados"
-                        // return res.send([user,req.file])
-                        return res.redirect('/users/profile')
-                    })
-            }).catch(error => console.log(error))
-        }else{
+                    )
+                    Promise.all(([addressUpdated, userUpdated]))
+                        .then(() => {
+                            (req.file && fs.existsSync('./public/images/users/' + user.image)) && fs.unlinkSync('./public/images/users/' + user.image)
+                            req.session.message = "Datos actualizados"
+                            // return res.send([user,req.file])
+                            return res.redirect('/users/profile')
+                        })
+                }).catch(error => console.log(error))
+        } else {
 
             (req.file && fs.existsSync('./public/images/users/' + req.file.filename)) && fs.unlinkSync('./public/images/users/' + req.file.filename)
 
@@ -197,24 +198,27 @@ module.exports = {
                     }
                 ],
             })
-            
-            .then(user => {
-                return res.render('users/profile', {                  
-                    errors: errors.mapped(),
-                    old: req.body,
-                    title : "Perfil de usuario",
-                    user,
-                 })
-             }).catch(error => console.log(error))
-            
+
+                .then(user => {
+                    return res.render('users/profile', {
+                        errors: errors.mapped(),
+                        old: req.body,
+                        title: "Perfil de usuario",
+                        user,
+                    })
+                }).catch(error => console.log(error))
+
         }
     },
 
-    resetpassword: (req, res) => {
-        return res.render('users/resetpassword', {
-            categories,
-            title: "Restablecer mi contraseña"
-        })
+    resetpassword: async (req, res) => {
+        db.Category.findAll()
+            .then(categories => {
+                return res.render('users/resetpassword', {
+                    categories,
+                    title: "Restablecer mi contraseña"
+                })
+            })
     },
     logout: (req, res) => {
         req.session.destroy()
